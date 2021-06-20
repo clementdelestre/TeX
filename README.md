@@ -16,7 +16,7 @@ In Kodi -> Settings -> Services -> Control
 - Web interface : select "TeX"
 - Enable "Allow remote control from application on this system"
 
-In your browser, navigate to "http://[your ip]:[Port]
+In your browser, navigate to "http://[your ip]:[Port]"
 <br>You can find your ip in Kodi -> Settings -> System information
 <br>The port is the port you have chosen in Kodi -> Settings -> Services -> Control -> Port
 
