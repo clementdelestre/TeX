@@ -1,0 +1,100 @@
+<div class="top-viewport"></div>
+<div class="flex sm:space-x-4 mb-4">
+
+    <div class="w-72 relative flex-shrink-0 hidden md:block">
+        <div *ngIf="detailedSong" [ngClass]="{'fixed top-16' : !animatedDesc}" class=" mt-8 rounded-xl bg-dark-gray p-4 flex flex-col" style="width: inherit;">
+            <img *ngIf="imgDetailed != ''" [src]="imgDetailed" class="rounded-xl w-full" loading="lazy">
+            <p class="font-semibold text-xl w-full text-center m-4">{{detailedSong.title }}</p>
+
+            <!-- Artist -->
+            <p class="space-x-2">
+                <span class="text-primary font-semibold" translate="library.musicsView.artist"></span>
+                <span><a [routerLink]="'/musics/artist/' + detailedSong.albumartistid">{{ detailedSong.albumartist }}</a></span>
+            </p>
+
+            <!-- Album -->
+            <p class="space-x-2 mt-2">
+                <span class="text-primary font-semibold" translate="library.musicsView.album"></span>
+                <span *ngIf="detailedSong.album"><a [routerLink]="'/musics/album/' + detailedSong.albumid">{{ detailedSong.album }}</a></span>
+            </p>
+
+            <!-- Track -->
+            <p class="space-x-2 mt-2">
+                <span class="text-primary font-semibold" translate="library.musicsView.track"></span>
+                <span *ngIf="detailedSong.album">{{ detailedSong.track }}</span>
+            </p>
+
+            <!-- Duration -->
+            <p class="space-x-2 mt-2">
+                <span class="text-primary font-semibold" translate="library.musicsView.duration"></span>
+                <span *ngIf="detailedSong.album">{{ getSongDuration(detailedSong.duration ?? 0) }}</span>
+            </p>
+
+            <!-- Genre -->
+            <p class="space-x-2 mt-2">
+                <span class="text-primary font-semibold" translate="library.musicsView.genre"></span>
+                <span *ngIf="detailedSong.album">{{ detailedSong.genre }}</span>
+            </p>
+
+            <!-- Year -->
+            <p class="space-x-2 mt-2">
+                <span class="text-primary font-semibold" translate="library.musicsView.year"></span>
+                <span *ngIf="detailedSong.album">{{ detailedSong.year }}</span>
+            </p>
+        </div>
+    </div>
+
+    <div @openClose *ngIf="_songs.length != 0" class="w-full mt-4 md:mt-8">
+        <div class="bg-dark-gray p-4 rounded-xl sm:space-x-4 mb-2 flex flex-row justify-between w-full just">
+            <button class="text-center z-10 group relative whitespace-nowrap text-primary">     
+                {{ 'library.musicsView.listenIn' | translate }} {{ (player.useInternal ? player.internalPlayer?.title : "Kodi") ?? "unknown" | translate }} 
+                <div class="floating-button-bottom-left pointer-group-button text-white">
+                    <div class="floating-list">
+                        <button (click)="player.setInternalPlayerEnable(false)" [ngClass]="{'floating-button-active': !this.player.useInternal}" class="floating-button" >
+                            Kodi
+                        </button>    
+                        <button (click)="player.setInternalPlayerEnable(true)" [ngClass]="{'floating-button-active': this.player.useInternal}" class="floating-button" >
+                            {{ 'library.musicsView.internalPlayer' | translate}}
+                        </button>      
+                    </div>
+                </div>   
+            </button>
+            <button class="text-center z-10 group relative whitespace-nowrap">     
+                {{ 'library.sortBy.sortBy' | translate}}<i class="fas fa-sort ml-2"></i>
+                <div class="floating-button-bottom-right pointer-group-button">
+                    <div class="floating-list">
+                        <button (click)="changeSort('titleAZ')" [ngClass]="{'floating-button-active': sortby=='titleAZ'}" class="floating-button" translate="">
+                            library.sortBy.alphabetical
+                        </button>  
+                        <button (click)="changeSort('titleZA')" [ngClass]="{'floating-button-active': sortby=='titleZA'}" class="floating-button" translate="">
+                            library.sortBy.alphabeticalInversed
+                        </button>  
+                        <button (click)="changeSort('duration')" [ngClass]="{'floating-button-active': sortby=='duration'}" class="floating-button" translate="">
+                            library.sortBy.duration
+                        </button>  
+                        <button (click)="changeSort('latest')" [ngClass]="{'floating-button-active': sortby=='latest'}" class="floating-button" translate="">
+                            library.sortBy.latest
+                         </button>  
+                        <button (click)="changeSort('older')" [ngClass]="{'floating-button-active': sortby=='older'}" class="floating-button" translate="">
+                            library.sortBy.older
+                         </button>  
+                        <button (click)="changeSort('track')" [ngClass]="{'floating-button-active': sortby=='track'}" class="floating-button" translate="">
+                            library.sortBy.track
+                         </button>     
+                    </div>
+                </div>   
+            </button>
+            
+        </div>
+
+        <div *ngIf="!soft" class="relative mb-4 border-b border-dark-gray pb-2 group">
+            <div class="flex items-center h-full absolute left-3 pb-2">
+                <i class="fas fa-search text-gray-500 group-focus: group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <input [(ngModel)]="searchText" (ngModelChange)="modelChangeFn($event)" class="w-full pl-10 text-lg py-2 bg-dark-full rounded-lg text-white border border-transparent px-4" placeholder="{{ 'library.musicsView.search' | translate }}">
+        </div>
+
+        <app-musics-musics-view-item *ngFor="let song of showedSongs" [song]="song" (onHover)="songHover(song)" (onPlay)="playSong(song)" ></app-musics-musics-view-item>
+        
+    </div>
+</div>

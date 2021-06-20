@@ -1,0 +1,36 @@
+<div class="flex" [ngClass]="{'items-center':!isLoaded}"><span class="text-gray-500 whitespace-nowrap mr-1" translate="">library.details.genres</span><div *ngIf="!isLoaded" class="data-placeholder w-2/3 h-4 bg-gray-500 rounded-sm"></div><div *ngIf="isLoaded">{{tvShow.genre?.join(", ")}}</div></div>
+<div class="flex" [ngClass]="{'items-center':!isLoaded}"><span class="text-gray-500 whitespace-nowrap mr-1" translate="">library.details.studios</span><div *ngIf="!isLoaded" class="data-placeholder w-1/2 h-4 bg-gray-500 rounded-sm"></div><div *ngIf="isLoaded">{{tvShow.studio?.join(", ")}}</div></div>
+<div class="flex" [ngClass]="{'items-center':!isLoaded}"><span class="text-gray-500 whitespace-nowrap mr-1" translate="">library.details.episodes</span><div *ngIf="!isLoaded" class="data-placeholder w-2/3 h-4 bg-gray-500 rounded-sm"></div><div *ngIf="isLoaded">{{ tvShow.episode }}</div></div>
+
+<div *ngIf="seasons.length>0" class="flex justify-between items-center mt-8 w-full">
+    <p class="text-xl mb-2 font-bold text-shadow-xl" translate="">
+        library.details.episodesTitle
+    </p>
+
+    <button *ngIf="isLoaded" class="custom-button group relative flex">
+    
+        {{ 'library.details.seasonNumber' | translate:{'value' : currentSeason?.season ?? ''} }}
+        <img class="rotate-90 transform h-4 ml-4 scale-75" src="../../../assets/icons/play-white.svg">
+
+        <div class="floating-button-bottom-right pointer-group-button">
+            <div class="floating-list">
+                <div *ngFor="let season of seasons" (click)="displaySeason(season)" class="floating-button">
+                    <label>{{ 'library.details.seasonNumber' | translate:{'value' : season.season} }}</label>
+                    <label class="font-normal text-sm ml-2"> ({{ 'library.details.episodeCount' | translate:{'value' : season.episode} }})</label>
+                </div>   
+                
+            </div>
+        </div>      
+    </button>
+
+
+</div>
+
+<div @openClose *ngIf="currentSeason && seasons.length>0" class="overflow-auto scrollbar-hide">
+    <app-episode *ngFor="let episode of episodes" [episode]="episode" ></app-episode>   
+</div>
+
+<div *ngIf="seasons.length==0">
+    <p class="text-center text-lg mt-8" translate="library.details.noSeasonAvailable"></p>
+</div>
+

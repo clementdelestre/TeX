@@ -1,0 +1,11 @@
+<div class="flex items-center justify-center w-full h-full"> 
+    <label class="flex items-center cursor-pointer h-full">
+        <div class="relative">
+            <input name="checkbox" [ngModel]="checkboxStatus" (ngModelChange)="checkBoxStatus($event)" type="checkbox" class="sr-only">
+            <!-- <div class="block bg-dark-gray w-14 h-8 rounded-full"></div>
+            <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div> -->
+            <div class="block bg-dark-full w-10 h-6 rounded-full"></div>
+            <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
+        </div>
+    </label>
+  </div>

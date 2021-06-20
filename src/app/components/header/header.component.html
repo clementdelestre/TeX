@@ -1,0 +1,74 @@
+<div class=" hidden sm:block fixed w-screen top-0 z-30">
+    <div class="bg-gray-800">
+        <div class="flex h-16 relative w-11/12 m-auto items-center justify-between">
+            <div class="flex items-center space-x-8 h-full text-lg font-semibold">
+                <a [ngClass]="{'text-primary': isRoute('movie')}" routerLink="/movies" class="header-button" translate>header.movies</a>
+                <a [ngClass]="{'text-primary': isRoute('tvshow')}" routerLink="/tvshows" class="header-button" translate>header.tvshows</a>
+                <a [ngClass]="{'text-primary': isRoute('music')}" routerLink="/musics" class="header-button" translate>header.musics</a>
+            </div>        
+            <div class="flex items-center justify-items-center space-x-8">        
+                <app-searchbar></app-searchbar>
+    
+                <button *ngIf="player.isAvailable()" (click)="openPlayer()" class="hidden sm:block header-button text-xl helllo"><i class="far fa-play-circle toggle-player"></i></button>
+    
+                <a (click)="openRemote()" class="header-button text-xl"><i class="fas fa-mobile-alt"></i></a>
+                <a [ngClass]="{'text-primary': isRoute('settings')}" routerLink="/settings" class="header-button text-xl"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="h-1 bg-gradient-to-b from-gray-900 to-transparent w-full"></div>
+</div>
+
+
+
+<div class="sm:hidden w-full fixed z-40">
+    <div class="px-2 py-2 bg-dark-gray">
+        <app-searchbar  class=""></app-searchbar>
+    </div>
+    <div class="h-1 bg-gradient-to-b from-gray-900 to-transparent w-full"></div>
+</div>
+
+<div class="h-20"></div>
+
+    
+<app-player @modalAnimationReverse *ngIf="application.showPlayer && player.isAvailable()" class="z-40 fixed bottom-0 left-0 w-screen h-screen sm:left-auto sm:bottom-auto sm:h-auto sm:w-full sm:right-4 sm:top-14 sm:mt-1"></app-player> 
+
+
+<div class="sm:hidden w-full bg-dark-gray bottom-0 fixed z-30">
+    <div class="flex items-center text-xl py-4 px-2">
+        <div class="w-full text-center z-10">
+            <i [ngClass]="{'text-primary': isRoute('movie')}" routerLink="/movies" class="fas fa-film header-button"></i>
+        </div>
+        <div class="w-full text-center z-10">
+            <i [ngClass]="{'text-primary': isRoute('tvshow')}" routerLink="/tvshows" class="fas fa-tv header-button"></i>
+        </div>
+        <div class="w-full">
+            <div class="w-full absolute text-center left-0 bottom-4">
+                <div *ngIf="!player.isAvailable()" (click)="openRemote()" class="rounded-full h-14 w-14 m-auto flex items-center justify-center text-gray-500 hover:text-dark-full bg-white hover:bg-gray-200 transition-colors duration-300 cursor-pointer ">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div *ngIf="player.isAvailable()" (click)="openPlayer()" class="rounded-full h-14 w-14 m-auto flex items-center justify-center text-gray-500 hover:text-dark-full bg-white hover:bg-gray-200 transition-colors duration-300 cursor-pointer ">
+                    <i class="far fa-play-circle toggle-player text-2xl"></i>
+                </div>
+            </div>
+        </div>
+        <div class="w-full text-center z-10">
+            <i [ngClass]="{'text-primary': isRoute('music')}" routerLink="/musics" class="fas fa-music header-button"></i>
+        </div>
+
+        <div class="w-full text-center z-10 group relative">     
+            <i class="fas fa-bars header-button"></i>
+            <div class="floating-button-top-right pointer-group-button">
+                <div class="floating-list">
+                    <button class="floating-button toggle-player" *ngIf="player.isAvailable()" (click)="openRemote()" translate="">
+                        header.remote
+                    </button>
+                    <a [ngClass]="{'text-primary': isRoute('settings')}" routerLink="/settings" class="floating-button" translate="">
+                        header.settings
+                    </a>                
+                </div>
+            </div>   
+        </div>  
+    </div>
+</div>

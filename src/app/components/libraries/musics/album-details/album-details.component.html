@@ -1,0 +1,33 @@
+
+<div *ngIf="album" class="w-full relative mt-8 z-0">
+    <div class="absolute w-full h-full top-0 z-0">
+        <img *ngIf="albumFanart" [src]="albumFanart" class="rounded-xl w-full h-full object-cover" loading="lazy">
+        <div class="absolute z-0 top-0 bg-gradient-to-l from-transparent to-dark-gray w-full h-full rounded-xl backdrop-filter backdrop-blur-sm"></div>
+    </div>
+    <div class="flex flex-col sm:flex-row rounded-xl bg-dark-gray w-full p-4 items-center sm:items-start">
+        <div class="z-10 w-40 mb-4 sm:mb-0" *ngIf="albumThumb != ''">
+            <img *ngIf="albumThumb" [src]="albumThumb" class="rounded-xl w-full z-10" loading="lazy">
+        </div>
+        <div class="w-full sm:px-4 relative z-10">
+            <p class="font-bold text-xl">{{ album.title }}</p>
+            <a [routerLink]="'/musics/artist/' + album.artistid" class="font-semibold text-lg text-gray-500 mb-2 block hover:text-gray-400">{{ album.artist }}</a>
+            <p class="text-gray-500"><span class="text-primary">{{ 'library.details.genres' | translate}} </span><a class="hover:text-gray-400" *ngFor="let genre of album.genre; let i=index" [routerLink]="'/musics/genre/' + getEncodedGenre(genre)">{{ genre + (i < (album.genre?.length ?? 0) -1 ? ", " : "") }}</a></p>
+            <p class="text-gray-500"><span class="text-primary">{{ 'library.details.totalDiscs' | translate}} </span>{{ album.totaldiscs }}</p>
+            <p class="text-gray-500"><span class="text-primary">{{ 'library.details.year' | translate }} </span>{{ album.year }}</p>
+            <button (click)="playAlbum()" class="mt-4 h-10 items-center focus:outline-none transition-colors bg-opacity-100 hover:bg-opacity-80 cursor-pointer flex rounded bg-gray-200 text-dark-full px-5 py-1 md:px-7 md:py-1.5 text-base md:text-lg font-bold"><img src="../../../assets/icons/play.svg" class="h-3 md:h-4 m-auto mr-2 md:mt-1.75"> {{ 'library.details.playButton' | translate }}</button>
+        </div>
+    </div>
+   
+</div>
+
+<div *ngIf="disks.length > 1" class="flex overflow-auto scrollbar-hide space-x-4 mb-4 mt-4">
+
+    <button [ngClass]="{'text-primary':disk == showDisk}" (click)="changeDisk(disk)" *ngFor="let disk of disks" class="button-library-section">
+        <i class="fas fa-compact-disc sm:text-xl"></i>
+        <p class="text-lg font-semibold whitespace-nowrap">{{ 'library.details.disk' | translate }} {{ disk }}</p>
+    </button>
+
+</div>
+
+
+<app-musics-musics-view *ngIf="albumSongs" [songs]="albumSongs" [sortby]="'track'" ></app-musics-musics-view>

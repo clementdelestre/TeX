@@ -1,0 +1,48 @@
+<div class="px-4 sm:px-16 w-full">
+
+    <div class="inline-block float-right z-10 group relative">     
+        <i class="fas fa-ellipsis-v p-1 pl-2  header-button"></i>
+        <div class="floating-button-bottom-right pointer-group-button">
+            <div class="floating-list">
+                <button (click)="scanAudioLibrary()" class="floating-button toggle-player"translate="library.scanAudioLibrary"></button>
+                <button (click)="cleanAudioLibrary()" class="floating-button toggle-player"translate="library.cleanAudioLibrary"></button>        
+            </div>
+        </div>   
+    </div> 
+
+    <div class="flex overflow-auto scrollbar-hide space-x-4 mt-4 sm:mt-0">
+
+        <a [ngClass]="{'text-primary':isPage('musics')}" (click)="navigate('musics')" class="button-library-section">
+            <i class="fas fa-music sm:text-xl"></i>
+            <p class="text-lg font-semibold" translate="library.musics"></p>
+        </a>
+        <a [ngClass]="{'text-primary':isPage('albums')}" (click)="navigate('albums')" class="button-library-section">
+            <i class="fas fa-compact-disc sm:text-xl"></i>
+            <p class="text-lg font-semibold" translate="library.albums"></p>
+        </a>
+        <a [ngClass]="{'text-primary':isPage('artists')}" (click)="navigate('artists')" class="button-library-section">
+            <i class="fas fa-users sm:text-xl"></i>
+            <p class="text-lg font-semibold" translate="library.artists"></p>
+        </a>
+        <a [ngClass]="{'text-primary':isPage('genres')}" (click)="navigate('genres')" class="button-library-section">
+            <i class="fas fa-guitar sm:text-xl"></i>
+            <p class="text-lg font-semibold" translate="library.genres"></p>
+        </a>
+
+    </div>
+
+    <app-musics-home *ngIf="isPage('home')"></app-musics-home>
+    <app-musics-musics *ngIf="isPage('musics')"></app-musics-musics>
+
+    <app-musics-albums *ngIf="isPage('albums')"></app-musics-albums>
+    <app-musics-album-details *ngIf="isPage('album')"></app-musics-album-details>
+
+    <app-musics-artists *ngIf="isPage('artists')"></app-musics-artists>
+    <app-musics-artist-details *ngIf="isPage('artist')"></app-musics-artist-details>
+
+    <app-musics-genres *ngIf="isPage('genres')"></app-musics-genres>
+    <app-musics-genre-details *ngIf="isPage('genre')"></app-musics-genre-details>
+   
+</div>
+
+<div class="h-20 sm:hidden"></div>

@@ -1,0 +1,8 @@
+<div class="mb-4">
+    <div *ngIf="title != ''">
+        <h3 class="text-xl pt-4 font-bold w-full" translate="{{ title }}"></h3>
+    </div>
+    <div #scrollElement class="flex mx-auto overflow-auto scrollbar-hide items-center" (mousedown)="mouseDown = true; treeshold = 10" (mousemove)="onMouseMove($event)">
+        <app-mediacard class="w-40" *ngFor="let movie of medias" [media]="movie" [isDisabled]="treeshold==0"></app-mediacard> 
+    </div>
+</div>

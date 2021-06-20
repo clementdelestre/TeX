@@ -1,0 +1,40 @@
+<div class="text-sm font-semibold text-center">
+    <button @openClose *ngFor="let filter of searchService.selectedFilter" (click)="searchService.toggleFilter(filter.field, filter.value)" class="m-2 px-3 py-2.5 bg-dark-gray hover:opacity-80 transition-opacity rounded-lg border border-yellow-500 duration-300">
+        {{ filter.value }}                        
+    </button>
+</div>
+
+<div class="px-4 sm:px-16 w-full pb-4">
+
+
+    <!-- Movies -->
+    <div @openClose *ngIf="searchService.moviesSearch && searchService.movies.length != 0" class="mb-4">
+        <div class="flex justify-between items-center">
+            <h3 class="text-xl pt-4 font-bold w-full" translate="library.movies"></h3>
+        </div>
+        <div class="flex w-full mx-auto overflow-auto scrollbar-hide">
+            <app-mediacard class="w-37" *ngFor="let movie of searchService.movies" [media]="movie"></app-mediacard> 
+        </div>
+    </div>
+
+    <!-- TV Shows -->
+    <div @openClose *ngIf="searchService.tvshowsSearch && searchService.tvShows.length != 0" class="mb-4">
+        <div class="flex justify-between items-center">
+            <h3 class="text-xl pt-4 font-bold w-full" translate="library.tvshows"></h3>
+        </div>
+        <div class="flex w-full mx-auto overflow-auto scrollbar-hide">
+            <app-mediacard class="w-37" *ngFor="let tvShow of searchService.tvShows" [media]="tvShow"></app-mediacard> 
+        </div>
+    </div>
+
+    <!-- Musiques -->
+    <div *ngIf="searchService.songsSearch && searchService.songs?.length != 0" class="mb-4">
+        <div class="flex justify-between items-center">
+            <h3 class="text-xl pt-4 font-bold w-full" translate="library.musics"></h3>
+        </div>
+        <app-musics-musics-view [songs]="searchService.songs" [soft]="true"></app-musics-musics-view>
+    </div>
+
+</div>
+
+<div class="h-20 sm:hidden"></div>

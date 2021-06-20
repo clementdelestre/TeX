@@ -1,0 +1,30 @@
+
+<div *ngIf="artist" class="w-full relative flex flex-col mt-8 z-0">
+    <div class="absolute w-full h-full top-0 z-0">
+        <img *ngIf="artistFanart" [src]="artistFanart" class="rounded-xl w-full h-full object-cover" loading="lazy">
+        <div class="absolute z-0 top-0 bg-gradient-to-l from-transparent to-dark-gray w-full h-full rounded-xl backdrop-filter backdrop-blur-sm"></div>
+    </div>
+    <div class="flex flex-col sm:flex-row rounded-xl bg-dark-gray w-full p-4 items-center sm:items-start">
+        <div class="z-10 flex-shrink-0 w-37 mb-4 sm:mb-0" *ngIf="artistThumb != ''">
+            <img *ngIf="artistThumb" [src]="artistThumb" class="rounded-xl" loading="lazy">
+        </div>
+        <div class="w-full flex-grow sm:px-4 relative z-10">
+            <p class="font-bold text-xl mb-2">{{ artist.artist }}</p>
+            <p *ngIf="artist.born" class="text-gray-500"><span class="text-primary">{{ 'library.details.born' | translate }} </span>{{ artist.born }}</p>
+            <p class="text-gray-500"><span class="text-primary">{{ 'library.details.genres' | translate }} </span><a class="hover:text-gray-400" *ngFor="let genre of artist.songgenres; let i=index" [routerLink]="'/musics/genre/' + getEncodedGenre(genre.title)">{{ genre.title + (i < (artist.songgenres?.length ?? 0) -1 ? ", " : "") }}</a></p>
+            <p *ngIf="(artist.mood?.length ?? 0) > 0" class="text-gray-500"><span class="text-primary">{{ 'library.details.mood' | translate }} </span>{{ artist.mood?.join(', ') }}</p>
+            <p *ngIf="artist.formed" class="text-gray-500"><span class="text-primary">{{ 'library.details.formed' | translate }} </span>{{ artist.formed }}</p>
+            <p *ngIf="artist.disbanded" class="text-gray-500"><span class="text-primary">{{ 'library.details.disbanded' | translate }} </span>{{ artist.disbanded }}</p>        
+        </div>
+    </div>
+    <div *ngIf="artist.description" class="w-full z-10 px-8 sm:px-20 mb-4">
+        <p (click)="toggleDescription()" [ngClass]="{'overflow-ellipsis whitespace-nowrap' : !showDescription}" class="text-gray-500 hover:text-gray-300 transition-colors duration-300 cursor-pointer overflow-auto scrollbar-hide text-justify">{{ artist.description }}</p>
+    </div>
+</div>
+
+<!-- Albums -->
+<app-library-row-medias @openClose *ngIf="albums.length > 0" [title]="'library.albums'" [medias]="albums"></app-library-row-medias>
+
+<!-- Musics -->
+<h3 *ngIf="songs" class="text-xl font-bold w-full ml-2 mt-16">{{ 'library.details.musicsBy' | translate }} {{ artist?.artist }}</h3>
+<app-musics-musics-view *ngIf="songs" [songs]="songs"></app-musics-musics-view>

@@ -1,0 +1,142 @@
+{
+    "header" : {
+        "movies" : "Films",
+        "tvshows" : "Séries",
+        "musics" : "Musiques",
+        "player" : "Lecteur",
+        "remote" : "Télécommande",
+        "settings" : "Paramètres",
+        "search" : {
+            "search" : "Rechercher",
+            "searchIn" : "Rechercher parmi :",
+            "filters" : "Filtres :",
+            "year" : "Année",
+            "genre" : "Genre"
+        }
+    },
+    "library" : {
+        "videoLibrary" : "Librairie vidéo",
+        "audioLibrary" : "Librairie audio",
+        "continueToWatch" : "Continuer de regarder",
+        "recentlyAdded" : "Récemment ajoutés",
+        "unwatched" : "Non vus",
+        "movies" : "Films",
+        "tvshows" : "Séries",
+        "musics" : "Musiques",
+
+        "scanVideoLibrary" : "Scanner la librairie vidéo",
+        "scanAudioLibrary" : "Scanner la librairie audio",
+        "cleanVideoLibrary" : "Nettoyer la librairie vidéo",
+        "cleanAudioLibrary" : "Nettoyer la librairie audio",
+
+        "sortBy" : {
+            "sortBy" : "Trier par",
+            "alphabetical" : "Alphabétique",
+            "alphabeticalInversed" : "Alphabétique (inversé)",
+            "random" : "Aléatoire",
+            "duration" : "Durée",
+            "latest" : "Récent",
+            "older" : "Ancien",
+            "track" : "Piste"
+        },
+        "page" : "Page",
+
+        "albums" : "Albums",
+        "artists" : "Artists",
+        "genres" : "Genres",
+
+        "recentlyPlayedAlbums" : "Albums écoutés récemment",
+        "recentlyAddedAlbums" : "Albums ajoutés récemment",
+        "mostPlayedAlbums" : "Albums les plus écoutés",
+
+        "allMusics" : "Toutes les musiques",
+
+        "details" : {
+            "genres" : "Genres :",
+            "totalDiscs" : "Nombre de disque :",
+            "year" : "Année :",
+            "studios" : "Studios :",
+            "writers" : "Writers:",
+            "directors" : "Metteurs en scène :",         
+            "disk" : "Disque",
+            "born" : "Naissance :",
+            "mood" : "Ambiance :",
+            "formed" : "Date de formation :",
+            "disbanded" : "Date de dissolution:",
+            "episodes" : "Episodes :",
+            "musicsBy" : "Musique par",
+            "playButton": "Jouer",
+            "playNext" : "Jouer ensuite",
+            "rating" : "Avis des utilisateurs : {{ value }}%",
+            "watched" : "Vu",
+            "unwatched" : "Non vu",
+            "size" : "Taille :",
+            "file" : "Fichier :",
+            "dateadded" : "Date d'ajout :",
+            "download" : "Télécharger",
+            "moreinfo" : "Plus d'informations",
+            "lessinfo" : "Moins d'informations",
+            "trailer" : "Bande annonce",
+            "casting" : "Casting",
+            "seasons" : "Saisons",
+            "seasonNumber" : "Saison {{ value }}",
+            "episodeCount" : "{{ value }} épisodes",
+            "episodesTitle" : "Episodes",
+            "noSeasonAvailable" : "Aucune saison disponible",
+            "getStreamingLink" : "Obtenir le lien de stream",
+            "additionalInformation" : "Informations additionnelles"
+        },
+
+        "musicsView" : {
+            "artist" : "Artiste :",
+            "album" : "Album :",
+            "track" : "Piste :",
+            "duration" : "Durée :",
+            "genre" : "Genre :",
+            "year" : "Année :",
+            "listenIn" : "Ecouter dans :",
+            "internalPlayer" : "Navigateur",
+            "search" : "Rechercher",
+            "playNext" : "Jouer ensuite",            
+            "download" : "Télécharger",
+            "linkCopied" : "Lien copié",
+            "linkWasCopiedInClipBoard" : "Le lien a été copié dans le presse-papier."
+        }
+        
+    },
+    "player" : {
+        "playlist" : "Playlist",
+        "noMedia" : "Aucun média"
+    },
+    "settings" : {
+        "settings" : "Paramètres",
+        "general" : {
+            "general" : "Général",
+            "language" : "Langage",
+            "musicsDefaultPlayer" : "Lecteur de musique par défaut"
+        },
+        "appearance" : {
+            "appearance" : "Apparence"
+        },
+        "advanced" : {
+            "advanced" : "Avancés",
+            "websocketAddr" : "Adresse websocket",
+            "websocketPort" : "Port websocket",
+            "state" : "Etat",
+            "connected" : "Connecté",
+            "disconnected" : "Déconnecté",
+            "connect" : "Se connecter",
+            "disconnect" : "Se déconnecter",
+            "save" : "Sauvegarder",
+            "reset" : "Réinitialiser"
+        }
+    },
+    "unknown" : "Inconnu",
+    "notification" : {
+        "scanStarted" : "Analyse démarrée",
+        "scanFinished" : "Annalyse terminée",
+        "cleanStarted" : "Nettoyage démarré",
+        "cleanFinished" : "Nettoyage terminé"
+    }
+    
+}

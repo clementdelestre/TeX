@@ -1,0 +1,140 @@
+{
+    "header" : {
+        "movies" : "Movies",
+        "tvshows" : "TV Shows",
+        "musics" : "Musics",
+        "player" : "Player",
+        "remote" : "Remote",
+        "settings" : "Settings",
+        "search" : {
+            "search" : "Search",
+            "searchIn" : "Search in:",
+            "filters" : "Filters:",
+            "year" : "Year",
+            "genre" : "Genre"
+        }      
+    },
+    "library" : {
+        "videoLibrary" : "Library video",
+        "audioLibrary" : "Library audio",
+        "continueToWatch" : "Continue to watch",
+        "recentlyAdded" : "Recently Added",
+        "unwatched" : "Unwatched",
+        "movies" : "Movies",
+        "tvshows" : "TV Shows",
+        "musics" : "Musics",
+
+        "scanVideoLibrary" : "Scan video library",
+        "scanAudioLibrary" : "Scan audio library",
+        "cleanVideoLibrary" : "Clean video library",
+        "cleanAudioLibrary" : "Clean audio library",
+
+        "sortBy" : {
+            "sortBy" : "Sort by",
+            "alphabetical" : "Alphabetical",
+            "alphabeticalInversed" : "Alphabetical (inversed)",
+            "random" : "Random",
+            "duration" : "Duration",
+            "latest" : "Latest",
+            "older" : "Older",
+            "track" : "Track"
+        },
+        "page" : "Page",
+
+        "albums" : "Albums",
+        "artists" : "Artists",
+        "genres" : "Genres",
+
+        "recentlyPlayedAlbums" : "Recently played albums",
+        "recentlyAddedAlbums" : "Recently added albums",
+        "mostPlayedAlbums" : "Most played albums",
+
+        "allMusics" : "All musics",
+
+        "details" : {
+            "genres" : "Genres:",
+            "totalDiscs" : "Total disks:",
+            "year" : "Year:",
+            "studios" : "Studios:",
+            "writers" : "Writers:",
+            "directors" : "Directors:",         
+            "disk" : "Disk",
+            "born" : "Born:",
+            "mood" : "Mood:",
+            "formed" : "Formed:",
+            "disbanded" : "Disbanded:",
+            "episodes" : "Episodes:",
+            "musicsBy" : "Musics by",
+            "playButton": "Play",
+            "playNext" : "Play next",
+            "rating" : "Viewers rating: {{ value }}%",
+            "watched" : "Watched",
+            "unwatched" : "Unwatched",
+            "size" : "Size:",
+            "file" : "File:",
+            "dateadded" : "Date added:",
+            "download" : "Download",
+            "moreinfo" : "More information",
+            "lessinfo" : "Less information",
+            "trailer" : "Trailer",
+            "casting" : "Casting",
+            "seasons" : "Seasons",
+            "seasonNumber" : "Season {{ value }}",
+            "episodeCount" : "{{ value }} episodes",
+            "episodesTitle" : "Episodes",
+            "noSeasonAvailable" : "No season available",
+            "getStreamingLink" : "Get streaming link",
+            "additionalInformation" : "Additional information"
+        },
+
+        "musicsView" : {
+            "artist" : "Artist:",
+            "album" : "Album:",
+            "track" : "Track:",
+            "duration" : "Duration:",
+            "genre" : "Genre:",
+            "year" : "Year:",
+            "listenIn" : "Listen in:",
+            "internalPlayer" : "Internal",
+            "search" : "Search",
+            "playNext" : "Play next",            
+            "download" : "Download",
+            "linkCopied" : "Link copied",
+            "linkWasCopiedInClipBoard" : "The link has been copied to the clipboard."
+        }
+    },
+    "player" : {
+        "playlist" : "Playlist",
+        "noMedia" : "No media"
+    },
+    "settings" : {
+        "settings" : "Settings",
+        "general" : {
+            "general" : "General",
+            "language" : "Language",
+            "musicsDefaultPlayer" : "Musics default player"
+        },
+        "appearance" : {
+            "appearance" : "Appearance"
+        },
+        "advanced" : {
+            "advanced" : "Advanced",
+            "websocketAddr" : "Websocket address",
+            "websocketPort" : "websocket port",
+            "state" : "State",
+            "connected" : "Connected",
+            "disconnected" : "Disconnected",
+            "connect" : "Connect",
+            "disconnect" : "disconnect",
+            "save" : "Save",
+            "reset" : "Reset"
+        }
+    },
+    "unknown" : "Unknown",
+    "notification" : {
+        "scanStarted" : "Scan started",
+        "scanFinished" : "Scan finished",
+        "cleanStarted" : "Clean started",
+        "cleanFinished" : "Clean finished"
+    }
+}

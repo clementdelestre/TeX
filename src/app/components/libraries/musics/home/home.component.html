@@ -1,0 +1,8 @@
+ <!-- Recently Played Albums -->
+<app-library-row-medias @openClose *ngIf="recentlyPlayedAlbums.length > 0" [title]="'library.recentlyPlayedAlbums'" [medias]="recentlyPlayedAlbums"></app-library-row-medias>
+
+ <!-- Recently Added Albums -->
+<app-library-row-medias @openClose *ngIf="recentlyAddedAlbums.length > 0" [title]="'library.recentlyAddedAlbums'" [medias]="recentlyAddedAlbums"></app-library-row-medias>
+
+ <!-- Most played Albums -->
+<app-library-row-medias @openClose *ngIf="mostPlayedAlbums.length > 0" [title]="'library.mostPlayedAlbums'" [medias]="mostPlayedAlbums"></app-library-row-medias>

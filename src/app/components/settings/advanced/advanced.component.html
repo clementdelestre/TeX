@@ -1,0 +1,35 @@
+<h3 class="settings-title" translate="settings.advanced.advanced"></h3>
+<div class="bg-dark-gray rounded-lg w-full px-4">
+    <div class="settings-section">
+        <div class="settings-subsection">
+            <label class="font-semibold" translate="settings.advanced.websocketAddr"></label>
+            <div class="flex flex-col">
+                <input type="text" class="custom-input block" placeholder="default" [(ngModel)]="webSocketAddrValue" (ngModelChange)="webSocketAddrChange($event)">
+                <p (click)="webSocketResetAddr()" class="text-right text-xs mb-1 cursor-pointer"  translate="settings.advanced.reset"></p>
+            </div>
+        </div>
+        <div class="settings-subsection">
+            <label class="font-semibold"  translate="settings.advanced.websocketPort"></label>
+            <div class="flex flex-col">
+                <input type="number" class="custom-input" placeholder="9090" [(ngModel)]="webSocketPortValue" (ngModelChange)="webSocketPortChange($event)">
+                <p (click)="webSocketResetPort()" class="text-right text-xs mb-1 cursor-pointer" translate="settings.advanced.reset"></p>
+            </div>
+        </div>
+        <div class="settings-subsection">
+            <label class="font-semibold"></label>
+            <div class="text-right">
+                <button (click)="webSocketSaveChange()" class="bg-blue-600 rounded-lg px-4 py-2 hover:opacity-80 transition-opacity duration-300"  translate="settings.advanced.save"></button>
+            </div>
+        </div>
+        <div class="settings-subsection pt-8">
+            <label class="font-semibold"  translate="settings.advanced.state"></label>
+            <div *ngIf="kodiWebSocketService.isConnected()" class="flex justify-between items-center w-72">
+                <label class="text-lg"  translate="settings.advanced.connected"></label>
+                <button (click)="kodiWebSocketService.close()" class="bg-red-600 rounded-lg px-2 py-1 hover:opacity-80 transition-opacity duration-300" translate="settings.advanced.disconnect"></button>
+            </div>
+            <div *ngIf="!kodiWebSocketService.isConnected()" class="flex justify-between items-center">
+                <label class="text-lg" translate="settings.advanced.disconnected"></label>
+                <button (click)="kodiWebSocketService.connect()" class="bg-green-600 rounded-lg px-2 py-1 hover:opacity-80 transition-opacity duration-300" translate="settings.advanced.connect"></button>
+            </div>
+        </div>
+   </div>

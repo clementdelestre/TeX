@@ -1,0 +1,39 @@
+
+
+<button (click)="goTo($event)" class="w-full {{ player.currentPlayer?.properties?.position == position ? 'bg-dark-full' : '' }} border-t-2 border-gray-500 flex py-2 sm:py-4 px-4 hover:bg-dark-full hover:bg-opacity-50 transition-all duration-300 cursor-pointer relative">
+    
+    <div *ngIf="item.type=='movie'" class="w-full flex items-center space-x-8">
+        <img src="{{imageUrl}}" class="w-20 rounded-lg" loading="lazy">
+        <div class="text-left w-full">
+            <p class="text-lg font-bold">{{ item.title }}</p>
+        </div>
+        <button (click)="removeItem()" class="text-white cursor-pointer pr-4 text-xl hover:text-red-500 p-2 remove-file"><i class="fas fa-times remove-file"></i></button>
+    </div>
+
+    <div *ngIf="item.type=='episode'" class="w-full flex items-center space-x-8">
+        <img src="{{imageUrl}}" class="w-36 rounded-lg" loading="lazy">
+        <div class="text-left w-full">
+            <p class="text-lg font-bold">{{ item.showtitle }}</p>
+            <p class="text-gray-400">S{{ item.season }}E{{ item.episode }} : {{ item.title }}</p>
+        </div>
+        <button (click)="removeItem()" class="text-white cursor-pointer pr-4 text-xl hover:text-red-500 p-2 remove-file"><i class="fas fa-times remove-file"></i></button>
+    </div>
+
+    <div *ngIf="item.type=='song'" class="w-full flex items-center space-x-8">
+        <img src="{{imageUrl}}" class="w-24 rounded-lg" loading="lazy">
+        <div class="text-left w-full">
+            <p class="text-lg font-semibold">{{ item.title }}</p>
+            <p class="text-gray-400 font-semibold">{{ item.artist }}</p>
+        </div>
+        <button (click)="removeItem()" class="text-white cursor-pointer pr-4 text-xl hover:text-red-500 p-2 remove-file"><i class="fas fa-times remove-file"></i></button>
+    </div>
+
+    <div *ngIf="item.type=='unknown'" class="w-full flex items-center space-x-8">
+        <div class="text-left w-full">
+            <p class="text-lg font-semibold">{{ item.file }}</p>
+        </div>
+        <button (click)="removeItem()" class="text-white cursor-pointer pr-4 text-xl hover:text-red-500 p-2 remove-file"><i class="fas fa-times remove-file"></i></button>
+    </div>
+    
+    
+</button>

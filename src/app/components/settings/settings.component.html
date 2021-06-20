@@ -1,0 +1,28 @@
+<div @openClose class="px-4 sm:px-16 w-full flex flex-col sm:flex-row mt-8 sm:space-x-4">
+    <div [ngClass]="{'hidden sm:block' : !isHome}" class="sm:w-1/5">
+        <h3 [ngClass]="{'block' : isHome}" class="settings-title sm:hidden" translate="settings.settings"></h3>
+
+        <a [routerLink]="'/settings/general'" class="settings-button-header">
+            {{ 'settings.general.general' | translate }}
+            <i class="sm:hidden fas fa-chevron-right float-right"></i>
+        </a>
+        <a [routerLink]="'/settings/appearance'" class="settings-button-header">
+            {{ 'settings.appearance.appearance' | translate }}
+            <i class="sm:hidden fas fa-chevron-right float-right"></i>
+        </a>
+        <a [routerLink]="'/settings/advanced'" class="settings-button-header">
+            {{ 'settings.advanced.advanced' | translate }}   
+            <i class="sm:hidden fas fa-chevron-right float-right"></i>     
+        </a>
+    </div>
+
+    <div [ngClass]="{'hidden sm:block' : isHome}" class="sm:w-4/5">
+        <app-settings-general *ngIf="isPage('general')"></app-settings-general>
+        <app-settings-appearance *ngIf="isPage('appearance')"></app-settings-appearance>
+        <app-settings-advanced *ngIf="isPage('advanced')"></app-settings-advanced>
+    </div>
+    
+</div>
+    
+<div class="h-20 sm:hidden"></div>
+

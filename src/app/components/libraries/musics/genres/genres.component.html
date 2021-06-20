@@ -1,0 +1,7 @@
+<h3 class="text-xl font-bold w-full ml-2 mt-8" translate="library.genres"></h3>
+
+<div @fastFadeAnimation class="flex flex-wrap mx-auto justify-center mb-2 items-center">
+    <div *ngFor="let genre of genres" class="w-1/2 sm:w-44">
+        <app-mediacard class="w-full" [media]="genre"></app-mediacard>
+    </div>
+</div>

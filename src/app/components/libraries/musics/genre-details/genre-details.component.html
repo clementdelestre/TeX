@@ -1,0 +1,14 @@
+<!-- Artists -->
+
+<h3  @openClose *ngIf="artists.length > 0"class="text-lg pt-4 font-bold w-full"><span class="text-primary">{{genre }} : </span>{{ 'library.artists' | translate }}</h3>
+<app-library-row-medias @openClose *ngIf="artists.length > 0" [medias]="artists"></app-library-row-medias>
+
+ <!-- Albums -->
+ 
+<h3 @openClose *ngIf="albums.length > 0" class="text-lg pt-4 font-bold w-full"><span class="text-primary">{{genre }} : </span>{{ 'library.albums' | translate }}</h3>
+<app-library-row-medias @openClose *ngIf="albums.length > 0" [medias]="albums"></app-library-row-medias>
+
+<!-- Musics -->
+<h3 class="text-lg pt-4 font-bold w-full"><span class="text-primary">{{genre }} : </span>{{ 'library.musics' | translate }}</h3>
+<app-musics-musics-view [songs]="songs"></app-musics-musics-view>
+

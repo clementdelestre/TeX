@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "videocard.component.scss"
+    ],
+    "names": [],
+    "file": "videocard.component.css"
+}

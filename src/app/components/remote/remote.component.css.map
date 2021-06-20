@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "remote.component.scss"
+    ],
+    "names": [],
+    "file": "remote.component.css"
+}

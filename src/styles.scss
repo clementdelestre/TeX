@@ -1,0 +1,210 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+    color:white;
+    overflow: overlay;
+    overscroll-behavior-x: none;
+}
+
+@media (min-width: 768px){
+    .custom-container {
+        padding-left:3.5em;
+        padding-right:3.5em;
+    }
+}
+
+@keyframes lazy-kf{
+    from {opacity:0;}
+    to {opacity:1;}
+}
+img[loading=lazy] {
+    animation: lazy-kf 1s;
+}
+
+input,
+textarea,
+button,
+select,
+a,
+label,
+.cursor-pointer,
+button:focus, button:active:focus, button.active:focus {
+    outline: none !important;
+    outline-style: none !important;
+  -webkit-tap-highlight-color: rgba(0,0,0,0)!important;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.button-primary {
+    @apply text-gray-100 cursor-pointer transition-all duration-300;
+}
+
+.button-primary:hover {
+    @apply text-primary;
+}
+
+.header-button {
+    @apply transition-opacity cursor-pointer duration-300;
+
+    outline: none !important;
+    outline-style: none !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0)!important;
+}
+
+.header-button:hover {
+    @apply opacity-70;
+}
+
+@layer utilities {
+    @variants responsive {
+        .floating-container {
+            @apply bg-dark-gray rounded-lg text-left absolute border border-gray-600 px-6 sm:px-4 py-4 bg-opacity-80;
+        }
+
+        .max-w-33 {
+            max-width:33%;
+        }
+
+        .max-w-70 {
+            max-width:70%;
+        }
+
+        .player-box {
+            @apply bg-dark-gray right-0 w-full sm:max-w-md fixed h-screen sm:h-auto top-0 sm:top-auto flex flex-col justify-between p-4 pt-8 sm:pt-4;
+        }
+
+        .max-h-75 {
+            max-height:75%;
+        }
+
+        .floating-button-bottom-left {
+            left:0;
+            top:100%;
+            position: absolute;
+            padding-top:4px;
+        }
+    
+        .floating-button-right {
+            top: 0;
+            position: absolute;
+            padding-left: 6px;
+            left: 100%;
+            padding-top:0;
+        }
+    
+        .floating-button-bottom-right {
+            right:0;
+            top:100%;
+            position: absolute;
+            padding-top:4px;
+        }
+    
+        .floating-button-top-right {
+            right:0;
+            bottom:100%;
+            position: absolute;
+            padding-bottom:4px;
+        }
+
+        .floating-button-top-left {
+            left:0;
+            bottom:100%;
+            position: absolute;
+            padding-bottom:4px;
+        }
+
+        .floating-button-active {
+            @apply text-primary;
+        }
+    }
+
+    .floating-list {
+        @apply group-hover:opacity-100 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:pointer-events-auto pointer-events-none cursor-pointer rounded-sm bg-dark-gray border-gray-200 border-opacity-20 border-2 max-h-52 overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400 opacity-0 transition-opacity duration-300;
+
+        .floating-button {
+            @apply block whitespace-nowrap px-3 py-2.5 w-full font-semibold bg-dark-gray bg-opacity-100 hover:bg-gray-500 transition-opacity duration-300 text-sm group-hover:pointer-events-auto group-focus:pointer-events-auto pointer-events-none;
+        
+            * {
+                @apply cursor-pointer group-hover:pointer-events-auto group-focus:pointer-events-auto pointer-events-none;
+            }
+        }
+    }
+   
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.close-button {
+    @apply p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity absolute top-3 right-3 cursor-pointer;
+}
+
+.button-media-watched {
+    @apply cursor-pointer text-lg text-yellow-600 font-semibold float-right hover:opacity-80;
+}
+
+.custom-button {
+    @apply z-10 cursor-pointer font-semibold bg-dark-gray hover:opacity-80 focus:opacity-80 rounded-lg px-4 py-2 items-center ring-gray-500 ring-1;
+}
+
+
+.data-placeholder {
+    animation: pulse 1s infinite ease-in-out;
+}
+@keyframes loadPlaceholder {
+    0% {
+        background-color: rgba(165, 165, 165, 0.1);
+    }
+    50% {
+    background-color: rgba(165, 165, 165, 0.3);
+    }
+    100% {
+    background-color: rgba(165, 165, 165, 0.1);
+    }
+}
+
+.pointer-group-button {
+    @apply cursor-pointer group-hover:pointer-events-auto group-focus:pointer-events-auto pointer-events-none;
+}
+
+.button-library-section {
+    @apply cursor-pointer bg-dark-gray hover:bg-gray-600 rounded-xl flex space-x-2 sm:space-x-0 sm:space-y-1 px-4 sm:px-6 py-2 sm:flex-col items-center justify-center sm:w-40 sm:h-24;
+}
+
+
+//Settings
+
+.settings-section {
+    @apply py-4;
+}
+
+.settings-title {
+    @apply text-2xl pb-2 font-bold w-full ml-1 text-primary;
+}
+
+.settings-subsection {
+    @apply m-auto flex w-full sm:w-10/12 md:w-2/3 flex-col sm:flex-row items-center justify-between space-y-2 whitespace-nowrap my-2 sm:mt-0;
+    * {
+        @apply w-full;
+
+        * {
+            @apply w-auto;
+        }
+    }
+}
+
+.custom-input {
+    @apply h-10 w-full bg-dark-full rounded-lg text-white border border-transparent hover:border-gray-700 focus:border-gray-700 px-4 pt-5 pb-6;
+}

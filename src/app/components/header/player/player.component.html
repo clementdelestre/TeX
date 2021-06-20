@@ -1,0 +1,148 @@
+
+<!-- Playlist -->
+<div @openClose *ngIf="showPlaylist" class="sm:floating-container player-box z-40 sm:max-h-screen3/4">
+    <button (click)="toggleDisplayPlaylist()" class="close-button bg-dark-full"><img _ngcontent-rnn-c28="" src="../../../assets/icons/close.svg" class="w-4 h-4"></button> 
+    <p class="text-xl font-semibold mb-4" translate="">player.playlist</p>
+    <div class="w-full h-full overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400">
+        <app-playlist-item *ngFor="let item of player.currentPlayer?.playlistItems; let i = index" [item]="item" [position]="i" ></app-playlist-item>
+    </div>
+</div>
+
+
+<!-- Player -->
+<div @openClose *ngIf="!showPlaylist" class="sm:floating-container player-box z-30">
+    
+    <div *ngIf="player.players.length > 1" class="w-full">
+        <button class="custom-button group relative flex mx-auto mb-4">   
+            {{ player.currentPlayer?.title ?? "unknown" | translate }} 
+            <div class="floating-button-bottom-left m-auto pointer-group-button min-w-full">
+                <div class="floating-list">
+                    <div (click)="player.showPlayer(i)" class="floating-button" *ngFor="let pl of player.players; let i = index" >
+                        <label>{{ pl.title | translate}}</label>
+                    </div> 
+                </div>
+            </div>      
+        </button>
+    </div>
+    <div class="flex flex-col h-screen3/2 sm:h-auto sm:flex-row w-full">
+        <button (click)="close()" class="sm:hidden close-button bg-dark-full"><img _ngcontent-rnn-c28="" src="../../../assets/icons/close.svg" class="w-4 h-4"></button> 
+
+        <img class="rounded-lg max-h-58 sm:max-h-36 max-w-70 sm:max-w-33 m-auto" src="{{ player.currentPlayer?.playerIllustration }}" title="{{ player.currentPlayer?.playerItem?.title }}">
+
+        <div *ngIf="!player.currentPlayer?.playerItem" class="text-center sm:text-left px-4 w-full flex flex-col h-full justify-center">
+            <p translate="player.noMedia"></p>
+        </div>
+        <div *ngIf="player.currentPlayer?.playerItem" class="text-center sm:text-left px-4 w-full flex flex-col">
+            <!-- Movie info -->
+            <div *ngIf="player.currentPlayer?.playerItem?.type == 'movie'">
+                <p class="text-2xl sm:text-xl font-semibold">
+                    {{  player.currentPlayer?.playerItem?.title }}
+                </p>
+            </div>
+        
+            <!-- Episode info -->
+            <div *ngIf="player.currentPlayer?.playerItem?.type == 'episode'">
+                <p class="text-2xl sm:text-xl font-semibold">
+                    {{ player.currentPlayer?.playerItem?.showtitle }}
+                </p>
+                <p class="text-gray-400 text-lg sm:text-sm">
+                    S{{ player.currentPlayer?.playerItem?.season }}E{{ player.currentPlayer?.playerItem?.episode }} : {{ player.currentPlayer?.playerItem?.title }}
+                </p>
+            </div>
+        
+            <!-- Song info -->
+            <div *ngIf="player.currentPlayer?.playerItem?.type == 'song'">
+                <p class="text-2xl font-semibold">
+                    {{ player.currentPlayer?.playerItem?.title }}
+                </p>
+                <p class="text-gray-400 text-lg sm:text-sm">
+                    {{ player.currentPlayer?.playerItem?.artist }}
+                </p>
+            </div>
+
+            <!-- Language and Subtitles -->
+            <div *ngIf="player.currentPlayer?.playerItem?.type != 'song'" class="text-2xl sm:text-lg flex items-center h-full justify-evenly pt-8 sm:pt-0">
+                
+                <label *ngIf="player.currentPlayer?.properties?.subtitles?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
+    
+                    <i (click)="player.currentPlayer?.toggleSubtitle()" class="fa-closed-captioning" [ngClass]="{'fas' : player.currentPlayer?.properties?.subtitleenabled, 'far' : !player.currentPlayer?.properties?.subtitleenabled}"></i>
+                    <div class="floating-button-bottom-left pointer-group-button min-w-full">
+                        <div class="floating-list floating-button-top">
+        
+                            <div *ngFor="let subtitle of player.currentPlayer?.properties?.subtitles" class="floating-button">
+                                <p (click)="player.currentPlayer?.setSubtitle(subtitle)" class="{{ (subtitle.index == player.currentPlayer?.properties?.currentsubtitle?.index) && player.currentPlayer?.properties?.subtitleenabled ? 'text-white' : 'text-gray-500' }}  text-sm">
+                                    {{ subtitle.language }} {{ subtitle.isforced ? "(forcé)" : "" }}
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </label>                   
+                <label *ngIf="player.currentPlayer?.properties?.audiostreams?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
+                    <i class="fas fa-globe"></i>
+                    <div class="floating-button-bottom-left pointer-group-button min-w-full">
+                        <div class="floating-list floating-button-top">
+        
+                            <div *ngFor="let audiostream of player.currentPlayer?.properties?.audiostreams" class="floating-button">
+                                <p (click)="player.currentPlayer?.setAudioStream(audiostream)" class="{{ audiostream.index == player.currentPlayer?.properties?.currentaudiostream?.index ? 'text-white' : 'text-gray-500' }}  text-sm">
+                                    {{ audiostream.language != "" ? audiostream.language : "Unknown" }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </label>  
+            </div>
+
+
+        </div>
+
+        
+        
+    </div>
+   
+    
+    <div *ngIf="player.currentPlayer?.playerItem" class="flex flex-col h-full sm:flex-col-reverse">
+
+         <!-- Buttons -->
+
+         <div class="flex w-full h-full sm:w-auto justify-center items-center text-2xl sm:text-lg mt-4 sm:mt-6 sm:mb-2 px-8">
+
+            <!-- Previous media -->
+            <button (click)="player.currentPlayer?.goBackward()" class="button-primary absolute left-6 sm:left-4"><i class="fas fa-step-backward"></i></button>
+
+            <!-- Stop player -->
+            <button (click)="player.currentPlayer?.stop();close()" class="button-primary mx-3"><i class="fas fa-stop"></i></button> 
+
+            <!-- - seconds -->
+            <button (click)="player.currentPlayer?.setFixedSeek(-15)" class="button-primary mx-4"><i class="fas fa-undo"></i></button> 
+
+            <!-- Toggle Play / Pause -->
+            <button class="button-primary mx-3 text-5xl sm:text-3xl" (click)="player.currentPlayer?.tooglePlayPause()" >
+                <i class="fas " [ngClass]="{'fa-play' : !player.currentPlayer?.isPlaying(), 'fa-pause' : player.currentPlayer?.isPlaying()}" ></i>
+            </button> 
+
+            <!-- + seconds -->
+            <button (click)="player.currentPlayer?.setFixedSeek(15)" class="button-primary mx-3"><i class="fas fa-redo"></i></button>  
+            
+            <!-- Toggle show playlist -->
+            <button (click)="toggleDisplayPlaylist()" class="button-primary mx-3">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Next media -->
+            <button (click)="player.currentPlayer?.goForward()" class="button-primary absolute right-6 sm:right-4"><i class="fas fa-step-forward"></i></button> 
+
+        </div>
+
+        <!-- Seek Bar -->
+        <div class="w-full px-2 text-lg sm:text-sm mt-6 mb-4 sm:mb-0">      
+            <input #ref (change)="player.currentPlayer?.setSeek(ref.value)" class="w-full cursor-pointer" min="0" max="100" value="{{ player.currentPlayer?.properties?.percentage }}" type="range">
+            <div class="text-left w-full">
+                <button>{{ getSongDuration(player.currentPlayer?.properties?.time, player.currentPlayer?.playerItem?.type != 'song') }}</button>
+                <button class="float-right">{{ getSongDuration(player.currentPlayer?.properties?.totaltime, player.currentPlayer?.playerItem?.type != 'song')}}</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

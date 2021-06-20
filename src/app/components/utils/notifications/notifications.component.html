@@ -1,0 +1,11 @@
+<div class="w-full sm:w-96 fixed top-0 sm:top-auto sm:bottom-0 right-0 z-50 max-h-96 overflow-auto scrollbar-thin">
+    <div (click)="hideNotification(notif.key)" *ngFor="let notif of application.notifications | keyvalue" >
+        <div [@insertAnimation]="regenerate(notif.key)" [ngClass]="{'bg-green-500' : getNofificationType(notif.value.type) == 'success', 'bg-red-500' : getNofificationType(notif.value.type) == 'error'}" class="m-4 rounded-lg p-2 bg-opacity-80 z-50 cursor-pointer hover:bg-opacity-90 transition-opacity duration-300">
+            <p  class="font-bold text-shadow-md">
+                {{notif.value.title | translate}}
+            </p>
+            <p class="text-shadow-md">{{notif.value.body | translate}}</p>
+        </div>
+        
+    </div>
+</div>

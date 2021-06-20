@@ -1,0 +1,23 @@
+{
+  "name": "TeX",
+  "short_name": "TeX",
+  "theme_color": "#f59e0b",
+  "background_color": "#151515",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

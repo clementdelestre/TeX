@@ -1,0 +1,43 @@
+
+
+
+<div class="w-full text-center flex flex-col sm:flex-row justify-evenly mt-8 mb-4 space-y-4 sm:space-y-0">
+    <a *ngIf="downloadUrl != ''" @openClose href="{{ downloadUrl }}" class="custom-button" download><i class="fas fa-download mr-4"></i>{{ 'library.details.download' | translate }}</a>
+    <button *ngIf="downloadUrl != ''" @openClose (click)="streamLink()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><i class="fab fa-chromecast mr-4"></i>{{ 'library.details.getStreamingLink' | translate }}</button>
+    <button (click)="toogleMoreInfo()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base">{{ !moreInfo ? ("library.details.moreinfo" | translate) : "library.details.lessinfo" | translate}} </button>
+</div>
+
+<!-- More info -->
+<div @heightAnimation *ngIf="moreInfo" class="w-full overflow-auto scrollbar-hide border border-dark-gray rounded-xl px-4 py-2 mt-8">
+    <p class="font-bold mb-2" translate="library.details.additionalInformation"></p>
+    <div *ngIf="fileDetails" class="text-gray-200 w-full">
+        <p><span class="text-gray-500">{{ 'library.details.size' | translate }} </span>{{ getSize(fileDetails.size ?? 0) }} Go</p>
+        <p><span class="text-gray-500">{{ 'library.details.file' | translate }} </span>{{ movie.file }}</p>
+        <p><span class="text-gray-500">{{ 'library.details.dateadded' | translate }} </span>{{ fileDetails.dateadded }}</p>
+    </div>
+</div>
+
+<!-- Trailer -->
+<p class="text-3xl mb-3 ml-2 font-bold text-shadow-xl mt-8" translate="">library.details.trailer</p>
+<div class="sm:flex sm:space-x-4 mt-2">
+    <div class="sm:w-2/3">
+        <div class="aspect-w-16 aspect-h-9 rounded-lg" [ngClass]="{'data-placeholder bg-gray-500':!isLoaded}">
+            <iframe *ngIf="isLoaded && trailerUrl != ''" class="rounded-lg" [src]='trailerUrl' frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="sm:w-1/3 mt-8 sm:mt-0">
+        <div class="flex" [ngClass]="{'items-center':!isLoaded}"><span class="text-gray-500 whitespace-nowrap mr-1" translate="">library.details.genres</span><div *ngIf="!isLoaded" class="data-placeholder w-full h-4 bg-gray-500 rounded-sm"></div><div *ngIf="isLoaded">{{movie.genre?.join(", ")}}</div></div>
+        <div class="flex" [ngClass]="{'items-center':!isLoaded}"><span class="text-gray-500 whitespace-nowrap mr-1" translate="">library.details.studios</span><div *ngIf="!isLoaded" class="data-placeholder w-full h-4 bg-gray-500 rounded-sm"></div><div *ngIf="isLoaded">{{movie.studio?.join(", ")}}</div></div>
+        <div class="flex" [ngClass]="{'items-center':!isLoaded}"><span class="text-gray-500 whitespace-nowrap mr-1" translate="">library.details.writers</span><div *ngIf="!isLoaded" class="data-placeholder w-full h-4 bg-gray-500 rounded-sm"></div><div *ngIf="isLoaded">{{movie.writer?.join(", ")}}</div></div>
+        <div class="flex" [ngClass]="{'items-center':!isLoaded}"><span class="text-gray-500 whitespace-nowrap mr-1" translate="">library.details.directors</span><div *ngIf="!isLoaded" class=" data-placeholder w-full h-4 bg-gray-500 rounded-sm"></div><div *ngIf="isLoaded">{{movie.director?.join(", ")}}</div></div>                 
+    </div>
+</div>
+
+<!-- Cast -->
+<p class="text-3xl mt-12 mb-2 ml-2 font-bold text-shadow-xl" translate="">library.details.casting</p>
+
+<app-library-row-medias @openClose *ngIf="isLoaded" [medias]="movie.cast"></app-library-row-medias>
+
+<div *ngIf="!isLoaded" class="inline-flex flex-nowrap space-x-4 overflow-x-auto overflow-y-hidden w-full scrollbar-hide">
+    <div *ngFor="let number of [0,1,2,3,4,5,6,7,8,9]" class="data-placeholder m-2 rounded-xl block h-48 w-32 bg-gray-500" style="min-width: 8rem;"></div>
+</div>

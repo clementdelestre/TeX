@@ -1,0 +1,63 @@
+<div (click)="clickBg($event)" class="w-screen h-screen z-20 float-left top-0 bottom-0 fixed sm:py-8 back bg-opacity-80 bg-dark-full">
+    <div class="z-50 opacity-100 h-full relative m-auto overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400 sm:rounded-lg bg-dark-gray w-full sm:w-11/12 md:w-5/6 lg:w-4/6 xl:w-7/12 custom-modal">             
+ 
+        <button (click)="close()" class="close-button bg-dark-full"><img _ngcontent-rnn-c28="" src="../../../assets/icons/close.svg" class="w-4 h-4"></button>
+     
+        <div class="py-4 px-8 text-center items-center flex-col w-full h-full">
+            
+            <div class="flex flex-col items-center h-full w-full max-w-sm m-auto text-3xl space-y-2 remote-container">
+                <div class="flex flex-col items-center h-full w-full bg-dark-full rounded-xl m-auto space-y-4 py-4 opacity-80  overflow-auto scrollbar-hide"  style="max-height: 750px;">
+                    <div class="flex flex-row w-full h-full items-center">
+                        <button><i (click)="onInputMenu()" class="fas fa-align-left button-primary"></i></button>
+                        <button><i (click)="onInputHome()" class="fas fa-home button-primary"></i></button>
+                        <button><i (click)="onInputInfo()" class="fas fa-info-circle button-primary"></i></button>
+                    </div>
+                    <div class="flex flex-col w-full">
+                        <div class="flex flex-row w-full h-full items-center">
+                            <button><i (click)="onInputVolumeDown()" class="fas fa-volume-down button-primary"></i></button>
+                            <button></button>
+                            <button><i (click)="onInputVolumeUp()" class="fas fa-volume-up button-primary"></i></button>
+                        </div>
+                        <div [ngClass]="{'opacity-100' : displayVolumeBar}" class="relative pt-1 w-full px-8 mt-2 opacity-0 transition-opacity duration-100">
+                            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
+                            <div [ngStyle]="{'width': application.volume + '%'}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-9/12">
+                        <div class="aspect-w-4 aspect-h-3 text-4xl">
+                            <div class="flex flex-col items-center w-full h-full">
+                        
+                                <div class="flex flex-row w-full h-full items-center">
+                                    <button></button>
+                                    <button><i (click)="onInputUp()" class="fas fa-sort-up button-primary"></i></button>
+                                    <button></button>
+                                </div>
+                        
+                                <div class="flex flex-row w-full h-full items-center">
+                                    <button><i (click)="onInputLeft()" class="fas fa-caret-left button-primary"></i></button>
+                                    <button><i (click)="onInputSelect()" class="fas fa-dot-circle button-primary"></i></button>
+                                    <button><i (click)="onInputRight()" class="fas fa-caret-right button-primary"></i></button>
+                                </div>
+                        
+                                <div class="flex flex-row w-full h-full items-center">
+                                    <button></button>
+                                    <button><i (click)="onInputDown()" class="fas fa-sort-down button-primary"></i></button>
+                                    <button></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+                
+                    <div class="flex flex-row w-full h-full items-center">
+                        <button><i (click)="onInputBack()" class="fas fa-arrow-left button-primary"></i></button>
+                        <button></button>
+                        <button><i (click)="onInputContextMenu()" class="fas fa-bars button-primary"></i></button>
+                    </div>    
+                    
+                </div>                
+            </div>
+            
+        </div>
+    </div>
+</div>
