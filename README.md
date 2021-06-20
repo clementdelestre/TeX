@@ -35,22 +35,22 @@ I will apreciate any help if you want to improve the project. You can do pull re
 
 ## Gallery
 #### Movies
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/movies.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/movies.jpg?raw=true)
 
 #### Movie details
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/moviedetails.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/moviedetails.jpg?raw=true)
 
 #### Musics
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/musics.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/musics.jpg?raw=true)
 
 #### Album
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/album.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/album.jpg?raw=true)
 
 #### Player
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/player.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/player.jpg?raw=true)
 
 #### Player on mobile
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/player-mobile.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/player-mobile.jpg?raw=true)
 
 #### Web remote
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/remote.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/remote.jpg?raw=true)
