@@ -34,6 +34,10 @@ Only English and French are supported for now. Others languages may be added lat
 
 I will apreciate any help if you want to improve the project. You can do pull request on the dev branch and I will check it.
 
+## Donate
+
+Do you like TeX? You can <a href="https://lydia-app.com/collect/51723-tex-beer-fund/fr">buy Clément a beer</a> to say thanks :)
+
 ## Gallery
 #### Movies
 ![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/movies.jpg?raw=true)
