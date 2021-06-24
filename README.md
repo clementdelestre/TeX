@@ -15,8 +15,9 @@ In Kodi -> Settings -> Services -> Control
 - Enable "Allow remote control via HTTP"
 - Web interface : select "TeX"
 - Enable "Allow remote control from application on this system"
+- Enable "Allow remote control from application on others systems"
 
-In your browser, navigate to "http://[your ip]:[Port]
+In your browser, navigate to "http://[your ip]:[Port]"
 <br>You can find your ip in Kodi -> Settings -> System information
 <br>The port is the port you have chosen in Kodi -> Settings -> Services -> Control -> Port
 
@@ -33,24 +34,28 @@ Only English and French are supported for now. Others languages may be added lat
 
 I will apreciate any help if you want to improve the project. You can do pull request on the dev branch and I will check it.
 
+## Donate
+
+Do you like TeX? You can <a href="https://lydia-app.com/collect/51723-tex-beer-fund/fr">buy Clément a beer</a> to say thanks :)
+
 ## Gallery
 #### Movies
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/movies.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/movies.jpg?raw=true)
 
 #### Movie details
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/moviedetails.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/moviedetails.jpg?raw=true)
 
 #### Musics
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/musics.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/musics.jpg?raw=true)
 
 #### Album
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/album.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/album.jpg?raw=true)
 
 #### Player
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/player.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/player.jpg?raw=true)
 
 #### Player on mobile
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/player-mobile.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/player-mobile.jpg?raw=true)
 
 #### Web remote
-![alt text](https://github.com/clementdelestre/kodi-website/blob/main/src/screenshots/remote.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/remote.jpg?raw=true)
