@@ -14,13 +14,12 @@
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
-			<screenshot>screenshots/movies.jpg</screenshot>
-			<screenshot>screenshots/moviedetails.jpg</screenshot>
-			<screenshot>screenshots/musics.jpg</screenshot>
-			<screenshot>screenshots/album.jpg</screenshot>
-			<screenshot>screenshots/player.jpg</screenshot>
-			<screenshot>screenshots/player-mobile.jpg</screenshot>
-			<screenshot>screenshots/remote.jpg</screenshot>
+			<screenshot>resources/movies.jpg</screenshot>
+			<screenshot>resources/moviedetails.jpg</screenshot>
+			<screenshot>resources/musics.jpg</screenshot>
+			<screenshot>resources/album.jpg</screenshot>
+			<screenshot>resources/player.jpg</screenshot>
+			<screenshot>resources/mobile.jpg</screenshot>
 		</assets>
 	</extension>
 </addon>

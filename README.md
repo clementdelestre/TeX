@@ -40,22 +40,19 @@ Do you like TeX? You can <a href="https://lydia-app.com/collect/51723-tex-beer-f
 
 ## Gallery
 #### Movies
-![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/movies.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/resources/movies.jpg?raw=true)
 
 #### Movie details
-![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/moviedetails.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/resources/moviedetails.jpg?raw=true)
 
 #### Musics
-![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/musics.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/resources/musics.jpg?raw=true)
 
 #### Album
-![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/album.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/resources/album.jpg?raw=true)
 
 #### Player
-![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/player.jpg?raw=true)
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/resources/player.jpg?raw=true)
 
-#### Player on mobile
-![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/player-mobile.jpg?raw=true)
-
-#### Web remote
-![alt text](https://github.com/clementdelestre/TeX/blob/main/src/screenshots/remote.jpg?raw=true)
+#### On mobile
+![alt text](https://github.com/clementdelestre/TeX/blob/main/src/resources/mobile.jpg?raw=true)
