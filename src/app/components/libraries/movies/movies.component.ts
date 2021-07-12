@@ -92,7 +92,8 @@ export class MoviesComponent implements OnInit {
     } 
     
     this.kodiApi.media.getMovies({limit:limitReq, filter: progressFilter }).subscribe((resp) => {
-      this.inProgressMovies = resp.movies;
+      if(resp.movies)
+        this.inProgressMovies = resp.movies;
     });
   }
 
@@ -104,7 +105,8 @@ export class MoviesComponent implements OnInit {
     }
 
     this.kodiApi.media.getRecentlyAddedMovies({limit:limitReq}).subscribe((resp) => {
-      this.recentlyAddedMovies = resp.movies;
+      if(resp?.movies)
+        this.recentlyAddedMovies = resp.movies;
     });
   }
 
@@ -128,7 +130,8 @@ export class MoviesComponent implements OnInit {
     };
     
     this.kodiApi.media.getMovies({limit:limitReq, filter: filter, sort:ratingSort }).subscribe((resp) => {
-      this.unwatchedMovies = resp.movies;
+      if(resp?.movies)
+        this.unwatchedMovies = resp.movies;
     });
   }
 
@@ -141,15 +144,17 @@ export class MoviesComponent implements OnInit {
     this.isLoadingMovies = true;
 
     this.kodiApi.media.getMovies({limit:limitReq, sort: this.currentSort}).subscribe((resp) => {
-      this.movies = resp.movies;
-      this.indexMovies = resp.limits.start;
-      this.moviesCount = resp.limits.total;
-      this.pageMovies = [];
-      for(let x = 0;x<this.moviesCount / this.maxMoviesPerPage;x++){
-        this.pageMovies.push(x);
-      }
-      this.pageMovies.reverse();
-      this.isLoadingMovies = false;
+      if(resp?.movies){
+        this.movies = resp.movies;
+        this.indexMovies = resp.limits.start;
+        this.moviesCount = resp.limits.total;
+        this.pageMovies = [];
+        for(let x = 0;x<this.moviesCount / this.maxMoviesPerPage;x++){
+          this.pageMovies.push(x);
+        }
+        this.pageMovies.reverse();
+        this.isLoadingMovies = false;
+      }  
     });
   }
 

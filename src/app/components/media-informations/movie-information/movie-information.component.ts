@@ -61,7 +61,8 @@ export class MovieInformationComponent implements OnInit {
     if(!this.fileDetails && !this.moreInfo){
       if(this.movie.file)
       this.kodiApi.file.getFileDetails(this.movie.file, "video").subscribe((resp) => {
-        this.fileDetails = resp.filedetails;
+        if(resp?.filedetails)
+          this.fileDetails = resp.filedetails;
         this.moreInfo = true;
       });
     } else {

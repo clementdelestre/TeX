@@ -38,10 +38,10 @@
     <!-- More info -->
     <div @heightAnimation *ngIf="moreInfo" class="w-full overflow-auto scrollbar-hide border border-dark-gray rounded-xl px-4 py-2">
         <p class="font-bold mb-2" translate="library.details.additionalInformation"></p>
-        <div *ngIf="fileDetails" class="text-gray-200 w-full">
-            <p><span class="text-gray-500">{{ 'library.details.size' | translate }} </span>{{ getSize(fileDetails.size ?? 0) }} Go</p>
+        <div class="text-gray-200 w-full">
+            <p *ngIf="fileDetails"><span class="text-gray-500">{{ 'library.details.size' | translate }} </span>{{ getSize(fileDetails?.size ?? 0) }} Go</p>
             <p><span class="text-gray-500">{{ 'library.details.file' | translate }} </span>{{ episode.file }}</p>
-            <p><span class="text-gray-500">{{ 'library.details.dateadded' | translate }} </span>{{ fileDetails.dateadded }}</p>
+            <p><span class="text-gray-500">{{ 'library.details.dateadded' | translate }} </span>{{ episode.dateadded }}</p>
         </div>
     </div>
     

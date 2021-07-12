@@ -112,19 +112,19 @@ export class SearchService {
 
     if(this.moviesSearch){
       this.kodiApi.media.getMovies({limit: this.getLimits(), filter: this.result}).subscribe((resp) => {
-        this.movies = resp.movies ?? [];
+        this.movies = resp?.movies ?? [];
       });
     }
     
     if(this.tvshowsSearch){
       this.kodiApi.media.getTvShows({limit: this.getLimits(), filter: this.result}).subscribe((resp) => {
-        this.tvShows = resp.tvshows ?? [];
+        this.tvShows = resp?.tvshows ?? [];
       });
     }
 
     if(this.songsSearch){
       this.kodiApi.media.getSongs({limit: this.getLimits(), filter: this.result}).subscribe(resp => {
-        this.songs = resp.songs ?? [];
+        this.songs = resp?.songs ?? [];
       })
     }
    

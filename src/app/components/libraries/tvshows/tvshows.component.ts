@@ -73,7 +73,8 @@ export class TvshowsComponent implements OnInit {
   getInProgressTVShows(){
     
     this.kodiApi.media.getInProgressTvShows({}).subscribe((resp) => {
-      this.inProgressTVShows = resp.tvshows;
+      if(resp?.tvshows)
+        this.inProgressTVShows = resp.tvshows;
     });
   }
 
@@ -86,16 +87,19 @@ export class TvshowsComponent implements OnInit {
     this.isLoadingTVShows = true;
 
     this.kodiApi.media.getTvShows({limit:limitReq, sort: this.currentSort}).subscribe((resp) => {
-      this.tvShows = resp.tvshows;
-      this.indexTVShows = resp.limits.start;
-      this.tvShowsCount = resp.limits.total;
-      this.pageMovies = [];
-      for(let x = 0;x<this.tvShowsCount / this.maxTVShowsPerPage;x++){
-        this.pageMovies.push(x);
+      if(resp?.tvshows){
+        this.tvShows = resp.tvshows;
+        this.indexTVShows = resp.limits.start;
+        this.tvShowsCount = resp.limits.total;
+        this.pageMovies = [];
+        for(let x = 0;x<this.tvShowsCount / this.maxTVShowsPerPage;x++){
+          this.pageMovies.push(x);
+        }
+        this.pageMovies.reverse();
+        this.isLoadingTVShows = false;
+    
       }
-      this.pageMovies.reverse();
-      this.isLoadingTVShows = false;
-    });
+    });  
   }
 
   incrementPage(){

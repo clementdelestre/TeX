@@ -149,7 +149,8 @@ export const fullMovieProperties = [
     "cast",
     "file",
     "lastplayed",
-    "playcount"
+    "playcount",
+    "dateadded"
 ];
 
 
@@ -203,6 +204,7 @@ export const episodeProperties = [
     "art",
     "plot",
     "file",
-    "playcount"
+    "playcount",
+    "dateadded"
 ]
 

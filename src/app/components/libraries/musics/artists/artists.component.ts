@@ -31,7 +31,8 @@ export class ArtistsComponent implements OnInit {
     };
 
     this.kodiApi.media.getArtists({sort:sort}).subscribe(resp => {
-      this.artists = resp.artists;
+      if(resp?.artists)
+        this.artists = resp.artists;
     })
   }
 

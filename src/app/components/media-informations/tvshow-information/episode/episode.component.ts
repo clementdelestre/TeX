@@ -47,7 +47,8 @@ export class EpisodeComponent implements OnInit {
     if(!this.fileDetails && !this.moreInfo){
       if(this.episode.file)
       this.kodiApi.file.getFileDetails(this.episode.file, "video").subscribe((resp) => {
-        this.fileDetails = resp.filedetails;
+        if(resp?.filedetails)
+          this.fileDetails = resp.filedetails;
         this.moreInfo = true;
       });
     } else {
