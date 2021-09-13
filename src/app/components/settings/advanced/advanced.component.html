@@ -33,3 +33,18 @@
             </div>
         </div>
    </div>
+</div>
+
+<h3 class="settings-title mt-8" translate="settings.advanced.jsonapi"></h3>
+<div class="bg-dark-gray rounded-lg w-full px-4">
+    <div class="settings-section text-right">
+        <input type="text" class="custom-input block" placeholder="" [(ngModel)]="request">
+        <button (click)="executeRequest()" class="bg-blue-600 rounded-lg px-2 py-1 hover:opacity-80 transition-opacity duration-300 mt-4" translate="settings.advanced.sendrequest"></button>
+   </div>
+   <div class="settings-section" *ngIf="requestResponse != ''">
+        <pre class="bg-dark-full rounded-lg p-2 overflow-auto">{{ requestResponse }}</pre>
+    </div>
+</div>
+
+
+   

@@ -15,7 +15,7 @@ export class HttpRequestData {
         return this.location.protocol + "//" + this.location.hostname + ":" + this.port + "/"
     }
 
-    private getApiUrl(): string {
+    protected getApiUrl(): string {
         return this.getBaseUrl() + "jsonrpc?request=";
     }
 

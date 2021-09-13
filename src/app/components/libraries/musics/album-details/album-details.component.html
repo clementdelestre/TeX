@@ -14,7 +14,7 @@
             <p class="text-gray-500"><span class="text-primary">{{ 'library.details.genres' | translate}} </span><a class="hover:text-gray-400" *ngFor="let genre of album.genre; let i=index" [routerLink]="'/musics/genre/' + getEncodedGenre(genre)">{{ genre + (i < (album.genre?.length ?? 0) -1 ? ", " : "") }}</a></p>
             <p class="text-gray-500"><span class="text-primary">{{ 'library.details.totalDiscs' | translate}} </span>{{ album.totaldiscs }}</p>
             <p class="text-gray-500"><span class="text-primary">{{ 'library.details.year' | translate }} </span>{{ album.year }}</p>
-            <button (click)="playAlbum()" class="mt-4 h-10 items-center focus:outline-none transition-colors bg-opacity-100 hover:bg-opacity-80 cursor-pointer flex rounded bg-gray-200 text-dark-full px-5 py-1 md:px-7 md:py-1.5 text-base md:text-lg font-bold"><img src="../../../assets/icons/play.svg" class="h-3 md:h-4 m-auto mr-2 md:mt-1.75"> {{ 'library.details.playButton' | translate }}</button>
+            <button (click)="playAlbum()" class="mt-4 h-10 items-center focus:outline-none transition-colors bg-opacity-100 hover:bg-opacity-80 cursor-pointer flex rounded bg-gray-200 text-dark-full px-5 py-1 md:px-7 md:py-1.5 text-base md:text-lg font-bold"><i class="fas fa-play mr-2"></i> {{ 'library.details.playButton' | translate }}</button>
         </div>
     </div>
    

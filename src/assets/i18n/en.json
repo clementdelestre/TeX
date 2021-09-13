@@ -127,7 +127,9 @@
             "connect" : "Connect",
             "disconnect" : "disconnect",
             "save" : "Save",
-            "reset" : "Reset"
+            "reset" : "Reset",
+            "jsonapi" : "JSON API",
+            "sendrequest" : "Send request"
         }
     },
     "unknown" : "Unknown",

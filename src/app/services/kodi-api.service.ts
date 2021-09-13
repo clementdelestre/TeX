@@ -5,6 +5,7 @@ import { PlayerRequest } from './protocol/http/player';
 import { PlaylistRequest } from './protocol/http/playlist';
 import { FileRequest } from './protocol/http/file';
 import { RemoteRequest } from './protocol/http/remote';
+import { MiscRequest } from './protocol/http/misc';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class KodiApiService {
   playlist: PlaylistRequest;
   file: FileRequest;
   remote: RemoteRequest;
+  misc : MiscRequest;
 
   constructor(private http:HttpClient) {
     this.media = new MediaRequest(http);
@@ -23,6 +25,7 @@ export class KodiApiService {
     this.playlist = new PlaylistRequest(http);
     this.file = new FileRequest(http);
     this.remote = new RemoteRequest(http);
+    this.misc = new MiscRequest(http)
   }
 
 }

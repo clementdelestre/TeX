@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { catchError, map } from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { listFieldsFilesProperties } from "src/app/models/fieldsFiles";
 import { HttpRequestData } from "./http";
 
