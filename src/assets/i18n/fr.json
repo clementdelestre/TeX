@@ -24,6 +24,9 @@
         "tvshows" : "Séries",
         "musics" : "Musiques",
 
+        "nothingToShow" : "Rien à afficher",
+        "changeFilterToFindSomething" : "Modifier les filtres pour trouver du contenu",
+
         "scanVideoLibrary" : "Scanner la librairie vidéo",
         "scanAudioLibrary" : "Scanner la librairie audio",
         "cleanVideoLibrary" : "Nettoyer la librairie vidéo",
@@ -40,10 +43,14 @@
             "track" : "Piste"
         },
         "page" : "Page",
-
+        
+        "directors" : "Réalisateurs",
+        "writers" : "Scénaristes",
+        "actors" : "Acteurs",
         "albums" : "Albums",
-        "artists" : "Artists",
+        "artists" : "Artistes",
         "genres" : "Genres",
+        "years" : "Années",
 
         "recentlyPlayedAlbums" : "Albums écoutés récemment",
         "recentlyAddedAlbums" : "Albums ajoutés récemment",
@@ -56,8 +63,8 @@
             "totalDiscs" : "Nombre de disque :",
             "year" : "Année :",
             "studios" : "Studios :",
-            "writers" : "Writers:",
-            "directors" : "Metteurs en scène :",         
+            "writers" : "Scénaristes :",
+            "directors" : "Réalisateurs :",         
             "disk" : "Disque",
             "born" : "Naissance :",
             "mood" : "Ambiance :",

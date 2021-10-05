@@ -1,11 +1,15 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Filter, FilterOperatorList } from '../models/filter';
-import { AudioDetailsAlbum, AudioDetailsArtist, AudioDetailsSong } from '../models/kodiInterfaces/audio';
-import { ListLimits } from '../models/kodiInterfaces/others';
 import { VideoDetailsMovie, VideoDetailsTVShow } from '../models/kodiInterfaces/video';
 import { KodiApiService } from './kodi-api.service';
+
+export enum FilterList {
+  Directors = "Directors",
+  Writers = "Writers",
+  Years = "Years",
+  Genres = "Genres",
+  Actors = "Actors"
+}
 
 @Injectable({
   providedIn: 'root'
@@ -13,133 +17,270 @@ import { KodiApiService } from './kodi-api.service';
 export class SearchService {
 
   backUrl: string = "";
-
-  selectedFilter:Filter[] = []
   textSearch = "";
+
+  directors:string[] = []
+  writers:string[] = []
+  actors:string[] = []
+  years:string[] = []
+  genres:string[] = []
+
+  directorsFilter:string[] = []
+  writersFilter:string[] = []
+  actorsFilter:string[] = []
+  yearsFilter:string[] = []
+  genresFilter:string[] = []
 
   movies: VideoDetailsMovie[] = [];
   tvShows: VideoDetailsTVShow[] = [];
-  songs: AudioDetailsSong[] = [];
 
-  moviesSearch = true;
-  tvshowsSearch = true;
-  songsSearch = true;
+  public FilterList = FilterList;
+  showFilterMenu: string = "";
 
-  result: any = {};
+  searchFilterField = ""
 
-  constructor(private kodiApi: KodiApiService, private router:Router) { }
+  searchMovies = true
+  searchTvShows = true
+
+  constructor(private kodiApi: KodiApiService, private router:Router) {
+    this.loadData()
+   }
 
   openSearchPage(){
-    this.backUrl = this.router.url;
-    this.router.navigateByUrl("/search");
+    if( (this.backUrl == "" && this.router.url != "/search") || (this.router.url != "/search" && this.textSearch != "")){
+      this.backUrl = this.router.url;
+      this.router.navigateByUrl("/search");
+    }
   }
 
   closeSearchPage(){
     if(this.backUrl != ""){
       this.router.navigateByUrl(this.backUrl);
+      this.backUrl = ""
     }
   }
 
-  toggleFilter(field: string, value: any){
-    const filter: Filter = {
-      field: field,
-      operator: FilterOperatorList.contains,
-      value: value
-    }
+  loadData(){
+    this.directors = []
+    this.writers = []
+    this.actors = []
+    this.years = []
+    this.genres = []
 
-    this.addFilter(filter);
+    this.movies = [];
+    this.tvShows = [];
+
+    this.loadDirectors()
+    this.loadWriters()
+    this.loadYears()
+    this.loadGenres()
+    this.loadActors()
+
+    this.loadMovies()
+    this.loadTvShows()
   }
 
-  getStringFilter(){ 
+  clearFilters(){
+    this.directorsFilter = []
+    this.writersFilter = []
+    this.actorsFilter = []
+    this.yearsFilter = []
+    this.genresFilter = []
 
-    let fieldList: string[] = [];
+    this.searchFilterField = ""
+    this.textSearch = ""
+  }
 
-    this.selectedFilter.forEach(filter => {
-      if(fieldList.indexOf(filter.field) == -1){
-        fieldList.push(filter.field);
+  toggleSearchMovies(value: boolean){
+    this.searchMovies = value
+  }
+
+  toggleSearchTVShows(value: boolean){
+    this.searchTvShows = value
+  }
+
+
+  showFilterValues(filter:string){
+    if(this.showFilterMenu == filter){
+      this.showFilterMenu = "";
+      return;
+    }
+    this.searchFilterField = ""
+    this.showFilterMenu = filter;
+  }
+
+  getFilterValues(filter:string){
+    let array = []
+    switch(filter){
+      case FilterList.Directors:
+        array =  this.directors
+        break;
+      case FilterList.Writers:
+        array =  this.writers
+        break;
+        case FilterList.Years:
+          array =  this.years
+          break;
+        case FilterList.Genres:
+          array =  this.genres
+          break;
+        case FilterList.Actors:
+            array =  this.actors
+            break;
+      default:
+        return []
+    }
+
+    if(filter == FilterList.Actors){
+      return array.filter(c => c.toLocaleLowerCase().includes(this.searchFilterField.toLocaleLowerCase())).sort().slice(0,50)
+    } else {
+      return array.filter(c => c.toLocaleLowerCase().includes(this.searchFilterField.toLocaleLowerCase())).sort()
+    }
+  }
+
+  getArrayFilterFromFilter(filter:string){
+    switch(filter){
+      case FilterList.Directors:
+        return this.directorsFilter
+      case FilterList.Writers:
+        return this.writersFilter
+        case FilterList.Years:
+          return this.yearsFilter
+        case FilterList.Genres:
+          return this.genresFilter
+        case FilterList.Actors:
+          return this.actorsFilter
+        default:
+          return []
+    }
+  }
+
+  changeFilterValue(filter:string, value:string){
+    let array:string[] = this.getArrayFilterFromFilter(filter)
+    
+    if(array.indexOf(value) === -1){
+      array.push(value)
+    } else {
+      const index = array.indexOf(value, 0);
+      if (index > -1) {
+        array.splice(index, 1);
+      }
+    }
+  }
+
+  checkFilterStatus(filter:string, value:string){
+    return this.getArrayFilterFromFilter(filter).indexOf(value) > -1
+  }
+
+  loadDirectors(){
+    this.directors = []
+
+    this.kodiApi.media.getMovies({ propoerties: ["director"] }).subscribe(resp => {
+      if(resp?.movies){
+        //Directors
+        resp.movies.forEach(e => {
+          e.director?.map(d => { if (this.directors.indexOf(d) === -1) this.directors.push(d) })
+        })
       }
     })
 
-    let globalAnd: any[] = []
+  }
 
-    fieldList.forEach(field => {
-      let or: Filter[] = []
-      this.selectedFilter.filter(filter => filter.field == field).forEach(filter => {
-        or.push(filter);
-      });
+  loadWriters(){
+    this.writers = []
 
-      globalAnd.push({"or" : or});
-    });
-
-    if(this.textSearch != ""){
-
-      const textFilter: Filter = {
-        field: "title",
-        operator: FilterOperatorList.contains,
-        value: this.textSearch
-      } 
-
-      globalAnd.push({"or" : [textFilter]});
-    }
-
-    if(globalAnd.length > 0){
-      this.result = {"and" : globalAnd}
-    } else {
-      this.result = undefined;
-    }
+    this.kodiApi.media.getMovies({ propoerties: ["writer"] }).subscribe(resp => {
+      if(resp?.movies){
+        //Writers
+        resp.movies.forEach(e => {
+          e.writer?.map(d => { if (this.writers.indexOf(d) === -1) this.writers.push(d) })
+        })
+      }
+    })
 
   }
 
-  private getLimits() : ListLimits {
-    return {
-      start: 0,
-      end : (this.textSearch == "" && this.selectedFilter.length == 0) ? 5 : 20
-    }
+  loadActors(){
+    this.kodiApi.media.getMovies({ propoerties: ["cast"] }).subscribe(resp => {
+      if(resp?.movies){
+        //Actors
+        resp.movies.forEach(e => {
+          e.cast?.map(d => { if (this.actors.indexOf(d.name) === -1) this.actors.push(d.name) })
+        })
+      }
+    })
   }
 
-  search(){
-
-    this.getStringFilter();
-
-    const routeData:string = this.router.url;
-    if(routeData.indexOf("search") == -1 && (this.selectedFilter.length != 0 || this.textSearch != "")){
-      this.openSearchPage();
-    }
-
-    if(routeData.indexOf("search") != -1 && (this.selectedFilter.length == 0 && this.textSearch == "")){
-      this.closeSearchPage();
-    }
-
-    if(this.moviesSearch){
-      this.kodiApi.media.getMovies({limit: this.getLimits(), filter: this.result}).subscribe((resp) => {
-        this.movies = resp?.movies ?? [];
-      });
-    }
+  loadYears(){
+    this.kodiApi.media.getMovies({ propoerties: ["year"] }).subscribe(resp => {
+      if(resp?.movies){
+        //Years
+        resp.movies.forEach(e => {
+          if (this.years.indexOf(e.year?.toString() ?? '') === -1) this.years.push(e.year?.toString() ?? "")
+        })
+      }
+    })
     
-    if(this.tvshowsSearch){
-      this.kodiApi.media.getTvShows({limit: this.getLimits(), filter: this.result}).subscribe((resp) => {
-        this.tvShows = resp?.tvshows ?? [];
-      });
-    }
-
-    if(this.songsSearch){
-      this.kodiApi.media.getSongs({limit: this.getLimits(), filter: this.result}).subscribe(resp => {
-        this.songs = resp?.songs ?? [];
-      })
-    }
-   
   }
 
-  addFilter(filterAdd: Filter){
-    let filters = this.selectedFilter.filter(filter => filter.field == filterAdd.field && filter.value == filterAdd.value)
+  loadGenres(){
+    this.kodiApi.media.getVideoLibraryGenres({type:"movie"}).subscribe(resp => {
+      if(resp?.genres){
+        //Genres
+        resp.genres.forEach(e => {
+         if (this.genres.indexOf(e.title) === -1) this.genres.push(e.title)
+        })
+      }
+    })
 
-    if(filters.length == 0){
-      this.selectedFilter.push(filterAdd);
-    } else {
-      this.selectedFilter.splice(this.selectedFilter.indexOf(filters[0]), 1);
-    }
+    this.kodiApi.media.getVideoLibraryGenres({type:"tvshow"}).subscribe(resp => {
+      if(resp?.genres){
+        //Genres
+        resp.genres.forEach(e => {
+         if (this.genres.indexOf(e.title) === -1) this.genres.push(e.title)
+        })
+      }
+    })
+  }
 
-    this.search()
+  containsAll(arr:any[], arr2:any[]){
+    return arr2.some(i => arr.includes(i));
+  }
+
+  loadMovies(){
+    this.kodiApi.media.getMovies({ propoerties: ["director", "year", "art", "title", "resume", "rating", "genre", "writer", "cast"] }).subscribe(resp => {
+      if(resp?.movies){
+        this.movies = resp.movies
+      }
+    })
+  }
+
+  getMovies(){
+    return this.movies.filter(e => 
+      ((this.containsAll(e.director ?? [], this.directorsFilter) && (e.director ?? []).length > 0) && this.directorsFilter.length > 0
+      || (this.containsAll(e.writer ?? [], this.writersFilter) && (e.writer ?? []).length > 0) && this.writersFilter.length > 0
+      || (this.containsAll(e.cast.map(cast => cast.name) ?? [], this.actorsFilter) && (e.cast ?? []).length > 0) && this.actorsFilter.length > 0
+      || (this.containsAll(e.genre ?? [], this.genresFilter) && (e.genre ?? []).length > 0) && this.genresFilter.length > 0
+      || (this.yearsFilter.indexOf(e.year?.toString() ?? "") > -1)  && this.yearsFilter.length > 0)
+      || ((e.title!.toLocaleLowerCase().indexOf(this.textSearch.toLocaleLowerCase() ?? "") > -1 && this.textSearch.length > 0))
+      )
+  }
+
+  loadTvShows(){
+    this.kodiApi.media.getTvShows({ propoerties: ["year", "art", "title", "genre", "cast"] }).subscribe(resp => {
+      if(resp?.tvshows){
+        this.tvShows = resp.tvshows
+        console.log(this.tvShows)
+      }
+    })
+  }
+
+  getTvShows(){
+    return this.tvShows.filter(e => 
+      (this.containsAll(e.genre ?? [], this.genresFilter) && (e.genre ?? []).length > 0) && this.genresFilter.length > 0
+      || (this.yearsFilter.indexOf(e.year?.toString() ?? "") > -1)  && this.yearsFilter.length > 0
+      || ((e.title!.toLocaleLowerCase().indexOf(this.textSearch.toLocaleLowerCase() ?? "") > -1 && this.textSearch.length > 0))
+      )
   }
 
 }

@@ -14,6 +14,8 @@ export interface GetLibraryParameters {
   limit?: ListLimits
   filter?: any
   sort?: ListSort
+  propoerties?: string[]
+  type?: string
 }
 
 export class MediaRequest extends HttpRequestData {
@@ -26,7 +28,7 @@ export class MediaRequest extends HttpRequestData {
   getMovies(parameter : GetLibraryParameters): Observable<ResponseWithLimits>{
       
       const params = {
-        "properties": previewMovieProperties,
+        "properties": parameter.propoerties ?? previewMovieProperties,
         ...parameter.filter ? {"filter" : parameter.filter} : undefined,
         ...parameter.limit ? {"limits" : parameter.limit} : undefined,
         ...parameter.sort ? { "sort" : parameter.sort } : undefined
@@ -66,7 +68,7 @@ export class MediaRequest extends HttpRequestData {
   getTvShows(parameter : GetLibraryParameters): Observable<ResponseWithLimits>{
 
     const params = {
-      "properties": previewTVShowProperties,
+      "properties": parameter.propoerties ?? previewTVShowProperties,
       ...parameter.filter ? {"filter" : parameter.filter} : undefined,
       ...parameter.limit ? {"limits" : parameter.limit} : undefined,
       ...parameter.sort ? { "sort" : parameter.sort } : undefined
@@ -331,7 +333,8 @@ export class MediaRequest extends HttpRequestData {
     const params = {
       "properties": LibraryFieldsGenreProperties,
       ...parameter.limit ? {"limits" : parameter.limit} : undefined,
-      ...parameter.sort ? { "sort" : parameter.sort } : undefined
+      ...parameter.sort ? { "sort" : parameter.sort } : undefined,
+      ...parameter.type ? { "type" : parameter.type } : undefined
     }
     const req = this.getRequestUrl("getvideogenres", "VideoLibrary.GetGenres", params)
     return this.makeGetRequest(req);

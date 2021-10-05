@@ -2,39 +2,8 @@
 <div class="w-full sm:w-52 md:w-64 lg:w-72 text-center relative">
 
     <div class="sm:px-2 relative">
-        <i [ngClass]="{'text-gray-200' : searchTextValue!='', 'text-gray-500' : searchTextValue==''}" class="fas flex items-center h-full fa-search absolute left-3 sm:left-5 transition-colors duration-300" ></i>
-        <input (blur)="onBlur()" (focus)="openSearch()" (click)="openSearch()" [(ngModel)]="searchTextValue" (ngModelChange)="modelChangeFn($event)" class="z-20 w-full h-10 bg-dark-full rounded-lg text-white border border-transparent hover:border-gray-700 focus:border-gray-700 pl-9 pr-4 sm:pr-2 py-6 sm:py-0 transition-all duration-300"  placeholder="{{ 'header.search.search' | translate}}">
+        <i [ngClass]="{'text-gray-200' : searchService.textSearch!='', 'text-gray-500' : searchService.textSearch==''}" class="fas flex items-center h-full fa-search absolute left-3 sm:left-5 transition-colors duration-300" ></i>
+        <input (blur)="onBlur()" (focus)="openSearch()" (click)="openSearch()" [(ngModel)]="searchService.textSearch" (ngModelChange)="modelChangeFn($event)" class="z-20 w-full h-10 bg-dark-full rounded-lg text-white border border-transparent hover:border-gray-700 focus:border-gray-700 pl-9 pr-4 sm:pr-2 py-6 sm:py-0 transition-all duration-300"  placeholder="{{ 'header.search.search' | translate}}">
     </div>
-    
-    <div @openClose *ngIf="displaySearchBox" class="floating-container z-20 w-full mt-2 space-y-2">
-        <div class="space-y-4 px-2 pb-2">
-            <p class="text-center" translate="header.search.searchIn"></p>
-            <div class="flex pt-2">
-                <p class="w-full" translate="header.movies"></p>
-                <app-switch [value]="searchService.moviesSearch" (toggle)="toggleSearchMovies($event)"></app-switch>
-            </div>
-            <div class="flex">
-                <p class="w-full" translate="header.tvshows"></p>
-                <app-switch [value]="searchService.tvshowsSearch" (toggle)="toggleSearchTVShows($event)"></app-switch>
-            </div>
-            <div class="flex">
-                <p class="w-full" translate="header.musics"></p>
-                <app-switch [value]="searchService.songsSearch" (toggle)="toggleSearchSongs($event)"></app-switch>
-            </div>
-        </div>
 
-        <hr class="border-gray-600">
-        
-        <div class="pt-2 relative">
-            <p class="text-center mb-4" translate="header.search.filters"></p>
-            <div *ngFor="let filter of filtersFieldList">
-                <button (click)="toggleDisplayField(filter.field)" [ngClass]="{'bg-dark-full hover:opacity-80':filter.field==displayField}" class="w-full hover:bg-dark-full rounded-lg text-left px-3 py-2.5 mb-2" translate=""> header.search.{{ filter.field }}</button>
-                <div @heightAnimation *ngIf="filter.field==displayField" class="text-white text-sm font-semibold text-center overflow-auto scrollbar-hide">
-                    <button (click)="searchService.toggleFilter(filter.field, value)" *ngFor="let value of filter.values" class="m-2 px-3 py-2.5 bg-dark-gray hover:opacity-80 transition-opacity rounded-lg border border-gray-400 duration-300" [ngClass]="{'border-yellow-500' : isFilterEnabled(filter.field, value)}">
-                       {{ value }}                        
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

@@ -1,40 +1,72 @@
-<div class="text-sm font-semibold text-center">
-    <button @openClose *ngFor="let filter of searchService.selectedFilter" (click)="searchService.toggleFilter(filter.field, filter.value)" class="m-2 px-3 py-2.5 bg-dark-gray hover:opacity-80 transition-opacity rounded-lg border border-yellow-500 duration-300">
-        {{ filter.value }}                        
-    </button>
-</div>
+<div class="px-4 sm:px-16 flex flex-col md:flex-row md:space-x-4 mb-4">
 
-<div class="px-4 sm:px-16 w-full pb-4">
+    <div class="w-full md:w-80 relative flex-shrink-0">
+        <div class="sm:mt-8 rounded-xl bg-dark-gray p-4 flex flex-col" style="width: inherit;">
+                 
+            <div class="space-y-4 px-2 pb-2">
+                <div class="flex pt-2">
+                    <p class="w-full" translate="header.movies"></p>
+                    <app-switch [value]="searchService.searchMovies" (toggle)="searchService.toggleSearchMovies($event)"></app-switch>
+                </div>
+                <div class="flex">
+                    <p class="w-full" translate="header.tvshows"></p>
+                    <app-switch [value]="searchService.searchTvShows" (toggle)="searchService.toggleSearchTVShows($event)"></app-switch>
+                </div>
+            </div>
+    
+            <hr class="border-gray-600 mt-4 mb-2">
+            
+            <div class="pt-2 relative">
+                <div *ngFor="let filter of searchService.FilterList | keyvalue">
+                    <button (click)="searchService.showFilterValues(filter.value)" [ngClass]="{'bg-dark-full hover:opacity-80':false}" class="w-full hover:bg-dark-full rounded-lg text-left px-3 py-2">
+                        {{ ('library.' + filter.value.toLowerCase()) | translate }}
+                        <i class="fas fa-sort-down right-2 absolute duration-300" [ngClass]="{'transform rotate-180' : searchService.showFilterMenu == filter.value}"></i>
+                    </button>
+                    <div>
+                        <button (click)="searchService.changeFilterValue(filter.value, value)" *ngFor="let value of searchService.getArrayFilterFromFilter(filter.value)" class="m-1 px-2 py-1.5 bg-dark-gray hover:opacity-80 transition-opacity rounded-lg border border-gray-400 duration-300" [ngClass]="{'border-yellow-500' : true}">
+                            {{ value }}                        
+                         </button>
+                    </div>
+                    <div @heightAnimation *ngIf="searchService.showFilterMenu == filter.value" class="text-white text-sm font-semibold text-center overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumn-gray-300" style="max-height: 200px;">
+                        
+                        <div class="px-1 my-1 relative w-full">
+                            <i [ngClass]="{'text-gray-200' : searchService.searchFilterField!='', 'text-gray-500' : searchService.searchFilterField==''}" class="fas fa-search flex items-center h-10 top-0 absolute left-3 sm:left-5 transition-colors duration-300" ></i>
+                            <input [(ngModel)]="searchService.searchFilterField" (ngModelChange)="modelChangeFn($event)" class="z-20 w-full h-10 bg-dark-full rounded-lg text-white border border-gray-700 pl-9 pr-4 sm:pr-2 transition-all duration-300"  placeholder="{{ 'header.search.search' | translate}}">
+                        </div>
+                        
+                        <button (click)="searchService.changeFilterValue(filter.value, value)" *ngFor="let value of searchService.getFilterValues(filter.value)" class="m-1 px-2 py-1.5 bg-dark-gray hover:opacity-80 transition-opacity rounded-lg border border-gray-400 duration-300" [ngClass]="{'border-yellow-500' : searchService.checkFilterStatus(filter.value, value)}">
+                           {{ value }}                        
+                        </button>
+                    </div>
+                </div>
+            </div>
 
+          
+        </div>
+    </div>
 
-    <!-- Movies -->
-    <div @openClose *ngIf="searchService.moviesSearch && searchService.movies.length != 0" class="mb-4">
-        <div class="flex justify-between items-center">
+    <div @openClose class="w-full mt-4 md:mt-8">
+
+        
+        <div *ngIf="searchService.getMovies().length > 0 && searchService.searchMovies" class="flex flex-wrap mx-auto justify-center items-center mb-2">
             <h3 class="text-xl pt-4 font-bold w-full" translate="library.movies"></h3>
+            <div *ngFor="let movie of searchService.getMovies()" class="w-1/3 sm:w-37">
+                <app-mediacard class="w-full" [media]="movie"></app-mediacard>
+            </div>
         </div>
-        <div class="flex w-full mx-auto overflow-auto scrollbar-hide">
-            <app-mediacard class="w-37" *ngFor="let movie of searchService.movies" [media]="movie"></app-mediacard> 
-        </div>
-    </div>
 
-    <!-- TV Shows -->
-    <div @openClose *ngIf="searchService.tvshowsSearch && searchService.tvShows.length != 0" class="mb-4">
-        <div class="flex justify-between items-center">
+        <div *ngIf="searchService.getTvShows().length > 0 && searchService.searchTvShows" class="flex flex-wrap mx-auto justify-center items-center mb-2">
             <h3 class="text-xl pt-4 font-bold w-full" translate="library.tvshows"></h3>
+            <div *ngFor="let movie of searchService.getTvShows()" class="w-1/3 sm:w-37">
+                <app-mediacard class="w-full" [media]="movie"></app-mediacard>
+            </div>
         </div>
-        <div class="flex w-full mx-auto overflow-auto scrollbar-hide">
-            <app-mediacard class="w-37" *ngFor="let tvShow of searchService.tvShows" [media]="tvShow"></app-mediacard> 
-        </div>
-    </div>
 
-    <!-- Musiques -->
-    <div *ngIf="searchService.songsSearch && searchService.songs?.length != 0" class="mb-4">
-        <div class="flex justify-between items-center">
-            <h3 class="text-xl pt-4 font-bold w-full" translate="library.musics"></h3>
+        <div *ngIf="!(searchService.getTvShows().length > 0 && searchService.searchTvShows) && !(searchService.getMovies().length > 0 && searchService.searchMovies)" class="flex flex-col mx-auto justify-center items-center mb-2">
+            <h3 class="text-3xl pt-4 font-bold text-primary"><i class="far fa-eye-slash"></i></h3>
+            <h3 class="text-xl pt-4 font-bold" translate="library.nothingToShow"></h3>
+            <h3 class="text-lg" translate="library.changeFilterToFindSomething"></h3>
         </div>
-        <app-musics-musics-view [songs]="searchService.songs" [soft]="true"></app-musics-musics-view>
-    </div>
 
+    </div>
 </div>
-
-<div class="h-20 sm:hidden"></div>

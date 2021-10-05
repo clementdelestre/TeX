@@ -17,8 +17,9 @@ import { LibraryDetailsGenre } from 'src/app/models/kodiInterfaces/library';
 })
 export class MediacardComponent implements OnInit {
 
-  @Input() media!: VideoDetailsMovie | VideoDetailsTVShow | AudioDetailsAlbum | AudioDetailsArtist | LibraryDetailsGenre | VideoCast;
+  @Input() media!: VideoDetailsMovie | VideoDetailsTVShow | AudioDetailsAlbum | AudioDetailsArtist | LibraryDetailsGenre | VideoCast | string;
   @Input() isDisabled:boolean = false;
+  @Input() openUrl:string = "";
 
   isImgLoaded = false;
 
@@ -87,6 +88,8 @@ export class MediacardComponent implements OnInit {
       this.router.navigateByUrl("/musics/artist/" + (this.media as AudioDetailsArtist).artistid)
     } else if((this.media as LibraryDetailsGenre).genreid){
       this.router.navigateByUrl("/musics/genre/" + encodeURIComponent((this.media as LibraryDetailsGenre).title))
+    } else {
+      
     }
   }
 

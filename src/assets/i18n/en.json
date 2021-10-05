@@ -24,6 +24,9 @@
         "tvshows" : "TV Shows",
         "musics" : "Musics",
 
+        "nothingToShow" : "Nothing to show",
+        "changeFilterToFindSomething" : "Change filters to find something",
+
         "scanVideoLibrary" : "Scan video library",
         "scanAudioLibrary" : "Scan audio library",
         "cleanVideoLibrary" : "Clean video library",
@@ -40,10 +43,14 @@
             "track" : "Track"
         },
         "page" : "Page",
-
+        
+        "directors" : "Directors",
+        "writers" : "Writers",
+        "actors" : "Actors",
         "albums" : "Albums",
         "artists" : "Artists",
         "genres" : "Genres",
+        "years" : "Years",
 
         "recentlyPlayedAlbums" : "Recently played albums",
         "recentlyAddedAlbums" : "Recently added albums",
