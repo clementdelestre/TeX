@@ -344,4 +344,14 @@ export class MediaRequest extends HttpRequestData {
     const req = this.getRequestParams("refreshmovie", "VideoLibrary.RefreshMovie", { "movieid" : movieid, })   
     this.makePostRequest(req).subscribe();  
   }
+
+  refreshTvShow(tvshowid:number){
+    const req = this.getRequestParams("refreshtvshow", "VideoLibrary.RefreshTVShow", { "tvshowid" : tvshowid, })   
+    this.makePostRequest(req).subscribe();  
+  }
+
+  refreshEpisode(episodeid:number){
+    const req = this.getRequestParams("refreshepisode", "VideoLibrary.RefreshEpisode", { "episodeid" : episodeid, })   
+    this.makePostRequest(req).subscribe();  
+  }
 }

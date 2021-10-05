@@ -106,4 +106,9 @@ export class EpisodeComponent implements OnInit {
     this.application.showNotification('library.musicsView.linkCopied', "library.musicsView.linkWasCopiedInClipBoard", AppNotificationType.success);
   }
 
+  refreshData(){
+    this.kodiApi.media.refreshEpisode(this.episode.episodeid)
+    this.application.showNotification('notification.contentUpdated', "notification.refreshPageToSee", AppNotificationType.success);
+  }
+
 }
