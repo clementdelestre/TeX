@@ -26,6 +26,7 @@
 
         "nothingToShow" : "Nothing to show",
         "changeFilterToFindSomething" : "Change filters to find something",
+        "resetFilters" : "Reset",
 
         "scanVideoLibrary" : "Scan video library",
         "scanAudioLibrary" : "Scan audio library",

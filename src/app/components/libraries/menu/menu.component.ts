@@ -1,5 +1,6 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { searchMenuItem } from 'src/app/models/searchMenu';
 
 @Component({
   selector: 'app-movies-menu',
@@ -9,6 +10,9 @@ import { Router } from '@angular/router';
 export class MoviesMenuComponent implements OnInit {
 
   constructor(private router: Router) { }
+
+  @Input() items: searchMenuItem[] = [];
+  @Input() searchPageButton: boolean = false
 
   ngOnInit(): void {
   }
@@ -20,11 +24,11 @@ export class MoviesMenuComponent implements OnInit {
   navigate(url: string){
 
     if(url == this.router.url.split("/")[2]){
-      this.router.navigate(["movies/"]);
+      this.router.navigate([this.router.url.split("/")[1]]);
       return;
     }
 
-    this.router.navigate(["movies/" + url]);
+    this.router.navigate([this.router.url.split("/")[1] + "/" + url]);
   }
 
   mouseDown: boolean = false;

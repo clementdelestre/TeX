@@ -69,7 +69,6 @@ export const fullPlayerItemProperties = [
     "hidden",
     "locked",
     "channelnumber",
-    "subchannelnumber",
     "starttime",
     "endtime",
     "specialsortseason",

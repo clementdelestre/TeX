@@ -44,8 +44,9 @@ import { GeneralComponent } from './components/settings/general/general.componen
 import { AdvancedComponent } from './components/settings/advanced/advanced.component';
 import { RowMediaComponent } from './components/utils/row-media/row-media.component';
 import { MoviesHomeComponent } from './components/libraries/movies/home/home.component';
-import { MoviesCategoryComponent } from './components/libraries/movies/category/category.component';
-import { MoviesMenuComponent } from './components/libraries/movies/menu/menu.component';
+import { LibraryCategoryComponent } from './components/libraries/menu/category/category.component';
+import { MoviesMenuComponent } from './components/libraries/menu/menu.component';
+import { TvShowsHomeComponent } from './components/libraries/tvshows/home/home.component';
 
 @NgModule({
   declarations: [
@@ -82,8 +83,9 @@ import { MoviesMenuComponent } from './components/libraries/movies/menu/menu.com
     AdvancedComponent,
     RowMediaComponent,
     MoviesHomeComponent,
-    MoviesCategoryComponent,
+    LibraryCategoryComponent,
     MoviesMenuComponent,
+    TvShowsHomeComponent,
   ],
   imports: [
     BrowserModule,

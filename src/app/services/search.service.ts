@@ -270,7 +270,6 @@ export class SearchService {
     this.kodiApi.media.getTvShows({ propoerties: ["year", "art", "title", "genre", "cast"] }).subscribe(resp => {
       if(resp?.tvshows){
         this.tvShows = resp.tvshows
-        console.log(this.tvShows)
       }
     })
   }

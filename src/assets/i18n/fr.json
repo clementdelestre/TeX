@@ -26,6 +26,7 @@
 
         "nothingToShow" : "Rien à afficher",
         "changeFilterToFindSomething" : "Modifier les filtres pour trouver du contenu",
+        "resetFilters" : "Réinitialiser les filtres",
 
         "scanVideoLibrary" : "Scanner la librairie vidéo",
         "scanAudioLibrary" : "Scanner la librairie audio",

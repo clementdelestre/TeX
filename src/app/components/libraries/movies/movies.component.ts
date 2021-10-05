@@ -3,6 +3,7 @@ import { KodiApiService } from 'src/app/services/kodi-api.service';
 import { fastFadeAnimation, modalAnimation, openCloseAnimation } from 'src/app/models/appAnimation';
 import { ApplicationService } from 'src/app/services/application.service';
 import { Location} from '@angular/common'; 
+import { searchMenuItem } from 'src/app/models/searchMenu';
 
 @Component({
   selector: 'app-movies',
@@ -17,6 +18,34 @@ import { Location} from '@angular/common';
 export class MoviesComponent implements OnInit {
 
   constructor(private kodiApi:KodiApiService, private application:ApplicationService, private location:Location) {  }
+
+  itemMenu:searchMenuItem[] = [
+    {
+      title: "library.directors",
+      icon: "fa-users",
+      page : "directors"
+    },
+    {
+      title: "library.writers",
+      icon: "fa-users",
+      page : "writers"
+    },
+    {
+      title: "library.genres",
+      icon: "fa-theater-masks",
+      page : "genres"
+    },
+    {
+      title: "library.actors",
+      icon: "fa-users",
+      page : "actors"
+    },
+    {
+      title: "library.years",
+      icon: "fa-calendar-alt",
+      page : "years"
+    },
+  ]
 
   ngOnInit(): void {
 
