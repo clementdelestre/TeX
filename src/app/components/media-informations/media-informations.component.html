@@ -41,7 +41,7 @@
                     
                 </div>
                 
-
+                <!-- Set Movie Watched -->
                 <button *ngIf="isMovie() && isLoaded" (click)="setWatched(media.playcount==0)" class="button-media-watched">
                     <div *ngIf="media.playcount!=0">
                         {{ 'library.details.watched' | translate }} <i class="fas fa-check ml-2"></i>
@@ -49,6 +49,11 @@
                     <div *ngIf="media.playcount==0">
                         {{ 'library.details.unwatched' | translate }} <i class="fas fa-eye-slash ml-2"></i>
                     </div>
+                </button>
+
+                <!-- Refresh TvShow -->
+                <button *ngIf="!isMovie() && isLoaded" (click)="refreshDataTvShow()" class="text-gray-500">
+                    <i class="fas fa-sync"></i>
                 </button>
 
             </div>
