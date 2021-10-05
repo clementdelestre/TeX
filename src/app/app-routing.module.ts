@@ -31,7 +31,6 @@ const routes: Routes = [
   },
   {
     path:'movie',
-    component: MoviesComponent,
     children:[
       {
         path:':type',
@@ -59,7 +58,6 @@ const routes: Routes = [
   },
   {
     path:'tvshow',
-    component: TvshowsComponent,
     children:[
       {
         path:':type',
