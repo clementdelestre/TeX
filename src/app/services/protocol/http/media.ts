@@ -339,4 +339,9 @@ export class MediaRequest extends HttpRequestData {
     const req = this.getRequestUrl("getvideogenres", "VideoLibrary.GetGenres", params)
     return this.makeGetRequest(req);
   }
+
+  refreshMovie(movieid:number){
+    const req = this.getRequestParams("refreshmovie", "VideoLibrary.RefreshMovie", { "movieid" : movieid, })   
+    this.makePostRequest(req).subscribe();  
+  }
 }

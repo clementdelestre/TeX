@@ -92,7 +92,8 @@
             "episodesTitle" : "Episodes",
             "noSeasonAvailable" : "No season available",
             "getStreamingLink" : "Get streaming link",
-            "additionalInformation" : "Additional information"
+            "additionalInformation" : "Additional information",
+            "refresh" : "Refresh data"
         },
 
         "musicsView" : {
@@ -145,6 +146,8 @@
         "scanStarted" : "Scan started",
         "scanFinished" : "Scan finished",
         "cleanStarted" : "Clean started",
-        "cleanFinished" : "Clean finished"
+        "cleanFinished" : "Clean finished",
+        "contentUpdated" : "Content updated",
+        "refreshPageToSee" : "Refresh the page to see the changes"
     }
 }
