@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fastFadeAnimation, modalAnimation, openCloseAnimation } from 'src/app/models/appAnimation';
+import { fastFadeAnimation, openCloseAnimation } from 'src/app/models/appAnimation';
 import { Filter, FilterOperatorList } from 'src/app/models/filter';
 import { ListFilterFieldsMovies } from 'src/app/models/kodiInterfaces/listFilter';
 import { ListSort, ListSortMethod, ListSortOrder } from 'src/app/models/kodiInterfaces/listItem';
@@ -12,7 +12,6 @@ import { KodiApiService } from 'src/app/services/kodi-api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
-    modalAnimation,
     openCloseAnimation,
     fastFadeAnimation
   ],

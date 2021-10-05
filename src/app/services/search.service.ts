@@ -209,6 +209,15 @@ export class SearchService {
         })
       }
     })
+
+    this.kodiApi.media.getTvShows({ propoerties: ["cast"] }).subscribe(resp => {
+      if(resp?.tvshows){
+        //Actors
+        resp.tvshows.forEach(e => {
+          e.cast?.map(d => { if (this.actors.indexOf(d.name) === -1) this.actors.push(d.name) })
+        })
+      }
+    })
   }
 
   loadYears(){

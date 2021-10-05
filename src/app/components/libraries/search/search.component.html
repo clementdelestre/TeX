@@ -23,7 +23,7 @@
                         <i class="fas fa-sort-down right-2 absolute duration-300" [ngClass]="{'transform rotate-180 mt-2' : searchService.showFilterMenu == filter.value}"></i>
                     </button>
                     <div class="px-1">
-                        <button (click)="searchService.changeFilterValue(filter.value, value)" *ngFor="let value of searchService.getArrayFilterFromFilter(filter.value)" class="mx-1 px-1 hover:opacity-90 transition-opacity text-primary duration-300">
+                        <button (click)="searchService.changeFilterValue(filter.value, value)" *ngFor="let value of searchService.getArrayFilterFromFilter(filter.value)" class="mx-1 px-1 mb-1 hover:opacity-90 transition-opacity text-primary duration-300">
                             {{ value }}                        
                          </button>
                     </div>

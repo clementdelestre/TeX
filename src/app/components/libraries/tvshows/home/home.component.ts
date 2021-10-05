@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ListSort, ListSortMethod, ListSortOrder } from 'src/app/models/kodiInterfaces/listItem';
 import { VideoDetailsTVShow } from 'src/app/models/kodiInterfaces/video';
-import { ApplicationService } from 'src/app/services/application.service';
 import { KodiApiService } from 'src/app/services/kodi-api.service';
 import { ListLimits } from 'src/app/models/kodiInterfaces/others';
+import { fastFadeAnimation, openCloseAnimation } from 'src/app/models/appAnimation';
 
 @Component({
   selector: 'app-tvshow-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [
+    openCloseAnimation,
+    fastFadeAnimation
+  ],
 })
 export class TvShowsHomeComponent implements OnInit {
 
