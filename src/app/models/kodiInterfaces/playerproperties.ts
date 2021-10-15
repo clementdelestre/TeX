@@ -128,5 +128,4 @@ export const fullPlayerPropertyName = [
     "live",
     "currentvideostream",
     "videostreams",
-    "cachepercentage"
 ]
