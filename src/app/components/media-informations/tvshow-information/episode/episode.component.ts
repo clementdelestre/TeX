@@ -70,20 +70,20 @@ export class EpisodeComponent implements OnInit {
     if(this.episode.tvshowid && this.episode.season)
     this.kodiApi.media.getEpisodes(this.episode.tvshowid, this.episode.season).subscribe(resp => {
       const episodes: VideoDetailsEpisode[] = resp.episodes
-
-      episodes.filter(ep => ep.episode ?? 0 >= (this.episode.episode ?? 0)).forEach(ep => {
+      console.log(this.episode.episode)
+      episodes.filter(ep => (ep.episode ?? 0) >= (this.episode.episode ?? 0)).forEach(epi => {
         const item: PlaylistItem = {
-          episodeid: ep.episodeid
+          episodeid: epi.episodeid
         }
         items.push(item);
       });
-
       this.playListEpisodes(items);
     });
   }
 
   async playListEpisodes(items: PlaylistItem[]){
       await this.kodiApi.playlist.add(1, items);
+      this.kodiApi.player.open({'playlistid':1})
       // this.player.openPlaylist(1);
   }
 
