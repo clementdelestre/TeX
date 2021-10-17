@@ -119,6 +119,11 @@ export class MediaInformationsComponent implements OnInit {
   
   playMovie(){
     this.player.openMediaFile((this.media as VideoDetailsMovie).file ?? "");
+    this.close()
+  }
+
+  async test () {
+    this.application.showPlayer = true;
   }
 
   addMovieToPlaylist(){    

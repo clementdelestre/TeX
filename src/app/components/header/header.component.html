@@ -9,7 +9,7 @@
             <div class="flex items-center justify-items-center space-x-8">        
                 <app-searchbar></app-searchbar>
     
-                <button *ngIf="player.isAvailable()" (click)="openPlayer()" class="hidden sm:block header-button text-xl helllo"><i class="far fa-play-circle toggle-player"></i></button>
+                <button (click)="openPlayer()" class="hidden sm:block header-button text-xl helllo"><i class="far fa-play-circle toggle-player"></i></button>
     
                 <a (click)="openRemote()" class="header-button text-xl"><i class="fas fa-mobile-alt"></i></a>
                 <a [ngClass]="{'text-primary': isRoute('settings')}" routerLink="/settings" class="header-button text-xl"><i class="fas fa-cog"></i></a>
@@ -32,7 +32,7 @@
 <div class="h-20"></div>
 
     
-<app-player @modalAnimationReverse *ngIf="application.showPlayer && player.isAvailable()" class="z-40 fixed bottom-0 left-0 w-screen h-screen sm:left-auto sm:bottom-auto sm:h-auto sm:w-full sm:right-4 sm:top-14 sm:mt-1"></app-player> 
+<app-player @modalAnimationReverse *ngIf="application.showPlayer" class="z-40 fixed bottom-0 left-0 w-screen h-screen sm:left-auto sm:bottom-auto sm:h-auto sm:w-full sm:right-4 sm:top-14 sm:mt-1"></app-player> 
 
 
 <div class="sm:hidden w-full bg-dark-gray bottom-0 fixed z-30">
