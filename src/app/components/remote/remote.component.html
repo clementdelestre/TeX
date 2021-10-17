@@ -7,15 +7,15 @@
             <div class="flex flex-col items-center h-full w-full max-w-sm m-auto text-3xl space-y-2 remote-container">
                 <div class="flex flex-col items-center h-full w-full bg-dark-full rounded-xl m-auto space-y-4 py-4 opacity-80  overflow-auto scrollbar-hide"  style="max-height: 750px;">
                     <div class="flex flex-row w-full h-full items-center">
-                        <button><i (click)="onInputMenu()" class="fas fa-align-left button-primary"></i></button>
-                        <button><i (click)="onInputHome()" class="fas fa-home button-primary"></i></button>
-                        <button><i (click)="onInputInfo()" class="fas fa-info-circle button-primary"></i></button>
+                        <button><fa-icon [icon]="['fas', 'align-left']" class="button-primary" (click)="onInputMenu()"></fa-icon></button>
+                        <button><fa-icon [icon]="['fas', 'home']" class="button-primary" (click)="onInputHome()"></fa-icon></button>
+                        <button><fa-icon [icon]="['fas', 'info-circle']" class="button-primary" (click)="onInputInfo()"></fa-icon></button>
                     </div>
                     <div class="flex flex-col w-full">
                         <div class="flex flex-row w-full h-full items-center">
-                            <button><i (click)="onInputVolumeDown()" class="fas fa-volume-down button-primary"></i></button>
+                            <button><fa-icon [icon]="['fas', 'volume-down']" class="button-primary" (click)="onInputVolumeDown()"></fa-icon></button>
                             <button></button>
-                            <button><i (click)="onInputVolumeUp()" class="fas fa-volume-up button-primary"></i></button>
+                            <button><fa-icon [icon]="['fas', 'volume-up']" class="button-primary" (click)="onInputVolumeUp()"></fa-icon></button>
                         </div>
                         <div [ngClass]="{'opacity-100' : displayVolumeBar}" class="relative pt-1 w-full px-8 mt-2 opacity-0 transition-opacity duration-100">
                             <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
@@ -29,19 +29,19 @@
                         
                                 <div class="flex flex-row w-full h-full items-center">
                                     <button></button>
-                                    <button><i (click)="onInputUp()" class="fas fa-sort-up button-primary"></i></button>
+                                    <button><fa-icon [icon]="['fas', 'sort-up']" class="button-primary" (click)="onInputUp()"></fa-icon></button>
                                     <button></button>
                                 </div>
                         
                                 <div class="flex flex-row w-full h-full items-center">
-                                    <button><i (click)="onInputLeft()" class="fas fa-caret-left button-primary"></i></button>
-                                    <button><i (click)="onInputSelect()" class="fas fa-dot-circle button-primary"></i></button>
-                                    <button><i (click)="onInputRight()" class="fas fa-caret-right button-primary"></i></button>
+                                    <button><fa-icon [icon]="['fas', 'caret-left']" class="button-primary" (click)="onInputLeft()"></fa-icon></button>
+                                    <button><fa-icon [icon]="['fas', 'dot-circle']" class="button-primary" (click)="onInputSelect()"></fa-icon></button>
+                                    <button><fa-icon [icon]="['fas', 'caret-right']" class="button-primary" (click)="onInputRight()"></fa-icon></button>
                                 </div>
                         
                                 <div class="flex flex-row w-full h-full items-center">
                                     <button></button>
-                                    <button><i (click)="onInputDown()" class="fas fa-sort-down button-primary"></i></button>
+                                    <button><fa-icon [icon]="['fas', 'sort-down']" class="button-primary" (click)="onInputDown()"></fa-icon></button>
                                     <button></button>
                                 </div>
                             </div>
@@ -49,9 +49,9 @@
                     </div>       
                 
                     <div class="flex flex-row w-full h-full items-center">
-                        <button><i (click)="onInputBack()" class="fas fa-arrow-left button-primary"></i></button>
+                        <button><fa-icon [icon]="['fas', 'arrow-left']" class="button-primary" (click)="onInputBack()"></fa-icon></button>
                         <button></button>
-                        <button><i (click)="onInputContextMenu()" class="fas fa-bars button-primary"></i></button>
+                        <button><fa-icon [icon]="['fas', 'bars']" class="button-primary" (click)="onInputContextMenu()"></fa-icon></button>
                     </div>    
                     
                 </div>                

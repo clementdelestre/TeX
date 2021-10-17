@@ -25,7 +25,7 @@
          </div>
      </div>
      <div *ngIf="pageMovies.length > 1" class="flex justify-between sm:w-44 sm:ml-auto mt-4 mx-4">
-         <button (click)="decrementPage()"><i [ngClass]="{'text-gray-500' : currentPage == 0}" class="fas fa-arrow-left"></i></button>
+         <button (click)="decrementPage()"><fa-icon [icon]="['fas', 'arrow-left']" [ngClass]="{'text-gray-500' : currentPage == 0}"></fa-icon></button>
          <button class="custom-button group relative">
              {{ 'library.page' | translate}} {{ currentPage+1 }}
              <div class="floating-button-top-left pointer-group-button min-w-full">
@@ -38,6 +38,6 @@
                  </div>
              </div>
          </button>
-         <button (click)="incrementPage()"><i [ngClass]="{'text-gray-500' : currentPage == pageMovies.length-1}" class="fas fa-arrow-right"></i></button>
+         <button (click)="incrementPage()"><fa-icon [icon]="['fas', 'arrow-right']" [ngClass]="{'text-gray-500' : currentPage == pageMovies.length-1}"></fa-icon></button>
      </div>
  </div>

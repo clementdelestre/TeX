@@ -35,10 +35,10 @@ export class PlayerComponent implements OnInit {
 
   @HostListener('document:click', ['$event.target'])
   public onClick(target: HTMLElement) {
-    const clickedInside = this.elementRef.nativeElement.contains(target) || target.classList.contains("toggle-player")
-    if(!clickedInside && this.application.showPlayer) {
-      this.close()
-    }
+    // const clickedInside = this.elementRef.nativeElement.contains(target) || target.classList.contains("toggle-player")
+    // if(!clickedInside && this.application.showPlayer) {
+    //   this.close()
+    // }
   }
 
   close(){

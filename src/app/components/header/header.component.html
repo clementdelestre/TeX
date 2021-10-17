@@ -9,7 +9,7 @@
             <div class="flex items-center justify-items-center space-x-8">        
                 <app-searchbar></app-searchbar>
     
-                <button (click)="openPlayer()" class="hidden sm:block header-button text-xl helllo"><fa-icon class="toggle-player" [icon]="['far', 'play-circle']"></fa-icon></button>
+                <button (click)="openPlayer()" class="hidden sm:block header-button text-xl"><fa-icon [icon]="['far', 'play-circle']"></fa-icon></button>
     
                 <a (click)="openRemote()" class="header-button text-xl"><fa-icon [icon]="['fas', 'mobile-alt']"></fa-icon></a>
                 <a [ngClass]="{'text-primary': isRoute('settings')}" routerLink="/settings" class="header-button text-xl"><fa-icon [icon]="['fas', 'cog']"></fa-icon></a>
@@ -49,7 +49,7 @@
                     <fa-icon [icon]="['fas', 'mobile-alt']"></fa-icon>
                 </div>
                 <div *ngIf="player.isAvailable()" (click)="openPlayer()" class="rounded-full h-14 w-14 m-auto flex items-center justify-center text-gray-500 hover:text-dark-full bg-white hover:bg-gray-200 transition-colors duration-300 cursor-pointer ">
-                    <fa-icon class="toggle-player" [icon]="['far', 'play-circle']"></fa-icon>
+                    <fa-icon [icon]="['far', 'play-circle']"></fa-icon>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
             <fa-icon class="header-button" [icon]="['fas', 'bars']"></fa-icon>
             <div class="floating-button-top-right pointer-group-button">
                 <div class="floating-list">
-                    <button class="floating-button toggle-player" *ngIf="player.isAvailable()" (click)="openRemote()" translate="">
+                    <button class="floating-button" *ngIf="player.isAvailable()" (click)="openRemote()" translate="">
                         header.remote
                     </button>
                     <a [ngClass]="{'text-primary': isRoute('settings')}" routerLink="/settings" class="floating-button" translate="">

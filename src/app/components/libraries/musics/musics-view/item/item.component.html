@@ -1,5 +1,5 @@
 <button (click)="playSong($event)" (mouseenter) ="songHover()" (contextmenu)="onContextMenuShow($event)" (blur)="onContextMenuHide($event)" [ngClass]="{'bg-primary hover:bg-primary hover:bg-opacity-80': getCurrentPlayingSong() == song.songid}" class="flex w-full rounded-xl hover:bg-dark-gray cursor-pointer py-1 px-2 sm:py-2 sm:px-4 group items-center mb-1 relative">
-    <i *ngIf="getCurrentPlayingSong() == song.songid" class="fas fa-play mr-4 sm:mr-4"></i>
+    <fa-icon [icon]="['fas', 'play']" *ngIf="getCurrentPlayingSong() == song.songid"></fa-icon>
     <div class="w-full text-left">
         <p class="font-semibold">{{song.title}}</p>
         <p class="text-gray-500 text-sm">{{song.artist}}</p>
