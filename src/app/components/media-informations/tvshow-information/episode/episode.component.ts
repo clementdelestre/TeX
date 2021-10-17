@@ -84,7 +84,6 @@ export class EpisodeComponent implements OnInit {
   async playListEpisodes(items: PlaylistItem[]){
       await this.kodiApi.playlist.add(1, items);
       this.kodiApi.player.open({'playlistid':1})
-      // this.player.openPlaylist(1);
   }
 
   setWatched(watched: boolean){
