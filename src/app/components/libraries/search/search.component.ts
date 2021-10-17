@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { fastFadeAnimation, heightAnimation, modalAnimation, openCloseAnimation } from 'src/app/models/appAnimation';
 import { AudioDetailsSong } from 'src/app/models/kodiInterfaces/audio';
 import { VideoDetailsMovie, VideoDetailsTVShow } from 'src/app/models/kodiInterfaces/video';
@@ -19,7 +19,7 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class SearchComponent implements OnInit {
 
-  
+  showFilterBox = false;
 
   constructor(public searchService: SearchService, private kodiApi: KodiApiService) { }
 
@@ -30,6 +30,24 @@ export class SearchComponent implements OnInit {
   
   modelChangeFn(e:any){
     this.searchService.searchFilterField = e;
+  }
+
+  toggleFilterBox(){
+    this.showFilterBox = !this.showFilterBox
+  }
+
+  getFilterBoxVisibility(){
+    let x = document.getElementById("toggleFilterButton");
+    if (window.getComputedStyle(x!).display === "none") {
+      return true
+    } else {
+      return this.showFilterBox
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event:Event) {
+    this.getFilterBoxVisibility()
   }
   
 

@@ -54,6 +54,8 @@
 
         "allMusics" : "All musics",
 
+        "filters" : "Filters",
+
         "details" : {
             "genres" : "Genres:",
             "totalDiscs" : "Total disks:",

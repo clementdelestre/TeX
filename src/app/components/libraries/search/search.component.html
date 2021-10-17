@@ -1,7 +1,14 @@
 <div class="px-4 sm:px-16 flex flex-col md:flex-row md:space-x-4 mb-4">
 
-    <div class="w-full md:w-80 relative flex-shrink-0">
-        <div class="sm:mt-8 rounded-xl bg-dark-gray p-4 flex flex-col" style="width: inherit;">
+    <!-- Filter box -->  
+    <div class="w-full md:w-80 relative flex-shrink-0 group">
+
+        <p id="toggleFilterButton" class="md:hidden text-center text-primary mb-4 cursor-pointer" (click)="toggleFilterBox()">
+            <span translate="library.filters"></span>
+            <fa-icon [icon]="['fas', 'caret-down']" class="ml-4 duration-300 absolute" [ngClass]="{'transform rotate-180' : showFilterBox}"></fa-icon>
+        </p>
+
+        <div *ngIf="getFilterBoxVisibility()" @heightAnimation class="sm:mt-8 rounded-xl bg-dark-gray p-4 flex flex-col" style="width: inherit;">
                  
             <div class="space-y-4 px-2 pb-2">
                 <div class="flex pt-2">
@@ -20,7 +27,7 @@
                 <div *ngFor="let filter of searchService.FilterList | keyvalue" class="bg-dark-full rounded-lg mb-1">
                     <button (click)="searchService.showFilterValues(filter.value)" class="w-full hover:opacity-80  rounded-lg text-left px-3 py-2">
                         {{ ('library.' + filter.value.toLowerCase()) | translate }}
-                        <fa-icon [icon]="['fas', 'sort']" class="right-2 absolute duration-300" [ngClass]="{'transform rotate-180 mt-2' : searchService.showFilterMenu == filter.value}"></fa-icon>
+                        <fa-icon [icon]="['fas', 'caret-down']" class="right-3 absolute duration-300" [ngClass]="{'transform rotate-180' : searchService.showFilterMenu == filter.value}"></fa-icon>
                     </button>
                     <div class="px-1">
                         <button (click)="searchService.changeFilterValue(filter.value, value)" *ngFor="let value of searchService.getArrayFilterFromFilter(filter.value)" class="mx-1 px-1 mb-1 hover:opacity-90 transition-opacity text-primary duration-300">
@@ -47,8 +54,8 @@
         </div>
     </div>
 
+    <!-- Results -->
     <div @openClose class="w-full mt-4 md:mt-8">
-
         
         <div *ngIf="searchService.getMovies().length > 0 && searchService.searchMovies" class="flex flex-wrap mx-auto justify-center items-center mb-2">
             <h3 class="text-xl pt-4 font-bold w-full" translate="library.movies"></h3>

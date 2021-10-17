@@ -1,4 +1,4 @@
-<div #scrollElement class="flex overflow-auto scrollbar-hide space-x-4 mt-4 sm:mt-0" (mousedown)="mouseDown = true; treeshold = 10" (mousemove)="onMouseMove($event)">
+<div #scrollElement class="flex overflow-auto scrollbar-hide space-x-4 mt-2 sm:mt-0" (mousedown)="mouseDown = true; treeshold = 10" (mousemove)="onMouseMove($event)">
 
 
     <a  *ngFor="let item of items" [ngClass]="{'text-primary':isPage(item.page)}" (click)="navigate(item.page)" class="button-library-section">

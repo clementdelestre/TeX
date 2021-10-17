@@ -54,6 +54,8 @@
 
         "allMusics" : "Toutes les musiques",
 
+        "filters" : "Filtres",
+
         "details" : {
             "genres" : "Genres :",
             "totalDiscs" : "Nombre de disque :",
