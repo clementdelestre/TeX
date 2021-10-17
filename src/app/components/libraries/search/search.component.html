@@ -20,7 +20,7 @@
                 <div *ngFor="let filter of searchService.FilterList | keyvalue" class="bg-dark-full rounded-lg mb-1">
                     <button (click)="searchService.showFilterValues(filter.value)" class="w-full hover:opacity-80  rounded-lg text-left px-3 py-2">
                         {{ ('library.' + filter.value.toLowerCase()) | translate }}
-                        <i class="fas fa-sort-down right-2 absolute duration-300" [ngClass]="{'transform rotate-180 mt-2' : searchService.showFilterMenu == filter.value}"></i>
+                        <fa-icon [icon]="['fas', 'sort']" class="right-2 absolute duration-300" [ngClass]="{'transform rotate-180 mt-2' : searchService.showFilterMenu == filter.value}"></fa-icon>
                     </button>
                     <div class="px-1">
                         <button (click)="searchService.changeFilterValue(filter.value, value)" *ngFor="let value of searchService.getArrayFilterFromFilter(filter.value)" class="mx-1 px-1 mb-1 hover:opacity-90 transition-opacity text-primary duration-300">
@@ -29,7 +29,7 @@
                     </div>
                     <div @heightAnimation *ngIf="searchService.showFilterMenu == filter.value" class="text-white text-sm font-semibold text-center overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumn-gray-300" style="max-height: 200px;">
                         <div class="px-1 my-1 relative w-full">
-                            <i [ngClass]="{'text-gray-200' : searchService.searchFilterField!='', 'text-gray-500' : searchService.searchFilterField==''}" class="fas fa-search flex items-center h-10 top-0 absolute left-3 sm:left-5 transition-colors duration-300" ></i>
+                            <fa-icon [icon]="['fas', 'search']" class="flex items-center h-10 top-0 absolute left-3 sm:left-5 transition-colors duration-300" [ngClass]="{'text-gray-200' : searchService.searchFilterField!='', 'text-gray-500' : searchService.searchFilterField==''}"></fa-icon>
                             <input [(ngModel)]="searchService.searchFilterField" (ngModelChange)="modelChangeFn($event)" class="z-20 w-full h-10 bg-dark-full rounded-lg text-white border border-gray-700 pl-9 pr-4 sm:pr-2 transition-all duration-300"  placeholder="{{ 'header.search.search' | translate}}">
                         </div>
                         
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <button (click)="searchService.clearFilters()" class="ml-1 mt-1 hover:opacity-90 transition-opacity text-primary duration-300">
-                    <span translate="library.resetFilters"></span><i class="fas fa-times ml-2"></i>                  
+                    <span translate="library.resetFilters"></span><fa-icon [icon]="['fas', 'times']" class="ml-2"></fa-icon>             
                  </button>
             </div>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div *ngIf="!(searchService.getTvShows().length > 0 && searchService.searchTvShows) && !(searchService.getMovies().length > 0 && searchService.searchMovies)" class="flex flex-col mx-auto justify-center items-center mb-2">
-            <h3 class="text-3xl pt-4 font-bold text-primary"><i class="far fa-eye-slash"></i></h3>
+            <h3 class="text-3xl pt-4 font-bold text-primary"><fa-icon [icon]="['fas', 'eye-slash']"></fa-icon></h3>
             <h3 class="text-xl pt-4 font-bold" translate="library.nothingToShow"></h3>
             <h3 class="text-lg" translate="library.changeFilterToFindSomething"></h3>
         </div>

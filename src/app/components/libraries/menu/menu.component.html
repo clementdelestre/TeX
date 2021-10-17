@@ -2,12 +2,12 @@
 
 
     <a  *ngFor="let item of items" [ngClass]="{'text-primary':isPage(item.page)}" (click)="navigate(item.page)" class="button-library-section">
-        <i class="fas sm:text-xl {{ item.icon }}"></i>
+        <fa-icon [icon]="['fas', item.icon]" class="sm:text-xl"></fa-icon>
         <p class="text-lg font-semibold" [translate]="item.title"></p>
     </a>
 
     <a *ngIf="searchPageButton" routerLink="/search" class="button-library-section">
-        <i class="fas fa-search sm:text-xl"></i>
+        <fa-icon [icon]="['fas', 'search']" class="sm:text-xl"></fa-icon>
         <p class="text-lg font-semibold" translate="header.search.search"></p>
     </a>
 </div>

@@ -8,7 +8,7 @@
          <h3 class="text-xl font-bold w-full" translate="library.tvshows"></h3>
          <div>
              <button class="w-full text-center z-10 group relative whitespace-nowrap">     
-                 {{ 'library.sortBy.sortBy' | translate}}<i class="fas fa-sort ml-2"></i>
+                 {{ 'library.sortBy.sortBy' | translate}}<fa-icon [icon]="['fas', 'sort']" class="ml-2"></fa-icon>
                  <div class="floating-button-bottom-right pointer-group-button">
                      <div class="floating-list">
                          <button (click)="changeSort(sort.value)" [ngClass]="{'floating-button-active': currentSort == sort.value}"  *ngFor="let sort of sortby | keyvalue" class="floating-button" translate="">

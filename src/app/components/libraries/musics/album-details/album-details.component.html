@@ -14,7 +14,7 @@
             <p class="text-gray-500"><span class="text-primary">{{ 'library.details.genres' | translate}} </span><a class="hover:text-gray-400" *ngFor="let genre of album.genre; let i=index" [routerLink]="'/musics/genre/' + getEncodedGenre(genre)">{{ genre + (i < (album.genre?.length ?? 0) -1 ? ", " : "") }}</a></p>
             <p class="text-gray-500"><span class="text-primary">{{ 'library.details.totalDiscs' | translate}} </span>{{ album.totaldiscs }}</p>
             <p class="text-gray-500"><span class="text-primary">{{ 'library.details.year' | translate }} </span>{{ album.year }}</p>
-            <button (click)="playAlbum()" class="mt-4 h-10 items-center focus:outline-none transition-colors bg-opacity-100 hover:bg-opacity-80 cursor-pointer flex rounded bg-gray-200 text-dark-full px-5 py-1 md:px-7 md:py-1.5 text-base md:text-lg font-bold"><i class="fas fa-play mr-2"></i> {{ 'library.details.playButton' | translate }}</button>
+            <button (click)="playAlbum()" class="mt-4 h-10 items-center focus:outline-none transition-colors bg-opacity-100 hover:bg-opacity-80 cursor-pointer flex rounded bg-gray-200 text-dark-full px-5 py-1 md:px-7 md:py-1.5 text-base md:text-lg font-bold"><fa-icon [icon]="['fas', 'play']" class="mr-2"></fa-icon>{{ 'library.details.playButton' | translate }}</button>
         </div>
     </div>
    
@@ -23,7 +23,7 @@
 <div *ngIf="disks.length > 1" class="flex overflow-auto scrollbar-hide space-x-4 mb-4 mt-4">
 
     <button [ngClass]="{'text-primary':disk == showDisk}" (click)="changeDisk(disk)" *ngFor="let disk of disks" class="button-library-section">
-        <i class="fas fa-compact-disc sm:text-xl"></i>
+        <fa-icon [icon]="['fas', 'compact-disc']" class="sm:text-xl"></fa-icon>
         <p class="text-lg font-semibold whitespace-nowrap">{{ 'library.details.disk' | translate }} {{ disk }}</p>
     </button>
 

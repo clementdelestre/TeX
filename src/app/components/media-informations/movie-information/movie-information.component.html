@@ -2,8 +2,8 @@
 
 
 <div class="w-full text-center flex flex-col sm:flex-row justify-evenly mt-8 mb-4 space-y-4 sm:space-y-0">
-    <a *ngIf="downloadUrl != ''" @openClose href="{{ downloadUrl }}" class="custom-button" download><i class="fas fa-download mr-4"></i>{{ 'library.details.download' | translate }}</a>
-    <button *ngIf="downloadUrl != ''" @openClose (click)="streamLink()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><i class="fab fa-chromecast mr-4"></i>{{ 'library.details.getStreamingLink' | translate }}</button>
+    <a *ngIf="downloadUrl != ''" @openClose href="{{ downloadUrl }}" class="custom-button" download><fa-icon [icon]="['fas', 'download']" class="mr-4"></fa-icon>{{ 'library.details.download' | translate }}</a>
+    <button *ngIf="downloadUrl != ''" @openClose (click)="streamLink()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><fa-icon [icon]="['fab', 'chromecast']" class="mr-4"></fa-icon>{{ 'library.details.getStreamingLink' | translate }}</button>
     <button (click)="toogleMoreInfo()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base">{{ !moreInfo ? ("library.details.moreinfo" | translate) : "library.details.lessinfo" | translate}} </button>
 </div>
 
@@ -16,7 +16,7 @@
         <p><span class="text-gray-500">{{ 'library.details.dateadded' | translate }} </span>{{ movie.dateadded }}</p>
     </div>
     <div class="flex mt-4 mb-2">
-        <button (click)="refreshData()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><i class="fas fa-sync mr-4"></i>{{ 'library.details.refresh' | translate }}</button>
+        <button (click)="refreshData()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><fa-icon [icon]="['fas', 'sync']" class="mr-4"></fa-icon>{{ 'library.details.refresh' | translate }}</button>
     </div>
 </div>
 

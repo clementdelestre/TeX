@@ -22,27 +22,27 @@ export class MoviesComponent implements OnInit {
   itemMenu:searchMenuItem[] = [
     {
       title: "library.directors",
-      icon: "fa-users",
+      icon: "users",
       page : "directors"
     },
     {
       title: "library.writers",
-      icon: "fa-users",
+      icon: "users",
       page : "writers"
     },
     {
       title: "library.genres",
-      icon: "fa-theater-masks",
+      icon: "theater-masks",
       page : "genres"
     },
     {
       title: "library.actors",
-      icon: "fa-users",
+      icon: "users",
       page : "actors"
     },
     {
       title: "library.years",
-      icon: "fa-calendar-alt",
+      icon: "calendar-alt",
       page : "years"
     },
   ]

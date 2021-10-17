@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { modalAnimation, modalAnimationReverse, openCloseAnimation } from 'src/app/models/appAnimation';
 import { ApplicationService } from 'src/app/services/application.service';
 import { PlayerService } from 'src/app/services/player.service';
@@ -16,7 +15,6 @@ import { PlayerService } from 'src/app/services/player.service';
   ]
 })
 export class HeaderComponent implements OnInit {
-
   constructor(public application:ApplicationService, public player: PlayerService, public router:Router) { }
 
   ngOnInit(): void {

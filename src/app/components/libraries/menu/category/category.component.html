@@ -3,7 +3,7 @@
     <h3 class="text-xl font-bold w-full ml-2">{{ title | translate }} ({{ contentsFilter.length }})</h3>
 
     <div class="sm:px-2 relative w-full sm:w-80 mt-2 sm:mt-0">
-        <i [ngClass]="{'text-gray-200' : searchTextValue!='', 'text-gray-500' : searchTextValue==''}" class="fas fa-search flex items-center h-10 top-0 absolute left-3 sm:left-5 transition-colors duration-300" ></i>
+        <fa-icon [ngClass]="{'text-gray-200' : searchTextValue!='', 'text-gray-500' : searchTextValue==''}" class="flex items-center h-10 top-0 absolute left-3 sm:left-5 transition-colors duration-300" [icon]="['fas', 'search']"></fa-icon>
         <input [(ngModel)]="searchTextValue" (ngModelChange)="modelChangeFn($event)" class="z-20 w-full h-10 bg-dark-full rounded-lg text-white border border-gray-700 pl-9 pr-4 sm:pr-2 transition-all duration-300"  placeholder="{{ 'header.search.search' | translate}}">
     </div>
     
@@ -11,7 +11,7 @@
 
 
 <div @fastFadeAnimation *ngIf="isLoading" class="flex flex-wrap mx-auto justify-center mb-2 items-center">
-    <i class="fas fa-circle-notch fa-spin text-primary text-4xl"></i>
+    <fa-icon [icon]="['fas', 'circle-notch']" class="text-primary"></fa-icon>
 </div>
 
 <div @fastFadeAnimation *ngIf="!isLoading" class="flex flex-wrap mx-auto justify-center mb-2 items-center">
@@ -22,6 +22,6 @@
 
 <div *ngIf="contentsToShow.length < contentsFilter.length && !isLoading" class="text-center mb-4">
     <button (click)="showMore()" title="show more" class="p-4 h-16 w-16 inline-flex items-center rounded-full opacity-80 hover:opacity-100 transition-opacity cursor-pointer bg-dark-gray">
-        <i class="fas fa-arrow-down fill-current w-full text-2xl"></i>
+        <fa-icon [icon]="['fas', 'arrow-down']" class="fill-current w-full"></fa-icon>
     </button>
 </div>

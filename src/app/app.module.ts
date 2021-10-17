@@ -47,6 +47,10 @@ import { MoviesHomeComponent } from './components/libraries/movies/home/home.com
 import { LibraryCategoryComponent } from './components/libraries/menu/category/category.component';
 import { MoviesMenuComponent } from './components/libraries/menu/menu.component';
 import { TvShowsHomeComponent } from './components/libraries/tvshows/home/home.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [
@@ -106,14 +110,19 @@ import { TvShowsHomeComponent } from './components/libraries/tvshows/home/home.c
         deps: [HttpClient],
       },
       defaultLanguage: 'en'
-    })
+    }),
+    FontAwesomeModule
   ],
   exports: [
     TranslateModule
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, far, fab);
+  }
+ }
 
 // AOT compilation support
 export function httpTranslateLoader(http: HttpClient) {

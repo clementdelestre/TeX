@@ -10,7 +10,7 @@
     <button *ngIf="isLoaded" class="custom-button group relative flex">
     
         {{ 'library.details.seasonNumber' | translate:{'value' : currentSeason?.season ?? ''} }}
-        <i class="fas fa-play ml-4 text-xs"></i>
+        <fa-icon [icon]="['fas', 'play']" class="ml-4 text-xs"></fa-icon>
         <div class="floating-button-bottom-right pointer-group-button">
             <div class="floating-list">
                 <div *ngFor="let season of seasons" (click)="displaySeason(season)" class="floating-button">

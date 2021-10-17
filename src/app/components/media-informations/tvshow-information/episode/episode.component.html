@@ -6,7 +6,7 @@
                 <img *ngIf="imgUrl != ''" class="w-full rounded-lg m-auto" src="{{imgUrl}}" loading="lazy">
                 <div (click)="playEpisode($event)" class="absolute flex justify-center items-center w-full rounded-lg opacity-0 group-hover:opacity-40 bg-dark-full h-full top-0 transition-opacity duration-300 cursor-pointer">
                     <div class=" text-center flex text-4xl rounded-full border-white border w-16 h-16 items-center justify-center">
-                        <i class="fas fa-play pl-1 text-3xl"></i>
+                        <fa-icon [icon]="['fas', 'play']" class="pl-1 text-3xl"></fa-icon>
                     </div>
                 </div>
             </div>
@@ -15,10 +15,10 @@
                     {{ episode.title }} 
                     <button (click)="setWatched(episode.playcount==0)" class="button-media-watched z-30" title="{{ episode.playcount!=0 ? ('library.details.watched' | translate) : 'library.details.unwatched' | translate}}">
                         <div *ngIf="episode.playcount!=0">
-                            <i class="fas fa-check ml-2 toggle-watched"></i>
+                            <fa-icon [icon]="['fas', 'check']" class="ml-2 toggle-watched"></fa-icon>
                         </div>
                         <div *ngIf="episode.playcount==0">
-                            <i class="fas fa-eye-slash ml-2 no-play"></i>
+                            <fa-icon [icon]="['fas', 'eye-slash']" class="ml-2 no-play"></fa-icon>
                         </div>
                     </button>
                 </div>
@@ -30,8 +30,8 @@
 
    
     <div class="w-full text-center flex flex-col sm:flex-row justify-evenly space-y-4 sm:space-y-0">
-        <a href="{{ downloadUrl }}" class="custom-button" download><i class="fas fa-download mr-2"></i>{{ 'library.details.download' | translate }}</a>
-        <button *ngIf="downloadUrl != ''" @openClose (click)="streamLink()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><i class="fab fa-chromecast mr-4"></i>{{ 'library.details.getStreamingLink' | translate }}</button>
+        <a href="{{ downloadUrl }}" class="custom-button" download><fa-icon [icon]="['fas', 'download']" class="mr-2"></fa-icon>{{ 'library.details.download' | translate }}</a>
+        <button *ngIf="downloadUrl != ''" @openClose (click)="streamLink()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><fa-icon [icon]="['fab', 'chromecast']" class="mr-4"></fa-icon>{{ 'library.details.getStreamingLink' | translate }}</button>
         <button (click)="toogleMoreInfo()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base">{{ !moreInfo ? ("library.details.moreinfo" | translate) : "library.details.lessinfo" | translate }} </button>
     </div>
 
@@ -44,7 +44,7 @@
             <p><span class="text-gray-500">{{ 'library.details.dateadded' | translate }} </span>{{ episode.dateadded }}</p>
         </div>
         <div class="flex mt-4 mb-2">
-            <button (click)="refreshData()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><i class="fas fa-sync mr-4"></i>{{ 'library.details.refresh' | translate }}</button>
+            <button (click)="refreshData()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><fa-icon [icon]="['fas', 'sync']" class="mr-4"></fa-icon>{{ 'library.details.refresh' | translate }}</button>
         </div>
     </div>
     

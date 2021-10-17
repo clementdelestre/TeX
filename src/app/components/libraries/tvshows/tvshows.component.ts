@@ -45,17 +45,17 @@ export class TvshowsComponent implements OnInit {
   itemMenu:searchMenuItem[] = [
     {
       title: "library.genres",
-      icon: "fa-theater-masks",
+      icon: "theater-masks",
       page : "genres"
     },
     {
       title: "library.actors",
-      icon: "fa-users",
+      icon: "users",
       page : "actors"
     },
     {
       title: "library.years",
-      icon: "fa-calendar-alt",
+      icon: "calendar-alt",
       page : "years"
     },
   ]

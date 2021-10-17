@@ -1,7 +1,7 @@
 
 <!-- Playlist -->
 <div @openClose *ngIf="showPlaylist" class="sm:floating-container player-box z-40 sm:max-h-screen3/4">
-    <button  (click)="toggleDisplayPlaylist()" class="close-button bg-dark-full z-20"><i class="w-6 fas fa-times"></i></button>
+    <button  (click)="toggleDisplayPlaylist()" class="close-button bg-dark-full z-20"><fa-icon [icon]="['fas', 'times']" class="w-6"></fa-icon></button>
     <p class="text-xl font-semibold mb-4" translate="">player.playlist</p>
     <div class="w-full h-full overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400">
         <app-playlist-item *ngFor="let item of player.currentPlayer?.playlistItems; let i = index" [item]="item" [position]="i" ></app-playlist-item>
@@ -25,7 +25,7 @@
         </button>
     </div>
     <div class="flex flex-col h-screen3/2 sm:h-auto sm:flex-row w-full">
-        <button  (click)="close()" class="sm:hidden close-button bg-dark-full z-20"><i class="w-6 fas fa-times"></i></button>
+        <button  (click)="close()" class="sm:hidden close-button bg-dark-full z-20"><fa-icon [icon]="['fas', 'times']" class="w-6"></fa-icon></button>
 
         <img class="rounded-lg max-h-58 sm:max-h-36 max-w-70 sm:max-w-33 m-auto" src="{{ player.currentPlayer?.playerIllustration }}" title="{{ player.currentPlayer?.playerItem?.title }}">
 
@@ -79,7 +79,7 @@
                     </div>
                 </label>                   
                 <label *ngIf="player.currentPlayer?.properties?.audiostreams?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
-                    <i class="fas fa-globe"></i>
+                    <fa-icon [icon]="['fas', 'globe']"></fa-icon>
                     <div class="floating-button-bottom-left pointer-group-button min-w-full">
                         <div class="floating-list floating-button-top">
         
@@ -108,29 +108,29 @@
          <div class="flex w-full h-full sm:w-auto justify-center items-center text-2xl sm:text-lg mt-4 sm:mt-6 sm:mb-2 px-8">
 
             <!-- Previous media -->
-            <button (click)="player.currentPlayer?.goBackward()" class="button-primary absolute left-6 sm:left-4"><i class="fas fa-step-backward"></i></button>
+            <button (click)="player.currentPlayer?.goBackward()" class="button-primary absolute left-6 sm:left-4"><fa-icon [icon]="['fas', 'step-backward']"></fa-icon></button>
 
             <!-- Stop player -->
-            <button (click)="player.currentPlayer?.stop();close()" class="button-primary mx-3"><i class="fas fa-stop"></i></button> 
+            <button (click)="player.currentPlayer?.stop();close()" class="button-primary mx-3"><fa-icon [icon]="['fas', 'stop']"></fa-icon></button> 
 
             <!-- - seconds -->
-            <button (click)="player.currentPlayer?.setFixedSeek(-15)" class="button-primary mx-4"><i class="fas fa-undo"></i></button> 
+            <button (click)="player.currentPlayer?.setFixedSeek(-15)" class="button-primary mx-4"><fa-icon [icon]="['fas', 'undo']"></fa-icon></button> 
 
             <!-- Toggle Play / Pause -->
             <button class="button-primary mx-3 text-5xl sm:text-3xl" (click)="player.currentPlayer?.tooglePlayPause()" >
-                <i class="fas " [ngClass]="{'fa-play' : !player.currentPlayer?.isPlaying(), 'fa-pause' : player.currentPlayer?.isPlaying()}" ></i>
+                <fa-icon [icon]="['fas', player.currentPlayer?.isPlaying() ? 'pause' : 'play']"></fa-icon>
             </button> 
 
             <!-- + seconds -->
-            <button (click)="player.currentPlayer?.setFixedSeek(15)" class="button-primary mx-3"><i class="fas fa-redo"></i></button>  
+            <button (click)="player.currentPlayer?.setFixedSeek(15)" class="button-primary mx-3"><fa-icon [icon]="['fas', 'redo']"></fa-icon></button>  
             
             <!-- Toggle show playlist -->
             <button (click)="toggleDisplayPlaylist()" class="button-primary mx-3">
-                <i class="fas fa-bars"></i>
+                <fa-icon [icon]="['fas', 'bars']"></fa-icon>
             </button>
 
             <!-- Next media -->
-            <button (click)="player.currentPlayer?.goForward()" class="button-primary absolute right-6 sm:right-4"><i class="fas fa-step-forward"></i></button> 
+            <button (click)="player.currentPlayer?.goForward()" class="button-primary absolute right-6 sm:right-4"><fa-icon [icon]="['fas', 'step-forward']"></fa-icon></button> 
 
         </div>
 
