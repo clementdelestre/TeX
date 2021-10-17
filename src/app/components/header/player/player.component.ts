@@ -33,18 +33,6 @@ export class PlayerComponent implements OnInit {
     this.application.toggleBodyScroll(true);
   }
 
-  @HostListener('document:click', ['$event.target'])
-  public onClick(target: HTMLElement) {
-    const hasClass = target.parentElement?.classList.contains("toggle-player") || target.parentElement?.parentElement?.classList.contains("toggle-player")
-
-    //Fix subtitles button issue
-    if(target.parentElement?.classList.contains("fa-closed-captioning")) return 
-    const clickedInside = this.elementRef.nativeElement.contains(target) || hasClass
-    if(!clickedInside && this.application.showPlayer) {
-      this.close()
-    }
-  }
-
   close(){
     if(this.application.showPlayer)
       this.application.toggleBodyScroll(true);
