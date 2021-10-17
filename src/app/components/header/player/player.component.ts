@@ -36,6 +36,9 @@ export class PlayerComponent implements OnInit {
   @HostListener('document:click', ['$event.target'])
   public onClick(target: HTMLElement) {
     const hasClass = target.parentElement?.classList.contains("toggle-player") || target.parentElement?.parentElement?.classList.contains("toggle-player")
+
+    //Fix subtitles button issue
+    if(target.parentElement?.classList.contains("fa-closed-captioning")) return 
     const clickedInside = this.elementRef.nativeElement.contains(target) || hasClass
     if(!clickedInside && this.application.showPlayer) {
       this.close()

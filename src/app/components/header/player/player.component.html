@@ -67,7 +67,6 @@
                     <fa-icon [icon]="[player.currentPlayer?.properties?.subtitleenabled ? 'fas' : 'far', 'closed-captioning']" (click)="player.currentPlayer?.toggleSubtitle()"></fa-icon>
                     <div class="floating-button-bottom-left pointer-group-button min-w-full">
                         <div class="floating-list floating-button-top">
-        
                             <div *ngFor="let subtitle of player.currentPlayer?.properties?.subtitles" class="floating-button">
                                 <p (click)="player.currentPlayer?.setSubtitle(subtitle)" class="{{ (subtitle.index == player.currentPlayer?.properties?.currentsubtitle?.index) && player.currentPlayer?.properties?.subtitleenabled ? 'text-white' : 'text-gray-500' }}  text-sm">
                                     {{ subtitle.language }} {{ subtitle.isforced ? "(forcé)" : "" }}
