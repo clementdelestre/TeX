@@ -70,8 +70,7 @@ export class EpisodeComponent implements OnInit {
     if(this.episode.tvshowid && this.episode.season)
     this.kodiApi.media.getEpisodes(this.episode.tvshowid, this.episode.season).subscribe(resp => {
       const episodes: VideoDetailsEpisode[] = resp.episodes
-      console.log(this.episode.episode)
-      episodes.filter(ep => (ep.episode ?? 0) >= (this.episode.episode ?? 0)).forEach(epi => {
+      episodes.sort((a, b) => (a.episode ?? 0) -(b.episode ?? 0)).filter(ep => (ep.episode ?? 0) >= (this.episode.episode ?? 0)).forEach(epi => {
         const item: PlaylistItem = {
           episodeid: epi.episodeid
         }
