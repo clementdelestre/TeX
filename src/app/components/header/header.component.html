@@ -9,7 +9,7 @@
             <div class="flex items-center justify-items-center space-x-8">        
                 <app-searchbar></app-searchbar>
     
-                <button (click)="openPlayer()" class="hidden sm:block header-button text-xl"><fa-icon [icon]="['far', 'play-circle']"></fa-icon></button>
+                <button (click)="openPlayer()" [ngClass]="{'text-primary': application.showPlayer}" class="hidden sm:block header-button text-xl"><fa-icon [icon]="['far', 'play-circle']" class="toggle-player"></fa-icon></button>
     
                 <a (click)="openRemote()" class="header-button text-xl"><fa-icon [icon]="['fas', 'mobile-alt']"></fa-icon></a>
                 <a [ngClass]="{'text-primary': isRoute('settings')}" routerLink="/settings" class="header-button text-xl"><fa-icon [icon]="['fas', 'cog']"></fa-icon></a>
