@@ -118,6 +118,7 @@ export class MediaInformationsComponent implements OnInit {
 
   
   playMovie(){
+    if(!this.isLoaded) return;
     this.player.openMediaFile((this.media as VideoDetailsMovie).file ?? "");
     this.close()
   }
