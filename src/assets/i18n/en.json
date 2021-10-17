@@ -28,11 +28,6 @@
         "changeFilterToFindSomething" : "Change filters to find something",
         "resetFilters" : "Reset",
 
-        "scanVideoLibrary" : "Scan video library",
-        "scanAudioLibrary" : "Scan audio library",
-        "cleanVideoLibrary" : "Clean video library",
-        "cleanAudioLibrary" : "Clean audio library",
-
         "sortBy" : {
             "sortBy" : "Sort by",
             "alphabetical" : "Alphabetical",
@@ -121,7 +116,12 @@
         "general" : {
             "general" : "General",
             "language" : "Language",
-            "musicsDefaultPlayer" : "Musics default player"
+            "musicsDefaultPlayer" : "Musics default player",
+            "scanVideoLibrary" : "Scan video library",
+            "scanAudioLibrary" : "Scan audio library",
+            "cleanVideoLibrary" : "Clean video library",
+            "cleanAudioLibrary" : "Clean audio library",
+            "libraries" : "Libraries"
         },
         "appearance" : {
             "appearance" : "Appearance"

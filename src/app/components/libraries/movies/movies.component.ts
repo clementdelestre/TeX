@@ -69,13 +69,5 @@ export class MoviesComponent implements OnInit {
 
   }
 
-  scanVideoLibrary(){
-    this.kodiApi.media.scanVideoLibrary().subscribe();
-  }
-
-  cleanVideoLibrary(){
-    this.kodiApi.media.cleanVideoLibrary().subscribe();
-  }
-
 
 }

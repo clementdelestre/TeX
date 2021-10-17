@@ -59,14 +59,4 @@ export class TvshowsComponent implements OnInit {
       page : "years"
     },
   ]
-
- 
-
-  scanVideoLibrary(){
-    this.kodiApi.media.scanVideoLibrary().subscribe();
-  }
-
-  cleanVideoLibrary(){
-    this.kodiApi.media.cleanVideoLibrary().subscribe();
-  }
 }

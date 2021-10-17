@@ -1,17 +1,7 @@
 
 
 <div class="px-4 sm:px-16 w-full">
-
-    <div class="inline-block float-right z-20 group relative mt-4 sm:mt-0">     
-        <fa-icon [icon]="['fas', 'ellipsis-v']" class="p-1 pl-2 header-button"></fa-icon>
-        <div class="floating-button-bottom-right pointer-group-button">
-            <div class="floating-list">
-                <button (click)="scanVideoLibrary()" class="floating-button"translate="library.scanVideoLibrary"></button>
-                <button (click)="cleanVideoLibrary()" class="floating-button"translate="library.cleanVideoLibrary"></button>                
-            </div>
-        </div>   
-    </div> 
-    
+   
     <app-movies-menu [items]="itemMenu" [searchPageButton]="true"></app-movies-menu>
     <router-outlet></router-outlet>
    

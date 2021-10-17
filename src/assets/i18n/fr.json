@@ -15,8 +15,8 @@
         }
     },
     "library" : {
-        "videoLibrary" : "Librairie vidéo",
-        "audioLibrary" : "Librairie audio",
+        "videoLibrary" : "Bibliothèque vidéo",
+        "audioLibrary" : "Bibliothèque audio",
         "continueToWatch" : "Continuer de regarder",
         "recentlyAdded" : "Récemment ajoutés",
         "unwatched" : "Non vus",
@@ -27,11 +27,6 @@
         "nothingToShow" : "Rien à afficher",
         "changeFilterToFindSomething" : "Modifier les filtres pour trouver du contenu",
         "resetFilters" : "Réinitialiser les filtres",
-
-        "scanVideoLibrary" : "Scanner la librairie vidéo",
-        "scanAudioLibrary" : "Scanner la librairie audio",
-        "cleanVideoLibrary" : "Nettoyer la librairie vidéo",
-        "cleanAudioLibrary" : "Nettoyer la librairie audio",
 
         "sortBy" : {
             "sortBy" : "Trier par",
@@ -122,7 +117,12 @@
         "general" : {
             "general" : "Général",
             "language" : "Langage",
-            "musicsDefaultPlayer" : "Lecteur de musique par défaut"
+            "musicsDefaultPlayer" : "Lecteur de musique par défaut",
+            "scanVideoLibrary" : "Scanner le contenu vidéo",
+            "scanAudioLibrary" : "Scanner le contenu audio",
+            "cleanVideoLibrary" : "Nettoyer le contenu vidéo",
+            "cleanAudioLibrary" : "Nettoyer le contenu audio",
+            "libraries" : "Bibliothèques"
         },
         "appearance" : {
             "appearance" : "Apparence"
