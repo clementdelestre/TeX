@@ -23,7 +23,8 @@ export class GenresComponent implements OnInit {
 
   getGenres(){
     this.kodiApi.media.getAudioLibraryGenres({}).subscribe(resp =>{
-      this.genres = resp.genres;
+      if(resp?.genres)
+        this.genres = resp.genres;
     })
   }
 

@@ -1,5 +1,5 @@
 <button (click)="playSong($event)" (mouseenter) ="songHover()" (contextmenu)="onContextMenuShow($event)" (blur)="onContextMenuHide($event)" [ngClass]="{'bg-primary hover:bg-primary hover:bg-opacity-80': getCurrentPlayingSong() == song.songid}" class="flex w-full rounded-xl hover:bg-dark-gray cursor-pointer py-1 px-2 sm:py-2 sm:px-4 group items-center mb-1 relative">
-    <i *ngIf="getCurrentPlayingSong() == song.songid" class="fas fa-play mr-4 sm:mr-4"></i>
+    <fa-icon [icon]="['fas', 'play']" *ngIf="getCurrentPlayingSong() == song.songid"></fa-icon>
     <div class="w-full text-left">
         <p class="font-semibold">{{song.title}}</p>
         <p class="text-gray-500 text-sm">{{song.artist}}</p>
@@ -10,9 +10,9 @@
 
 
     <div @openClose (mouseleave)="onContextMenuHide($event)" (blur)="onContextMenuHide($event)" *ngIf="showContext" class="absolute z-10 top-0 right-0 bg-dark-gray rounded-xl border border-gray-500 flex flex-col">
-        <label (click)="playNext()" class="hover:bg-gray-500 rounded-lg text-left px-4 py-3 no-play cursor-pointer"><i class="fas fa-play mr-4"></i>{{ 'library.musicsView.playNext' | translate }}</label>
-        <label (click)="streamLink()" class="hover:bg-gray-500 rounded-lg text-left px-4 py-3 no-play cursor-pointer"><i class="fab fa-chromecast mr-4"></i>{{ 'library.details.getStreamingLink' | translate }}</label>
-        <a href="{{ fileLink }}" class="hover:bg-gray-500 rounded-lg text-left px-4 py-3 no-play" download><i class="fas fa-download mr-4"></i>{{ 'library.musicsView.download' | translate }}</a>
+        <label (click)="playNext()" class="hover:bg-gray-500 rounded-lg text-left px-4 py-3 no-play cursor-pointer"><fa-icon [icon]="['fas', 'play']" class="mr-4"></fa-icon>{{ 'library.musicsView.playNext' | translate }}</label>
+        <label (click)="streamLink()" class="hover:bg-gray-500 rounded-lg text-left px-4 py-3 no-play cursor-pointer"><fa-icon [icon]="['fab', 'chromecast']" class="mr-4"></fa-icon>{{ 'library.details.getStreamingLink' | translate }}</label>
+        <a href="{{ fileLink }}" class="hover:bg-gray-500 rounded-lg text-left px-4 py-3 no-play" download><fa-icon [icon]="['fas', 'download']" class="mr-4"></fa-icon>{{ 'library.musicsView.download' | translate }}</a>
     </div>
 
 </button>

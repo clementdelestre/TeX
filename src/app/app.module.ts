@@ -43,6 +43,14 @@ import { AppearanceComponent } from './components/settings/appearance/appearance
 import { GeneralComponent } from './components/settings/general/general.component';
 import { AdvancedComponent } from './components/settings/advanced/advanced.component';
 import { RowMediaComponent } from './components/utils/row-media/row-media.component';
+import { MoviesHomeComponent } from './components/libraries/movies/home/home.component';
+import { LibraryCategoryComponent } from './components/libraries/menu/category/category.component';
+import { MoviesMenuComponent } from './components/libraries/menu/menu.component';
+import { TvShowsHomeComponent } from './components/libraries/tvshows/home/home.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [
@@ -78,6 +86,10 @@ import { RowMediaComponent } from './components/utils/row-media/row-media.compon
     GeneralComponent,
     AdvancedComponent,
     RowMediaComponent,
+    MoviesHomeComponent,
+    LibraryCategoryComponent,
+    MoviesMenuComponent,
+    TvShowsHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,14 +110,19 @@ import { RowMediaComponent } from './components/utils/row-media/row-media.compon
         deps: [HttpClient],
       },
       defaultLanguage: 'en'
-    })
+    }),
+    FontAwesomeModule
   ],
   exports: [
     TranslateModule
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, far, fab);
+  }
+ }
 
 // AOT compilation support
 export function httpTranslateLoader(http: HttpClient) {

@@ -15,8 +15,8 @@
         }
     },
     "library" : {
-        "videoLibrary" : "Librairie vidéo",
-        "audioLibrary" : "Librairie audio",
+        "videoLibrary" : "Bibliothèque vidéo",
+        "audioLibrary" : "Bibliothèque audio",
         "continueToWatch" : "Continuer de regarder",
         "recentlyAdded" : "Récemment ajoutés",
         "unwatched" : "Non vus",
@@ -24,10 +24,9 @@
         "tvshows" : "Séries",
         "musics" : "Musiques",
 
-        "scanVideoLibrary" : "Scanner la librairie vidéo",
-        "scanAudioLibrary" : "Scanner la librairie audio",
-        "cleanVideoLibrary" : "Nettoyer la librairie vidéo",
-        "cleanAudioLibrary" : "Nettoyer la librairie audio",
+        "nothingToShow" : "Rien à afficher",
+        "changeFilterToFindSomething" : "Modifier les filtres pour trouver du contenu",
+        "resetFilters" : "Réinitialiser les filtres",
 
         "sortBy" : {
             "sortBy" : "Trier par",
@@ -40,10 +39,14 @@
             "track" : "Piste"
         },
         "page" : "Page",
-
+        
+        "directors" : "Réalisateurs",
+        "writers" : "Scénaristes",
+        "actors" : "Acteurs",
         "albums" : "Albums",
-        "artists" : "Artists",
+        "artists" : "Artistes",
         "genres" : "Genres",
+        "years" : "Années",
 
         "recentlyPlayedAlbums" : "Albums écoutés récemment",
         "recentlyAddedAlbums" : "Albums ajoutés récemment",
@@ -51,13 +54,15 @@
 
         "allMusics" : "Toutes les musiques",
 
+        "filters" : "Filtres",
+
         "details" : {
             "genres" : "Genres :",
             "totalDiscs" : "Nombre de disque :",
             "year" : "Année :",
             "studios" : "Studios :",
-            "writers" : "Writers:",
-            "directors" : "Metteurs en scène :",         
+            "writers" : "Scénaristes :",
+            "directors" : "Réalisateurs :",         
             "disk" : "Disque",
             "born" : "Naissance :",
             "mood" : "Ambiance :",
@@ -84,7 +89,8 @@
             "episodesTitle" : "Episodes",
             "noSeasonAvailable" : "Aucune saison disponible",
             "getStreamingLink" : "Obtenir le lien de stream",
-            "additionalInformation" : "Informations additionnelles"
+            "additionalInformation" : "Informations additionnelles",
+            "refresh" : "Rafraîchir les données"
         },
 
         "musicsView" : {
@@ -113,7 +119,14 @@
         "general" : {
             "general" : "Général",
             "language" : "Langage",
-            "musicsDefaultPlayer" : "Lecteur de musique par défaut"
+            "musicsDefaultPlayer" : "Lecteur de musique par défaut",
+            "scanVideoLibrary" : "Scanner le contenu vidéo",
+            "scanAudioLibrary" : "Scanner le contenu audio",
+            "cleanVideoLibrary" : "Nettoyer le contenu vidéo",
+            "cleanAudioLibrary" : "Nettoyer le contenu audio",
+            "libraries" : "Bibliothèques",
+            "application" : "Application",
+            "resetApp" : "Réinitialiser l'application"
         },
         "appearance" : {
             "appearance" : "Apparence"
@@ -136,7 +149,9 @@
         "scanStarted" : "Analyse démarrée",
         "scanFinished" : "Annalyse terminée",
         "cleanStarted" : "Nettoyage démarré",
-        "cleanFinished" : "Nettoyage terminé"
+        "cleanFinished" : "Nettoyage terminé",
+        "contentUpdated" : "Contenu mis à jour",
+        "refreshPageToSee" : "Actualisez la page pour voir les changements"
     }
     
 }

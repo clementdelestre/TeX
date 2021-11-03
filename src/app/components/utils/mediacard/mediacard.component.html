@@ -5,7 +5,7 @@
             
             <div [ngClass]="{'opacity-0': posterUrl != '' || !isImgLoaded, 'bg-dark-full' : !(posterUrl == '' && isImgLoaded)}" class="rounded-xl cursor-pointer absolute z-0 flex flex-col align-bottom  bottom-0 bg-opacity-70 hover:opacity-100 transition-opacity duration-300 text-white font-semibold px-3 py-1 h-full w-full items-center justify-center text-center text-shadow-xl overflow-auto scrollbar-hide">
                 <p class="">
-                    {{ $any(media).title ?? $any(media).artist ?? $any(media).name ?? "" }}
+                    {{ $any(media).title ?? $any(media).artist ?? $any(media).name ?? $any(media) ?? "" }}
                 </p>
                 <p *ngIf="$any(media).role" class="mt-4 font-bold">
                     {{ $any(media).role }}

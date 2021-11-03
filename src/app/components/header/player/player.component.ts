@@ -25,19 +25,12 @@ export class PlayerComponent implements OnInit {
     this.application.toggleBodyScroll(false);
     this.application.historyPush("player");
     this.player.loadPlayer()
+    console.log(this.player.players)
   }
 
   ngOnDestroy(): void {
     this.application.showPlayer = false;  
     this.application.toggleBodyScroll(true);
-  }
-
-  @HostListener('document:click', ['$event.target'])
-  public onClick(target: HTMLElement) {
-    const clickedInside = this.elementRef.nativeElement.contains(target) || target.classList.contains("toggle-player")
-    if(!clickedInside && this.application.showPlayer) {
-      this.close()
-    }
   }
 
   close(){

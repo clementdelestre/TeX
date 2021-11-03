@@ -60,7 +60,7 @@
                 </div>   
             </button>
             <button class="text-center z-10 group relative whitespace-nowrap">     
-                {{ 'library.sortBy.sortBy' | translate}}<i class="fas fa-sort ml-2"></i>
+                {{ 'library.sortBy.sortBy' | translate}}<fa-icon [icon]="['fas', 'sort']" class="ml-2"></fa-icon>
                 <div class="floating-button-bottom-right pointer-group-button">
                     <div class="floating-list">
                         <button (click)="changeSort('titleAZ')" [ngClass]="{'floating-button-active': sortby=='titleAZ'}" class="floating-button" translate="">
@@ -89,7 +89,7 @@
 
         <div *ngIf="!soft" class="relative mb-4 border-b border-dark-gray pb-2 group">
             <div class="flex items-center h-full absolute left-3 pb-2">
-                <i class="fas fa-search text-gray-500 group-focus: group-hover:text-white transition-colors duration-300"></i>
+                <fa-icon [icon]="['fas', 'search']" class="text-gray-500 group-focus: group-hover:text-white transition-colors duration-300"></fa-icon>
             </div>
             <input [(ngModel)]="searchText" (ngModelChange)="modelChangeFn($event)" class="w-full pl-10 text-lg py-2 bg-dark-full rounded-lg text-white border border-transparent px-4" placeholder="{{ 'library.musicsView.search' | translate }}">
         </div>

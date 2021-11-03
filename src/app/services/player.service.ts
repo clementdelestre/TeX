@@ -15,7 +15,7 @@ export class PlayerService {
   currentPlayer: ControlPlayer | undefined;
   internalPlayer: InternalPlayer = new InternalPlayer(this.kodiApi, this);
 
-  useInternal: boolean = false;
+  useInternal: boolean = true;
 
   constructor(private kodiApi:KodiApiService, private kodiWebsocket:KodiwebsocketService, private application:ApplicationService) {
     this.kodiWebsocket.registerPlayerHandlers(this);
@@ -30,7 +30,7 @@ export class PlayerService {
     this.kodiApi.player.getActivePlayers().subscribe((players) => {   
       this.players = [];
 
-      this.players.push(this.internalPlayer)
+      //this.players.push(this.internalPlayer)
       
       players.forEach(pl => {
         let customPlayer = new KodiPlayer(pl.playerid, this.kodiApi)
@@ -62,6 +62,11 @@ export class PlayerService {
   openMediaFile(file: string, canUseInternal:boolean = false){
     
     if(this.useInternal && canUseInternal){
+      if(this.players.indexOf(this.internalPlayer) == -1){
+        this.players.push(this.internalPlayer)
+        this.currentPlayer = this.internalPlayer
+      }
+
       this.internalPlayer.openFile(file);
     } else {
       this.kodiApi.player.open({ "file" : file });
@@ -69,8 +74,12 @@ export class PlayerService {
   }
 
   openPlaylist(id: number, canUseInternal:boolean = false){
-
+    console.log("open playlist")
     if(this.useInternal && canUseInternal){
+      if(this.players.indexOf(this.internalPlayer) == -1){
+        this.players.push(this.internalPlayer)
+        this.currentPlayer = this.internalPlayer
+      }
       this.internalPlayer.openPlaylist();
     } else {
       this.kodiApi.player.open({ "playlistid" : id });

@@ -82,12 +82,4 @@ export class MusicsComponent implements OnInit {
     }
   }
 
-  scanAudioLibrary(){
-    this.kodiApi.media.scanAudioLibrary().subscribe();
-  }
-
-  cleanAudioLibrary(){
-    this.kodiApi.media.cleanAudioLibrary().subscribe();
-  }
-
 }

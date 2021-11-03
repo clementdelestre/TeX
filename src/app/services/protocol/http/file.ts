@@ -1,8 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { catchError, map } from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { listFieldsFilesProperties } from "src/app/models/fieldsFiles";
-import { ListItemFile } from "src/app/models/kodiInterfaces/listItem";
 import { HttpRequestData } from "./http";
 
 export class FileRequest extends HttpRequestData {

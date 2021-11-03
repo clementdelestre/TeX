@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="webinterface.tex" name="TeX" provider-name="clementdelestre" version="1.0.0">
+<addon id="webinterface.tex" name="TeX" provider-name="clementdelestre" version="1.0.1">
 	<requires>
 		<import addon="xbmc.json" version="6.0.0" />
 	</requires>
@@ -12,15 +12,14 @@
 		<language>en</language>
 		<source>https://github.com/clementdelestre/TeX</source>
 		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-			<screenshot>screenshots/movies.jpg</screenshot>
-			<screenshot>screenshots/moviedetails.jpg</screenshot>
-			<screenshot>screenshots/musics.jpg</screenshot>
-			<screenshot>screenshots/album.jpg</screenshot>
-			<screenshot>screenshots/player.jpg</screenshot>
-			<screenshot>screenshots/player-mobile.jpg</screenshot>
-			<screenshot>screenshots/remote.jpg</screenshot>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/movies.jpg</screenshot>
+			<screenshot>resources/moviedetails.jpg</screenshot>
+			<screenshot>resources/musics.jpg</screenshot>
+			<screenshot>resources/album.jpg</screenshot>
+			<screenshot>resources/player.jpg</screenshot>
+			<screenshot>resources/mobile.jpg</screenshot>
 		</assets>
 	</extension>
 </addon>

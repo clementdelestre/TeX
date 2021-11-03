@@ -47,7 +47,8 @@ export class EpisodeComponent implements OnInit {
     if(!this.fileDetails && !this.moreInfo){
       if(this.episode.file)
       this.kodiApi.file.getFileDetails(this.episode.file, "video").subscribe((resp) => {
-        this.fileDetails = resp.filedetails;
+        if(resp?.filedetails)
+          this.fileDetails = resp.filedetails;
         this.moreInfo = true;
       });
     } else {
@@ -61,7 +62,6 @@ export class EpisodeComponent implements OnInit {
   }
 
   async playEpisode(event: any){
-    if(event.target.classList.contains('no-play')) return;
 
     this.kodiApi.playlist.clear(1)
     let items: PlaylistItem[] = [];
@@ -69,21 +69,19 @@ export class EpisodeComponent implements OnInit {
     if(this.episode.tvshowid && this.episode.season)
     this.kodiApi.media.getEpisodes(this.episode.tvshowid, this.episode.season).subscribe(resp => {
       const episodes: VideoDetailsEpisode[] = resp.episodes
-
-      episodes.filter(ep => ep.episode ?? 0 >= (this.episode.episode ?? 0)).forEach(ep => {
+      episodes.sort((a, b) => (a.episode ?? 0) -(b.episode ?? 0)).filter(ep => (ep.episode ?? 0) >= (this.episode.episode ?? 0)).forEach(epi => {
         const item: PlaylistItem = {
-          episodeid: ep.episodeid
+          episodeid: epi.episodeid
         }
         items.push(item);
       });
-
       this.playListEpisodes(items);
     });
   }
 
   async playListEpisodes(items: PlaylistItem[]){
       await this.kodiApi.playlist.add(1, items);
-      // this.player.openPlaylist(1);
+      this.kodiApi.player.open({'playlistid':1})
   }
 
   setWatched(watched: boolean){
@@ -103,6 +101,11 @@ export class EpisodeComponent implements OnInit {
   streamLink(){
     this.clipboardApi.copyFromContent(this.downloadUrl);
     this.application.showNotification('library.musicsView.linkCopied', "library.musicsView.linkWasCopiedInClipBoard", AppNotificationType.success);
+  }
+
+  refreshData(){
+    this.kodiApi.media.refreshEpisode(this.episode.episodeid)
+    this.application.showNotification('notification.contentUpdated', "notification.refreshPageToSee", AppNotificationType.success);
   }
 
 }

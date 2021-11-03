@@ -24,10 +24,9 @@
         "tvshows" : "TV Shows",
         "musics" : "Musics",
 
-        "scanVideoLibrary" : "Scan video library",
-        "scanAudioLibrary" : "Scan audio library",
-        "cleanVideoLibrary" : "Clean video library",
-        "cleanAudioLibrary" : "Clean audio library",
+        "nothingToShow" : "Nothing to show",
+        "changeFilterToFindSomething" : "Change filters to find something",
+        "resetFilters" : "Reset",
 
         "sortBy" : {
             "sortBy" : "Sort by",
@@ -40,16 +39,22 @@
             "track" : "Track"
         },
         "page" : "Page",
-
+        
+        "directors" : "Directors",
+        "writers" : "Writers",
+        "actors" : "Actors",
         "albums" : "Albums",
         "artists" : "Artists",
         "genres" : "Genres",
+        "years" : "Years",
 
         "recentlyPlayedAlbums" : "Recently played albums",
         "recentlyAddedAlbums" : "Recently added albums",
         "mostPlayedAlbums" : "Most played albums",
 
         "allMusics" : "All musics",
+
+        "filters" : "Filters",
 
         "details" : {
             "genres" : "Genres:",
@@ -84,7 +89,8 @@
             "episodesTitle" : "Episodes",
             "noSeasonAvailable" : "No season available",
             "getStreamingLink" : "Get streaming link",
-            "additionalInformation" : "Additional information"
+            "additionalInformation" : "Additional information",
+            "refresh" : "Refresh data"
         },
 
         "musicsView" : {
@@ -112,7 +118,14 @@
         "general" : {
             "general" : "General",
             "language" : "Language",
-            "musicsDefaultPlayer" : "Musics default player"
+            "musicsDefaultPlayer" : "Musics default player",
+            "scanVideoLibrary" : "Scan video library",
+            "scanAudioLibrary" : "Scan audio library",
+            "cleanVideoLibrary" : "Clean video library",
+            "cleanAudioLibrary" : "Clean audio library",
+            "libraries" : "Libraries",
+            "application" : "Application",
+            "resetApp" : "Reset app"
         },
         "appearance" : {
             "appearance" : "Appearance"
@@ -127,7 +140,9 @@
             "connect" : "Connect",
             "disconnect" : "disconnect",
             "save" : "Save",
-            "reset" : "Reset"
+            "reset" : "Reset",
+            "jsonapi" : "JSON API",
+            "sendrequest" : "Send request"
         }
     },
     "unknown" : "Unknown",
@@ -135,6 +150,8 @@
         "scanStarted" : "Scan started",
         "scanFinished" : "Scan finished",
         "cleanStarted" : "Clean started",
-        "cleanFinished" : "Clean finished"
+        "cleanFinished" : "Clean finished",
+        "contentUpdated" : "Content updated",
+        "refreshPageToSee" : "Refresh the page to see the changes"
     }
 }

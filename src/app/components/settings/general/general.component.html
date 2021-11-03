@@ -21,3 +21,25 @@
         </div>
     </div>
 </div>
+
+<h3 class="settings-title mt-4" translate="settings.general.libraries"></h3>
+<div class="bg-dark-gray rounded-lg w-full px-4">
+    <h5 class="text-xl pt-4" translate="library.videoLibrary"></h5>
+    <div class="settings-section flex flex-col sm:flex-row justify-items-center text-center">
+        <button (click)="scanVideoLibrary()" class="bg-primary rounded-lg px-4 py-2 mx-4 my-2 hover:opacity-80 transition-opacity duration-300" translate="settings.general.scanVideoLibrary"></button>
+        <button (click)="cleanVideoLibrary()" class="bg-primary rounded-lg px-4 py-2 mx-4 my-2 hover:opacity-80 transition-opacity duration-300" translate="settings.general.cleanVideoLibrary"></button>
+    </div>
+
+    <h5 class="text-xl pt-4" translate="library.audioLibrary"></h5>
+    <div class="settings-section flex flex-col sm:flex-row justify-items-center text-center">
+        <button (click)="scanAudioLibrary()" class="bg-primary rounded-lg px-4 py-2 mx-4 my-2 hover:opacity-80 transition-opacity duration-300" translate="settings.general.scanAudioLibrary"></button>
+        <button (click)="cleanAudioLibrary()" class="bg-primary rounded-lg px-4 py-2 mx-4 my-2 hover:opacity-80 transition-opacity duration-300" translate="settings.general.cleanAudioLibrary"></button>
+    </div>
+</div>
+
+<h3 class="settings-title mt-4" translate="settings.general.application"></h3>
+<div class="bg-dark-gray rounded-lg w-full px-4">
+    <div class="settings-section flex flex-col sm:flex-row justify-items-center text-center">
+        <button (click)="resetApp()" class="bg-red-500 rounded-lg px-4 py-2 mx-4 my-2 hover:opacity-80 transition-opacity duration-300" translate="settings.general.resetApp"></button>
+    </div>
+</div>

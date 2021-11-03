@@ -5,16 +5,32 @@ import { TvshowsComponent } from './components/libraries/tvshows/tvshows.compone
 import { SearchComponent } from './components/libraries/search/search.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { MusicsComponent } from './components/libraries/musics/musics.component';
+import { LibraryCategoryComponent } from './components/libraries/menu/category/category.component';
+import { MoviesHomeComponent } from './components/libraries/movies/home/home.component';
+import { TvShowsHomeComponent } from './components/libraries/tvshows/home/home.component';
 
 const routes: Routes = [
   
   {
     path:'movies',
     component: MoviesComponent,  
+    children:[
+      {
+        path:'',  
+        component:MoviesHomeComponent
+      },
+      {
+        path:'home',  
+        component:MoviesHomeComponent
+      },
+      {
+        path:':type',   
+        component:LibraryCategoryComponent
+      }
+    ]
   },
   {
     path:'movie',
-    component: MoviesComponent,
     children:[
       {
         path:':type',
@@ -24,11 +40,24 @@ const routes: Routes = [
   },
   {
     path:'tvshows',
-    component: TvshowsComponent
+    component: TvshowsComponent,
+    children:[
+      {
+        path:'',  
+        component:TvShowsHomeComponent
+      },
+      {
+        path:'home',  
+        component:TvShowsHomeComponent
+      },
+      {
+        path:':type',   
+        component:LibraryCategoryComponent
+      }
+    ]
   },
   {
     path:'tvshow',
-    component: TvshowsComponent,
     children:[
       {
         path:':type',

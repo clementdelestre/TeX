@@ -31,8 +31,7 @@
               "src/manifest.webmanifest",
               "src/addon.xml",
               "src/favicon.svg",
-              "src/icon.png",
-              "src/fanart.jpg",
+              "src/resources",
               "src/LICENSE.txt",
               "src/screenshots"
             ],

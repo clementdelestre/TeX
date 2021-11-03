@@ -61,7 +61,8 @@ export class MovieInformationComponent implements OnInit {
     if(!this.fileDetails && !this.moreInfo){
       if(this.movie.file)
       this.kodiApi.file.getFileDetails(this.movie.file, "video").subscribe((resp) => {
-        this.fileDetails = resp.filedetails;
+        if(resp?.filedetails)
+          this.fileDetails = resp.filedetails;
         this.moreInfo = true;
       });
     } else {
@@ -77,6 +78,11 @@ export class MovieInformationComponent implements OnInit {
   streamLink(){
     this.clipboardApi.copyFromContent(this.downloadUrl);
     this.application.showNotification('library.musicsView.linkCopied', "library.musicsView.linkWasCopiedInClipBoard", AppNotificationType.success);
+  }
+
+  refreshData(){
+    this.kodiApi.media.refreshMovie(this.movie.movieid)
+    this.application.showNotification('notification.contentUpdated', "notification.refreshPageToSee", AppNotificationType.success);
   }
 
 

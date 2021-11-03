@@ -28,13 +28,15 @@ export class MusicsHomeComponent implements OnInit {
 
   getRecentlyPlayedAlbums(){
     this.kodiApi.media.getRecentlyPlayedAlbums({}).subscribe((resp) => {
-      this.recentlyPlayedAlbums = resp.albums;
+      if(resp?.albums)
+        this.recentlyPlayedAlbums = resp.albums;
     });
   }
 
   getRecentlyAddedAlbums(){
     this.kodiApi.media.getRecentlyAddedAlbums({}).subscribe((resp) => {
-      this.recentlyAddedAlbums = resp.albums;
+      if(resp?.albums)
+        this.recentlyAddedAlbums = resp.albums;
     });
   }
 
@@ -47,7 +49,8 @@ export class MusicsHomeComponent implements OnInit {
     };
     
     this.kodiApi.media.getAlbums({sort:playedSort}).subscribe((resp) => {
-      this.mostPlayedAlbums = resp.albums;
+      if(resp?.albums)
+        this.mostPlayedAlbums = resp.albums;
     });
   }
 

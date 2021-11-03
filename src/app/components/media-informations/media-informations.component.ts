@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { ApplicationService } from 'src/app/services/application.service';
 import { heightAnimation, modalAnimation, openCloseAnimation } from 'src/app/models/appAnimation';
 import { delay } from 'rxjs/operators';
+import { AppNotificationType } from 'src/app/models/notification';
 
 @Component({
   selector: 'app-media-informations',
@@ -117,7 +118,13 @@ export class MediaInformationsComponent implements OnInit {
 
   
   playMovie(){
+    if(!this.isLoaded) return;
     this.player.openMediaFile((this.media as VideoDetailsMovie).file ?? "");
+    this.close()
+  }
+
+  async test () {
+    this.application.showPlayer = true;
   }
 
   addMovieToPlaylist(){    
@@ -141,5 +148,10 @@ export class MediaInformationsComponent implements OnInit {
     if(this.isMovie()){   
       this.kodiApi.media.setMovieDetails(this.movieId, params).subscribe()
     }
+  }
+
+  refreshDataTvShow(){
+    this.kodiApi.media.refreshTvShow(this.tvShowId)
+    this.application.showNotification('notification.contentUpdated', "notification.refreshPageToSee", AppNotificationType.success);
   }
 }

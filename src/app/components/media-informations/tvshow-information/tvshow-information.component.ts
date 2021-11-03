@@ -47,7 +47,7 @@ export class TvshowInformationComponent implements OnInit {
 
     if(season?.tvshowid && season?.season)
     this.kodiApi.media.getEpisodes(season.tvshowid, season.season).subscribe((resp) => {
-      this.episodes = resp.episodes;
+      this.episodes = resp.episodes.sort((a, b) => (a.episode ?? 0) -(b.episode ?? 0));
       this.currentSeason = season;
     });
 

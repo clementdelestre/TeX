@@ -69,7 +69,6 @@ export const fullPlayerItemProperties = [
     "hidden",
     "locked",
     "channelnumber",
-    "subchannelnumber",
     "starttime",
     "endtime",
     "specialsortseason",
@@ -129,5 +128,4 @@ export const fullPlayerPropertyName = [
     "live",
     "currentvideostream",
     "videostreams",
-    "cachepercentage"
 ]

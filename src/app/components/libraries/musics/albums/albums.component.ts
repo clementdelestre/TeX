@@ -26,7 +26,8 @@ export class MusicsAlbumsComponent implements OnInit {
 
   getAlbums(){
     this.kodiApi.media.getAlbums({}).subscribe(resp => {
-      this.albums = resp.albums;
+      if(resp?.albums)
+        this.albums = resp.albums;
     })
   }
 

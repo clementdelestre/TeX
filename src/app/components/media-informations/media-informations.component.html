@@ -2,7 +2,7 @@
     <div class="z-50 opacity-100 relative m-auto sm:rounded-lg bg-dark-full w-full sm:my-8 sm:w-11/12 md:w-5/6 lg:w-4/6 xl:w-7/12 custom-modal sm:border border-dark-gray">             
         <div class="h-96 w-full">
             <div class="flex items-end w-full h-full relative">
-                <button  (click)="close()" class="close-button bg-dark-full z-20"><img _ngcontent-rnn-c28="" src="../../../assets/icons/close.svg" class="w-4 h-4"></button>
+                <button  (click)="close()" class="close-button bg-dark-full z-20 w-12"><fa-icon [icon]="['fas', 'times']"></fa-icon></button>
 
                 <div class="z-10 absolute w-full h-full bg-black opacity-20 sm:rounded-t-lg"></div>
                 
@@ -13,11 +13,11 @@
                         <p *ngIf="isMovie()" class="text-shadow-lg text-lg font-semibold mb-4">{{ $any(media).tagline }}</p>
                         <div *ngIf="isMovie()" class="flex">
                             <button (click)="playMovie()" class="h-10 items-center focus:outline-none transition-colors bg-opacity-100 hover:bg-opacity-80 cursor-pointer flex rounded bg-gray-200 text-dark-full px-5 py-1 md:px-7 md:py-1.5 text-base md:text-lg font-bold">
-                                <img _ngcontent-rnn-c28="" src="../../../assets/icons/play.svg" class="h-3 md:h-4 m-auto mr-2 md:mt-1.75">
+                                <fa-icon [icon]="['fas', 'play']" class="mr-4"></fa-icon>
                                 {{ 'library.details.playButton' | translate }}
                             </button>
                             <button *ngIf="canAddMovieToPlaylist" (click)="addMovieToPlaylist()" class="ml-2 w-10 h-10 text-lg focus:outline-none transition-colors bg-opacity-100 hover:bg-opacity-80 cursor-pointer rounded-full bg-gray-200 group relative">
-                                <i class="fas fa-plus text-black md:mt-1.75"></i>
+                                <fa-icon [icon]="['fas', 'plus']" class="text-black md:mt-1.75"></fa-icon>
                                 <div class="group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none cursor-pointer absolute text-sm w-24 rounded-lg h-10 items-center flex bg-dark-gray border-gray-200 border-opacity-20 border-2 opacity-0 transition-opacity duration-300" style="left:48px;top:0;">
                                     <p class="m-auto" translate="">library.details.playNext</p>                                   
                                 </div>
@@ -41,14 +41,19 @@
                     
                 </div>
                 
-
+                <!-- Set Movie Watched -->
                 <button *ngIf="isMovie() && isLoaded" (click)="setWatched(media.playcount==0)" class="button-media-watched">
                     <div *ngIf="media.playcount!=0">
-                        {{ 'library.details.watched' | translate }} <i class="fas fa-check ml-2"></i>
+                        {{ 'library.details.watched' | translate }}<fa-icon [icon]="['fas', 'check']" class="ml-2"></fa-icon>
                     </div>
                     <div *ngIf="media.playcount==0">
-                        {{ 'library.details.unwatched' | translate }} <i class="fas fa-eye-slash ml-2"></i>
+                        {{ 'library.details.unwatched' | translate }}<fa-icon [icon]="['fas', 'eye-slash']" class="ml-2"></fa-icon>
                     </div>
+                </button>
+
+                <!-- Refresh TvShow -->
+                <button *ngIf="!isMovie() && isLoaded" (click)="refreshDataTvShow()" class="text-gray-500">
+                    <fa-icon [icon]="['fas', 'sync']"></fa-icon>
                 </button>
 
             </div>
