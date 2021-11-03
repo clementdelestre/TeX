@@ -1,24 +1,24 @@
 <div class="border-t-2 mt-2 border-dark-gray p-4 pb-2 space-y-4">
-    <div class="flex w-full items-center space-x-6 group pb-2">
+    <div class="flex w-full items-center space-x-6 pb-2">
         <label class="font-semibold text-lg">{{ episode.episode }}.</label>
         <div class="sm:flex items-center space-x-0 sm:space-x-6 text-center sm:text-left w-full sm:w-auto flex-grow">
             <div class="w-52 m-auto relative">
                 <img *ngIf="imgUrl != ''" class="w-full rounded-lg m-auto" src="{{imgUrl}}" loading="lazy">
-                <div (click)="playEpisode($event)" class="absolute flex justify-center items-center w-full rounded-lg opacity-0 group-hover:opacity-40 bg-dark-full h-full top-0 transition-opacity duration-300 cursor-pointer">
+                <div (click)="playEpisode($event)" class="absolute flex justify-center items-center w-full rounded-lg opacity-0 hover:opacity-40 bg-dark-full h-full top-0 transition-opacity duration-300 cursor-pointer">
                     <div class=" text-center flex text-4xl rounded-full border-white border w-16 h-16 items-center justify-center">
                         <fa-icon [icon]="['fas', 'play']" class="pl-1 text-3xl"></fa-icon>
                     </div>
                 </div>
             </div>
             <div class="mt-4 w-full sm:mt-0">
-                <div (click)="playEpisode($event)" class="font-semibold text-lg mb-2 cursor-pointer w-full">
-                    {{ episode.title }} 
+                <div class="font-semibold text-lg mb-2 w-full">
+                    <span (click)="playEpisode($event)" class="cursor-pointer">{{ episode.title }} </span>
                     <button (click)="setWatched(episode.playcount==0)" class="button-media-watched z-30" title="{{ episode.playcount!=0 ? ('library.details.watched' | translate) : 'library.details.unwatched' | translate}}">
                         <div *ngIf="episode.playcount!=0">
                             <fa-icon [icon]="['fas', 'check']" class="ml-2 toggle-watched"></fa-icon>
                         </div>
                         <div *ngIf="episode.playcount==0">
-                            <fa-icon [icon]="['fas', 'eye-slash']" class="ml-2 no-play"></fa-icon>
+                            <fa-icon [icon]="['fas', 'eye-slash']" class="ml-2"></fa-icon>
                         </div>
                     </button>
                 </div>

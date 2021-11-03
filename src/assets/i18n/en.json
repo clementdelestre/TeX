@@ -123,7 +123,9 @@
             "scanAudioLibrary" : "Scan audio library",
             "cleanVideoLibrary" : "Clean video library",
             "cleanAudioLibrary" : "Clean audio library",
-            "libraries" : "Libraries"
+            "libraries" : "Libraries",
+            "application" : "Application",
+            "resetApp" : "Reset app"
         },
         "appearance" : {
             "appearance" : "Appearance"

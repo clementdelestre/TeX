@@ -62,7 +62,6 @@ export class EpisodeComponent implements OnInit {
   }
 
   async playEpisode(event: any){
-    if(event.target.classList.contains('no-play')) return;
 
     this.kodiApi.playlist.clear(1)
     let items: PlaylistItem[] = [];

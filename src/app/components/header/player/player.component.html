@@ -24,7 +24,7 @@
             </div>      
         </button>
     </div>
-    <div class="flex flex-col h-screen3/2 sm:h-auto sm:flex-row w-full">
+    <div class="flex flex-col h-full sm:h-auto sm:flex-row w-full">
         <button  (click)="close()" class="sm:hidden close-button bg-dark-full z-20 w-12"><fa-icon [icon]="['fas', 'times']"></fa-icon></button>
 
         <img class="rounded-lg max-h-58 sm:max-h-36 max-w-70 sm:max-w-33 m-auto" src="{{ player.currentPlayer?.playerIllustration }}" title="{{ player.currentPlayer?.playerItem?.title }}">

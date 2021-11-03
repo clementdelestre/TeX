@@ -42,4 +42,9 @@ export class GeneralComponent implements OnInit {
     this.kodiApi.media.cleanAudioLibrary().subscribe();
   }
 
+  resetApp(){
+    this.localStorage.clear()
+    window.location.reload();   
+  }
+
 }

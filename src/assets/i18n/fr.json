@@ -124,7 +124,9 @@
             "scanAudioLibrary" : "Scanner le contenu audio",
             "cleanVideoLibrary" : "Nettoyer le contenu vidéo",
             "cleanAudioLibrary" : "Nettoyer le contenu audio",
-            "libraries" : "Bibliothèques"
+            "libraries" : "Bibliothèques",
+            "application" : "Application",
+            "resetApp" : "Réinitialiser l'application"
         },
         "appearance" : {
             "appearance" : "Apparence"
