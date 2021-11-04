@@ -4,7 +4,7 @@
 
     <div class="sm:px-2 relative w-full sm:w-80 mt-2 sm:mt-0">
         <fa-icon [ngClass]="{'text-gray-200' : searchTextValue!='', 'text-gray-500' : searchTextValue==''}" class="flex items-center h-10 top-0 absolute left-3 sm:left-5 transition-colors duration-300" [icon]="['fas', 'search']"></fa-icon>
-        <input [(ngModel)]="searchTextValue" (ngModelChange)="modelChangeFn($event)" class="z-20 w-full h-10 bg-dark-full rounded-lg text-white border border-gray-700 pl-9 pr-4 sm:pr-2 transition-all duration-300"  placeholder="{{ 'header.search.search' | translate}}">
+        <input type="text" [(ngModel)]="searchTextValue" (ngModelChange)="modelChangeFn($event)" class="z-20 w-full h-10 bg-dark-full rounded-lg text-white border hover:border-gray-700 focus:border-gray-700 focus:ring-0 pl-9 pr-4 sm:pr-2 transition-all duration-300"  placeholder="{{ 'header.search.search' | translate}}">
     </div>
     
 </div>
