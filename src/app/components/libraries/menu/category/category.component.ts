@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { fastFadeAnimation } from 'src/app/models/appAnimation';
+import { fastFadeAnimation, heightAnimation } from 'src/app/models/appAnimation';
 import { KodiApiService } from 'src/app/services/kodi-api.service';
 import { Location} from '@angular/common';
 import { SearchService } from 'src/app/services/search.service';
@@ -10,7 +10,8 @@ import { SearchService } from 'src/app/services/search.service';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss'],
   animations: [
-    fastFadeAnimation
+    fastFadeAnimation,
+    heightAnimation
   ]
 })
 export class LibraryCategoryComponent implements OnInit {
