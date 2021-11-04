@@ -208,3 +208,7 @@ body::-webkit-scrollbar {
 .custom-input {
     @apply h-10 w-full bg-dark-full rounded-lg text-white border border-transparent hover:border-gray-700 focus:border-gray-700 px-4 pt-5 pb-6;
 }
+
+input[type=text] {
+    -webkit-user-select: text
+}

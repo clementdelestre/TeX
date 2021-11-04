@@ -21,23 +21,15 @@ export class SearchbarComponent implements OnInit {
 
   modelChangeFn(e:any){
     
-    this.searchService.textSearch = e;
+    //this.searchService.textSearch = e;
 
-    if(e != ""){
+    if(this.searchService.textSearch != ""){
       this.searchService.openSearchPage()
     } else {
       this.searchService.closeSearchPage()
     }
 
     
-  }
-
-  openSearch(){
-
-  }
-
-  onBlur(){
-
   }
 
 }

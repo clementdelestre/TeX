@@ -3,7 +3,7 @@
 
     <div class="sm:px-2 relative">
         <fa-icon [icon]="['fas', 'search']" [ngClass]="{'text-gray-200' : searchService.textSearch!='', 'text-gray-500' : searchService.textSearch==''}" class="flex items-center h-full absolute left-3 sm:left-5 transition-colors duration-300"></fa-icon>
-        <input (blur)="onBlur()" (focus)="openSearch()" (click)="openSearch()" [(ngModel)]="searchService.textSearch" (ngModelChange)="modelChangeFn($event)" class="z-20 w-full h-10 bg-dark-full rounded-lg text-white border border-transparent hover:border-gray-700 focus:border-gray-700 pl-9 pr-4 sm:pr-2 py-6 sm:py-0 transition-all duration-300"  placeholder="{{ 'header.search.search' | translate}}">
+        <input type="text" [(ngModel)]="searchService.textSearch" (ngModelChange)="modelChangeFn($event)" class="z-20 w-full h-10 bg-dark-full rounded-lg text-white border border-transparent hover:border-gray-700 focus:ring-0 pl-9 pr-4 sm:pr-2 py-6 sm:py-0 transition-all duration-300"  placeholder="{{ 'header.search.search' | translate}}">
     </div>
 
 </div>

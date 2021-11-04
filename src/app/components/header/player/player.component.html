@@ -63,7 +63,7 @@
             <!-- Language and Subtitles -->
             <div *ngIf="player.currentPlayer?.playerItem?.type != 'song'" class="text-2xl sm:text-lg flex items-center h-full justify-evenly pt-8 sm:pt-0">
                 
-                <label *ngIf="player.currentPlayer?.properties?.subtitles?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
+                <button *ngIf="player.currentPlayer?.properties?.subtitles?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
                     <fa-icon [icon]="[player.currentPlayer?.properties?.subtitleenabled ? 'fas' : 'far', 'closed-captioning']" (click)="player.currentPlayer?.toggleSubtitle()"></fa-icon>
                     <div class="floating-button-bottom-left pointer-group-button min-w-full">
                         <div class="floating-list floating-button-top">
@@ -75,8 +75,8 @@
                             
                         </div>
                     </div>
-                </label>                   
-                <label *ngIf="player.currentPlayer?.properties?.audiostreams?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
+                </button>                   
+                <button *ngIf="player.currentPlayer?.properties?.audiostreams?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
                     <fa-icon [icon]="['fas', 'globe']"></fa-icon>
                     <div class="floating-button-bottom-left pointer-group-button min-w-full">
                         <div class="floating-list floating-button-top">
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                </label>  
+                </button>  
             </div>
 
 
