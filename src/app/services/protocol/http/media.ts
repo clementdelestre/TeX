@@ -205,12 +205,12 @@ export class MediaRequest extends HttpRequestData {
   }
 
   scanVideoLibrary(): Observable<any>{  
-    const req = this.getRequestParams("scanVideoLibrary", "VideoLibrary.Scan", {})
+    const req = this.getRequestParams("scanVideoLibrary", "VideoLibrary.Scan", { "showdialogs" : false})
     return this.makePostRequest(req);
   }
 
   cleanVideoLibrary(): Observable<any>{  
-    const req = this.getRequestParams("scanVideoLibrary", "VideoLibrary.Clean", {})
+    const req = this.getRequestParams("scanVideoLibrary", "VideoLibrary.Clean", { "showdialogs" : false})
     return this.makePostRequest(req);
   }
 
@@ -307,12 +307,12 @@ export class MediaRequest extends HttpRequestData {
   }
 
   scanAudioLibrary(): Observable<any>{  
-    const req = this.getRequestParams("scanAudioLibrary", "AudioLibrary.Scan", {})
+    const req = this.getRequestParams("scanAudioLibrary", "AudioLibrary.Scan", { "showdialogs" : false})
     return this.makePostRequest(req);
   }
 
   cleanAudioLibrary(): Observable<any>{  
-    const req = this.getRequestParams("scanAudioLibrary", "AudioLibrary.Clean", {})
+    const req = this.getRequestParams("scanAudioLibrary", "AudioLibrary.Clean", { "showdialogs" : false})
     return this.makePostRequest(req);
   }
 
