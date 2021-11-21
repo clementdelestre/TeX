@@ -46,10 +46,14 @@ button:focus, button:active:focus, button.active:focus {
 }
 
 .button-primary {
-    @apply text-gray-100 cursor-pointer transition-all duration-300;
+    @apply text-gray-100 cursor-pointer transition-all duration-200;
 }
 
 .button-primary:hover {
+    @apply text-gray-300;
+}
+
+.button-primary:active {
     @apply text-primary;
 }
 
@@ -195,14 +199,7 @@ body::-webkit-scrollbar {
 }
 
 .settings-subsection {
-    @apply m-auto flex w-full sm:w-10/12 md:w-2/3 flex-col sm:flex-row items-center justify-between space-y-2 whitespace-nowrap my-2 sm:mt-0;
-    * {
-        @apply w-full;
-
-        * {
-            @apply w-auto;
-        }
-    }
+    @apply m-auto flex w-full sm:w-10/12 md:w-2/3 flex-col sm:flex-row items-center justify-between space-y-2 whitespace-nowrap my-2 mt-8 sm:mt-0;
 }
 
 .custom-input {

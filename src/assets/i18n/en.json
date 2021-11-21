@@ -125,7 +125,10 @@
             "cleanAudioLibrary" : "Clean audio library",
             "libraries" : "Libraries",
             "application" : "Application",
-            "resetApp" : "Reset app"
+            "resetApp" : "Reset app",
+            "vibrate" : "Vibrate",
+            "vibrationOff" : "Vibration Off",
+            "mayNotWorkDevice" : "May not work on some devices"
         },
         "appearance" : {
             "appearance" : "Appearance"
@@ -153,5 +156,8 @@
         "cleanFinished" : "Clean finished",
         "contentUpdated" : "Content updated",
         "refreshPageToSee" : "Refresh the page to see the changes"
+    },
+    "remote" : {
+        "sendText" : "Send text"
     }
 }

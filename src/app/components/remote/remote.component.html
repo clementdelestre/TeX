@@ -5,7 +5,16 @@
         <div class="py-4 px-8 text-center items-center flex-col w-full h-full">
             
             <div class="flex flex-col items-center h-full w-full max-w-sm m-auto text-3xl space-y-2 remote-container">
+                
                 <div class="flex flex-col items-center h-full w-full bg-dark-full rounded-xl m-auto space-y-4 py-4 opacity-80  overflow-auto scrollbar-hide"  style="max-height: 750px;">
+                    <div class="px-2 w-full mt-4">
+                        <form class="bg-dark-full w-full rounded-lg text-white border border-1 border-gray-400 hover:border-gray-500 focus:border-gray-700 duration-300 flex items-center">
+                            <input name="textInput" [(ngModel)]="sendTextValue" (ngModelChange)="modelChangeFn($event)" class="bg-dark-full border-none focus:ring-0 focus:border-transparent w-full rounded-xl" type="text" placeholder="{{ 'remote.sendText' | translate }}">
+                            <button style="width: auto;" class="flex-shrink-0 hover:text-primary text-sm mr-4" type="submit" (click)="sendText()">
+                                <fa-icon class="flex items-center float-right text-xs" [icon]="['fas', 'paper-plane']"></fa-icon>
+                            </button>
+                        </form>
+                    </div>
                     <div class="flex flex-row w-full h-full items-center">
                         <button><fa-icon [icon]="['fas', 'align-left']" class="button-primary" (click)="onInputMenu()"></fa-icon></button>
                         <button><fa-icon [icon]="['fas', 'home']" class="button-primary" (click)="onInputHome()"></fa-icon></button>
@@ -52,7 +61,7 @@
                         <button><fa-icon [icon]="['fas', 'arrow-left']" class="button-primary" (click)="onInputBack()"></fa-icon></button>
                         <button></button>
                         <button><fa-icon [icon]="['fas', 'bars']" class="button-primary" (click)="onInputContextMenu()"></fa-icon></button>
-                    </div>    
+                    </div>   
                     
                 </div>                
             </div>

@@ -11,9 +11,11 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 })
 export class GeneralComponent implements OnInit {
 
+  vibrate:number = 50;
   constructor(private kodiApi:KodiApiService, public application:ApplicationService, private localStorage: LocalStorageService, public translate: TranslateService) { }
 
   ngOnInit(): void {
+    this.vibrate = this.localStorage.getData("vibrate") ?? 50;
   }
 
   switchLang(lang: string) {
@@ -45,6 +47,11 @@ export class GeneralComponent implements OnInit {
   resetApp(){
     this.localStorage.clear()
     window.location.reload();   
+  }
+
+  vibrateChange(value: any){
+    this.localStorage.setData("vibrate", value);
+    this.vibrate = value
   }
 
 }

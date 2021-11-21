@@ -126,7 +126,10 @@
             "cleanAudioLibrary" : "Nettoyer le contenu audio",
             "libraries" : "Bibliothèques",
             "application" : "Application",
-            "resetApp" : "Réinitialiser l'application"
+            "resetApp" : "Réinitialiser l'application",
+            "vibrate" : "Vibrations",
+            "vibrationOff" : "Vibrations désactivées",
+            "mayNotWorkDevice" : "Peut ne pas fonctionner sur certains appareils"
         },
         "appearance" : {
             "appearance" : "Apparence"
@@ -152,6 +155,9 @@
         "cleanFinished" : "Nettoyage terminé",
         "contentUpdated" : "Contenu mis à jour",
         "refreshPageToSee" : "Actualisez la page pour voir les changements"
+    },
+    "remote" : {
+        "sendText" : "Envoyer du texte"
     }
     
 }

@@ -2,15 +2,16 @@
     
 <div class="bg-dark-gray rounded-lg w-full px-4">
     <div class="settings-section">
+        <!-- Language -->
         <div class="settings-subsection">
             <label class="font-semibold" translate="settings.general.language"></label>
-
             <select class="bg-dark-full text-white px-2 py-2 rounded-xl cursor-pointer" #selectedLang (change)="switchLang(selectedLang.value)">
                 <option *ngFor="let language of translate.getLangs()" [value]="language" [selected]="language === translate.currentLang">
                 {{ language }}
                 </option>
             </select>
         </div>
+        <!-- Player -->
         <div class="settings-subsection">
             <label class="font-semibold" translate="settings.general.musicsDefaultPlayer"></label>
 
@@ -18,6 +19,20 @@
                 <option [value]="'internal'" [selected]="application.musicsDefaultPlayer === 'internal'" translate="library.musicsView.internalPlayer"></option>
                 <option [value]="'kodi'" [selected]="application.musicsDefaultPlayer === 'kodi'">Kodi</option>
             </select>
+        </div>
+        <!-- Vibrate -->
+        <div class="settings-subsection">
+            <div class="text-center">
+                <p class="font-semibold" translate="settings.general.vibrate"></p>
+                <p class="font-thin" translate="settings.general.mayNotWorkDevice"></p>
+            </div>
+            
+            <div class="flex items-center space-x-4 flex-col">
+                <input type="range" min="0" max="80" [value]="vibrate" #ref (change)="vibrateChange(ref.value)">
+                <span>{{ vibrate != 0 ? vibrate + "ms" : ("settings.general.vibrationOff" | translate) }}</span>
+            </div>
+
+
         </div>
     </div>
 </div>

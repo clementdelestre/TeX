@@ -57,6 +57,11 @@ export class RemoteRequest extends HttpRequestData {
         this.makePostRequest(req).subscribe();
     }
 
+    sendText(text:string){
+        const req = this.getRequestParams("sendText", "Input.SendText", {"text" : decodeURIComponent(text),"done" : true})   
+        this.makePostRequest(req).subscribe();
+    }
+
     
 
 }
