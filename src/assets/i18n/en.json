@@ -125,10 +125,12 @@
             "cleanAudioLibrary" : "Clean audio library",
             "libraries" : "Libraries",
             "application" : "Application",
-            "resetApp" : "Reset app",
+            "resetApp" : "Reset app and install updates",
             "vibrate" : "Vibrate",
             "vibrationOff" : "Vibration Off",
-            "mayNotWorkDevice" : "May not work on some devices"
+            "mayNotWorkDevice" : "May not work on some devices",
+            "translationIssues" : "In case of translation issues, clear cache from your web browser",
+            "refreshTranslation" : "Refresh translations"
         },
         "appearance" : {
             "appearance" : "Appearance"
@@ -155,6 +157,7 @@
         "cleanStarted" : "Clean started",
         "cleanFinished" : "Clean finished",
         "contentUpdated" : "Content updated",
+        "updatedTranslations" : "Traductions mises à jour",
         "refreshPageToSee" : "Refresh the page to see the changes"
     },
     "remote" : {

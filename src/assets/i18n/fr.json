@@ -126,10 +126,12 @@
             "cleanAudioLibrary" : "Nettoyer le contenu audio",
             "libraries" : "Bibliothèques",
             "application" : "Application",
-            "resetApp" : "Réinitialiser l'application",
+            "resetApp" : "Réinitialiser l'application et installer les mises à jour",
             "vibrate" : "Vibrations",
             "vibrationOff" : "Vibrations désactivées",
-            "mayNotWorkDevice" : "Peut ne pas fonctionner sur certains appareils"
+            "mayNotWorkDevice" : "Peut ne pas fonctionner sur certains appareils",
+            "translationIssues" : "En cas de problème de traductions, nettoyez le cache de votre navigateur web",
+            "refreshTranslation" : "Rafraichir les traductions"
         },
         "appearance" : {
             "appearance" : "Apparence"
@@ -154,6 +156,7 @@
         "cleanStarted" : "Nettoyage démarré",
         "cleanFinished" : "Nettoyage terminé",
         "contentUpdated" : "Contenu mis à jour",
+        "updatedTranslations" : "Traductions mises à jour",
         "refreshPageToSee" : "Actualisez la page pour voir les changements"
     },
     "remote" : {

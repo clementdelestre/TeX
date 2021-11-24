@@ -22,7 +22,7 @@
         </div>
         <!-- Vibrate -->
         <div class="settings-subsection">
-            <div class="text-center">
+            <div class="text-center sm:text-left">
                 <p class="font-semibold" translate="settings.general.vibrate"></p>
                 <p class="font-thin" translate="settings.general.mayNotWorkDevice"></p>
             </div>
@@ -56,5 +56,7 @@
 <div class="bg-dark-gray rounded-lg w-full px-4">
     <div class="settings-section flex flex-col sm:flex-row justify-items-center text-center">
         <button (click)="resetApp()" class="bg-red-500 rounded-lg px-4 py-2 mx-4 my-2 hover:opacity-80 transition-opacity duration-300" translate="settings.general.resetApp"></button>
+        <button (click)="refreshTranslation()" class="bg-red-500 rounded-lg px-4 py-2 mx-4 my-2 hover:opacity-80 transition-opacity duration-300" translate="settings.general.refreshTranslation"></button>
     </div>
+    <p class="mx-4 pb-4" translate="settings.general.translationIssues"></p>
 </div>
