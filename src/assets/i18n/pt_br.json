@@ -1,9 +1,9 @@
 {
     "header": {
-        "movies": "",
-        "tvshows": "",
-        "musics": "",
-        "player": "",
+        "movies": "Filmes",
+        "tvshows": "Séries",
+        "musics": "Músicas",
+        "player": "Reprodutor",
         "remote": "",
         "settings": "",
         "search": {
