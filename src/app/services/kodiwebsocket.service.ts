@@ -21,6 +21,7 @@ import { SocketInOnAudioLibraryScanFinished } from './protocol/websocket/in/sock
 import { SocketInOnAudioLibraryCleanStarted } from './protocol/websocket/in/socketInAudioLibraryCleanStarted';
 import { SocketInOnAudioLibraryCleanFinished } from './protocol/websocket/in/socketInAudioLibraryCleanFInished';
 import { SocketInOnVideoLibraryScanStarted } from './protocol/websocket/in/socketInVideoLibraryScanStarted';
+import { SearchService } from './search.service';
 
 
 @Injectable({
@@ -34,7 +35,7 @@ export class KodiwebsocketService {
   private socketHandlerIn:Map<string, SocketIn> = new Map();
   private socketHandlerOut:Map<string, SocketOut> = new Map();
 
-  constructor(private application: ApplicationService, private storageService: LocalStorageService) {  
+  constructor(private application: ApplicationService, private storageService: LocalStorageService, private searchService: SearchService) {  
 
     this.registerHandlers();
 
@@ -88,14 +89,14 @@ export class KodiwebsocketService {
     this.socketHandlerIn.set(SocketInApplicationOnVolumeChanged.method, new SocketInApplicationOnVolumeChanged(this.application));
 
     this.socketHandlerIn.set(SocketInOnVideoLibraryScanStarted.method, new SocketInOnVideoLibraryScanStarted(this.application));
-    this.socketHandlerIn.set(SocketInOnVideoLibraryScanFinished.method, new SocketInOnVideoLibraryScanFinished(this.application));
+    this.socketHandlerIn.set(SocketInOnVideoLibraryScanFinished.method, new SocketInOnVideoLibraryScanFinished(this.application, this.searchService));
     this.socketHandlerIn.set(SocketInOnVideoLibraryCleanStarted.method, new SocketInOnVideoLibraryCleanStarted(this.application));
-    this.socketHandlerIn.set(SocketInOnVideoLibraryCleanFinished.method, new SocketInOnVideoLibraryCleanFinished(this.application));
+    this.socketHandlerIn.set(SocketInOnVideoLibraryCleanFinished.method, new SocketInOnVideoLibraryCleanFinished(this.application, this.searchService));
 
     this.socketHandlerIn.set(SocketInOnAudioLibraryScanStarted.method, new SocketInOnAudioLibraryScanStarted(this.application));
-    this.socketHandlerIn.set(SocketInOnAudioLibraryScanFinished.method, new SocketInOnAudioLibraryScanFinished(this.application));
+    this.socketHandlerIn.set(SocketInOnAudioLibraryScanFinished.method, new SocketInOnAudioLibraryScanFinished(this.application, this.searchService));
     this.socketHandlerIn.set(SocketInOnAudioLibraryCleanStarted.method, new SocketInOnAudioLibraryCleanStarted(this.application));
-    this.socketHandlerIn.set(SocketInOnAudioLibraryCleanFinished.method, new SocketInOnAudioLibraryCleanFinished(this.application));
+    this.socketHandlerIn.set(SocketInOnAudioLibraryCleanFinished.method, new SocketInOnAudioLibraryCleanFinished(this.application, this.searchService));
   }
 
   public registerPlayerHandlers(player:PlayerService){
