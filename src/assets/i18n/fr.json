@@ -122,7 +122,8 @@
             "vibrationOff": "Vibrations désactivées",
             "mayNotWorkDevice": "Peut ne pas fonctionner sur certains appareils",
             "translationIssues": "En cas de problème de traductions, nettoyez le cache de votre navigateur web",
-            "refreshTranslation": "Rafraichir les traductions"
+            "refreshTranslation": "Rafraichir les traductions",
+            "checkUpdates" : "Rechercher les mises à jour"
         },
         "appearance": {
             "appearance": "Apparence"

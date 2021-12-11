@@ -130,7 +130,8 @@
             "vibrationOff" : "Vibration Off",
             "mayNotWorkDevice" : "May not work on some devices",
             "translationIssues" : "In case of translation issues, clear cache from your web browser",
-            "refreshTranslation" : "Refresh translations"
+            "refreshTranslation" : "Refresh translations",
+            "checkUpdates" : "Check for updates"
         },
         "appearance" : {
             "appearance" : "Appearance"

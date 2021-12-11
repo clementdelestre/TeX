@@ -59,4 +59,9 @@
         <button (click)="refreshTranslation()" class="bg-red-500 rounded-lg px-4 py-2 mx-4 my-2 hover:opacity-80 transition-opacity duration-300" translate="settings.general.refreshTranslation"></button>
     </div>
     <p class="mx-4 pb-4" translate="settings.general.translationIssues"></p>
+    <hr>
+    <div class="settings-section ">
+       <p class="mb-4">Current version: {{ version }}</p>
+       <a href="https://github.com/clementdelestre/TeX/releases"  target="_blank" class="bg-blue-500 rounded-lg px-4 py-2 my-2 hover:opacity-80 transition-opacity duration-300" translate="settings.general.checkUpdates"></a>
+    </div>
 </div>

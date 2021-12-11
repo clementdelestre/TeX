@@ -6,6 +6,7 @@ import { AppNotificationType } from 'src/app/models/notification';
 import { ApplicationService } from 'src/app/services/application.service';
 import { KodiApiService } from 'src/app/services/kodi-api.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-settings-general',
@@ -14,11 +15,14 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 })
 export class GeneralComponent implements OnInit {
 
+  version = environment.appVersion;
+
   vibrate:number = 50;
   constructor(private kodiApi:KodiApiService, public application:ApplicationService, private localStorage: LocalStorageService, public translate: TranslateService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.vibrate = this.localStorage.getData("vibrate") ?? 50;
+    console.log(this.version);
   }
 
   switchLang(lang: string) {
