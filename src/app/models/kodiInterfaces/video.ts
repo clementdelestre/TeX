@@ -13,9 +13,29 @@ export interface VideoResume {
 }
 
 export interface VideoStreams {
-    audio: any[];
-    subtitle: any[];
-    video: any[];
+    audio: VideoStreamAudio[];
+    subtitle: VideoStreamSubtitle[];
+    video: VideoStreeamVideo[];
+}
+
+export interface VideoStreamAudio {
+    channels: number;
+    codec: string;
+    language: string;
+}
+
+export interface VideoStreamSubtitle {
+    language: string;
+}
+
+export interface VideoStreeamVideo {
+    aspect: number;
+    codec: string;
+    duration: number;
+    height: number;
+    language: string;
+    stereomode: string;
+    width: number;
 }
 
 export interface VideoDetailsBase extends MediaDetailsBase {
@@ -67,6 +87,7 @@ export interface VideoDetailsMovie extends VideoDetailsFile {
     votes?: string;
     writer?: string[];
     year?: number;
+    streamdetails: VideoStreams;
 }
 
 export interface VideoDetailsTVShow extends VideoDetailsItem {
@@ -150,7 +171,8 @@ export const fullMovieProperties = [
     "file",
     "lastplayed",
     "playcount",
-    "dateadded"
+    "dateadded",
+    "streamdetails"
 ];
 
 
