@@ -83,7 +83,10 @@
             "noSeasonAvailable": "Aucune saison disponible",
             "getStreamingLink": "Obtenir le lien de stream",
             "additionalInformation": "Informations additionnelles",
-            "refresh": "Rafraîchir les données"
+            "refresh": "Rafraîchir les données",
+            "streamVideo": "Video :",
+            "streamAudio" : "Audio :",
+            "streamSubtitle": "Sous-titres :"
         },
         "musicsView": {
             "artist": "Artiste :",
@@ -123,6 +126,7 @@
             "mayNotWorkDevice": "Peut ne pas fonctionner sur certains appareils",
             "translationIssues": "En cas de problème de traductions, nettoyez le cache de votre navigateur web",
             "refreshTranslation": "Rafraichir les traductions",
+            "currentVersion" : "Version actuelle :",
             "checkUpdates" : "Rechercher les mises à jour"
         },
         "appearance": {

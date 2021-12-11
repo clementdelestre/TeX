@@ -209,3 +209,7 @@ body::-webkit-scrollbar {
 input[type=text] {
     -webkit-user-select: text
 }
+
+.auto-comma ~ .auto-comma::before{
+    content: ", ";
+}
