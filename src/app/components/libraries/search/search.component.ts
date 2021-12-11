@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
 
   showFilterBox = false;
 
-  constructor(public searchService: SearchService, private kodiApi: KodiApiService) { }
+  constructor(public searchService: SearchService) { }
 
   ngOnInit(): void {
     
