@@ -114,7 +114,10 @@
     },
     "player" : {
         "playlist" : "Playlist",
-        "noMedia" : "No media"
+        "noMedia" : "No media",
+        "languages" : "Languages:",
+        "subtitles" : "Subtitles:",
+        "disabled" : "Disabled"
     },
     "settings" : {
         "settings" : "Settings",
