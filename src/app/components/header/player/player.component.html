@@ -63,32 +63,33 @@
             <!-- Language and Subtitles -->
             <div *ngIf="player.currentPlayer?.playerItem?.type != 'song'" class="text-2xl sm:text-lg flex items-center h-full justify-evenly pt-8 sm:pt-0">
                 
-                <button *ngIf="player.currentPlayer?.properties?.subtitles?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
-                    <fa-icon [icon]="[player.currentPlayer?.properties?.subtitleenabled ? 'fas' : 'far', 'closed-captioning']" (click)="player.currentPlayer?.toggleSubtitle()"></fa-icon>
-                    <div class="floating-button-bottom-left pointer-group-button min-w-full">
-                        <div class="floating-list floating-button-top">
-                            <div *ngFor="let subtitle of player.currentPlayer?.properties?.subtitles" class="floating-button">
-                                <p (click)="player.currentPlayer?.setSubtitle(subtitle)" class="{{ (subtitle.index == player.currentPlayer?.properties?.currentsubtitle?.index) && player.currentPlayer?.properties?.subtitleenabled ? 'text-white' : 'text-gray-500' }}  text-sm">
-                                    {{ subtitle.language }} {{ subtitle.isforced ? "(forcé)" : "" }}
-                                </p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </button>                   
                 <button *ngIf="player.currentPlayer?.properties?.audiostreams?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
                     <fa-icon [icon]="['fas', 'globe']"></fa-icon>
                     <div class="floating-button-bottom-left pointer-group-button min-w-full">
                         <div class="floating-list floating-button-top">
-        
-                            <div *ngFor="let audiostream of player.currentPlayer?.properties?.audiostreams" class="floating-button">
-                                <p (click)="player.currentPlayer?.setAudioStream(audiostream)" class="{{ audiostream.index == player.currentPlayer?.properties?.currentaudiostream?.index ? 'text-white' : 'text-gray-500' }}  text-sm">
-                                    {{ audiostream.language != "" ? audiostream.language : "Unknown" }}
-                                </p>
-                            </div>
+                            <p class="whitespace-nowrap px-2 py-1 text-sm">Langues :</p>
+                            <p *ngFor="let audiostream of player.currentPlayer?.properties?.audiostreams" (click)="player.currentPlayer?.setAudioStream(audiostream)" class="floating-button {{ audiostream.index == player.currentPlayer?.properties?.currentaudiostream?.index ? 'text-white' : 'text-gray-500 hover:text-white' }}  text-sm">
+                                {{ audiostream.language != "" ? audiostream.language : "Unknown" }}
+                            </p>
                         </div>
                     </div>
-                </button>  
+                </button>
+                <button *ngIf="player.currentPlayer?.properties?.subtitles?.length != 0" class="cursor-pointer text-gray-300 hover:text-gray-100 group relative">
+                    <fa-icon [icon]="[player.currentPlayer?.properties?.subtitleenabled ? 'fas' : 'far', 'closed-captioning']" ></fa-icon>
+                    <div class="floating-button-bottom-left pointer-group-button min-w-full">
+                        <div class="floating-list floating-button-top">
+                            <p class="whitespace-nowrap px-2 py-1 text-sm">Sous-titres :</p>
+                            <p *ngFor="let subtitle of player.currentPlayer?.properties?.subtitles" (click)="player.currentPlayer?.toggleSubtitle()" class="floating-button {{ !player.currentPlayer?.properties?.subtitleenabled ? 'text-white' : 'text-gray-500 hover:text-white' }} text-sm">
+                                Désactivé
+                            </p>
+                            <p *ngFor="let subtitle of player.currentPlayer?.properties?.subtitles" (click)="player.currentPlayer?.setSubtitle(subtitle)" class="floating-button {{ (subtitle.index == player.currentPlayer?.properties?.currentsubtitle?.index) && player.currentPlayer?.properties?.subtitleenabled ? 'text-white' : 'text-gray-500 hover:text-white' }} text-sm">
+                                {{ subtitle.language }} {{ subtitle.isforced ? "(forcé)" : "" }}
+                            </p>
+                            
+                        </div>
+                    </div>
+                </button>                   
+                  
             </div>
 
 
