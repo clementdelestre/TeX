@@ -40,8 +40,6 @@ export class MovieInformationComponent implements OnInit {
         this.downloadUrl = resp;
       });
     }
-
-    console.log(this.movie)
     
   }
 
