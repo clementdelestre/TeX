@@ -22,7 +22,6 @@ export class GeneralComponent implements OnInit {
 
   ngOnInit(): void {
     this.vibrate = this.localStorage.getData("vibrate") ?? 50;
-    console.log(this.version);
   }
 
   switchLang(lang: string) {
