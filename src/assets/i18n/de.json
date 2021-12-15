@@ -1,11 +1,11 @@
 {
     "header": {
-        "movies": "",
+        "movies": "Filme",
         "tvshows": "",
         "musics": "",
         "player": "",
-        "remote": "",
-        "settings": "",
+        "remote": "Fernsteuerung",
+        "settings": "Einstellungen",
         "search": {
             "search": "",
             "searchIn": "",
@@ -20,7 +20,7 @@
         "continueToWatch": "",
         "recentlyAdded": "",
         "unwatched": "",
-        "movies": "",
+        "movies": "Filme",
         "tvshows": "",
         "musics": "",
         "nothingToShow": "",
@@ -36,7 +36,7 @@
             "older": "",
             "track": ""
         },
-        "page": "",
+        "page": "Seite",
         "directors": "",
         "writers": "",
         "actors": "",
