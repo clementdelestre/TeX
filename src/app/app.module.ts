@@ -51,6 +51,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { PruningTranslationLoader } from './pruning-loader';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
       defaultLanguage: 'en'
@@ -125,6 +126,11 @@ export class AppModule {
  }
 
 // AOT compilation support
-export function httpTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+
+// export function httpTranslateLoader(http: HttpClient) {
+//   return new TranslateHttpLoader(http);
+// }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new PruningTranslationLoader(http);
 }

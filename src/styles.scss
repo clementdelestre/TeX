@@ -136,7 +136,7 @@ button:focus, button:active:focus, button.active:focus {
         @apply group-hover:opacity-100 group-hover:pointer-events-auto group-focus:opacity-100 group-focus:pointer-events-auto pointer-events-none cursor-pointer rounded-sm bg-dark-gray border-gray-200 border-opacity-20 border-2 max-h-52 overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400 opacity-0 transition-opacity duration-300;
 
         .floating-button {
-            @apply block whitespace-nowrap px-3 py-2.5 w-full font-semibold bg-dark-gray bg-opacity-100 hover:bg-gray-500 transition-opacity duration-300 text-sm group-hover:pointer-events-auto group-focus:pointer-events-auto pointer-events-none;
+            @apply block whitespace-nowrap px-3 py-2.5 w-full font-semibold bg-dark-gray bg-opacity-100 hover:bg-gray-500 transition-all duration-300 text-sm group-hover:pointer-events-auto group-focus:pointer-events-auto pointer-events-none;
         
             * {
                 @apply cursor-pointer group-hover:pointer-events-auto group-focus:pointer-events-auto pointer-events-none;
@@ -208,4 +208,8 @@ body::-webkit-scrollbar {
 
 input[type=text] {
     -webkit-user-select: text
+}
+
+.auto-comma ~ .auto-comma::before{
+    content: ", ";
 }

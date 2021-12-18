@@ -1,4 +1,4 @@
-<button class="p-2 rounded-xl border-0" (click)="openDetails()" style="width:inherit">
+<button class="p-1 sm:p-2 rounded-xl border-0" (click)="openDetails()" style="width:inherit">
     <div class="select-none rounded-xl">
         <div class="relative opacity-90 w-full rounded-xl" [ngClass]="{'h-24 bg-dark-gray hover:bg-gray-500' : posterUrl == '' && isImgLoaded}">
             <img *ngIf="posterLoaded" [ngClass]="{'border-b border-primary' : displayResume && isImgLoaded}" [src]="posterUrl" (load)="imageLoaded()" class="rounded-xl w-full" loading="lazy">

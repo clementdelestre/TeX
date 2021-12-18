@@ -1,3 +1,6 @@
+import pkg from '../../package.json';
+
 export const environment = {
-  production: true
+  production: true,
+  appVersion: pkg.version,
 };

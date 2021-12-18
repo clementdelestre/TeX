@@ -5,6 +5,7 @@ import { openCloseAnimation } from 'src/app/models/appAnimation';
 import { Location } from '@angular/common'
 import { KodiwebsocketService } from 'src/app/services/kodiwebsocket.service';
 import { LocalStorageService, STORAGE_KEYS } from 'src/app/services/local-storage.service';
+import { environment } from '../../../environments/environment';
 
 export enum Page {
   general = "general",
@@ -24,6 +25,7 @@ export class SettingsComponent implements OnInit {
 
   page:Page = Page.general;
   isHome:boolean = false;
+  version = environment.appVersion;
 
   constructor(private location:Location, private router: Router,) { }
 

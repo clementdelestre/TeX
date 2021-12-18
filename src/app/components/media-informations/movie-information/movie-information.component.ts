@@ -85,5 +85,15 @@ export class MovieInformationComponent implements OnInit {
     this.application.showNotification('notification.contentUpdated', "notification.refreshPageToSee", AppNotificationType.success);
   }
 
+  getAudioChannels(channels: number){
+    switch(channels){
+      case 6:
+        return "5.1";
+      case 4:
+        return "3.1";
+      default:
+        return channels + "";
+    }
+  }
 
 }
