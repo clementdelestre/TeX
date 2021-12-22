@@ -14,7 +14,7 @@ export class FileRequest extends HttpRequestData {
 
         const req = encodeURI(this.getRequestUrl("preparedownload", "Files.PrepareDownload", {"path" : url}))
         return this.makeGetRequest(req).pipe(
-          map(rep => { return this.getBaseUrl() + rep.details.path})
+          map(rep => { return rep?.details != null ? (this.getBaseUrl() + rep.details.path) : ''})
         )
     }
     

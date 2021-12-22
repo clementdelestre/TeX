@@ -129,23 +129,23 @@ export class MediaRequest extends HttpRequestData {
     return this.makeGetRequest(req);
   }
 
-  setMovieDetails(movieid: number, values: Map<string, any>): Observable<any>{
-      values.set("movieid", movieid);      
-      let obj = Array.from(values).reduce((obj, [key, value]) => (
-        Object.assign(obj, { [key]: value })
-      ), {});   
-      const req = this.getRequestParams("setmoviedetails", "VideoLibrary.SetMovieDetails", obj)
-      return this.makePostRequest(req);
-  }
+  // setMovieDetails(movieid: number, values: Map<string, any>): Observable<any>{
+  //     values.set("movieid", movieid);      
+  //     let obj = Array.from(values).reduce((obj, [key, value]) => (
+  //       Object.assign(obj, { [key]: value })
+  //     ), {});   
+  //     const req = this.getRequestParams("setmoviedetails", "VideoLibrary.SetMovieDetails", obj)
+  //     return this.makePostRequest(req);
+  // }
 
-  setTvShowDetails(tvshowid: number, values: Map<string, any>): Observable<any>{
-    values.set("tvshowid", tvshowid);      
-    let obj = Array.from(values).reduce((obj, [key, value]) => (
-      Object.assign(obj, { [key]: value })
-    ), {});   
-    const req = this.getRequestParams("settvshowdetails", "VideoLibrary.SetTVShowDetails", obj)
-    return this.makePostRequest(req);
-  }
+  // setTvShowDetails(tvshowid: number, values: Map<string, any>): Observable<any>{
+  //   values.set("tvshowid", tvshowid);      
+  //   let obj = Array.from(values).reduce((obj, [key, value]) => (
+  //     Object.assign(obj, { [key]: value })
+  //   ), {});   
+  //   const req = this.getRequestParams("settvshowdetails", "VideoLibrary.SetTVShowDetails", obj)
+  //   return this.makePostRequest(req);
+  // }
 
   setEpisodeDetails(episodeid: number, values: Map<string, any>): Observable<any>{
     values.set("episodeid", episodeid);      
@@ -353,5 +353,27 @@ export class MediaRequest extends HttpRequestData {
   refreshEpisode(episodeid:number){
     const req = this.getRequestParams("refreshepisode", "VideoLibrary.RefreshEpisode", { "episodeid" : episodeid, })   
     this.makePostRequest(req).subscribe();  
+  }
+
+  setMovieDetails(params : any): Observable<any>{
+    //require movieid
+    const req = this.getRequestParams("setmoviedet", "VideoLibrary.SetMovieDetails", params)
+    return this.makePostRequest(req)
+  }
+
+  removeMovie(movieid : number): Observable<any>{
+    const req = this.getRequestParams("setmoviedet", "VideoLibrary.RemoveMovie", {"movieid" : movieid})
+    return this.makePostRequest(req)
+  }
+
+  setTvShowDetails(params : any): Observable<any>{
+    //require tvshowid
+    const req = this.getRequestParams("setmoviedet", "VideoLibrary.SetTVShowDetails", params)
+    return this.makePostRequest(req)
+  }
+
+  removeTvShow(tvshowid : number): Observable<any>{
+    const req = this.getRequestParams("setmoviedet", "VideoLibrary.RemoveTVShow", {"tvshowid" : tvshowid})
+    return this.makePostRequest(req)
   }
 }

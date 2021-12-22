@@ -43,6 +43,24 @@
             <p><span class="text-gray-500">{{ 'library.details.file' | translate }} </span>{{ episode.file }}</p>
             <p><span class="text-gray-500">{{ 'library.details.dateadded' | translate }} </span>{{ episode.dateadded }}</p>
         </div>
+
+        <!-- StreamInfos-->
+        <div class="mt-4">
+            <div class="flex overflow-auto scrollbar-hide" @heightAnimation *ngIf="episode?.streamdetails?.audio?.length != 0">
+                <span class="text-gray-500 whitespace-nowrap mr-1" translate="library.details.streamAudio"></span>
+                <span *ngFor="let audio of episode?.streamdetails?.audio" class="uppercase auto-comma whitespace-nowrap">{{ audio.codec }} {{ getAudioChannels(audio.channels) }} ({{ audio.language }}) </span>
+            </div>
+            <div class="flex overflow-auto scrollbar-hide" @heightAnimation *ngIf="episode?.streamdetails?.video?.length != 0">
+                <span class="text-gray-500 whitespace-nowrap mr-1" translate="library.details.streamVideo"></span>
+                <span *ngFor="let video of episode?.streamdetails?.video" class="auto-comma whitespace-nowrap"> <span class="uppercase">{{ video.codec }}</span>  {{ video.width + "x" + video.height }} </span>
+            </div>
+            <div class="flex overflow-auto scrollbar-hide" @heightAnimation *ngIf="episode?.streamdetails?.subtitle?.length != 0">
+                <span class="text-gray-500 whitespace-nowrap mr-1" translate="library.details.streamSubtitle"></span>        
+                <span *ngFor="let subtitle of episode?.streamdetails?.subtitle" class="uppercase auto-comma whitespace-nowrap">{{ subtitle.language }}</span>
+            </div>          
+        </div>
+
+
         <div class="flex mt-4 mb-2">
             <button (click)="refreshData()" class="transition-colors cursor-pointer text-gray-300 hover:text-white text-base"><fa-icon [icon]="['fas', 'sync']" class="mr-4"></fa-icon>{{ 'library.details.refresh' | translate }}</button>
         </div>

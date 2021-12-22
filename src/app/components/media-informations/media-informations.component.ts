@@ -1,4 +1,3 @@
-import {  PlatformLocation } from '@angular/common';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import {  SafeResourceUrl } from '@angular/platform-browser'
 import { Location } from '@angular/common'
@@ -6,7 +5,6 @@ import { PlaylistItem } from 'src/app/models/kodiInterfaces/playlist';
 import { VideoDetailsMovie, VideoDetailsTVShow } from 'src/app/models/kodiInterfaces/video';
 import { KodiApiService } from 'src/app/services/kodi-api.service';
 import { PlayerService } from 'src/app/services/player.service';
-import { Router } from '@angular/router';
 import { ApplicationService } from 'src/app/services/application.service';
 import { heightAnimation, modalAnimation, openCloseAnimation } from 'src/app/models/appAnimation';
 import { delay } from 'rxjs/operators';
@@ -28,6 +26,7 @@ export class MediaInformationsComponent implements OnInit {
 
   isLoaded:boolean = false;
   media!: VideoDetailsMovie | VideoDetailsTVShow;
+  edit = false;
 
   trailerUrl:SafeResourceUrl = "";
   fanartUrl: string = "";
@@ -136,22 +135,20 @@ export class MediaInformationsComponent implements OnInit {
   }
 
   setWatched(watched: boolean){
-    let params: Map<string, any> = new Map<string, any>();   
-    if(watched){
-      params.set("playcount", 1);
-      this.media.playcount = 1;
-    } else {
-      params.set("playcount", 0);
-      this.media.playcount = 0;
-    }
-    
-    if(this.isMovie()){   
-      this.kodiApi.media.setMovieDetails(this.movieId, params).subscribe()
+    if(this.isMovie()){     
+      this.kodiApi.media.setMovieDetails({"movieid" : (this.media as VideoDetailsMovie).movieid, "playcount" : watched ? 1 : 0}).subscribe(
+        resp => {
+          if(resp != "OK"){
+            this.application.showNotification('notification.error', "notification.contentNotUpdated", AppNotificationType.error);
+          } else {
+            (this.media as VideoDetailsMovie).playcount = watched ? 1 : 0;
+          }
+        }
+      );
     }
   }
 
-  refreshDataTvShow(){
-    this.kodiApi.media.refreshTvShow(this.tvShowId)
-    this.application.showNotification('notification.contentUpdated', "notification.refreshPageToSee", AppNotificationType.success);
+  toggleEdit(){
+    this.edit = !this.edit;
   }
 }

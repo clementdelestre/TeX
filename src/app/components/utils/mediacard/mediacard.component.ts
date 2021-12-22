@@ -6,6 +6,7 @@ import {Location} from '@angular/common';
 import { AudioDetailsAlbum, AudioDetailsArtist } from 'src/app/models/kodiInterfaces/audio';
 import { Router } from '@angular/router';
 import { LibraryDetailsGenre } from 'src/app/models/kodiInterfaces/library';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-mediacard',
@@ -29,7 +30,7 @@ export class MediacardComponent implements OnInit {
   displayResume = false;
   resume = 0;
 
-  constructor(private kodiApi:KodiApiService, private location:Location, private application: ApplicationService, private router:Router) { }
+  constructor(private kodiApi:KodiApiService, private location:Location, private application: ApplicationService, private searchService: SearchService, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -88,6 +89,10 @@ export class MediacardComponent implements OnInit {
       this.router.navigateByUrl("/musics/artist/" + (this.media as AudioDetailsArtist).artistid)
     } else if((this.media as LibraryDetailsGenre).genreid){
       this.router.navigateByUrl("/musics/genre/" + encodeURIComponent((this.media as LibraryDetailsGenre).title))
+    } else if((this.media as VideoCast).name){
+      this.searchService.clearFilters();
+      this.searchService.actorsFilter.push((this.media as VideoCast).name);
+      this.router.navigateByUrl("/search")
     } else {
       
     }
