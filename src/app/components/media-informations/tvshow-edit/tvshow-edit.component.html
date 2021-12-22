@@ -1,0 +1,32 @@
+<p class="mt-4 mb-1 font-semibold text-lg" translate="library.edit.title"></p>
+<input type="text" class="w-full input-text" [(ngModel)]="title">
+
+<p class="mt-4 mb-1 font-semibold text-lg" translate="library.edit.plot"></p>
+<textarea class="w-full input-text" style="min-height:200px;" [(ngModel)]="plot"></textarea>
+
+<p class="mt-4 mb-1 font-semibold text-lg" translate="library.edit.studio"></p>
+<input type="text" class="w-full input-text" [(ngModel)]="studio">
+
+<p class="mt-4 mb-1 font-semibold text-lg" translate="library.edit.genres"></p>
+<input type="text" class="w-full input-text"  [(ngModel)]="genres">
+
+<div class="flex justify-between mt-4">
+    <button (click)="displayData()" class="bg-yellow-500 rounded-lg px-4 py-2 hover:opacity-80 transition-opacity duration-300" translate="library.edit.cancel"></button>
+    <button (click)="save()" class="bg-blue-500 rounded-lg px-4 py-2 hover:opacity-80 transition-opacity duration-300" translate="library.edit.save"></button>
+</div>
+
+<div class="flex justify-evenly mt-8 pt-8 pb-4 border-t-2 border-dark-gray">
+
+    <div>
+        <button  class="bg-green-500 rounded-lg px-4 py-2 hover:opacity-80 transition-opacity duration-300 group relative" translate="library.edit.refresh">
+            <button (click)="refreshData()" class="edit-confirm" translate="library.edit.confirm"></button>
+        </button>
+    </div>
+
+
+    <div>
+        <button class="bg-red-500 rounded-lg px-4 py-2 hover:opacity-80 transition-opacity duration-300 group relative" translate="library.edit.remove">
+            <button (click)="removeTvShow()" class="edit-confirm" translate="library.edit.confirm"></button>
+        </button>
+    </div>
+</div>

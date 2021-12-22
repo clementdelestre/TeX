@@ -86,8 +86,28 @@
             "refresh": "Rafraîchir les données",
             "streamVideo": "Video :",
             "streamAudio" : "Audio :",
-            "streamSubtitle": "Sous-titres :"
+            "streamSubtitle": "Sous-titres :",
+            "edit": "Editer"
         },
+
+        "edit" : {
+            "title" : "Titre :",
+            "plot" : "Intrigue :",
+            "tagline" : "Slogan :",
+            "studio" : "Studio :",
+            "directors" : "Réalisateurs :",
+            "writers" : "Scénaristes :",
+            "genres" : "Genres :",
+            "country" : "Pays :",
+            "set" : "Série :",
+            "tags" : "Tags :",
+            "refresh" : "Rafraichir",
+            "remove" : "Supprimer",
+            "save" : "Sauvegarder",
+            "cancel": "Annuler",
+            "confirm" : "Confirmer"
+        },
+
         "musicsView": {
             "artist": "Artiste :",
             "album": "Album :",
@@ -156,9 +176,14 @@
         "scanFinished": "Annalyse terminée",
         "cleanStarted": "Nettoyage démarré",
         "cleanFinished": "Nettoyage terminé",
-        "contentUpdated": "Contenu mis à jour",
+        "contentUpdated": "Contenu mis à jour.",
         "updatedTranslations": "Traductions mises à jour",
-        "refreshPageToSee": "Actualisez la page pour voir les changements"
+        "refreshPageToSee": "Actualisez la page pour voir les changements",
+        "error" : "Erreur",
+        "success" : "Succès",
+        "contentNotUpdated" : "Contenu non mis à jour.",
+        "contentRemoved" : "Contenu supprimé. Actualisez la page pour voir les changements.",
+        "contentNotRemoved" : "Contenu non supprimé."
     },
     "remote": {
         "sendText": "Envoyer du texte"

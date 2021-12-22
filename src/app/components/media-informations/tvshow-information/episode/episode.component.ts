@@ -40,6 +40,8 @@ export class EpisodeComponent implements OnInit {
     this.kodiApi.file.getPreparedFileUrl(this.episode.file).subscribe((resp) => {
       this.downloadUrl = resp;
     });
+
+    console.log(this.episode.streamdetails)
   }
 
   toogleMoreInfo() : void {
@@ -106,6 +108,17 @@ export class EpisodeComponent implements OnInit {
   refreshData(){
     this.kodiApi.media.refreshEpisode(this.episode.episodeid)
     this.application.showNotification('notification.contentUpdated', "notification.refreshPageToSee", AppNotificationType.success);
+  }
+
+  getAudioChannels(channels: number){
+    switch(channels){
+      case 6:
+        return "5.1";
+      case 4:
+        return "3.1";
+      default:
+        return channels + "";
+    }
   }
 
 }

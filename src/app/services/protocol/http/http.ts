@@ -39,7 +39,7 @@ export class HttpRequestData {
         }
 
         return this.http.post<any>(this.getBaseUrl() + "jsonrpc", req, httpOptions).pipe(
-            map(reponse => { return reponse.result}),
+            map(response => { return response?.result ?? response?.error ?? "error"}),
             catchError((err, caught) => {
                 console.error(err);
                 throw err;
@@ -49,7 +49,7 @@ export class HttpRequestData {
 
     protected makeGetRequest(req: string): Observable<any>{
         return this.http.get<any>(req).pipe(
-            map(response => { return response.result}),
+            map(response => { return response?.result ?? response?.error ?? "error"}),
             catchError((err, caught) => {
               console.error(err);
               throw err;

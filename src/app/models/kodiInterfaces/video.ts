@@ -58,7 +58,7 @@ export interface VideoDetailsFile extends VideoDetailsItem {
     director?: string[];
     resume?: VideoResume;
     runtime?: number;
-    streamsdetails?: VideoStreams;
+    streamdetails?: VideoStreams;
 }
 
 export interface VideoDetailsMovie extends VideoDetailsFile {
@@ -172,7 +172,10 @@ export const fullMovieProperties = [
     "lastplayed",
     "playcount",
     "dateadded",
-    "streamdetails"
+    "streamdetails",
+    "country",
+    "set",
+    "tag"
 ];
 
 
@@ -227,6 +230,7 @@ export const episodeProperties = [
     "plot",
     "file",
     "playcount",
-    "dateadded"
+    "dateadded",
+    "streamdetails",
 ]
 
