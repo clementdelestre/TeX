@@ -80,11 +80,6 @@ export class MovieInformationComponent implements OnInit {
     this.application.showNotification('library.musicsView.linkCopied', "library.musicsView.linkWasCopiedInClipBoard", AppNotificationType.success);
   }
 
-  refreshData(){
-    this.kodiApi.media.refreshMovie(this.movie.movieid)
-    this.application.showNotification('notification.contentUpdated', "notification.refreshPageToSee", AppNotificationType.success);
-  }
-
   getAudioChannels(channels: number){
     switch(channels){
       case 6:

@@ -52,6 +52,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { PruningTranslationLoader } from './pruning-loader';
+import { MovieEditComponent } from './components/media-informations/movie-edit/movie-edit.component';
+import { TvshowEditComponent } from './components/media-informations/tvshow-edit/tvshow-edit.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +93,8 @@ import { PruningTranslationLoader } from './pruning-loader';
     LibraryCategoryComponent,
     MoviesMenuComponent,
     TvShowsHomeComponent,
+    MovieEditComponent,
+    TvshowEditComponent,
   ],
   imports: [
     BrowserModule,

@@ -213,3 +213,11 @@ input[type=text] {
 .auto-comma ~ .auto-comma::before{
     content: ", ";
 }
+
+.input-text {
+    @apply bg-dark-gray rounded-xl border border-transparent hover:border-gray-700 focus:border-gray-700 focus:ring-0 transition-all duration-300;
+}
+
+.edit-confirm {
+    @apply opacity-0 group-focus:opacity-100 pointer-events-none group-focus:pointer-events-auto group-hover:pointer-events-auto mb-2 absolute w-full bottom-10 left-0 text-center transition-all duration-300 bg-primary rounded-xl
+}

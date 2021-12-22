@@ -55,7 +55,7 @@
         "allMusics" : "All music",
 
         "filters" : "Filters",
-
+        
         "details" : {
             "genres" : "Genres:",
             "totalDiscs" : "Total disks:",
@@ -93,7 +93,27 @@
             "refresh" : "Refresh data",
             "streamVideo": "Video:",
             "streamAudio" : "Audio:",
-            "streamSubtitle": "Subtitle:"
+            "streamSubtitle": "Subtitle:",    
+            "edit": "Edit"
+        },
+
+        "edit" : {
+            "title" : "Title:",
+            "plot" : "Plot:",
+            "tagline" : "Tagline:",
+            "studio" : "Studio:",
+            "year": "Year:",
+            "directors" : "Directors:",
+            "writers" : "Writers:",
+            "genres" : "Genres:",
+            "country" : "Countries:",
+            "set" : "Set:",
+            "tags" : "Tags:",
+            "refresh" : "Refresh",
+            "remove" : "Remove",
+            "save" : "Save",
+            "cancel": "Cancel",
+            "confirm" : "Confirm"
         },
 
         "musicsView" : {
@@ -164,9 +184,14 @@
         "scanFinished" : "Scan finished",
         "cleanStarted" : "Clean started",
         "cleanFinished" : "Clean finished",
-        "contentUpdated" : "Content updated",
-        "updatedTranslations" : "Traductions mises à jour",
-        "refreshPageToSee" : "Refresh the page to see the changes"
+        "success" : "Success",
+        "updatedTranslations" : "Updated translations",
+        "refreshPageToSee" : "Refresh page to see changes",
+        "contentUpdated" : "Content updated. Refresh to see changes.",
+        "error" : "Error",
+        "contentNotUpdated" : "Content not updated",
+        "contentRemoved" : "Content removed. Refresh to see changes.",
+        "contentNotRemoved" : "Content not removed"
     },
     "remote" : {
         "sendText" : "Send text"
