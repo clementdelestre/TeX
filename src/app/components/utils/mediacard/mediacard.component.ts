@@ -92,6 +92,7 @@ export class MediacardComponent implements OnInit {
     } else if((this.media as VideoCast).name){
       this.searchService.clearFilters();
       this.searchService.actorsFilter.push((this.media as VideoCast).name);
+      if(this.router.url == "/search") this.location.go("/search");
       this.router.navigateByUrl("/search")
     } else {
       
