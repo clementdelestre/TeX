@@ -5,14 +5,14 @@ import { catchError, map } from "rxjs/operators";
 export class HttpRequestData {
 
     private location = window.location;
-    private port = "8080";
 
     constructor(protected http:HttpClient){
         
     }
 
     protected getBaseUrl(): string {
-        return this.location.protocol + "//" + this.location.hostname + ":" + this.port + "/"
+        const port = this.location.port == "4200" ? "8080" : this.location.port; 
+        return this.location.protocol + "//" + this.location.hostname + ":" + port + "/";
     }
 
     protected getApiUrl(): string {

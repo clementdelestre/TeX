@@ -121,7 +121,10 @@ import { TvshowEditComponent } from './components/media-informations/tvshow-edit
   exports: [
     TranslateModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    
+  ]
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
