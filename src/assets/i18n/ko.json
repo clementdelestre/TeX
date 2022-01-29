@@ -83,7 +83,10 @@
             "noSeasonAvailable": "시즌 없음",
             "getStreamingLink": "스트리밍 링크 받기",
             "additionalInformation": "추가 정보",
-            "refresh": "데이터 새로고침"
+            "refresh": "데이터 새로고침",
+            "streamSubtitle": "자막:",
+            "streamVideo": "비디오:",
+            "streamAudio": "오디오:"
         },
         "musicsView": {
             "artist": "아티스트:",
@@ -103,7 +106,10 @@
     },
     "player": {
         "playlist": "재생 목록",
-        "noMedia": "미디어 없음"
+        "noMedia": "미디어 없음",
+        "disabled": "사용 안 함",
+        "subtitles": "자막:",
+        "languages": "언어:"
     },
     "settings": {
         "settings": "설정",
@@ -122,7 +128,9 @@
             "vibrationOff": "진동 끄기",
             "mayNotWorkDevice": "일부 기기에서는 작동 안 함",
             "translationIssues": "번역이 문제인 경우, 웹 브라우저에서 캐시 지우기",
-            "refreshTranslation": "번역 새로고침"
+            "refreshTranslation": "번역 새로고침",
+            "checkUpdates": "업데이트 확인",
+            "currentVersion": "현재 버전:"
         },
         "appearance": {
             "appearance": "외관"
