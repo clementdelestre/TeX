@@ -14,12 +14,17 @@
             {{ 'settings.advanced.advanced' | translate }}   
             <fa-icon [icon]="['fas', 'chevron-right']" class="sm:hidden float-right"></fa-icon>   
         </a>
+        <a [routerLink]="'/settings/contribute'" class="settings-button-header">
+            {{ 'settings.contribute.contribute' | translate }}   
+            <fa-icon [icon]="['fas', 'chevron-right']" class="sm:hidden float-right"></fa-icon>   
+        </a>
     </div>
 
     <div [ngClass]="{'hidden sm:block' : isHome}" class="sm:w-4/5">
         <app-settings-general *ngIf="isPage('general')"></app-settings-general>
         <app-settings-appearance *ngIf="isPage('appearance')"></app-settings-appearance>
         <app-settings-advanced *ngIf="isPage('advanced')"></app-settings-advanced>
+        <app-settings-contribute *ngIf="isPage('contribute')"></app-settings-contribute>
     </div>
     
 </div>
