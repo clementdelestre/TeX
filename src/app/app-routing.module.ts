@@ -138,6 +138,10 @@ const routes: Routes = [
         path:'advanced',
         component: SettingsComponent
       },
+      {
+        path:'contribute',
+        component: SettingsComponent
+      },
     ]
   },
   {

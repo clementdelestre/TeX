@@ -1,8 +1,12 @@
 import { DOCUMENT } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { VideoDetailsMovie, VideoDetailsTVShow } from '../models/kodiInterfaces/video';
 import { AppNotification, AppNotificationType } from '../models/notification';
-import { LocalStorageService } from './local-storage.service';
+import { LocalStorageService, STORAGE_KEYS } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +26,9 @@ export class ApplicationService {
 
   musicsDefaultPlayer: string;
 
-  constructor( @Inject(DOCUMENT) private document: Document, private localStorage: LocalStorageService) {
+  constructor( @Inject(DOCUMENT) private document: Document, private localStorage: LocalStorageService, public translate: TranslateService, private http: HttpClient) {
     this.musicsDefaultPlayer = localStorage.getData("musicsDefaultPlayer") ?? "internal";
+    this.checkUpdate();
   }
 
   toggleBodyScroll(scroll: boolean){
@@ -64,6 +69,35 @@ export class ApplicationService {
 
   hideNotification(id: number){
     this.notifications.delete(id);
+  }
+
+  checkUpdate(){
+    const currentVersion = environment.appVersion;
+    if(this.localStorage.getData(STORAGE_KEYS.lastVersion) != currentVersion){
+      this.localStorage.setData(STORAGE_KEYS.lastVersion, currentVersion);
+      this.refreshTranslations();
+    }
+  }
+
+  refreshTranslations(){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Cache-Control':  'no-cache, no-store, must-revalidate, post-check=0, pre-check=0',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }),
+    }
+
+    for(const lang in this.translate.getLangs()){
+      this.http.get<any>("/assets/i18n/" + this.translate.getLangs()[lang] + ".json", httpOptions).pipe(
+        map(reponse => { this.translate.reloadLang(this.translate.getLangs()[lang]); } ),
+        catchError((err) => {
+            console.error(err);
+            throw err;
+        })
+      ).subscribe();
+    }
   }
 
 }
