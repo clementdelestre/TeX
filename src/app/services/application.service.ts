@@ -76,6 +76,7 @@ export class ApplicationService {
     if(this.localStorage.getData(STORAGE_KEYS.lastVersion) != currentVersion){
       this.localStorage.setData(STORAGE_KEYS.lastVersion, currentVersion);
       this.refreshTranslations();
+      this.showNotification("notification.appUpdated", "notification.changelogsOnGithub", AppNotificationType.success);
     }
   }
 
