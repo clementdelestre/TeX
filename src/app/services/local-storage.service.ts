@@ -5,6 +5,7 @@ import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 export enum STORAGE_KEYS {
   websocket_port = 'websocket_port',
   websocket_address = 'websocket_addr',
+  lastVersion = "last_version"
 }
 
 @Injectable({

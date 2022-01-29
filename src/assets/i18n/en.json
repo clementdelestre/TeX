@@ -176,6 +176,13 @@
             "reset" : "Reset",
             "jsonapi" : "JSON API",
             "sendrequest" : "Send request"
+        },
+        "contribute" : {
+            "contribute" : "Contribute",
+            "t1" : "Adding new features to TeX and continuing development takes a lot of time.",
+            "t2" : "To help me keep my motivation, you can financially support the project by making a donation!",
+            "t3" : "I would be more motivated to add the features requested by the community and fix existing problems.",
+            "makeGift" : "Make a donation"
         }
     },
     "unknown" : "Unknown",

@@ -18,7 +18,7 @@ export class GeneralComponent implements OnInit {
   version = environment.appVersion;
 
   vibrate:number = 50;
-  constructor(private kodiApi:KodiApiService, public application:ApplicationService, private localStorage: LocalStorageService, public translate: TranslateService, private http: HttpClient) { }
+  constructor(private kodiApi:KodiApiService, public application:ApplicationService, private localStorage: LocalStorageService, public translate: TranslateService) { }
 
   ngOnInit(): void {
     this.vibrate = this.localStorage.getData("vibrate") ?? 50;
@@ -62,26 +62,7 @@ export class GeneralComponent implements OnInit {
   }
 
   refreshTranslation(){
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Cache-Control':  'no-cache, no-store, must-revalidate, post-check=0, pre-check=0',
-        'Pragma': 'no-cache',
-        'Expires': '0'
-      }),
-    }
-
-    for(const lang in this.translate.getLangs()){
-      this.http.get<any>("/assets/i18n/" + this.translate.getLangs()[lang] + ".json", httpOptions).pipe(
-        map(reponse => { this.translate.reloadLang(this.translate.getLangs()[lang]); } ),
-        catchError((err) => {
-            console.error(err);
-            throw err;
-        })
-      ).subscribe();
-
-    }
-    
+    this.application.refreshTranslations();
     this.application.showNotification('notification.updatedTranslations', "notification.refreshPageToSee", AppNotificationType.success);
   }
 

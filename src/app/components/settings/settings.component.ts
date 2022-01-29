@@ -10,7 +10,8 @@ import { environment } from '../../../environments/environment';
 export enum Page {
   general = "general",
   appearance = "appearance",
-  advanced = "advanced"
+  advanced = "advanced",
+  contribute = "contribute"
 }
 
 @Component({
@@ -53,8 +54,11 @@ export class SettingsComponent implements OnInit {
         this.page = Page.appearance;
         break;
       case "advanced":
-          this.page = Page.advanced;
-          break;
+        this.page = Page.advanced;
+        break;
+      case "contribute":
+        this.page = Page.contribute;
+        break;
       default:
         this.isHome = true;
         this.page = Page.general;

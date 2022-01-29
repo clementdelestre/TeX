@@ -54,6 +54,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { PruningTranslationLoader } from './pruning-loader';
 import { MovieEditComponent } from './components/media-informations/movie-edit/movie-edit.component';
 import { TvshowEditComponent } from './components/media-informations/tvshow-edit/tvshow-edit.component';
+import { ContributeComponent } from './components/settings/contribute/contribute.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { TvshowEditComponent } from './components/media-informations/tvshow-edit
     TvShowsHomeComponent,
     MovieEditComponent,
     TvshowEditComponent,
+    ContributeComponent,
   ],
   imports: [
     BrowserModule,

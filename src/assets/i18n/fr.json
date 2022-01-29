@@ -168,6 +168,13 @@
             "reset": "Réinitialiser",
             "sendrequest": "Envoyer la requête",
             "jsonapi": "API JSON"
+        },
+        "contribute" : {
+            "contribute" : "Contribuer",
+            "t1" : "Ajouter de nouvelles fonctionnalités à TeX et continuer le développement prend beaucoup de temps.",
+            "t2" : "Pour m'aider à garder ma motivation, vous pouvez soutenir financièrement le projet en faisant un don !",
+            "t3" : "Je serais ainsi plus motivé pour ajouter les fonctionnalités demandées par la communauté et corriger les problèmes existants.",
+            "makeGift" : "Faire un don"
         }
     },
     "unknown": "Inconnu",
