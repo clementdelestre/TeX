@@ -190,7 +190,9 @@
         "success" : "Succès",
         "contentNotUpdated" : "Contenu non mis à jour.",
         "contentRemoved" : "Contenu supprimé. Actualisez la page pour voir les changements.",
-        "contentNotRemoved" : "Contenu non supprimé."
+        "contentNotRemoved" : "Contenu non supprimé.",
+        "appUpdated" : "Application mise à jour",
+        "changelogsOnGithub" : "Vous pouvez trouver la liste des changements sur Github."
     },
     "remote": {
         "sendText": "Envoyer du texte"

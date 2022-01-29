@@ -198,7 +198,9 @@
         "error" : "Error",
         "contentNotUpdated" : "Content not updated",
         "contentRemoved" : "Content removed. Refresh to see changes.",
-        "contentNotRemoved" : "Content not removed"
+        "contentNotRemoved" : "Content not removed",
+        "appUpdated" : "App successfully updated",
+        "changelogsOnGithub" : "You can find the changelogs on Github."
     },
     "remote" : {
         "sendText" : "Send text"
