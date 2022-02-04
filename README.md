@@ -36,7 +36,7 @@ I will apreciate any help if you want to improve the project. You can do pull re
 
 ## Donate
 
-Do you like TeX? You can <a href="https://lydia-app.com/collect/51723-tex-beer-fund/fr">buy Clément a beer</a> to say thanks :)
+Do you like TeX? You can <a href="https://www.paypal.com/donate/?hosted_button_id=VJSXD37SKCE4S">buy Clément a beer</a> to say thanks :)
 
 ## Gallery
 #### Movies
