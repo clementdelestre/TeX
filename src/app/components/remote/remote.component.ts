@@ -19,6 +19,7 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 export class RemoteComponent implements OnInit {
 
   displayVolumeBar: boolean = false;
+  cecEnabled: boolean = false;
 
   private volumeBarDelay:number = 0;
   sendTextValue = ""
@@ -31,6 +32,11 @@ export class RemoteComponent implements OnInit {
   ngOnInit(): void {
     this.document.body.style.overflow = "hidden";  
     this.application.historyPush("remote");
+    this.kodiApi.remote.cecEnabled().subscribe((response) => {
+      if (response?.addon?.enabled === true) {
+        this.cecEnabled = true;
+      }
+    });
   }
 
   ngOnDestroy(): void {
@@ -136,6 +142,10 @@ export class RemoteComponent implements OnInit {
     const vibrationLength:number = this.localStorage.getData("vibrate") ?? 50
     if(vibrationLength > 0)
       window.navigator.vibrate(vibrationLength); 
+  }
+
+  onCecToggle() {
+    this.kodiApi.remote.cecCommand("toggle")
   }
 
 }
