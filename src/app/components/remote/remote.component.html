@@ -23,7 +23,7 @@
                     <div class="flex flex-col w-full">
                         <div class="flex flex-row w-full h-full items-center">
                             <button><fa-icon [icon]="['fas', 'volume-down']" class="button-primary" (click)="onInputVolumeDown()"></fa-icon></button>
-                            <button></button>
+                            <button><fa-icon *ngIf="cecEnabled" [icon]="['fas', 'power-off']" class="button-primary" (click)="onCecToggle()"></fa-icon></button>
                             <button><fa-icon [icon]="['fas', 'volume-up']" class="button-primary" (click)="onInputVolumeUp()"></fa-icon></button>
                         </div>
                         <div [ngClass]="{'opacity-100' : displayVolumeBar}" class="relative pt-1 w-full px-8 mt-2 opacity-0 transition-opacity duration-100">

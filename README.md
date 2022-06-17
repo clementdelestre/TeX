@@ -8,6 +8,7 @@ TeX is a new web interface for Kodi made with Angular and Tailwind CSS.
 - Play musics in your browser
 - Download medias directly from your browser
 - Manage some Kodi settings
+- Toggle CEC state (if the [script.json-cec](https://github.com/joshjowen/script.json-cec) addon is installed)
 
 ## Installation
 
