@@ -4,8 +4,8 @@
 
 <router-outlet></router-outlet>
 
-<app-remote class="sm:hidden fixed bottom-0 left-0 w-screen h-screen z-40" @modalAnimationReverse *ngIf="application.openRemote"></app-remote>
-<app-remote class="fixed bottom-0 left-0 w-screen h-screen hidden sm:block z-40" @modalAnimation *ngIf="application.openRemote"></app-remote>
+<remote-modal class="sm:hidden fixed bottom-0 left-0 w-screen h-screen z-40" @modalAnimationReverse *ngIf="application.openRemote"></remote-modal>
+<remote-modal class="fixed bottom-0 left-0 w-screen h-screen hidden sm:block z-40" @modalAnimation *ngIf="application.openRemote"></remote-modal>
 
 <app-media-informations class="fixed bottom-0 left-0 w-screen h-screen sm:block z-40" @modalAnimation *ngIf="application.openMovieDetails || application.openTVShowDetails"></app-media-informations>
 <app-notifications></app-notifications>

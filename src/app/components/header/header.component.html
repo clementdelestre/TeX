@@ -1,38 +1,35 @@
-<div class=" hidden sm:block fixed w-screen top-0 z-30">
+<div class="hidden sm:block fixed w-screen top-0 z-30 relative mb-4">
     <div class="bg-gray-800">
         <div class="flex h-16 relative w-11/12 m-auto items-center justify-between">
             <div class="flex items-center space-x-8 h-full text-lg font-semibold">
                 <a [ngClass]="{'text-primary': isRoute('movie')}" routerLink="/movies" class="header-button" translate>header.movies</a>
                 <a [ngClass]="{'text-primary': isRoute('tvshow')}" routerLink="/tvshows" class="header-button" translate>header.tvshows</a>
                 <a [ngClass]="{'text-primary': isRoute('music')}" routerLink="/musics" class="header-button" translate>header.musics</a>
-            </div>        
-            <div class="flex items-center justify-items-center space-x-8">        
+            </div>
+            <div class="flex items-center justify-items-center space-x-8">
                 <app-searchbar></app-searchbar>
-    
+
                 <button (click)="openPlayer()" [ngClass]="{'text-primary': application.showPlayer}" class="hidden sm:block header-button text-xl"><fa-icon [icon]="['far', 'play-circle']" class="toggle-player"></fa-icon></button>
-    
+
                 <a (click)="openRemote()" class="header-button text-xl"><fa-icon [icon]="['fas', 'mobile-alt']"></fa-icon></a>
                 <a [ngClass]="{'text-primary': isRoute('settings')}" routerLink="/settings" class="header-button text-xl"><fa-icon [icon]="['fas', 'cog']"></fa-icon></a>
             </div>
         </div>
     </div>
-    
+
     <div class="h-1 bg-gradient-to-b from-gray-900 to-transparent w-full"></div>
 </div>
 
 
 
-<div class="sm:hidden w-full fixed z-40">
+<div *ngIf="router.url !== '/remote'" class="sm:hidden w-full fixed z-40">
     <div class="px-2 py-2 bg-dark-gray">
         <app-searchbar  class=""></app-searchbar>
     </div>
     <div class="h-1 bg-gradient-to-b from-gray-900 to-transparent w-full"></div>
 </div>
 
-<div class="h-20"></div>
-
-    
-<app-player @modalAnimationReverse *ngIf="application.showPlayer" class="z-40 fixed bottom-0 left-0 w-screen h-screen sm:left-auto sm:bottom-auto sm:h-auto sm:w-full sm:right-4 sm:top-14 sm:mt-1"></app-player> 
+<app-player @modalAnimationReverse *ngIf="application.showPlayer" class="z-40 fixed bottom-0 left-0 w-screen h-screen sm:left-auto sm:bottom-auto sm:h-auto sm:w-full sm:right-4 sm:top-14 sm:mt-1"></app-player>
 
 
 <div class="sm:hidden w-full bg-dark-gray bottom-0 fixed z-30">
@@ -57,18 +54,21 @@
             <fa-icon [ngClass]="{'text-primary': isRoute('music')}" routerLink="/musics" class="header-button" [icon]="['fas', 'music']"></fa-icon>
         </div>
 
-        <button class="w-full text-center z-10 group relative">     
+        <button class="w-full text-center z-10 group relative">
             <fa-icon class="header-button" [icon]="['fas', 'bars']"></fa-icon>
             <div class="floating-button-top-right pointer-group-button">
                 <div class="floating-list">
-                    <button class="floating-button" *ngIf="player.isAvailable()" (click)="openRemote()" translate="">
+                    <button *ngIf="router.url === '/remote'" class="floating-button" routerLink="/search" translate="">
+                        header.search.search
+                    </button>
+                    <button class="floating-button" *ngIf="router.url !== '/remote' && player.isAvailable()" routerLink="/remote" translate="">
                         header.remote
                     </button>
                     <a [ngClass]="{'text-primary': isRoute('settings')}" routerLink="/settings" class="floating-button" translate="">
                         header.settings
-                    </a>                
+                    </a>
                 </div>
-            </div>   
-        </button>  
+            </div>
+        </button>
     </div>
 </div>
