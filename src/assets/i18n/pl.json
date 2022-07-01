@@ -86,7 +86,8 @@
             "refresh": "Odśwież dane",
             "streamSubtitle": "Napisy:",
             "streamAudio": "Audio:",
-            "streamVideo": "Wideo:"
+            "streamVideo": "Wideo:",
+            "edit": "Edytuj"
         },
         "musicsView": {
             "artist": "Wykonawca:",
@@ -102,6 +103,24 @@
             "download": "Pobierz",
             "linkCopied": "Łącze skopiowano",
             "linkWasCopiedInClipBoard": "Łącze zostało skopiowane do schowka."
+        },
+        "edit": {
+            "confirm": "Potwierdź",
+            "cancel": "Anuluj",
+            "save": "Zapisz",
+            "remove": "Usuń",
+            "refresh": "Odśwież",
+            "tags": "Znaczniki:",
+            "set": "Zestaw:",
+            "country": "Kraje:",
+            "genres": "Gatunki:",
+            "writers": "Autorzy:",
+            "directors": "Reżyserzy:",
+            "year": "Rok:",
+            "studio": "Studio:",
+            "tagline": "Slogan:",
+            "plot": "Fabuła:",
+            "title": "Tytuł:"
         }
     },
     "player": {
@@ -148,6 +167,13 @@
             "reset": "Resetuj",
             "jsonapi": "API JSON",
             "sendrequest": "Wyślij żądanie"
+        },
+        "contribute": {
+            "makeGift": "Przekaż darowiznę",
+            "t3": "Byłbym bardziej zmotywowany do dodania funkcji wymaganych przez społeczność i naprawienia istniejących problemów.",
+            "t2": "Aby pomóc mi utrzymać motywację, możesz wesprzeć projekt finansowo poprzez darowiznę!",
+            "t1": "Dodawanie nowych funkcji do interfejsu TeX i kontynuowanie rozwoju zajmuje dużo czasu.",
+            "contribute": "Przyczyń się"
         }
     },
     "unknown": "Nieznane",
@@ -156,9 +182,16 @@
         "scanFinished": "Skanowanie zakończono",
         "cleanStarted": "Porządkowanie rozpoczęto",
         "cleanFinished": "Porządkowanie zakończono",
-        "contentUpdated": "Zawartość zaktualizowano",
-        "updatedTranslations": "Tłumaczenia zaktualizowano",
-        "refreshPageToSee": "Odśwież stronę, aby zobaczyć zmiany"
+        "contentUpdated": "Zaktualizowano zawartość. Odśwież, aby zobaczyć zmiany.",
+        "updatedTranslations": "Zaktualizowane tłumaczenia",
+        "refreshPageToSee": "Odśwież stronę, aby zobaczyć zmiany",
+        "changelogsOnGithub": "Możesz znaleźć dzienniki zmian w serwisie GitHub.",
+        "appUpdated": "Pomyślnie zaktualizowano aplikację",
+        "contentNotRemoved": "Zawartość nie została usunięta",
+        "contentRemoved": "Zawartość została usunięta. Odśwież, aby zobaczyć zmiany.",
+        "contentNotUpdated": "Zawartość nie została zaktualizowana",
+        "error": "Błąd",
+        "success": "Powodzenie"
     },
     "remote": {
         "sendText": "Wyślij tekst"

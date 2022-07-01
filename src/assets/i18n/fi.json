@@ -48,16 +48,16 @@
         "recentlyAddedAlbums": "",
         "mostPlayedAlbums": "",
         "allMusics": "",
-        "filters": "",
+        "filters": "Suodattimet",
         "details": {
-            "genres": "",
-            "totalDiscs": "",
-            "year": "",
-            "studios": "",
-            "writers": "",
-            "directors": "",
-            "disk": "",
-            "born": "",
+            "genres": "Lajityypit:",
+            "totalDiscs": "Levyjen määrä:",
+            "year": "Vuosi:",
+            "studios": "Studiot:",
+            "writers": "Kirjoittajat:",
+            "directors": "Ohjaajat:",
+            "disk": "Levy",
+            "born": "Syntynyt:",
             "mood": "",
             "formed": "",
             "disbanded": "",
@@ -79,11 +79,12 @@
             "seasons": "",
             "seasonNumber": "",
             "episodeCount": "",
-            "episodesTitle": "",
+            "episodesTitle": "Jaksoa",
             "noSeasonAvailable": "",
             "getStreamingLink": "",
             "additionalInformation": "",
-            "refresh": ""
+            "refresh": "",
+            "streamSubtitle": "Tekstitys:"
         },
         "musicsView": {
             "artist": "",
@@ -99,17 +100,22 @@
             "download": "",
             "linkCopied": "",
             "linkWasCopiedInClipBoard": ""
+        },
+        "edit": {
+            "title": "Nimike:"
         }
     },
     "player": {
         "playlist": "",
-        "noMedia": ""
+        "noMedia": "",
+        "subtitles": "Tekstitykset:",
+        "languages": "Kielet:"
     },
     "settings": {
         "settings": "",
         "general": {
             "general": "",
-            "language": "",
+            "language": "Kieli",
             "musicsDefaultPlayer": "",
             "scanVideoLibrary": "",
             "scanAudioLibrary": "",
