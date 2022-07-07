@@ -86,7 +86,8 @@
             "refresh": "Obnoviť údaje",
             "streamSubtitle": "Titulky:",
             "streamAudio": "Audio:",
-            "streamVideo": "Video:"
+            "streamVideo": "Video:",
+            "edit": "Upraviť"
         },
         "musicsView": {
             "artist": "Interpret:",
@@ -97,11 +98,15 @@
             "year": "Rok:",
             "listenIn": "",
             "internalPlayer": "",
-            "search": "",
+            "search": "Vyhľadávanie",
             "playNext": "",
-            "download": "",
+            "download": "Stiahnuť",
             "linkCopied": "",
             "linkWasCopiedInClipBoard": ""
+        },
+        "edit": {
+            "remove": "Odstrániť",
+            "refresh": "Obnoviť"
         }
     },
     "player": {
@@ -109,13 +114,13 @@
         "noMedia": ""
     },
     "settings": {
-        "settings": "",
+        "settings": "Nastavenia",
         "general": {
-            "general": "",
-            "language": "",
+            "general": "Všeobecné",
+            "language": "Jazyk",
             "musicsDefaultPlayer": "",
-            "scanVideoLibrary": "",
-            "scanAudioLibrary": "",
+            "scanVideoLibrary": "Prehľadať videoknižnicu",
+            "scanAudioLibrary": "Prehľadať audioknižnicu",
             "cleanVideoLibrary": "",
             "cleanAudioLibrary": "",
             "libraries": "",

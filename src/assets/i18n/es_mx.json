@@ -86,7 +86,8 @@
             "refresh": "Actualizar datos",
             "streamSubtitle": "Subtítulo:",
             "streamAudio": "Audio:",
-            "streamVideo": "Video:"
+            "streamVideo": "Video:",
+            "edit": "Editar"
         },
         "musicsView": {
             "artist": "Artista:",
@@ -102,6 +103,24 @@
             "download": "Descargar",
             "linkCopied": "Enlace copiado",
             "linkWasCopiedInClipBoard": "El enlace ha sido copiado al portapapeles."
+        },
+        "edit": {
+            "confirm": "Confirmar",
+            "cancel": "Cancelar",
+            "save": "Guardar",
+            "remove": "Eliminar",
+            "refresh": "Actualiza",
+            "tags": "Etiquetas:",
+            "set": "Conjunto:",
+            "country": "Países:",
+            "genres": "Géneros:",
+            "writers": "Escritores:",
+            "directors": "Directores:",
+            "year": "Año:",
+            "studio": "Estudio:",
+            "tagline": "Titular:",
+            "plot": "Resumen:",
+            "title": "Título:"
         }
     },
     "player": {
@@ -148,6 +167,13 @@
             "reset": "Reiniciar",
             "jsonapi": "API JSON",
             "sendrequest": "Enviar petición"
+        },
+        "contribute": {
+            "makeGift": "Hacer una donación",
+            "t3": "Estaría mucho más motivado para agregar las características solicitadas por la comunidad y reparar los problemas existentes.",
+            "t2": "Para ayudarme a mantener mi motivación, ¡puedes apoyar financieramente el proyecto haciendo una donación!",
+            "t1": "Agregar nuevas características a TeX y continuar con su desarrollo toma bastante tiempo.",
+            "contribute": "Contribuir"
         }
     },
     "unknown": "Desconocido",
@@ -156,9 +182,16 @@
         "scanFinished": "Escaneo finalizado",
         "cleanStarted": "Limpieza iniciada",
         "cleanFinished": "Limpieza finalizada",
-        "contentUpdated": "Contenido actualizado",
+        "contentUpdated": "Contenido actualizado. Actualiza para ver los cambios.",
         "updatedTranslations": "Traducciones actualizadas",
-        "refreshPageToSee": "Recarga la página para ver los cambios"
+        "refreshPageToSee": "Recarga la página para ver los cambios",
+        "changelogsOnGithub": "Puedes encontrar el registro de cambios en GitHub.",
+        "appUpdated": "Aplicación actualizada con éxito",
+        "contentNotRemoved": "Contenido no eliminado",
+        "contentRemoved": "Contenido eliminado. Actualiza para ver los cambios.",
+        "contentNotUpdated": "Contenido no actualizado",
+        "error": "Error",
+        "success": "Éxito"
     },
     "remote": {
         "sendText": "Enviar texto"
