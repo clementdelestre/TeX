@@ -1,11 +1,11 @@
 {
     "header": {
-        "movies": "",
+        "movies": "Filmai",
         "tvshows": "",
-        "musics": "",
+        "musics": "Muzika",
         "player": "",
         "remote": "",
-        "settings": "",
+        "settings": "Nustatymai",
         "search": {
             "search": "",
             "searchIn": "",
@@ -20,9 +20,9 @@
         "continueToWatch": "",
         "recentlyAdded": "",
         "unwatched": "",
-        "movies": "",
+        "movies": "Filmai",
         "tvshows": "",
-        "musics": "",
+        "musics": "Muzika",
         "nothingToShow": "",
         "changeFilterToFindSomething": "",
         "resetFilters": "",
@@ -40,15 +40,15 @@
         "directors": "",
         "writers": "",
         "actors": "",
-        "albums": "",
-        "artists": "",
+        "albums": "Albumai",
+        "artists": "Atlikėjai",
         "genres": "",
         "years": "",
         "recentlyPlayedAlbums": "",
         "recentlyAddedAlbums": "",
         "mostPlayedAlbums": "",
         "allMusics": "",
-        "filters": "",
+        "filters": "Filtrai",
         "details": {
             "genres": "",
             "totalDiscs": "",
@@ -63,7 +63,7 @@
             "disbanded": "",
             "episodes": "",
             "musicsBy": "",
-            "playButton": "",
+            "playButton": "Atkurti",
             "playNext": "",
             "rating": "",
             "watched": "",
@@ -71,7 +71,7 @@
             "size": "",
             "file": "",
             "dateadded": "",
-            "download": "",
+            "download": "Atsisiųsti",
             "moreinfo": "",
             "lessinfo": "",
             "trailer": "",
@@ -96,9 +96,12 @@
             "internalPlayer": "",
             "search": "",
             "playNext": "",
-            "download": "",
+            "download": "Atsisiųsti",
             "linkCopied": "",
             "linkWasCopiedInClipBoard": ""
+        },
+        "edit": {
+            "remove": "Pašalinti"
         }
     },
     "player": {
@@ -106,13 +109,13 @@
         "noMedia": ""
     },
     "settings": {
-        "settings": "",
+        "settings": "Nustatymai",
         "general": {
-            "general": "",
-            "language": "",
+            "general": "Pagrindiniai",
+            "language": "Kalba",
             "musicsDefaultPlayer": "",
-            "scanVideoLibrary": "",
-            "scanAudioLibrary": "",
+            "scanVideoLibrary": "Nuskaityti vaizdo biblioteką",
+            "scanAudioLibrary": "Nuskaityti muzikos biblioteką",
             "cleanVideoLibrary": "",
             "cleanAudioLibrary": "",
             "libraries": "",

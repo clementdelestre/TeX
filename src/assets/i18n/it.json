@@ -86,7 +86,8 @@
             "refresh": "Ricarica i dati",
             "streamSubtitle": "Sottotitoli:",
             "streamAudio": "Audio:",
-            "streamVideo": "Video:"
+            "streamVideo": "Video:",
+            "edit": "Modifica"
         },
         "musicsView": {
             "artist": "Artista:",
@@ -102,6 +103,14 @@
             "download": "Scarica",
             "linkCopied": "Link copiato",
             "linkWasCopiedInClipBoard": "Il link è stato copiato negli appunti."
+        },
+        "edit": {
+            "genres": "Generi:",
+            "writers": "Autori:",
+            "directors": "Registi:",
+            "year": "Anno:",
+            "title": "Titolo:",
+            "remove": "Rimuovi"
         }
     },
     "player": {
