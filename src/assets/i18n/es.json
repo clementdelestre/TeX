@@ -86,7 +86,8 @@
             "refresh": "Refrescar datos",
             "streamSubtitle": "Subtítulo:",
             "streamAudio": "Audio:",
-            "streamVideo": "Vídeo:"
+            "streamVideo": "Vídeo:",
+            "edit": "Editar"
         },
         "musicsView": {
             "artist": "Intérprete:",
@@ -102,6 +103,24 @@
             "download": "Descargar",
             "linkCopied": "Enlace copiado",
             "linkWasCopiedInClipBoard": "El enlace se ha copiado al portapapeles."
+        },
+        "edit": {
+            "confirm": "Confirmar",
+            "cancel": "Cancelar",
+            "save": "Guardar",
+            "remove": "Eliminar",
+            "refresh": "Refrescar",
+            "tags": "Etiquetas:",
+            "set": "Saga:",
+            "country": "Paises:",
+            "genres": "Géneros:",
+            "writers": "Guionistas:",
+            "directors": "Directores:",
+            "year": "Año:",
+            "studio": "Estudio:",
+            "tagline": "Titular:",
+            "plot": "Argumento:",
+            "title": "Título:"
         }
     },
     "player": {
@@ -148,6 +167,13 @@
             "reset": "Restablecer",
             "jsonapi": "JSON API",
             "sendrequest": "Enviar petición"
+        },
+        "contribute": {
+            "makeGift": "Hacer una donación",
+            "t3": "Estaré mucho más motivado para añadir las funcionalidades pedidas por la comunidad y para arreglar los problemas existentes.",
+            "t2": "Para ayudarme a mantener la motivación, ¡puedes financiar el proyecto haciendo una donación!",
+            "t1": "Añadir funcionalides a TeX y desarrollarlo continuamente lleva un montón de tiempo.",
+            "contribute": "Contribuir"
         }
     },
     "unknown": "Desconocido",
@@ -156,9 +182,16 @@
         "scanFinished": "Escaneo terminado",
         "cleanStarted": "Limpieza empezada",
         "cleanFinished": "Limpieza terminada",
-        "contentUpdated": "Contenido actualizado",
+        "contentUpdated": "Contenido actualizado. Refrescar para ver los cambios.",
         "updatedTranslations": "Traducciones actualizadas",
-        "refreshPageToSee": "Refresque la página para ver los cambios"
+        "refreshPageToSee": "Refresque la página para ver los cambios",
+        "changelogsOnGithub": "Se puede ver el registro de cambios en Github.",
+        "appUpdated": "App actualizada con éxito",
+        "contentNotRemoved": "Contenido no eliminado",
+        "contentRemoved": "Contenido eliminado. Refrescar para ver los cambios.",
+        "contentNotUpdated": "Contenido no actualizado",
+        "error": "Error",
+        "success": "Éxito"
     },
     "remote": {
         "sendText": "Enviar texto"

@@ -3,7 +3,7 @@
         "movies": "Film",
         "tvshows": "Serie TV",
         "musics": "Musica",
-        "player": "Player",
+        "player": "Lettore",
         "remote": "Remoto",
         "settings": "Impostazioni",
         "search": {
@@ -21,20 +21,20 @@
         "recentlyAdded": "Aggiunti di recente",
         "unwatched": "Non visti",
         "movies": "Film",
-        "tvshows": "Serie TV",
+        "tvshows": "Programmi TV",
         "musics": "Musica",
-        "nothingToShow": "Nessun risultato",
+        "nothingToShow": "Niente da mostrare",
         "changeFilterToFindSomething": "Cambia i filtri per trovare qualcosa",
         "resetFilters": "Pulisci",
         "sortBy": {
             "sortBy": "Ordina per",
             "alphabetical": "Alfabetico",
-            "alphabeticalInversed": "Alfabetico inverso",
+            "alphabeticalInversed": "Alfabetico (inverso)",
             "random": "Casuale",
             "duration": "Durata",
             "latest": "Ultimo",
             "older": "Più vecchio",
-            "track": "Brano"
+            "track": "Traccia"
         },
         "page": "Pagina",
         "directors": "Registi",
@@ -44,7 +44,7 @@
         "artists": "Artisti",
         "genres": "Generi",
         "years": "Anni",
-        "recentlyPlayedAlbums": "Album ascoltati di recente",
+        "recentlyPlayedAlbums": "Album riprodotti di recente",
         "recentlyAddedAlbums": "Album aggiunti di recente",
         "mostPlayedAlbums": "Album più ascoltati",
         "allMusics": "Tutta la musica",
@@ -58,8 +58,8 @@
             "directors": "Registi:",
             "disk": "Disco",
             "born": "Nato:",
-            "mood": "Mood:",
-            "formed": "Nati:",
+            "mood": "Umore:",
+            "formed": "Formati:",
             "disbanded": "Sciolti:",
             "episodes": "Episodi:",
             "musicsBy": "Musica di",
@@ -77,8 +77,8 @@
             "trailer": "Trailer",
             "casting": "Casting",
             "seasons": "Stagioni",
-            "seasonNumber": "Stagione {{ valore }}",
-            "episodeCount": "{{ valore }} episodi",
+            "seasonNumber": "Stagione {{ value }}",
+            "episodeCount": "{{ value }} episodi",
             "episodesTitle": "Episodi",
             "noSeasonAvailable": "Nessuna stagione disponibile",
             "getStreamingLink": "Ottieni link per lo streaming",
@@ -86,12 +86,13 @@
             "refresh": "Ricarica i dati",
             "streamSubtitle": "Sottotitoli:",
             "streamAudio": "Audio:",
-            "streamVideo": "Video:"
+            "streamVideo": "Video:",
+            "edit": "Modifica"
         },
         "musicsView": {
             "artist": "Artista:",
             "album": "Album:",
-            "track": "Brano:",
+            "track": "Traccia:",
             "duration": "Durata:",
             "genre": "Genere:",
             "year": "Anno:",
@@ -102,6 +103,24 @@
             "download": "Scarica",
             "linkCopied": "Link copiato",
             "linkWasCopiedInClipBoard": "Il link è stato copiato negli appunti."
+        },
+        "edit": {
+            "genres": "Generi:",
+            "writers": "Autori:",
+            "directors": "Registi:",
+            "year": "Anno:",
+            "title": "Titolo:",
+            "remove": "Rimuovi",
+            "set": "Serie:",
+            "refresh": "Ricarica",
+            "tags": "Etichette:",
+            "save": "Salva",
+            "country": "Paesi:",
+            "confirm": "Conferma",
+            "cancel": "Annulla",
+            "studio": "Studio:",
+            "tagline": "Slogan:",
+            "plot": "Trama:"
         }
     },
     "player": {
@@ -116,21 +135,21 @@
         "general": {
             "general": "Generali",
             "language": "Lingua",
-            "musicsDefaultPlayer": "Player di default per la musica",
+            "musicsDefaultPlayer": "Lettore musicale predefinito",
             "scanVideoLibrary": "Scansione libreria video",
             "scanAudioLibrary": "Scansione libreria audio",
             "cleanVideoLibrary": "Pulisci libreria video",
             "cleanAudioLibrary": "Pulisci libreria audio",
             "libraries": "Librerie",
             "application": "Programma",
-            "resetApp": "Ripristina l'app e installa gli aggiornamenti",
-            "vibrate": "Vibrate",
-            "vibrationOff": "Vibrate Off",
+            "resetApp": "Ripristina app e installa aggiornamenti",
+            "vibrate": "Vibra",
+            "vibrationOff": "Non vibra",
             "mayNotWorkDevice": "Potrebbe non funzionare in certi dispositivi",
-            "translationIssues": "In caso di problemi di traduzione, pulire la cache del browser web",
-            "refreshTranslation": "Aggiorna le traduzioni",
-            "checkUpdates": "Verifica aggiornamenti",
-            "currentVersion": "Versione corrente:"
+            "translationIssues": "In caso di problemi di traduzione, svuota la cache dal tuo browser web",
+            "refreshTranslation": "Aggiorna traduzioni",
+            "checkUpdates": "Controlla aggiornamenti",
+            "currentVersion": "Versione attuale:"
         },
         "appearance": {
             "appearance": "Aspetto"
@@ -148,6 +167,13 @@
             "reset": "Pulisci",
             "jsonapi": "JSON API",
             "sendrequest": "Invia richiesta"
+        },
+        "contribute": {
+            "makeGift": "Fai una donazione",
+            "t3": "Sarei più motivato ad aggiungere le funzionalità richieste dalla community e risolvere i problemi esistenti.",
+            "t2": "Per aiutarmi a mantenere la mia motivazione, puoi sostenere finanziariamente il progetto facendo una donazione!",
+            "t1": "L'aggiunta di nuove funzionalità a TeX e lo sviluppo continuo richiedono molto tempo.",
+            "contribute": "Contributo"
         }
     },
     "unknown": "Sconosciuto",
@@ -156,9 +182,16 @@
         "scanFinished": "Scansione terminata",
         "cleanStarted": "Pulizia iniziata",
         "cleanFinished": "Pulizia terminata",
-        "contentUpdated": "Contenuto aggiornato",
+        "contentUpdated": "Contenuto aggiornato. Ricarica per vedere le modifiche.",
         "updatedTranslations": "Traduzioni aggiornate",
-        "refreshPageToSee": "Ricarica la pagina per vedere le modifiche"
+        "refreshPageToSee": "Ricarica la pagina per vedere le modifiche",
+        "changelogsOnGithub": "Puoi trovare i log delle modifiche su Github.",
+        "appUpdated": "App aggiornata con successo",
+        "contentNotRemoved": "Contenuto non rimosso",
+        "contentRemoved": "Contenuto rimosso. Ricarica per vedere le modifiche.",
+        "contentNotUpdated": "Contenuto non aggiornato",
+        "error": "Errore",
+        "success": "Successo"
     },
     "remote": {
         "sendText": "Invia testo"

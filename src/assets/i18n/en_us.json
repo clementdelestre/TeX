@@ -1,11 +1,11 @@
 {
     "header": {
-        "movies": "",
-        "tvshows": "",
-        "musics": "",
-        "player": "",
-        "remote": "",
-        "settings": "",
+        "movies": "Movies",
+        "tvshows": "TV Shows",
+        "musics": "Music",
+        "player": "Player",
+        "remote": "Remote",
+        "settings": "Settings",
         "search": {
             "search": "",
             "searchIn": "",
