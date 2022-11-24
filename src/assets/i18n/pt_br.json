@@ -2,16 +2,16 @@
     "header": {
         "movies": "Filmes",
         "tvshows": "Séries",
-        "musics": "Músicas",
+        "musics": "Música",
         "player": "Reprodutor",
         "remote": "",
-        "settings": "",
+        "settings": "Configurações",
         "search": {
-            "search": "",
+            "search": "Buscar",
             "searchIn": "",
-            "filters": "",
-            "year": "",
-            "genre": ""
+            "filters": "Filtros:",
+            "year": "Ano",
+            "genre": "Gênero"
         }
     },
     "library": {
@@ -20,9 +20,9 @@
         "continueToWatch": "",
         "recentlyAdded": "",
         "unwatched": "",
-        "movies": "",
+        "movies": "Filmes",
         "tvshows": "",
-        "musics": "",
+        "musics": "Música",
         "nothingToShow": "",
         "changeFilterToFindSomething": "",
         "resetFilters": "",
@@ -34,21 +34,21 @@
             "duration": "",
             "latest": "",
             "older": "",
-            "track": ""
+            "track": "Faixa"
         },
         "page": "",
-        "directors": "",
-        "writers": "",
+        "directors": "Diretores",
+        "writers": "Escritores",
         "actors": "",
-        "albums": "",
-        "artists": "",
-        "genres": "",
+        "albums": "Álbuns",
+        "artists": "Artistas",
+        "genres": "Gêneros",
         "years": "",
-        "recentlyPlayedAlbums": "",
-        "recentlyAddedAlbums": "",
+        "recentlyPlayedAlbums": "Álbuns recentemente tocados",
+        "recentlyAddedAlbums": "Álbuns recentemente adicionados",
         "mostPlayedAlbums": "",
         "allMusics": "",
-        "filters": "",
+        "filters": "Filtros",
         "details": {
             "genres": "",
             "totalDiscs": "",
@@ -63,18 +63,18 @@
             "disbanded": "",
             "episodes": "",
             "musicsBy": "",
-            "playButton": "",
+            "playButton": "Tocar",
             "playNext": "",
             "rating": "",
-            "watched": "",
+            "watched": "Assistido",
             "unwatched": "",
             "size": "",
             "file": "",
             "dateadded": "",
-            "download": "",
+            "download": "Baixar",
             "moreinfo": "",
             "lessinfo": "",
-            "trailer": "",
+            "trailer": "Trailer",
             "casting": "",
             "seasons": "",
             "seasonNumber": "",
@@ -83,7 +83,8 @@
             "noSeasonAvailable": "",
             "getStreamingLink": "",
             "additionalInformation": "",
-            "refresh": ""
+            "refresh": "",
+            "edit": "Editar"
         },
         "musicsView": {
             "artist": "",
@@ -94,11 +95,15 @@
             "year": "",
             "listenIn": "",
             "internalPlayer": "",
-            "search": "",
+            "search": "Buscar",
             "playNext": "",
-            "download": "",
+            "download": "Baixar",
             "linkCopied": "",
             "linkWasCopiedInClipBoard": ""
+        },
+        "edit": {
+            "remove": "Remover",
+            "refresh": "Atualizar"
         }
     },
     "player": {
@@ -106,13 +111,13 @@
         "noMedia": ""
     },
     "settings": {
-        "settings": "",
+        "settings": "Configurações",
         "general": {
-            "general": "",
-            "language": "",
+            "general": "Geral",
+            "language": "Língua",
             "musicsDefaultPlayer": "",
-            "scanVideoLibrary": "",
-            "scanAudioLibrary": "",
+            "scanVideoLibrary": "Atualizar coleção de vídeo",
+            "scanAudioLibrary": "Atualizar coleção de áudio",
             "cleanVideoLibrary": "",
             "cleanAudioLibrary": "",
             "libraries": "",

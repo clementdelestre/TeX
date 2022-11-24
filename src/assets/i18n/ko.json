@@ -86,7 +86,8 @@
             "refresh": "데이터 새로고침",
             "streamSubtitle": "자막:",
             "streamVideo": "비디오:",
-            "streamAudio": "오디오:"
+            "streamAudio": "오디오:",
+            "edit": "편집"
         },
         "musicsView": {
             "artist": "아티스트:",
@@ -102,6 +103,24 @@
             "download": "내려받기",
             "linkCopied": "링크 복사됨",
             "linkWasCopiedInClipBoard": "링크가 클립보드에 복사되었습니다."
+        },
+        "edit": {
+            "confirm": "확인",
+            "cancel": "취소",
+            "save": "저장",
+            "remove": "삭제",
+            "refresh": "새로 고침",
+            "tags": "태그:",
+            "set": "세트:",
+            "country": "국가:",
+            "genres": "장르:",
+            "writers": "작가:",
+            "directors": "감독:",
+            "year": "연도:",
+            "studio": "스튜디오:",
+            "tagline": "태그 라인:",
+            "plot": "구성:",
+            "title": "제목:"
         }
     },
     "player": {
@@ -148,6 +167,13 @@
             "reset": "초기화",
             "jsonapi": "JSON API",
             "sendrequest": "요청 보내기"
+        },
+        "contribute": {
+            "makeGift": "기부하기",
+            "t3": "커뮤니티에서 요청한 기능을 추가하고 기존 문제를 수정하는 데 더 많은 동기를 부여할 것입니다.",
+            "t2": "동기 부여를 위해서, 기부를 통한 프로젝트 지원을 할 수 있습니다!",
+            "t1": "TeX에 새로운 기능을 추가하고 개발을 계속하려면 많은 시간이 걸립니다.",
+            "contribute": "기여"
         }
     },
     "unknown": "알 수 없음",
@@ -156,9 +182,16 @@
         "scanFinished": "스캔 완료",
         "cleanStarted": "정리 시작",
         "cleanFinished": "정리 완료",
-        "contentUpdated": "콘텐츠 업데이트",
-        "updatedTranslations": "업데이트된 번역",
-        "refreshPageToSee": "변경 사항을 보려면 페이지를 새로 고침"
+        "contentUpdated": "콘텐츠가 업데이트 되었습니다. 변경 사항을 보려면 새로 고침 하세요.",
+        "updatedTranslations": "번역 업데이트됨",
+        "refreshPageToSee": "변경 사항을 보려면 페이지를 새로 고침",
+        "changelogsOnGithub": "Github에서 변경 내용을 확인할 수 있습니다.",
+        "appUpdated": "앱이 성공적으로 업데이트됨",
+        "contentNotRemoved": "콘텐츠가 삭제되지 않음",
+        "contentRemoved": "콘텐츠가 삭제되었습니다. 변경 사항을 보려면 새로 고침 하세요.",
+        "contentNotUpdated": "콘텐츠가 업데이트되지 않음",
+        "error": "오류",
+        "success": "성공"
     },
     "remote": {
         "sendText": "문자 보내기"
