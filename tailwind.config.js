@@ -1,20 +1,22 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: {
-      enabled: process.env.NODE_ENV,
-      content: [
-          './src/**/*.{html,js}',
-      ],     
-    },   
-    darkMode: false,  
+    // purge: {
+    //   enabled: process.env.NODE_ENV,
+    //   content: [
+    //       './src/**/*.{html,js}',
+    //   ],     
+    // },  
+    content: [
+      './src/**/*.{html,js}',
+    ], 
     theme: {
       
       extend: {
         colors: {
           "dark-full": "#151515",
           "dark-gray": "#2a2b2b",
-          gray: colors.trueGray,
+          gray: colors.neutral,
           primary : "#f59e0b"
         },
         spacing: {
