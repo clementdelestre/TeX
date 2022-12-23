@@ -11,6 +11,7 @@
 		<platform>all</platform>
 		<language>en</language>
 		<source>https://github.com/clementdelestre/TeX</source>
+		<license>AGPL-3.0-or-later</license>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
