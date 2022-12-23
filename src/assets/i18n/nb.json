@@ -86,7 +86,8 @@
             "refresh": "Oppdater data",
             "streamSubtitle": "Undertekst:",
             "streamAudio": "Lyd:",
-            "streamVideo": "Video:"
+            "streamVideo": "Video:",
+            "edit": "Rediger"
         },
         "musicsView": {
             "artist": "Artist:",
@@ -102,6 +103,22 @@
             "download": "Last ned",
             "linkCopied": "Link kopiert",
             "linkWasCopiedInClipBoard": "Linken ble kopiert til utklippstavlen."
+        },
+        "edit": {
+            "cancel": "Avbryt",
+            "save": "Lagre",
+            "remove": "Fjern",
+            "refresh": "Oppdater",
+            "tags": "Etiketter:",
+            "country": "Land:",
+            "genres": "Sjangre:",
+            "writers": "Forfattere:",
+            "directors": "Regissører:",
+            "year": "År:",
+            "studio": "Studio:",
+            "tagline": "Beskrivelse:",
+            "plot": "Handling:",
+            "title": "Tittel:"
         }
     },
     "player": {
@@ -156,9 +173,10 @@
         "scanFinished": "Skann fullført",
         "cleanStarted": "Tømming startet",
         "cleanFinished": "Tømming fullført",
-        "contentUpdated": "Innhold oppdatert",
+        "contentUpdated": "Innhold oppdatert. Oppfrisk for å se endringene.",
         "updatedTranslations": "Oppdaterte oversettelser",
-        "refreshPageToSee": "Oppfrisk siden for å se endringene"
+        "refreshPageToSee": "Oppfrisk siden for å se endringene",
+        "error": "Feil"
     },
     "remote": {
         "sendText": "Send tekst"

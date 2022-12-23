@@ -1,28 +1,28 @@
 {
     "header": {
-        "movies": "",
-        "tvshows": "",
-        "musics": "",
-        "player": "",
+        "movies": "Filmes",
+        "tvshows": "Programes de TV",
+        "musics": "Música",
+        "player": "Reproductor",
         "remote": "",
-        "settings": "",
+        "settings": "Axustes",
         "search": {
             "search": "",
             "searchIn": "",
             "filters": "",
-            "year": "",
-            "genre": ""
+            "year": "Añu",
+            "genre": "Xéneru"
         }
     },
     "library": {
-        "videoLibrary": "",
+        "videoLibrary": "Videoteca",
         "audioLibrary": "",
         "continueToWatch": "",
         "recentlyAdded": "",
         "unwatched": "",
-        "movies": "",
-        "tvshows": "",
-        "musics": "",
+        "movies": "Filmes",
+        "tvshows": "Programes de TV",
+        "musics": "Música",
         "nothingToShow": "",
         "changeFilterToFindSomething": "",
         "resetFilters": "",
@@ -31,7 +31,7 @@
             "alphabetical": "",
             "alphabeticalInversed": "",
             "random": "",
-            "duration": "",
+            "duration": "Duración",
             "latest": "",
             "older": "",
             "track": ""
@@ -40,10 +40,10 @@
         "directors": "",
         "writers": "",
         "actors": "",
-        "albums": "",
-        "artists": "",
-        "genres": "",
-        "years": "",
+        "albums": "Álbumes",
+        "artists": "Artistes",
+        "genres": "Xéneros",
+        "years": "Años",
         "recentlyPlayedAlbums": "",
         "recentlyAddedAlbums": "",
         "mostPlayedAlbums": "",
@@ -61,7 +61,7 @@
             "mood": "",
             "formed": "",
             "disbanded": "",
-            "episodes": "",
+            "episodes": "Episodios:",
             "musicsBy": "",
             "playButton": "",
             "playNext": "",
@@ -72,26 +72,28 @@
             "file": "",
             "dateadded": "",
             "download": "",
-            "moreinfo": "",
-            "lessinfo": "",
+            "moreinfo": "Más información",
+            "lessinfo": "Menos información",
             "trailer": "",
             "casting": "",
             "seasons": "",
             "seasonNumber": "",
             "episodeCount": "",
-            "episodesTitle": "",
+            "episodesTitle": "Episodios",
             "noSeasonAvailable": "",
             "getStreamingLink": "",
-            "additionalInformation": "",
-            "refresh": ""
+            "additionalInformation": "Información adicional",
+            "refresh": "",
+            "streamAudio": "Audiu:",
+            "streamVideo": "Videu:"
         },
         "musicsView": {
             "artist": "",
-            "album": "",
-            "track": "",
-            "duration": "",
-            "genre": "",
-            "year": "",
+            "album": "Artista:",
+            "track": "Pista:",
+            "duration": "Duración:",
+            "genre": "Xéneru:",
+            "year": "Añu:",
             "listenIn": "",
             "internalPlayer": "",
             "search": "",
@@ -99,6 +101,17 @@
             "download": "",
             "linkCopied": "",
             "linkWasCopiedInClipBoard": ""
+        },
+        "edit": {
+            "confirm": "Confirmar",
+            "cancel": "Encaboxar",
+            "save": "Guardar",
+            "remove": "Quitar",
+            "title": "Títulu:",
+            "year": "Añu:",
+            "country": "Países:",
+            "genres": "Xéneros:",
+            "directors": "Direutores:"
         }
     },
     "player": {
@@ -106,10 +119,10 @@
         "noMedia": ""
     },
     "settings": {
-        "settings": "",
+        "settings": "Axustes",
         "general": {
-            "general": "",
-            "language": "",
+            "general": "Xeneral",
+            "language": "Llingua",
             "musicsDefaultPlayer": "",
             "scanVideoLibrary": "",
             "scanAudioLibrary": "",
@@ -122,10 +135,11 @@
             "vibrationOff": "",
             "mayNotWorkDevice": "",
             "translationIssues": "",
-            "refreshTranslation": ""
+            "refreshTranslation": "",
+            "currentVersion": "Versión actual:"
         },
         "appearance": {
-            "appearance": ""
+            "appearance": "Aspeutu"
         },
         "advanced": {
             "advanced": "",
@@ -136,10 +150,13 @@
             "disconnected": "",
             "connect": "",
             "disconnect": "",
-            "save": "",
+            "save": "Guardar",
             "reset": "",
             "jsonapi": "",
             "sendrequest": ""
+        },
+        "contribute": {
+            "t3": "Quiero tar más motiváu p'amestar les funciones solicitaes pola comunidá ya iguar los problemes esistentes."
         }
     },
     "unknown": "",
@@ -150,7 +167,9 @@
         "cleanFinished": "",
         "contentUpdated": "",
         "updatedTranslations": "",
-        "refreshPageToSee": ""
+        "refreshPageToSee": "",
+        "changelogsOnGithub": "Pues atopar los rexistros de cambeos en Github.",
+        "error": "Fallu"
     },
     "remote": {
         "sendText": ""

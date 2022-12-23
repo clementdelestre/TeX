@@ -1,11 +1,11 @@
 {
     "header": {
-        "movies": "",
-        "tvshows": "",
-        "musics": "",
-        "player": "",
-        "remote": "",
-        "settings": "",
+        "movies": "Movies",
+        "tvshows": "TV Shows",
+        "musics": "Music",
+        "player": "Player",
+        "remote": "Remote",
+        "settings": "Settings",
         "search": {
             "search": "",
             "searchIn": "",
@@ -20,9 +20,9 @@
         "continueToWatch": "",
         "recentlyAdded": "",
         "unwatched": "",
-        "movies": "",
+        "movies": "Movies",
         "tvshows": "",
-        "musics": "",
+        "musics": "Music",
         "nothingToShow": "",
         "changeFilterToFindSomething": "",
         "resetFilters": "",
@@ -106,7 +106,7 @@
         "noMedia": ""
     },
     "settings": {
-        "settings": "",
+        "settings": "Settings",
         "general": {
             "general": "",
             "language": "",

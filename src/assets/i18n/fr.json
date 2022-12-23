@@ -2,7 +2,7 @@
     "header": {
         "movies": "Films",
         "tvshows": "Séries",
-        "musics": "Musiques",
+        "musics": "Musique",
         "player": "Lecteur",
         "remote": "Télécommande",
         "settings": "Paramètres",
@@ -22,7 +22,7 @@
         "unwatched": "Non vus",
         "movies": "Films",
         "tvshows": "Séries",
-        "musics": "Musiques",
+        "musics": "Musique",
         "nothingToShow": "Rien à afficher",
         "changeFilterToFindSomething": "Modifier les filtres pour trouver du contenu",
         "resetFilters": "Réinitialiser les filtres",
@@ -47,7 +47,7 @@
         "recentlyPlayedAlbums": "Albums écoutés récemment",
         "recentlyAddedAlbums": "Albums ajoutés récemment",
         "mostPlayedAlbums": "Albums les plus écoutés",
-        "allMusics": "Toutes les musiques",
+        "allMusics": "Toute la musique",
         "filters": "Filtres",
         "details": {
             "genres": "Genres :",
@@ -79,35 +79,34 @@
             "seasons": "Saisons",
             "seasonNumber": "Saison {{ value }}",
             "episodeCount": "{{ value }} épisodes",
-            "episodesTitle": "Episodes",
+            "episodesTitle": "Épisodes",
             "noSeasonAvailable": "Aucune saison disponible",
             "getStreamingLink": "Obtenir le lien de stream",
             "additionalInformation": "Informations additionnelles",
             "refresh": "Rafraîchir les données",
-            "streamVideo": "Video :",
-            "streamAudio" : "Audio :",
-            "streamSubtitle": "Sous-titres :",
+            "streamVideo": "Vidéo :",
+            "streamAudio": "Audio:",
+            "streamSubtitle": "Sous-titres:",
             "edit": "Editer"
         },
-
-        "edit" : {
-            "title" : "Titre :",
-            "plot" : "Intrigue :",
-            "tagline" : "Slogan :",
-            "studio" : "Studio :",
-            "directors" : "Réalisateurs :",
-            "writers" : "Scénaristes :",
-            "genres" : "Genres :",
-            "country" : "Pays :",
-            "set" : "Série :",
-            "tags" : "Tags :",
-            "refresh" : "Rafraichir",
-            "remove" : "Supprimer",
-            "save" : "Sauvegarder",
+        "edit": {
+            "title": "Titre:",
+            "plot": "Intrigue:",
+            "tagline": "Slogan:",
+            "studio": "Studio:",
+            "directors": "Réalisateurs:",
+            "writers": "Scénaristes:",
+            "genres": "Genres:",
+            "country": "Pays:",
+            "set": "Série:",
+            "tags": "Tags:",
+            "refresh": "Rafraichir",
+            "remove": "Supprimer",
+            "save": "Sauvegarder",
             "cancel": "Annuler",
-            "confirm" : "Confirmer"
+            "confirm": "Confirmer",
+            "year": "Année :"
         },
-
         "musicsView": {
             "artist": "Artiste :",
             "album": "Album :",
@@ -127,9 +126,9 @@
     "player": {
         "playlist": "Playlist",
         "noMedia": "Aucun média",
-        "languages" : "Langues :",
-        "subtitles" : "Sous-titres :",
-        "disabled" : "Désactivé"
+        "languages": "Langues:",
+        "subtitles": "Sous-titres:",
+        "disabled": "Désactivé"
     },
     "settings": {
         "settings": "Paramètres",
@@ -149,8 +148,8 @@
             "mayNotWorkDevice": "Peut ne pas fonctionner sur certains appareils",
             "translationIssues": "En cas de problème de traductions, nettoyez le cache de votre navigateur web",
             "refreshTranslation": "Rafraichir les traductions",
-            "currentVersion" : "Version actuelle :",
-            "checkUpdates" : "Rechercher les mises à jour"
+            "currentVersion": "Version actuelle:",
+            "checkUpdates": "Rechercher les mises à jour"
         },
         "appearance": {
             "appearance": "Apparence"
@@ -169,12 +168,12 @@
             "sendrequest": "Envoyer la requête",
             "jsonapi": "API JSON"
         },
-        "contribute" : {
-            "contribute" : "Contribuer",
-            "t1" : "Ajouter de nouvelles fonctionnalités à TeX et continuer le développement prend beaucoup de temps.",
-            "t2" : "Pour m'aider à garder ma motivation, vous pouvez soutenir financièrement le projet en faisant un don !",
-            "t3" : "Je serais ainsi plus motivé pour ajouter les fonctionnalités demandées par la communauté et corriger les problèmes existants.",
-            "makeGift" : "Faire un don"
+        "contribute": {
+            "contribute": "Contribuer",
+            "t1": "Ajouter de nouvelles fonctionnalités à TeX et continuer le développement prend beaucoup de temps.",
+            "t2": "Pour m'aider à garder ma motivation, vous pouvez soutenir financièrement le projet en faisant un don !",
+            "t3": "Je serais ainsi plus motivé pour ajouter les fonctionnalités demandées par la communauté et corriger les problèmes existants.",
+            "makeGift": "Faire un don"
         }
     },
     "unknown": "Inconnu",
@@ -186,13 +185,13 @@
         "contentUpdated": "Contenu mis à jour.",
         "updatedTranslations": "Traductions mises à jour",
         "refreshPageToSee": "Actualisez la page pour voir les changements",
-        "error" : "Erreur",
-        "success" : "Succès",
-        "contentNotUpdated" : "Contenu non mis à jour.",
-        "contentRemoved" : "Contenu supprimé. Actualisez la page pour voir les changements.",
-        "contentNotRemoved" : "Contenu non supprimé.",
-        "appUpdated" : "Application mise à jour",
-        "changelogsOnGithub" : "Vous pouvez trouver la liste des changements sur Github."
+        "error": "Erreur",
+        "success": "Succès",
+        "contentNotUpdated": "Contenu non mis à jour",
+        "contentRemoved": "Contenu supprimé. Actualisez la page pour voir les changements.",
+        "contentNotRemoved": "Contenu non supprimé",
+        "appUpdated": "Application mise à jour",
+        "changelogsOnGithub": "Vous pouvez trouver la liste des changements sur Github."
     },
     "remote": {
         "sendText": "Envoyer du texte"

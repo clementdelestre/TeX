@@ -51,19 +51,19 @@
         "filters": "筛选",
         "details": {
             "genres": "",
-            "totalDiscs": "",
-            "year": "",
-            "studios": "",
-            "writers": "",
-            "directors": "",
-            "disk": "",
+            "totalDiscs": "磁盘总数：",
+            "year": "年：",
+            "studios": "工作室：",
+            "writers": "作家:",
+            "directors": "董事：",
+            "disk": "磁盘",
             "born": "",
             "mood": "",
             "formed": "",
             "disbanded": "",
             "episodes": "",
             "musicsBy": "",
-            "playButton": "",
+            "playButton": "播放",
             "playNext": "",
             "rating": "",
             "watched": "",
@@ -71,7 +71,7 @@
             "size": "",
             "file": "",
             "dateadded": "",
-            "download": "",
+            "download": "下载",
             "moreinfo": "",
             "lessinfo": "",
             "trailer": "",
@@ -95,10 +95,13 @@
             "listenIn": "",
             "internalPlayer": "",
             "search": "",
-            "playNext": "",
-            "download": "",
-            "linkCopied": "",
-            "linkWasCopiedInClipBoard": ""
+            "playNext": "下一个播放",
+            "download": "下载",
+            "linkCopied": "链接已复制",
+            "linkWasCopiedInClipBoard": "链接已经复制到剪贴板上了。"
+        },
+        "edit": {
+            "remove": "删除"
         }
     },
     "player": {
@@ -106,40 +109,45 @@
         "noMedia": ""
     },
     "settings": {
-        "settings": "",
+        "settings": "设置",
         "general": {
-            "general": "",
-            "language": "",
+            "general": "通用",
+            "language": "语言",
             "musicsDefaultPlayer": "",
-            "scanVideoLibrary": "",
-            "scanAudioLibrary": "",
+            "scanVideoLibrary": "扫描视频库",
+            "scanAudioLibrary": "扫描音频库",
             "cleanVideoLibrary": "",
             "cleanAudioLibrary": "",
             "libraries": "",
-            "application": "",
-            "resetApp": "",
-            "vibrate": "",
-            "vibrationOff": "",
-            "mayNotWorkDevice": "",
-            "translationIssues": "",
-            "refreshTranslation": ""
+            "application": "应用程序",
+            "resetApp": "重置应用，安装更新",
+            "vibrate": "振动",
+            "vibrationOff": "振动关闭",
+            "mayNotWorkDevice": "在一些设备上可能不生效",
+            "translationIssues": "如果翻译出问题了，请清除网络浏览器中的缓存",
+            "refreshTranslation": "刷新翻译",
+            "checkUpdates": "检查更新",
+            "currentVersion": "当前版本："
         },
         "appearance": {
             "appearance": ""
         },
         "advanced": {
             "advanced": "",
-            "websocketAddr": "",
+            "websocketAddr": "Websocket 地址",
             "websocketPort": "",
-            "state": "",
-            "connected": "",
-            "disconnected": "",
-            "connect": "",
-            "disconnect": "",
-            "save": "",
-            "reset": "",
+            "state": "状态",
+            "connected": "已连接",
+            "disconnected": "未连接",
+            "connect": "连接",
+            "disconnect": "断开",
+            "save": "保存",
+            "reset": "重置",
             "jsonapi": "",
-            "sendrequest": ""
+            "sendrequest": "发送请求"
+        },
+        "contribute": {
+            "contribute": "帮助我们"
         }
     },
     "unknown": "",
@@ -153,6 +161,6 @@
         "refreshPageToSee": ""
     },
     "remote": {
-        "sendText": ""
+        "sendText": "发送文本"
     }
 }
