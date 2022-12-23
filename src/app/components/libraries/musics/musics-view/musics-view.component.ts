@@ -1,9 +1,6 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { delay } from 'rxjs/operators';
 import { openCloseAnimation } from 'src/app/models/appAnimation';
 import { AudioDetailsSong } from 'src/app/models/kodiInterfaces/audio';
-import { ListSort, ListSortMethod, ListSortOrder } from 'src/app/models/kodiInterfaces/listItem';
 import { PlaylistItem } from 'src/app/models/kodiInterfaces/playlist';
 import { durationToString } from 'src/app/models/utils';
 import { KodiApiService } from 'src/app/services/kodi-api.service';

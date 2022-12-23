@@ -47,7 +47,7 @@
     <div @openClose *ngIf="_songs.length != 0" class="w-full mt-4 md:mt-8">
         <div class="bg-dark-gray p-4 rounded-xl sm:space-x-4 mb-2 flex flex-row justify-between w-full just">
             <button class="text-center z-10 group relative whitespace-nowrap text-primary">     
-                {{ 'library.musicsView.listenIn' | translate }} {{ (player.useInternal ? player.internalPlayer?.title : "Kodi") ?? "unknown" | translate }} 
+                {{ 'library.musicsView.listenIn' | translate }} {{ player.useInternal ? player.internalPlayer.title : "Kodi" | translate }} 
                 <div class="floating-button-bottom-left pointer-group-button text-white">
                     <div class="floating-list">
                         <button (click)="player.setInternalPlayerEnable(false)" [ngClass]="{'floating-button-active': !this.player.useInternal}" class="floating-button" >

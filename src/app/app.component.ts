@@ -18,7 +18,41 @@ export class AppComponent {
   title = 'TeX';
 
   constructor(public application:ApplicationService, public translate: TranslateService, private localStorage: LocalStorageService) {
-    translate.addLangs(['en', 'fr', 'da', 'de', 'es_mx', 'es', 'it', 'nb', 'sv', 'ko', 'pl', 'pt_br', 'zh_cn']);
+    translate.addLangs([
+      'ast',
+      'ca',
+      'cs',
+      'en', 
+      'en_us',
+      'fr', 
+      'da', 
+      'de', 
+      'es_mx', 
+      'es', 
+      'et',
+      'fi',
+      'hu',
+      'id',
+      'it', 
+      'ka_ge',
+      'kl',
+      'ko',
+      'lt',
+      'nb', 
+      'nl',
+      'oc_fr',
+      'pl',
+      'sv', 
+      'ko', 
+      'pt_br', 
+      'ro_md',
+      'ru',
+      'scn',
+      'sk',
+      'sv',
+      'zh_cn',
+      'zh_tw'
+    ]);
     translate.use(this.localStorage.getData('lang') ?? 'en')
   } 
 

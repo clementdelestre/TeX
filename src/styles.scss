@@ -70,7 +70,7 @@ button:focus, button:active:focus, button.active:focus {
 }
 
 @layer utilities {
-    @variants responsive {
+    @layer components {
         .floating-container {
             @apply bg-dark-gray rounded-lg text-left absolute border border-gray-600 px-6 sm:px-4 py-4 bg-opacity-80;
         }
