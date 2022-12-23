@@ -1,7 +1,5 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { catchError, map } from 'rxjs/operators';
 import { AppNotificationType } from 'src/app/models/notification';
 import { ApplicationService } from 'src/app/services/application.service';
 import { KodiApiService } from 'src/app/services/kodi-api.service';
