@@ -1,71 +1,62 @@
-<div (click)="clickBg($event)" class="w-screen h-screen z-20 float-left top-0 bottom-0 fixed sm:py-8 back bg-opacity-80 bg-dark-full">
-    <div class="z-50 opacity-100 h-full relative m-auto overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400 sm:rounded-lg bg-dark-gray w-full sm:w-11/12 md:w-5/6 lg:w-4/6 xl:w-7/12 custom-modal">             
- 
-        <button  (click)="close()" class="close-button bg-dark-full z-20 w-12"><fa-icon [icon]="['fas', 'times']"></fa-icon></button>
-        <div class="py-4 px-8 text-center items-center flex-col w-full h-full">
-            
-            <div class="flex flex-col items-center h-full w-full max-w-sm m-auto text-3xl space-y-2 remote-container">
-                
-                <div class="flex flex-col items-center h-full w-full bg-dark-full rounded-xl m-auto space-y-4 py-4 opacity-80  overflow-auto scrollbar-hide"  style="max-height: 750px;">
-                    <div class="px-2 w-full mt-4">
-                        <form class="bg-dark-full w-full rounded-lg text-white border border-1 border-gray-400 hover:border-gray-500 focus:border-gray-700 duration-300 flex items-center">
-                            <input name="textInput" [(ngModel)]="sendTextValue" (ngModelChange)="modelChangeFn($event)" class="bg-dark-full border-none focus:ring-0 focus:border-transparent w-full rounded-xl" type="text" placeholder="{{ 'remote.sendText' | translate }}">
-                            <button style="width: auto;" class="flex-shrink-0 hover:text-primary text-sm mr-4" type="submit" (click)="sendText()">
-                                <fa-icon class="flex items-center float-right text-xs" [icon]="['fas', 'paper-plane']"></fa-icon>
-                            </button>
-                        </form>
-                    </div>
-                    <div class="flex flex-row w-full h-full items-center">
-                        <button><fa-icon [icon]="['fas', 'align-left']" class="button-primary" (click)="onInputMenu()"></fa-icon></button>
-                        <button><fa-icon [icon]="['fas', 'home']" class="button-primary" (click)="onInputHome()"></fa-icon></button>
-                        <button><fa-icon [icon]="['fas', 'info-circle']" class="button-primary" (click)="onInputInfo()"></fa-icon></button>
-                    </div>
-                    <div class="flex flex-col w-full">
-                        <div class="flex flex-row w-full h-full items-center">
-                            <button><fa-icon [icon]="['fas', 'volume-down']" class="button-primary" (click)="onInputVolumeDown()"></fa-icon></button>
-                            <button></button>
-                            <button><fa-icon [icon]="['fas', 'volume-up']" class="button-primary" (click)="onInputVolumeUp()"></fa-icon></button>
-                        </div>
-                        <div [ngClass]="{'opacity-100' : displayVolumeBar}" class="relative pt-1 w-full px-8 mt-2 opacity-0 transition-opacity duration-100">
-                            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
-                            <div [ngStyle]="{'width': application.volume + '%'}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-9/12">
-                        <div class="aspect-w-4 aspect-h-3 text-4xl">
-                            <div class="flex flex-col items-center w-full h-full">
-                        
-                                <div class="flex flex-row w-full h-full items-center">
-                                    <button></button>
-                                    <button><fa-icon [icon]="['fas', 'sort-up']" class="button-primary" (click)="onInputUp()"></fa-icon></button>
-                                    <button></button>
-                                </div>
-                        
-                                <div class="flex flex-row w-full h-full items-center">
-                                    <button><fa-icon [icon]="['fas', 'caret-left']" class="button-primary" (click)="onInputLeft()"></fa-icon></button>
-                                    <button><fa-icon [icon]="['fas', 'dot-circle']" class="button-primary" (click)="onInputSelect()"></fa-icon></button>
-                                    <button><fa-icon [icon]="['fas', 'caret-right']" class="button-primary" (click)="onInputRight()"></fa-icon></button>
-                                </div>
-                        
-                                <div class="flex flex-row w-full h-full items-center">
-                                    <button></button>
-                                    <button><fa-icon [icon]="['fas', 'sort-down']" class="button-primary" (click)="onInputDown()"></fa-icon></button>
-                                    <button></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>       
-                
-                    <div class="flex flex-row w-full h-full items-center">
-                        <button><fa-icon [icon]="['fas', 'arrow-left']" class="button-primary" (click)="onInputBack()"></fa-icon></button>
-                        <button></button>
-                        <button><fa-icon [icon]="['fas', 'bars']" class="button-primary" (click)="onInputContextMenu()"></fa-icon></button>
-                    </div>   
-                    
-                </div>                
+<div id="remote" class="flex flex-col justify-around items-center h-full w-full max-w-sm m-auto text-3xl space-y-2 py-2 scrollbar-hide overflow-auto">
+
+    <div class="px-2 w-full mt-4">
+        <form class="bg-dark-full w-full rounded-lg text-white border border-1 border-gray-400 hover:border-gray-500 focus:border-gray-700 duration-300 flex items-center">
+            <input name="textInput" [(ngModel)]="sendTextValue" (ngModelChange)="modelChangeFn($event)" class="bg-dark-full border-none focus:ring-0 focus:border-transparent w-full rounded-xl" type="text" placeholder="{{ 'remote.sendText' | translate }}">
+            <button style="width: auto;" class="flex-shrink-0 hover:text-primary text-sm mr-4" type="submit" (click)="sendText()">
+                <fa-icon class="flex items-center float-right text-xs" [icon]="['fas', 'paper-plane']"></fa-icon>
+            </button>
+        </form>
+    </div>
+
+    <div class="flex flex-row w-full h-full items-center">
+        <button (click)="onInputMenu()"><fa-icon [icon]="['fas', 'align-left']" class="button-primary"></fa-icon></button>
+        <button (click)="onInputHome()"><fa-icon [icon]="['fas', 'home']" class="button-primary"></fa-icon></button>
+        <button (click)="onInputInfo()"><fa-icon [icon]="['fas', 'info-circle']" class="button-primary"></fa-icon></button>
+    </div>
+
+    <div class="flex flex-col h-full w-full">
+        <div class="flex flex-row w-full h-full items-center">
+            <button (click)="onInputVolumeDown()"><fa-icon [icon]="['fas', 'volume-down']" class="button-primary"></fa-icon></button>
+            <button></button>
+            <button (click)="onInputVolumeUp()"><fa-icon [icon]="['fas', 'volume-up']" class="button-primary"></fa-icon></button>
+        </div>
+        <div [ngClass]="{'opacity-100' : displayVolumeBar}" class="relative pt-1 w-full px-8 mt-2 opacity-0 transition-opacity duration-100">
+            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
+            <div [ngStyle]="{'width': application.volume + '%'}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
             </div>
-            
         </div>
     </div>
+
+    <div class="w-9/12 h-full">
+        <div class="aspect-w-4 aspect-h-3 h-full text-4xl">
+            <div id="nav" class="flex flex-col items-center w-full h-full">
+
+                <div class="flex flex-row w-full h-full mb-4 items-center">
+                    <button></button>
+                    <button class="nav" (click)="onInputUp()"><fa-icon [icon]="['fas', 'angle-up']" class="button-primary fa-2xl"></fa-icon></button>
+                    <button></button>
+                </div>
+
+                <div class="flex flex-row w-full h-full items-center">
+                    <button class="nav" (click)="onInputLeft()"><fa-icon [icon]="['fas', 'angle-left']" class="button-primary fa-2xl"></fa-icon></button>
+                    <button class="nav" (click)="onInputSelect()"><fa-icon [icon]="['fas', 'dot-circle']" class="button-primary" style="font-size: 3rem;"></fa-icon></button>
+                    <button class="nav" (click)="onInputRight()"><fa-icon [icon]="['fas', 'angle-right']" class="button-primary fa-2xl"></fa-icon></button>
+                </div>
+
+                <div class="flex flex-row w-full h-full mt-4 items-center">
+                    <button></button>
+                    <button class="nav" (click)="onInputDown()"><fa-icon [icon]="['fas', 'angle-down']" class="button-primary fa-2xl"></fa-icon></button>
+                    <button></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bottom" class="flex flex-row w-full h-full items-center">
+        <button (click)="onInputBack()"><fa-icon [icon]="['fas', 'arrow-left']" class="button-primary"></fa-icon></button>
+        <button></button>
+        <button (click)="onInputContextMenu()"><fa-icon [icon]="['fas', 'bars']" class="button-primary"></fa-icon></button>
+    </div>
+
 </div>

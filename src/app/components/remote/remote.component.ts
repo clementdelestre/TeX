@@ -1,12 +1,13 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { Location} from '@angular/common'; 
+import { Location} from '@angular/common';
 import { PlayerService } from 'src/app/services/player.service';
 import { ApplicationService } from 'src/app/services/application.service';
 import { openCloseAnimation } from 'src/app/models/appAnimation';
 import { KodiApiService } from 'src/app/services/kodi-api.service';
 import { interval, Subscription } from 'rxjs';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-remote',
@@ -24,32 +25,14 @@ export class RemoteComponent implements OnInit {
   sendTextValue = ""
   private subscriptionIncrementProgress!: Subscription;
 
-  constructor(public application: ApplicationService, private localStorage: LocalStorageService, private kodiApi: KodiApiService, @Inject(DOCUMENT) private document: Document, private location:Location, public player:PlayerService) {
+  constructor(public application: ApplicationService, private localStorage: LocalStorageService, private kodiApi: KodiApiService, @Inject(DOCUMENT) private document: Document, private location:Location, public player:PlayerService, private router: Router) {
 
   }
 
   ngOnInit(): void {
-    this.document.body.style.overflow = "hidden";  
-    this.application.historyPush("remote");
   }
 
   ngOnDestroy(): void {
-    this.document.body.style.overflow = "overlay";
-  }
-
-  clickBg(event:any){
-    if(event.target.classList.contains('back')){
-      this.close();
-    }
-  }
-
-  close() {
-    this.application.openRemote = false;  
-  }
-
-  @HostListener('window:popstate', ['$event'])
-  onPopState(event:Event) {
-    this.close();
   }
 
   onInputBack(){
@@ -135,7 +118,7 @@ export class RemoteComponent implements OnInit {
   private vibrate(){
     const vibrationLength:number = this.localStorage.getData("vibrate") ?? 50
     if(vibrationLength > 0)
-      window.navigator.vibrate(vibrationLength); 
+      window.navigator.vibrate(vibrationLength);
   }
 
 }

@@ -3,6 +3,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+html, body {
+    height: 100%;
+}
+
 body {
     color:white;
     overflow: overlay;
@@ -97,7 +101,7 @@ button:focus, button:active:focus, button.active:focus {
             position: absolute;
             padding-top:4px;
         }
-    
+
         .floating-button-right {
             top: 0;
             position: absolute;
@@ -105,14 +109,14 @@ button:focus, button:active:focus, button.active:focus {
             left: 100%;
             padding-top:0;
         }
-    
+
         .floating-button-bottom-right {
             right:0;
             top:100%;
             position: absolute;
             padding-top:4px;
         }
-    
+
         .floating-button-top-right {
             right:0;
             bottom:100%;
@@ -137,13 +141,13 @@ button:focus, button:active:focus, button.active:focus {
 
         .floating-button {
             @apply block whitespace-nowrap px-3 py-2.5 w-full font-semibold bg-dark-gray bg-opacity-100 hover:bg-gray-500 transition-all duration-300 text-sm group-hover:pointer-events-auto group-focus:pointer-events-auto pointer-events-none;
-        
+
             * {
                 @apply cursor-pointer group-hover:pointer-events-auto group-focus:pointer-events-auto pointer-events-none;
             }
         }
     }
-   
+
 }
 
 body::-webkit-scrollbar {
@@ -153,6 +157,9 @@ body::-webkit-scrollbar {
 
 .close-button {
     @apply p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity absolute top-3 right-3 cursor-pointer;
+}
+.expand-button {
+    @apply p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity absolute top-3 right-16 cursor-pointer;
 }
 
 .button-media-watched {

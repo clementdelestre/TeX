@@ -8,23 +8,24 @@ import { MusicsComponent } from './components/libraries/musics/musics.component'
 import { LibraryCategoryComponent } from './components/libraries/menu/category/category.component';
 import { MoviesHomeComponent } from './components/libraries/movies/home/home.component';
 import { TvShowsHomeComponent } from './components/libraries/tvshows/home/home.component';
+import { RemoteComponent } from './components/remote/remote.component';
 
 const routes: Routes = [
-  
+
   {
     path:'movies',
-    component: MoviesComponent,  
+    component: MoviesComponent,
     children:[
       {
-        path:'',  
+        path:'',
         component:MoviesHomeComponent
       },
       {
-        path:'home',  
+        path:'home',
         component:MoviesHomeComponent
       },
       {
-        path:':type',   
+        path:':type',
         component:LibraryCategoryComponent
       }
     ]
@@ -43,15 +44,15 @@ const routes: Routes = [
     component: TvshowsComponent,
     children:[
       {
-        path:'',  
+        path:'',
         component:TvShowsHomeComponent
       },
       {
-        path:'home',  
+        path:'home',
         component:TvShowsHomeComponent
       },
       {
-        path:':type',   
+        path:':type',
         component:LibraryCategoryComponent
       }
     ]
@@ -117,10 +118,10 @@ const routes: Routes = [
         ]
       },
     ]
-  }, 
+  },
   {
     path:'search',
-    component: SearchComponent,  
+    component: SearchComponent,
   },
   {
     path:'settings',
@@ -143,6 +144,10 @@ const routes: Routes = [
         component: SettingsComponent
       },
     ]
+  },
+  {
+    path:'remote',
+    component: RemoteComponent,
   },
   {
     path:'',
