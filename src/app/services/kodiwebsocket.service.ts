@@ -57,7 +57,7 @@ export class KodiwebsocketService {
   }
 
   private getSocketUrl(): string {
-    return "ws://" + this.getAddress() + ":" + this.getPort() + "/jsonrpc"
+    return window.location.protocol.replace("http","ws")+"//" + this.getAddress() + ":" + this.getPort() + "/jsonrpc"
   }
 
   public connect(): void {
