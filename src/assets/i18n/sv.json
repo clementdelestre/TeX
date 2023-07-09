@@ -137,7 +137,7 @@
         },
         "advanced": {
             "advanced": "Avancerat",
-            "websocketAddr": "Websocket address",
+            "websocketAddr": "Websocket adress",
             "websocketPort": "websocket port",
             "state": "",
             "connected": "Ansluten",
@@ -148,6 +148,13 @@
             "reset": "Återställ",
             "jsonapi": "JSON API",
             "sendrequest": "Skicka förfrågan"
+        },
+        "contribute": {
+            "t1": "Att lägga till nya funktioner i TeX och fortsätta utvecklingen tar mycket tid.",
+            "t3": "Jag skulle vara mer motiverad att lägga till de funktioner som efterfrågas av communityn och fixa befintliga problem.",
+            "contribute": "Bidra",
+            "t2": "För att hjälpa mig behålla min motivation kan du ekonomiskt stödja projektet genom att donera!",
+            "makeGift": "Donera"
         }
     },
     "unknown": "Okänd",
@@ -158,7 +165,10 @@
         "cleanFinished": "",
         "contentUpdated": "Innehållet uppdaterat. Uppdatera för att se ändringarna.",
         "updatedTranslations": "",
-        "refreshPageToSee": "Uppdatera sidan för att se ändringarna"
+        "refreshPageToSee": "Uppdatera sidan för att se ändringarna",
+        "contentRemoved": "Innehåll borttaget. Uppdatera för att se ändringar.",
+        "changelogsOnGithub": "Du kan hitta ändringsloggarna på Github.",
+        "appUpdated": "Appen har uppdaterats korrekt"
     },
     "remote": {
         "sendText": "Skicka text"

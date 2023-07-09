@@ -7,8 +7,8 @@
         "remote": "Fernsteuerung",
         "settings": "Einstellungen",
         "search": {
-            "search": "Suche",
-            "searchIn": "Suche in:",
+            "search": "Suchen",
+            "searchIn": "Suchen in:",
             "filters": "Filter:",
             "year": "Jahr",
             "genre": "Genre"
@@ -17,7 +17,7 @@
     "library": {
         "videoLibrary": "Videobibliothek",
         "audioLibrary": "Audiobibliothek",
-        "continueToWatch": "Weitersehen",
+        "continueToWatch": "Wiedergabe fortsetzen",
         "recentlyAdded": "Zuletzt hinzugefügt",
         "unwatched": "Ungesehen",
         "movies": "Filme",
@@ -29,11 +29,11 @@
         "sortBy": {
             "sortBy": "Sortieren nach",
             "alphabetical": "Alphabetisch",
-            "alphabeticalInversed": "Alphabetisch (invertiert)",
+            "alphabeticalInversed": "Alphabetisch (umgekehrt)",
             "random": "Zufall",
             "duration": "Dauer",
-            "latest": "Letzte",
-            "older": "Reihenfolge",
+            "latest": "Neuestes",
+            "older": "Ältestes",
             "track": "Track"
         },
         "page": "Seite",
@@ -42,7 +42,7 @@
         "actors": "Darsteller",
         "albums": "Alben",
         "artists": "Interpreten",
-        "genres": "Genre",
+        "genres": "Genres",
         "years": "Jahre",
         "recentlyPlayedAlbums": "Zuletzt gehörte Alben",
         "recentlyAddedAlbums": "Zuletzt hinzugefügte Alben",
@@ -50,7 +50,7 @@
         "allMusics": "Gesamte Musik",
         "filters": "Filter",
         "details": {
-            "genres": "Genre:",
+            "genres": "Genres:",
             "totalDiscs": "Gesamte Disks:",
             "year": "Jahr:",
             "studios": "Studios:",
@@ -93,7 +93,7 @@
             "artist": "Interpret:",
             "album": "Album:",
             "track": "Track:",
-            "duration": "Länge:",
+            "duration": "Dauer:",
             "genre": "Genre:",
             "year": "Jahr:",
             "listenIn": "Anhören mit:",
@@ -146,19 +146,19 @@
             "vibrate": "Vibrieren",
             "vibrationOff": "Vibrieren aus",
             "mayNotWorkDevice": "Funktioniert nicht auf allen Geräten",
-            "translationIssues": "Im Falle von Übersetzungsfehlern bitte den Cache des Browers leeren",
+            "translationIssues": "Im Falle von Übersetzungsfehlern, bitte den Cache des Browers leeren",
             "refreshTranslation": "Übersetzungen aktualisieren",
             "checkUpdates": "Aktualisierungen suchen",
             "currentVersion": "Aktuelle Version:"
         },
         "appearance": {
-            "appearance": "Darstellung"
+            "appearance": "Aussehen"
         },
         "advanced": {
             "advanced": "Erweitert",
             "websocketAddr": "Websocket-Adresse",
             "websocketPort": "Websocket-Port",
-            "state": "Zustand",
+            "state": "Status",
             "connected": "Verbunden",
             "disconnected": "Nicht verbunden",
             "connect": "Verbinden",
@@ -170,7 +170,7 @@
         },
         "contribute": {
             "makeGift": "Spenden",
-            "t3": "Ich wäre mehr motiviert, von der Community gewollte Funktionen einzubauen und existierende Probleme zu beheben.",
+            "t3": "Ich wäre motivierter, von der Community gewollte Funktionen einzubauen und existierende Probleme zu beheben.",
             "t2": "Um meine Motivation hoch zu halten, kannst Du das Projekt finanziell unterstützen!",
             "t1": "Das Hinzufügen von Funktionen und die weitere Entwicklung von TeX benötigt viel Zeit.",
             "contribute": "Beitragen"
@@ -185,11 +185,11 @@
         "contentUpdated": "Inhalte aktualisiert. Um Änderungen zu sehen, Seite neu laden.",
         "updatedTranslations": "Übersetzungsaktualisierung",
         "refreshPageToSee": "Um Änderungen zu sehen, Seite neu laden",
-        "changelogsOnGithub": "Änderungen sind auf Github zu finden.",
+        "changelogsOnGithub": "Die Änderungshistorie ist auf Github zu finden.",
         "appUpdated": "App erfolgreich aktualisiert",
         "contentNotRemoved": "Inhalt nicht entfernt",
         "contentRemoved": "Inhalt entfernt. Um Änderungen zu sehen, Seite neu laden.",
-        "contentNotUpdated": "Inhalt nicht geändert",
+        "contentNotUpdated": "Inhalt nicht aktualisiert",
         "error": "Fehler",
         "success": "Erfolg"
     },
