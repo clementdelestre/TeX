@@ -1,8 +1,10 @@
 <button class="p-1 sm:p-2 rounded-xl border-0" (click)="openDetails()" style="width:inherit">
     <div class="select-none rounded-xl">
         <div class="relative opacity-90 w-full rounded-xl" [ngClass]="{'h-24 bg-dark-gray hover:bg-gray-500' : posterUrl == '' && isImgLoaded}">
-            <img *ngIf="posterLoaded" [ngClass]="{'border-b border-primary' : displayResume && isImgLoaded}" [src]="posterUrl" (load)="imageLoaded()" class="rounded-xl w-full" loading="lazy">
-            
+          <div [ngClass]="{'image-placeholder': !isImgLoaded}">
+            <img *ngIf="posterLoaded" [ngClass]="{'border-b border-primary' : displayResume && isImgLoaded}" [src]="posterUrl" (load)="imageLoaded()" class="rounded-xl w-full" loading="lazy"/>
+          </div>
+
             <div [ngClass]="{'opacity-0': posterUrl != '' || !isImgLoaded, 'bg-dark-full' : !(posterUrl == '' && isImgLoaded)}" class="rounded-xl cursor-pointer absolute z-0 flex flex-col align-bottom  bottom-0 bg-opacity-70 hover:opacity-100 transition-opacity duration-300 text-white font-semibold px-3 py-1 h-full w-full items-center justify-center text-center text-shadow-xl overflow-auto scrollbar-hide">
                 <p class="">
                     {{ $any(media).title ?? $any(media).artist ?? $any(media).name ?? $any(media) ?? "" }}
