@@ -1,0 +1,27 @@
+.custom-modal {
+  -webkit-animation: myanimation 500ms;
+          animation: myanimation 500ms;
+}
+
+@-webkit-keyframes myanimation {
+  0% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes myanimation {
+  0% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+/*# sourceMappingURL=media-informations.component.css.map */

@@ -39,6 +39,15 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'collection',
+    children: [
+      {
+        path: ':type',
+        component: MoviesComponent
+      }
+    ]
+  },
+  {
     path:'tvshows',
     component: TvshowsComponent,
     children:[

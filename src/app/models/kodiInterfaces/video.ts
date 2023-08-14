@@ -175,6 +175,7 @@ export const fullMovieProperties = [
     "streamdetails",
     "country",
     "set",
+  "setid",
     "tag"
 ];
 

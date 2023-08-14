@@ -73,7 +73,7 @@ export class MediaInformationsComponent implements OnInit {
 
     if(this.movieId != 0){
 
-      this.kodiApi.media.getMovieDetail(this.movieId).pipe(delay(1000)).subscribe((resp) => {
+      this.kodiApi.media.getMovieDetail(this.movieId).subscribe((resp) => {
         this.media = resp;
         this.isLoaded = true;
         
@@ -126,6 +126,7 @@ export class MediaInformationsComponent implements OnInit {
   close() {
     this.application.openMovieDetails = undefined;
     this.application.openTVShowDetails = undefined;
+    this.application.openMovieSetDetails = undefined;
     this.location.back();
   }
 
@@ -133,9 +134,9 @@ export class MediaInformationsComponent implements OnInit {
 
   
   playMovie(){
-    if(!this.isLoaded) return;
-    this.player.openMediaFile((this.media as VideoDetailsMovie).file ?? "");
-    this.close()
+    if (this.isMovie() && this.downloadUrl != "") {
+        window.open(this.downloadUrl);
+    }
   }
 
   async test () {

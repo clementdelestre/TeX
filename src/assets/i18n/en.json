@@ -47,6 +47,7 @@
         "artists" : "Artists",
         "genres" : "Genres",
         "years" : "Years",
+        "collections" : "Collections",
 
         "recentlyPlayedAlbums" : "Recently played albums",
         "recentlyAddedAlbums" : "Recently added albums",

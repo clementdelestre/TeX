@@ -6,7 +6,7 @@ import { AudioDetailsAlbum, AudioDetailsArtist, AudioDetailsSong } from "src/app
 import { AudioFieldsAlbumPropertiesFull, AudioFieldsAlbumPropertiesMinimal, AudioFieldsArtistPropertiesFull, AudioFieldsArtistPropertiesMinimal, AudioFieldsSongPropertiesFull, AudioFieldsSongPropertiesMinimal } from "src/app/models/kodiInterfaces/audiofields";
 import { LibraryFieldsGenreProperties } from "src/app/models/kodiInterfaces/libraryfields";
 import { ListSort } from "src/app/models/kodiInterfaces/listItem";
-import { ListLimits, ResponseWithLimits } from "src/app/models/kodiInterfaces/others";
+import { ListLimits, ResponseWithLimits, fullMovieSetProperties, MovieSetDetails } from "src/app/models/kodiInterfaces/others";
 import { episodeProperties, fullMovieProperties, fullTVShowProperties, previewMovieProperties, previewTVShowProperties, seasonProperties, VideoDetailsMovie, VideoDetailsTVShow } from "src/app/models/kodiInterfaces/video";
 import { HttpRequestData } from "./http";
 
@@ -14,7 +14,7 @@ export interface GetLibraryParameters {
   limit?: ListLimits
   filter?: any
   sort?: ListSort
-  propoerties?: string[]
+  properties?: string[]
   type?: string
 }
 
@@ -28,7 +28,7 @@ export class MediaRequest extends HttpRequestData {
   getMovies(parameter : GetLibraryParameters): Observable<ResponseWithLimits>{
       
       const params = {
-        "properties": parameter.propoerties ?? previewMovieProperties,
+        "properties": parameter.properties ?? previewMovieProperties,
         ...parameter.filter ? {"filter" : parameter.filter} : undefined,
         ...parameter.limit ? {"limits" : parameter.limit} : undefined,
         ...parameter.sort ? { "sort" : parameter.sort } : undefined
@@ -37,6 +37,19 @@ export class MediaRequest extends HttpRequestData {
       const req = this.getRequestUrl("getmovies", "VideoLibrary.GetMovies", params)
 
       return this.makeGetRequest(req);
+  }
+
+  getMovieSets(parameter : GetLibraryParameters): Observable<ResponseWithLimits>{
+    
+    const params = {
+      "properties": parameter.properties ?? previewMovieProperties,
+      ...parameter.limit ? {"limits" : parameter.limit} : undefined,
+      ...parameter.sort ? { "sort" : parameter.sort } : undefined
+    }
+
+    const req = this.getRequestUrl("getmovies", "VideoLibrary.GetMovieSets", params)
+
+    return this.makeGetRequest(req);
   }
 
   getRecentlyAddedMovies(parameter : GetLibraryParameters): Observable<ResponseWithLimits>{
@@ -50,7 +63,7 @@ export class MediaRequest extends HttpRequestData {
     const req = this.getRequestUrl("getrecentlyaddedmovies", "VideoLibrary.GetRecentlyAddedMovies", params)
 
     return this.makeGetRequest(req);
-}
+  }
 
   getMovieDetail(movieId: number): Observable<VideoDetailsMovie>{
 
@@ -59,16 +72,28 @@ export class MediaRequest extends HttpRequestData {
         "properties": fullMovieProperties,
       }
   
-      const req = this.getRequestUrl("getmoviedetail", "VideoLibrary.GetMovieDetails", params)
+      const req = this.getRequestUrl("getmoviedetail", "VideoLibrary.GetMovieDetails", params);
       return this.makeGetRequest(req).pipe(
-        map(rep => { return rep.moviedetails})
+        map(rep => { console.log(rep); return rep.moviedetails})
       );
+  }
+
+  getMovieSetDetail(movieSetId: number): Observable<MovieSetDetails> {
+    let params = {
+      "setid": movieSetId,
+      "properties": fullMovieSetProperties,
+    };
+
+    const req = this.getRequestUrl("getmoviesetdetail", "VideoLibrary.GetMovieSetDetails", params);
+    return this.makeGetRequest(req).pipe(
+      map(rep => { return rep.setdetails })
+    );
   }
 
   getTvShows(parameter : GetLibraryParameters): Observable<ResponseWithLimits>{
 
     const params = {
-      "properties": parameter.propoerties ?? previewTVShowProperties,
+      "properties": parameter.properties ?? previewTVShowProperties,
       ...parameter.filter ? {"filter" : parameter.filter} : undefined,
       ...parameter.limit ? {"limits" : parameter.limit} : undefined,
       ...parameter.sort ? { "sort" : parameter.sort } : undefined
