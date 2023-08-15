@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { fastFadeAnimation, heightAnimation } from 'src/app/models/appAnimation';
 import { KodiApiService } from 'src/app/services/kodi-api.service';
 import { Location} from '@angular/common';
-import { SearchService } from 'src/app/services/search.service';
+import { FilterList, SearchService } from 'src/app/services/search.service';
 import { CategoryEntry } from 'src/app/models/kodiInterfaces/others';
 import { ListSortMethod, ListSortOrder } from 'src/app/models/kodiInterfaces/listItem';
 
@@ -101,7 +101,8 @@ export class LibraryCategoryComponent implements OnInit {
             resp.movies.forEach(e => {
               e.director?.map(d => this.contents.push({
                   name: d,
-                  image: ""
+                  image: "",
+                  filterName: FilterList.Directors
                 }));
             });
             break;
@@ -111,7 +112,8 @@ export class LibraryCategoryComponent implements OnInit {
             resp.movies.forEach(e => {
               e.writer?.map(d => this.contents.push({
                   name: d,
-                  image: ""
+                  image: "",
+                  filterName: FilterList.Writers
                 }));
             });
             break;
@@ -121,7 +123,8 @@ export class LibraryCategoryComponent implements OnInit {
               resp.movies.forEach(e => {
                 e.genre?.map(d => this.contents.push({
                   name: d,
-                  image: ""
+                  image: "",
+                  filterName: FilterList.Genres
                 }));
               });
               break;
@@ -131,7 +134,8 @@ export class LibraryCategoryComponent implements OnInit {
             resp.movies.forEach(e => {
               e.cast?.map(d => this.contents.push({
                   name: d.name,
-                  image: d.thumbnail ?? ""
+                  image: d.thumbnail ?? "",
+                  filterName: FilterList.Actors
                 }));
             });
             break;
@@ -141,7 +145,8 @@ export class LibraryCategoryComponent implements OnInit {
               resp.movies.forEach(e => {
                 this.contents.push({
                   name: e.year?.toString() ?? "",
-                  image: ""
+                  image: "",
+                  filterName: FilterList.Years
                 });
               });
               break;
@@ -174,7 +179,8 @@ export class LibraryCategoryComponent implements OnInit {
               resp.tvshows.forEach(e => {
                 e.genre?.map(d => this.contents.push({
                   name: d,
-                  image: ""
+                  image: "",
+                  filterName: FilterList.Genres
                 }))
               })
               break;
@@ -184,7 +190,8 @@ export class LibraryCategoryComponent implements OnInit {
             resp.tvshows.forEach(e => {
               e.cast?.map(d => this.contents.push({
                 name: d.name,
-                image: d.thumbnail ?? ""
+                image: d.thumbnail ?? "",
+                filterName: FilterList.Actors
               }))
             })
             break;
@@ -194,7 +201,8 @@ export class LibraryCategoryComponent implements OnInit {
               resp.tvshows.forEach(e => {
                 this.contents.push({
                   name: e.year?.toString() ?? "",
-                  image: ""
+                  image: "",
+                  filterName: FilterList.Years
                 })
               })
               break;
