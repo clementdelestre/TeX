@@ -5,6 +5,7 @@ import { KodiApiService } from 'src/app/services/kodi-api.service';
 import { Location} from '@angular/common';
 import { SearchService } from 'src/app/services/search.service';
 import { CategoryEntry } from 'src/app/models/kodiInterfaces/others';
+import { ListSortMethod, ListSortOrder } from 'src/app/models/kodiInterfaces/listItem';
 
 function removeArticles(str:string): string {
   let words = str.toLowerCase().split(" ");
@@ -35,11 +36,15 @@ export class LibraryCategoryComponent implements OnInit {
 
   searchTextValue = ""
 
+  page = ""
+
   constructor(private kodiApi: KodiApiService, private router: Router, private location: Location, public searchService: SearchService) { }
 
   ngOnInit(): void {
     this.getContent();
     this.location.onUrlChange(() => {
+      if(this.router.url.split("/")[2] == this.page)return
+      this.page = this.router.url.split("/")[2]
       this.getContent()
     });
   }
@@ -59,7 +64,7 @@ export class LibraryCategoryComponent implements OnInit {
 
   modelChangeFn(e:any){
     this.searchTextValue = e;
-    this.contentsFilter = this.contents.filter(c => c.name.toLocaleLowerCase().includes(e.name.toLocaleLowerCase()));
+    this.contentsFilter = this.contents.filter(c => c.name.toLocaleLowerCase().includes(e.toLocaleLowerCase()));
     this.contentsToShow = this.contentsFilter.slice(0, 50)
   }
 
@@ -76,21 +81,19 @@ export class LibraryCategoryComponent implements OnInit {
           case "collections":
             this.title = "library.collections";
             this.filterName = "Collections";
-            let collections = new Set<number>();
-            resp.movies.forEach(e => {
-              if (e.setid)
-                collections.add(e.setid);
-            });
-            for (const setid of collections) {
-              this.kodiApi.media.getMovieSetDetail(setid).subscribe(resp => {
-                  this.contents.push({
-                    name: resp.title,
-                    image: resp.art.poster ?? "",
-                    movieset: resp
-                  });
-                  this.showMore();
-              });
-            }
+
+            const sort = {ignorearticle: true,  method: ListSortMethod.title, order: ListSortOrder.ascending};
+
+            this.kodiApi.media.getMovieSets ({ properties: ["art", "plot", "thumbnail", "fanart", "title"], sort:  sort}).subscribe(resp => {
+              resp.sets.forEach(e => this.contents.push({
+                name: e.title,
+                image: e.art.poster ?? e.fanart ?? "",
+                movieset: e
+              }))
+              this.contents.sort((a, b) => removeArticles(a.name).localeCompare(removeArticles(b.name)));
+              this.showMore();
+            })
+            
             break;
           case "directors":
             this.title = "library.directors"

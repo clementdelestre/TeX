@@ -25,7 +25,6 @@ export class PlayerComponent implements OnInit {
     this.application.toggleBodyScroll(false);
     this.application.historyPush("player");
     this.player.loadPlayer()
-    console.log(this.player.players)
   }
 
   ngOnDestroy(): void {

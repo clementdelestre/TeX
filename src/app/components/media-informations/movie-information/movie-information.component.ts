@@ -45,7 +45,7 @@ export class MovieInformationComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
         
-    if(changes.isLoaded.currentValue){
+    if(changes.isLoaded?.currentValue){
       this.trailerUrl = this._sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.movie.trailer?.split("=")[2]);
 
       if(this.movie.file)

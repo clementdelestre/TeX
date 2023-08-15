@@ -74,7 +74,6 @@ export class PlayerService {
   }
 
   openPlaylist(id: number, canUseInternal:boolean = false){
-    console.log("open playlist")
     if(this.useInternal && canUseInternal){
       if(this.players.indexOf(this.internalPlayer) == -1){
         this.players.push(this.internalPlayer)

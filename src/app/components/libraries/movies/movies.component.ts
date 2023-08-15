@@ -66,15 +66,15 @@ export class MoviesComponent implements OnInit {
     const routeData: (string)[] = this.location.path().split("/");
     if(routeData[1] == "movie"){
       this.kodiApi.media.getMovieDetail(parseInt(routeData[2])).subscribe(movie => {
-        this.application.openMovieDetails = movie;
+        this.application.openMovieDetails.set(movie);
       })         
     } else if (routeData[1] == "collection") {
       this.kodiApi.media.getMovieSetDetail(parseInt(routeData[2])).subscribe(movieset => {
-        this.application.openMovieSetDetails = movieset;
+        this.application.openMovieSetDetails.set(movieset);
       })
     } else {
-      this.application.openMovieDetails = undefined;
-      this.application.openMovieSetDetails = undefined;
+      this.application.openMovieDetails.set(undefined);
+      this.application.openMovieSetDetails.set(undefined);
     }
 
   }

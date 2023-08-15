@@ -41,7 +41,6 @@ export class KodiwebsocketService {
 
     this.messagesSubject.pipe(<any>switchAll(), catchError(e => { throw e })).subscribe((message:any) => {
       const data = JSON.parse(message);
-      console.log(data);
       if(data.method){    
         if(this.socketHandlerIn.has(data.method)){
           this.socketHandlerIn.get(data.method)?.handle(data.params.data)
@@ -108,7 +107,6 @@ export class KodiwebsocketService {
   }
 
   public sendRequest(socketOutId: string, params:any) {    
-    console.log(params);
     if(this.socketHandlerOut.get(socketOutId)){
       this.socketHandlerOut.get(socketOutId)?.setParams(params);
       this.makeRequest(socketOutId, <SocketOut>this.socketHandlerOut.get(socketOutId));

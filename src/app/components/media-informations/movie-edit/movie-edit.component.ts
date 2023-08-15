@@ -74,7 +74,6 @@ export class MovieEditComponent implements OnInit {
       if(resp == "OK"){
         this.application.showNotification('notification.success', "notification.contentUpdated", AppNotificationType.success);
       } else {
-        console.log(resp);
         this.application.showNotification('notification.error', "notification.contentNotUpdated", AppNotificationType.error);
       }
     }) 

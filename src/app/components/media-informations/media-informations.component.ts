@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit, effect } from '@angular/core';
 import {  SafeResourceUrl } from '@angular/platform-browser'
 import { Location } from '@angular/common'
 import { PlaylistItem } from 'src/app/models/kodiInterfaces/playlist';
@@ -50,31 +50,36 @@ export class MediaInformationsComponent implements OnInit {
   canAddMovieToPlaylist: boolean = false;
 
   constructor(private kodiApi:KodiApiService, public player:PlayerService, private location: Location, private application: ApplicationService) {
+    effect(() => {
+      this.movieId = this.application.openMovieDetails()?.movieid ?? 0;
+      this.tvShowId = this.application.openTVShowDetails()?.tvshowid ?? 0; 
+      this.movieSetId = this.application.openMovieSetDetails()?.setid ?? 0; 
 
+      if(this.application.openMovieDetails())
+        this.media = this.application.openMovieDetails() as VideoDetailsMovie;
+      
+      if(this.application.openTVShowDetails())
+        this.media = this.application.openTVShowDetails() as VideoDetailsTVShow;
+
+      if(this.application.openMovieSetDetails())
+        this.media = this.application.openMovieSetDetails() as MovieSetDetails;
+
+      this.load()
+    });
   }
 
   ngOnInit(): void {
     
     this.application.toggleBodyScroll(false);
 
-    this.movieId = this.application.openMovieDetails?.movieid ?? 0;
-    this.tvShowId = this.application.openTVShowDetails?.tvshowid ?? 0; 
-    this.movieSetId = this.application.openMovieSetDetails?.setid ?? 0; 
-
-    if(this.application.openMovieDetails)
-      this.media = this.application.openMovieDetails;
-    
-    if(this.application.openTVShowDetails)
-      this.media = this.application.openTVShowDetails;
-
-    this.load()
+   
   }
 
   async load(){
 
     if(this.movieId){
 
-      this.kodiApi.media.getMovieDetail(this.movieId).pipe(delay(1000)).subscribe((resp) => {
+      this.kodiApi.media.getMovieDetail(this.movieId).subscribe((resp) => {
         this.media = resp;
         this.isLoaded = true;
         
@@ -140,8 +145,9 @@ export class MediaInformationsComponent implements OnInit {
   }
 
   close() {
-    this.application.openMovieDetails = undefined;
-    this.application.openTVShowDetails = undefined;
+    this.application.openMovieDetails.set(undefined)
+    this.application.openTVShowDetails.set(undefined);
+    this.application.openMovieSetDetails.set(undefined);
     this.location.back();
   }
 

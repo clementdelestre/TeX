@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -20,9 +20,9 @@ export class ApplicationService {
   openRemote: boolean = false;
   showPlayer: boolean = false;
   
-  openMovieDetails: VideoDetailsMovie | undefined;
-  openTVShowDetails: VideoDetailsTVShow | undefined;
-  openMovieSetDetails: MovieSetDetails | undefined;
+  openMovieDetails = signal<VideoDetailsMovie | undefined>(undefined);
+  openTVShowDetails = signal<VideoDetailsTVShow | undefined>(undefined);
+  openMovieSetDetails = signal<MovieSetDetails | undefined>(undefined);
 
   notifications: Map<number, AppNotification> = new Map<number, AppNotification>();
 

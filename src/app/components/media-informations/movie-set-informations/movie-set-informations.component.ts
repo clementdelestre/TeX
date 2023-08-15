@@ -44,7 +44,6 @@ export class MovieSetInformationsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.movieSet)
     for (const movie of this.movieSet.movies) {
       this.kodiApi.media.getMovieDetail(movie.movieid).subscribe((resp) => {
         this.collectionMovies[movie.movieid] = resp;
