@@ -6,8 +6,8 @@
 	<extension point="xbmc.webinterface" />
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-		<summary lang="en">Modern web interface for Kodi</summary>
-		<description lang="en">Browse and interact with your Movies, TV Shows and musics via your web browser.</description>
+		<summary lang="en_GB">Modern web interface for Kodi</summary>
+		<description lang="en_GB">Browse and interact with your Movies, TV Shows and musics via your web browser.</description>
 		<platform>all</platform>
 		<language>en</language>
 		<source>https://github.com/clementdelestre/TeX</source>
