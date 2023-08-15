@@ -4,7 +4,7 @@
         "tvshows": "Seriály",
         "musics": "Hudba",
         "player": "Prehrávač",
-        "remote": "",
+        "remote": "Ovládač",
         "settings": "Nastavenia",
         "search": {
             "search": "Vyhľadávanie",
@@ -17,7 +17,7 @@
     "library": {
         "videoLibrary": "",
         "audioLibrary": "",
-        "continueToWatch": "",
+        "continueToWatch": "Pokračovať v sledovaní",
         "recentlyAdded": "Nedávno pridané",
         "unwatched": "Nevidené",
         "movies": "Filmy",
