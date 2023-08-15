@@ -15,16 +15,17 @@ export interface ListLimitsReturned {
 }
 
 export interface ResponseWithLimits {
-    limits: ListLimitsReturned,
-    tvshows: VideoDetailsTVShow[],
-    movies: VideoDetailsMovie[],
-    seasons: VideoDetailsSeason[],
-    episodes: VideoDetailsEpisode[],
-    albums: AudioDetailsAlbum[]
-    items: ListItemAll[],
-    songs: AudioDetailsSong[],
-    artists: AudioDetailsArtist[],
-    genres: LibraryDetailsGenre[]
+  limits: ListLimitsReturned,
+  tvshows: VideoDetailsTVShow[],
+  movies: VideoDetailsMovie[],
+  seasons: VideoDetailsSeason[],
+  episodes: VideoDetailsEpisode[],
+  albums: AudioDetailsAlbum[]
+  items: ListItemAll[],
+  songs: AudioDetailsSong[],
+  artists: AudioDetailsArtist[],
+  genres: LibraryDetailsGenre[]
+  sets: MovieSetDetails[]
 };
 
 
@@ -56,4 +57,41 @@ export interface GlobalTime {
     milliseconds: number;
     minutes: number;
     seconds: number;
+}
+
+export interface CategoryEntry {
+  name: string;
+  image: string;
+  movieset?: MovieSetDetails
+}
+
+export const fullMovieSetProperties = [
+  "title",
+  "playcount",
+  "fanart",
+  "thumbnail",
+  "art",
+  "plot"
+];
+
+export interface MovieSetDetails {
+  title: string;
+  setid: number;
+  plot: string;
+  movies: { label:string; movieid:number }[];
+  limits: { start: number; end: number; total: number };
+  label: string;
+  fanart?: string;
+  art: {
+    banner?: string;
+    clearart?: string;
+    clearlogo?: string;
+    discart?: string;
+    fanart?: string;
+    icon?: string;
+    keyart?: string;
+    landscape?: string;
+    poster?: string;
+    thumb?: string
+  };
 }

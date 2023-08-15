@@ -4,11 +4,12 @@ import { VideoDetailsMovie, VideoDetailsTVShow } from '../models/kodiInterfaces/
 import { KodiApiService } from './kodi-api.service';
 
 export enum FilterList {
+  Collections = "Collections",
   Directors = "Directors",
   Writers = "Writers",
   Years = "Years",
   Genres = "Genres",
-  Actors = "Actors"
+  Actors = "Actors",
 }
 
 @Injectable({
@@ -24,12 +25,14 @@ export class SearchService {
   actors:string[] = []
   years:string[] = []
   genres:string[] = []
+  collections:string[] = []
 
   directorsFilter:string[] = []
   writersFilter:string[] = []
   actorsFilter:string[] = []
   yearsFilter:string[] = []
   genresFilter:string[] = []
+  collectionsFilter:string[] = []
 
   movies: VideoDetailsMovie[] = [];
   tvShows: VideoDetailsTVShow[] = [];
@@ -66,6 +69,7 @@ export class SearchService {
     this.actors = []
     this.years = []
     this.genres = []
+    this.collections = []
 
     this.movies = [];
     this.tvShows = [];
@@ -75,6 +79,7 @@ export class SearchService {
     this.loadYears()
     this.loadGenres()
     this.loadActors()
+    this.loadCollections()
 
     this.loadMovies()
     this.loadTvShows()
@@ -86,6 +91,7 @@ export class SearchService {
     this.actorsFilter = []
     this.yearsFilter = []
     this.genresFilter = []
+    this.collectionsFilter = []
 
     this.searchFilterField = ""
     this.textSearch = ""
@@ -118,15 +124,18 @@ export class SearchService {
       case FilterList.Writers:
         array =  this.writers
         break;
-        case FilterList.Years:
-          array =  this.years
-          break;
-        case FilterList.Genres:
-          array =  this.genres
-          break;
-        case FilterList.Actors:
-            array =  this.actors
-            break;
+      case FilterList.Years:
+        array =  this.years
+        break;
+      case FilterList.Genres:
+        array =  this.genres
+        break;
+      case FilterList.Actors:
+        array =  this.actors
+        break;
+      case FilterList.Collections:
+        array = this.collections
+        break;
       default:
         return []
     }
@@ -144,14 +153,16 @@ export class SearchService {
         return this.directorsFilter
       case FilterList.Writers:
         return this.writersFilter
-        case FilterList.Years:
-          return this.yearsFilter
-        case FilterList.Genres:
-          return this.genresFilter
-        case FilterList.Actors:
-          return this.actorsFilter
-        default:
-          return []
+      case FilterList.Years:
+        return this.yearsFilter
+      case FilterList.Genres:
+        return this.genresFilter
+      case FilterList.Actors:
+        return this.actorsFilter
+      case FilterList.Collections:
+        return this.collectionsFilter;
+      default:
+        return []
     }
   }
 
@@ -175,7 +186,7 @@ export class SearchService {
   loadDirectors(){
     this.directors = []
 
-    this.kodiApi.media.getMovies({ propoerties: ["director"] }).subscribe(resp => {
+    this.kodiApi.media.getMovies({ properties: ["director"] }).subscribe(resp => {
       if(resp?.movies){
         //Directors
         resp.movies.forEach(e => {
@@ -186,10 +197,24 @@ export class SearchService {
 
   }
 
+  loadCollections() {
+    this.collections = [];
+
+    this.kodiApi.media.getMovieSets({ properties: ["title"] }).subscribe(resp => {
+      if(resp?.sets){
+        //Directors
+        resp.sets.forEach(e => {
+          if (this.collections.indexOf(e.title) === -1)
+            this.collections.push(e.title);
+        });
+      }
+    })
+  }
+
   loadWriters(){
     this.writers = []
 
-    this.kodiApi.media.getMovies({ propoerties: ["writer"] }).subscribe(resp => {
+    this.kodiApi.media.getMovies({ properties: ["writer"] }).subscribe(resp => {
       if(resp?.movies){
         //Writers
         resp.movies.forEach(e => {
@@ -201,7 +226,7 @@ export class SearchService {
   }
 
   loadActors(){
-    this.kodiApi.media.getMovies({ propoerties: ["cast"] }).subscribe(resp => {
+    this.kodiApi.media.getMovies({ properties: ["cast"] }).subscribe(resp => {
       if(resp?.movies){
         //Actors
         resp.movies.forEach(e => {
@@ -210,7 +235,7 @@ export class SearchService {
       }
     })
 
-    this.kodiApi.media.getTvShows({ propoerties: ["cast"] }).subscribe(resp => {
+    this.kodiApi.media.getTvShows({ properties: ["cast"] }).subscribe(resp => {
       if(resp?.tvshows){
         //Actors
         resp.tvshows.forEach(e => {
@@ -221,7 +246,7 @@ export class SearchService {
   }
 
   loadYears(){
-    this.kodiApi.media.getMovies({ propoerties: ["year"] }).subscribe(resp => {
+    this.kodiApi.media.getMovies({ properties: ["year"] }).subscribe(resp => {
       if(resp?.movies){
         //Years
         resp.movies.forEach(e => {
@@ -257,7 +282,7 @@ export class SearchService {
   }
 
   loadMovies(){
-    this.kodiApi.media.getMovies({ propoerties: ["director", "year", "art", "title", "resume", "rating", "genre", "writer", "cast"] }).subscribe(resp => {
+    this.kodiApi.media.getMovies({ properties: ["director", "year", "art", "title", "resume", "set", "rating", "genre", "writer", "cast"] }).subscribe(resp => {
       if(resp?.movies){
         this.movies = resp.movies
       }
@@ -270,13 +295,14 @@ export class SearchService {
       || (this.containsAll(e.writer ?? [], this.writersFilter) && (e.writer ?? []).length > 0) && this.writersFilter.length > 0
       || (this.containsAll(e.cast.map(cast => cast.name) ?? [], this.actorsFilter) && (e.cast ?? []).length > 0) && this.actorsFilter.length > 0
       || (this.containsAll(e.genre ?? [], this.genresFilter) && (e.genre ?? []).length > 0) && this.genresFilter.length > 0
+      || (this.containsAll([e.set], this.collectionsFilter) && (e.set ?? []).length > 0) && this.collectionsFilter.length > 0
       || (this.yearsFilter.indexOf(e.year?.toString() ?? "") > -1)  && this.yearsFilter.length > 0)
       || ((e.title!.toLocaleLowerCase().indexOf(this.textSearch.toLocaleLowerCase() ?? "") > -1 && this.textSearch.length > 0))
       )
   }
 
   loadTvShows(){
-    this.kodiApi.media.getTvShows({ propoerties: ["year", "art", "title", "genre", "cast"] }).subscribe(resp => {
+    this.kodiApi.media.getTvShows({ properties: ["year", "art", "title", "genre", "cast"] }).subscribe(resp => {
       if(resp?.tvshows){
         this.tvShows = resp.tvshows
       }

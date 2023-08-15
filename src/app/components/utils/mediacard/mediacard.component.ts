@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { VideoCast, VideoDetailsMovie, VideoDetailsTVShow } from 'src/app/models/kodiInterfaces/video';
 import { ApplicationService } from 'src/app/services/application.service';
 import { KodiApiService } from 'src/app/services/kodi-api.service';
@@ -7,6 +7,8 @@ import { AudioDetailsAlbum, AudioDetailsArtist } from 'src/app/models/kodiInterf
 import { Router } from '@angular/router';
 import { LibraryDetailsGenre } from 'src/app/models/kodiInterfaces/library';
 import { SearchService } from 'src/app/services/search.service';
+import { CategoryEntry } from 'src/app/models/kodiInterfaces/others';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-mediacard',
@@ -18,7 +20,7 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class MediacardComponent implements OnInit {
 
-  @Input() media!: VideoDetailsMovie | VideoDetailsTVShow | AudioDetailsAlbum | AudioDetailsArtist | LibraryDetailsGenre | VideoCast | string;
+  @Input() media!: VideoDetailsMovie | VideoDetailsTVShow | AudioDetailsAlbum | AudioDetailsArtist | LibraryDetailsGenre | VideoCast | CategoryEntry | string;
   @Input() isDisabled:boolean = false;
   @Input() openUrl:string = "";
 
@@ -30,7 +32,7 @@ export class MediacardComponent implements OnInit {
   displayResume = false;
   resume = 0;
 
-  constructor(private kodiApi:KodiApiService, private location:Location, private application: ApplicationService, private searchService: SearchService, private router:Router) { }
+  constructor(private kodiApi:KodiApiService, private location:Location, private application: ApplicationService, private searchService: SearchService, private router:Router, private cdRef:ChangeDetectorRef) { }
 
   ngOnInit(): void {
 
@@ -54,7 +56,11 @@ export class MediacardComponent implements OnInit {
     if((this.media as VideoCast).thumbnail){
       imageFile = (this.media as AudioDetailsArtist).thumbnail ?? "";
     }
-    
+
+    if ((this.media as CategoryEntry).image) {
+      imageFile = (this.media as CategoryEntry).image;
+    }
+
     if(imageFile != ""){
       this.kodiApi.file.getPreparedFileUrl(imageFile).subscribe((resp) => {
         this.posterUrl = resp;
@@ -76,6 +82,9 @@ export class MediacardComponent implements OnInit {
 
   openDetails(){
     if(this.isDisabled) return;
+    this.application.openMovieDetails = undefined;
+    this.application.openMovieSetDetails = undefined;
+    this.application.openTVShowDetails = undefined;
     
     if((this.media as VideoDetailsMovie).movieid){
       this.application.openMovieDetails = this.media as VideoDetailsMovie;
@@ -89,6 +98,10 @@ export class MediacardComponent implements OnInit {
       this.router.navigateByUrl("/musics/artist/" + (this.media as AudioDetailsArtist).artistid)
     } else if((this.media as LibraryDetailsGenre).genreid){
       this.router.navigateByUrl("/musics/genre/" + encodeURIComponent((this.media as LibraryDetailsGenre).title))
+    } else if ((this.media as CategoryEntry).movieset) {
+      this.application.openMovieSetDetails = (this.media as CategoryEntry).movieset;
+      if (this.application.openMovieSetDetails?.setid)
+        this.location.go("/collection/" + this.application.openMovieSetDetails.setid);
     } else if((this.media as VideoCast).name){
       this.searchService.clearFilters();
       this.searchService.actorsFilter.push((this.media as VideoCast).name);

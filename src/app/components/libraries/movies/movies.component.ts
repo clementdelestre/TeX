@@ -21,6 +21,11 @@ export class MoviesComponent implements OnInit {
 
   itemMenu:searchMenuItem[] = [
     {
+      title: "Collections",
+      icon: "book",
+      page: "collections"
+    },
+    {
       title: "library.directors",
       icon: "users",
       page : "directors"
@@ -63,6 +68,10 @@ export class MoviesComponent implements OnInit {
       this.kodiApi.media.getMovieDetail(parseInt(routeData[2])).subscribe(movie => {
         this.application.openMovieDetails = movie;
       })         
+    } else if (routeData[1] == "collection") {
+      this.kodiApi.media.getMovieSetDetail(parseInt(routeData[2])).subscribe(movieset => {
+        this.application.openMovieSetDetails = movieset;
+      })
     } else {
       this.application.openMovieDetails = undefined;
     }

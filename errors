@@ -1,0 +1,17 @@
+- Generating browser application bundles (phase: setup)...
+    TypeScript compiler options "target" and "useDefineForClassFields" are set to "ES2022" and "false" respectively by the Angular CLI. To control ECMA version and features use the Browerslist configuration. For more information, see https://angular.io/guide/build#configuring-browser-compatibility
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+
+Error: src/app/app.module.ts:18:10 - error TS2724: '"./components/movie-set-informations/movie-set-informations.component"' has no exported member named 'MovieSetInformationComponent'. Did you mean 'MovieSetInformationsComponent'?
+
+18 import { MovieSetInformationComponent } from './components/movie-set-informations/movie-set-informations.component';
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/components/movie-set-informations/movie-set-informations.component.ts:23:14
+    23 export class MovieSetInformationsComponent implements OnInit {
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    'MovieSetInformationsComponent' is declared here.
+
+
+

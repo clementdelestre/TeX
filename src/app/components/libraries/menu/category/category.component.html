@@ -15,7 +15,7 @@
 
 <div @fastFadeAnimation *ngIf="!isLoading" class="flex flex-wrap mx-auto justify-center mb-2 items-center">
     <div *ngFor="let content of contentsToShow" class="w-1/3 sm:w-44">
-        <app-mediacard class="w-full" [media]="content" (click)="openContent(content)" ></app-mediacard>
+        <app-mediacard class="w-full" [media]="content"></app-mediacard>
     </div>
 </div>
 

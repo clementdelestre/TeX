@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { VideoDetailsMovie, VideoDetailsTVShow } from '../models/kodiInterfaces/video';
 import { AppNotification, AppNotificationType } from '../models/notification';
 import { LocalStorageService, STORAGE_KEYS } from './local-storage.service';
+import { MovieSetDetails } from "src/app/models/kodiInterfaces/others";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class ApplicationService {
   
   openMovieDetails: VideoDetailsMovie | undefined;
   openTVShowDetails: VideoDetailsTVShow | undefined;
+  openMovieSetDetails: MovieSetDetails | undefined;
 
   notifications: Map<number, AppNotification> = new Map<number, AppNotification>();
 
