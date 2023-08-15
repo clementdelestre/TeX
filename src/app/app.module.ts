@@ -15,7 +15,6 @@ import { MoviesComponent } from './components/libraries/movies/movies.component'
 import { MediacardComponent } from './components/utils/mediacard/mediacard.component';
 import { TvshowsComponent } from './components/libraries/tvshows/tvshows.component';
 import { MediaInformationsComponent } from './components/media-informations/media-informations.component';
-import { MovieSetInformationsComponent } from './components/movie-set-informations/movie-set-informations.component';
 import { MovieInformationComponent } from './components/media-informations/movie-information/movie-information.component';
 import { TvshowInformationComponent } from './components/media-informations/tvshow-information/tvshow-information.component';
 import { EpisodeComponent } from './components/media-informations/tvshow-information/episode/episode.component';
@@ -54,9 +53,9 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { PruningTranslationLoader } from './pruning-loader';
 import { MovieEditComponent } from './components/media-informations/movie-edit/movie-edit.component';
-import { MovieSetEditComponent } from './components/movie-set-informations/movie-set-edit/movie-set-edit.component';
 import { TvshowEditComponent } from './components/media-informations/tvshow-edit/tvshow-edit.component';
 import { ContributeComponent } from './components/settings/contribute/contribute.component';
+import { MovieSetInformationsComponent } from './components/media-informations/movie-set-informations/movie-set-informations.component';
 
 @NgModule({
   declarations: [
@@ -99,8 +98,7 @@ import { ContributeComponent } from './components/settings/contribute/contribute
     MovieEditComponent,
     TvshowEditComponent,
     ContributeComponent,
-    MovieSetInformationsComponent,
-    MovieSetEditComponent
+    MovieSetInformationsComponent
   ],
   imports: [
     BrowserModule,

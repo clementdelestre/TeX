@@ -22,12 +22,12 @@ import { MovieSetDetails } from "src/app/models/kodiInterfaces/others";
 })
 export class MediaInformationsComponent implements OnInit {
 
-  @Input() movieId!: number;
-  @Input() movieSetId!: number;
-  @Input() tvShowId!: number;
+  movieId!: number;
+  movieSetId!: number;
+  tvShowId!: number;
 
   isLoaded: boolean = false;
-  private _media!: VideoDetailsMovie | VideoDetailsTVShow;
+  private _media!: VideoDetailsMovie | VideoDetailsTVShow | MovieSetDetails;
   downloadUrl: string = "";
   edit = false;
 
@@ -35,10 +35,10 @@ export class MediaInformationsComponent implements OnInit {
       return this._media;
   }
 
-  public set media(newVal: VideoDetailsMovie | VideoDetailsTVShow) {
+  public set media(newVal: VideoDetailsMovie | VideoDetailsTVShow | MovieSetDetails) {
       this._media = newVal;
-      if(this._media.file){
-          this.kodiApi.file.getPreparedFileUrl(this._media.file).subscribe((resp) => {
+      if((this._media as VideoDetailsMovie | VideoDetailsTVShow).file){
+          this.kodiApi.file.getPreparedFileUrl((this._media as VideoDetailsMovie | VideoDetailsTVShow).file ?? "").subscribe((resp) => {
               this.downloadUrl = resp;
           });
       }
@@ -59,6 +59,7 @@ export class MediaInformationsComponent implements OnInit {
 
     this.movieId = this.application.openMovieDetails?.movieid ?? 0;
     this.tvShowId = this.application.openTVShowDetails?.tvshowid ?? 0; 
+    this.movieSetId = this.application.openMovieSetDetails?.setid ?? 0; 
 
     if(this.application.openMovieDetails)
       this.media = this.application.openMovieDetails;
@@ -71,7 +72,7 @@ export class MediaInformationsComponent implements OnInit {
 
   async load(){
 
-    if(this.movieId != 0){
+    if(this.movieId){
 
       this.kodiApi.media.getMovieDetail(this.movieId).pipe(delay(1000)).subscribe((resp) => {
         this.media = resp;
@@ -93,7 +94,7 @@ export class MediaInformationsComponent implements OnInit {
       }
     }
 
-    if(this.tvShowId != 0){
+    if(this.tvShowId){
       
       this.kodiApi.media.getTvShowDetail(this.tvShowId).subscribe((resp) => {
         this.media = resp;
@@ -106,6 +107,21 @@ export class MediaInformationsComponent implements OnInit {
 
       });
     }
+
+    if (this.movieSetId) {
+      
+      this.kodiApi.media.getMovieSetDetail(this.movieSetId).subscribe((resp) => {
+
+        this.media = resp;
+        this.isLoaded = true;
+
+        if (this.media.fanart)
+          this.kodiApi.file.getPreparedFileUrl(this.media.fanart).subscribe((resp) => {
+            this.fanartUrl = resp;
+          });
+      })
+    }
+    
   }
 
   ngOnDestroy(): void {
@@ -129,7 +145,7 @@ export class MediaInformationsComponent implements OnInit {
     this.location.back();
   }
 
-  isMovie(): boolean { return this.media ? (this.media as VideoDetailsMovie).movieid !== undefined : true; }
+  // isMovie(): boolean { return this.media ? (this.media as VideoDetailsMovie).movieid !== undefined : true; }
 
   
   playMovie(){
@@ -151,7 +167,7 @@ export class MediaInformationsComponent implements OnInit {
   }
 
   setWatched(watched: boolean){
-    if(this.isMovie()){     
+    if(this.movieId){     
       this.kodiApi.media.setMovieDetails({"movieid" : (this.media as VideoDetailsMovie).movieid, "playcount" : watched ? 1 : 0}).subscribe(
         resp => {
           if(resp != "OK"){

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,SAAS,EAAE,iBAAiB;CAC/B;;AAED,kBAAkB,CAAlB,WAAkB;EACd,EAAE;IACE,SAAS,EAAE,iBAAiB;;EAEhC,IAAI;IACA,SAAS,EAAE,aAAa;;;;AAGhC,UAAU,CAAV,WAAU;EACN,EAAE;IACE,SAAS,EAAE,iBAAiB;;EAEhC,IAAI;IACA,SAAS,EAAE,aAAa",
-    "sources": [
-        "media-informations.component.scss"
-    ],
-    "names": [],
-    "file": "media-informations.component.css"
-}

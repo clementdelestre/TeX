@@ -74,6 +74,7 @@ export class MoviesComponent implements OnInit {
       })
     } else {
       this.application.openMovieDetails = undefined;
+      this.application.openMovieSetDetails = undefined;
     }
 
   }
