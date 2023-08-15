@@ -6,7 +6,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,7 +48,6 @@ import { MoviesMenuComponent } from './components/libraries/menu/menu.component'
 import { TvShowsHomeComponent } from './components/libraries/tvshows/home/home.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { PruningTranslationLoader } from './pruning-loader';
 import { MovieEditComponent } from './components/media-informations/movie-edit/movie-edit.component';
@@ -132,7 +130,7 @@ import { MovieSetInformationsComponent } from './components/media-informations/m
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIconPacks(fas, far, fab);
+    library.addIconPacks(fas, fab);
   }
  }
 
