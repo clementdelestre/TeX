@@ -149,7 +149,8 @@
             "translationIssues": "En cas de problème de traductions, nettoyez le cache de votre navigateur web",
             "refreshTranslation": "Rafraichir les traductions",
             "currentVersion": "Version actuelle:",
-            "checkUpdates": "Rechercher les mises à jour"
+            "checkUpdates": "Rechercher les mises à jour",
+            "restart" : "Redémarrer Kodi"
         },
         "appearance": {
             "appearance": "Apparence"
@@ -191,7 +192,10 @@
         "contentRemoved": "Contenu supprimé. Actualisez la page pour voir les changements.",
         "contentNotRemoved": "Contenu non supprimé",
         "appUpdated": "Application mise à jour",
-        "changelogsOnGithub": "Vous pouvez trouver la liste des changements sur Github."
+        "changelogsOnGithub": "Vous pouvez trouver la liste des changements sur Github.",
+        "restart" : "Kodi va redémarrer",
+        "waitBeforeUseApp" : "Merci de patienter quelques instants.",
+        "commandError" : "Impossible d'envoyer la requête."
     },
     "remote": {
         "sendText": "Envoyer du texte"

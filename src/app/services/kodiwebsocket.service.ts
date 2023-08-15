@@ -22,6 +22,8 @@ import { SocketInOnAudioLibraryCleanStarted } from './protocol/websocket/in/sock
 import { SocketInOnAudioLibraryCleanFinished } from './protocol/websocket/in/socketInAudioLibraryCleanFInished';
 import { SocketInOnVideoLibraryScanStarted } from './protocol/websocket/in/socketInVideoLibraryScanStarted';
 import { SearchService } from './search.service';
+import { SocketOutRestart } from './protocol/websocket/out/socketOutRestart';
+import { AppNotificationType } from '../models/notification';
 
 
 @Injectable({
@@ -41,6 +43,9 @@ export class KodiwebsocketService {
 
     this.messagesSubject.pipe(<any>switchAll(), catchError(e => { throw e })).subscribe((message:any) => {
       const data = JSON.parse(message);
+      if(data.error){
+        this.application.showNotification('notification.error', data.error.message, AppNotificationType.error);
+      }
       if(data.method){    
         if(this.socketHandlerIn.has(data.method)){
           this.socketHandlerIn.get(data.method)?.handle(data.params.data)
@@ -96,6 +101,8 @@ export class KodiwebsocketService {
     this.socketHandlerIn.set(SocketInOnAudioLibraryScanFinished.method, new SocketInOnAudioLibraryScanFinished(this.application, this.searchService));
     this.socketHandlerIn.set(SocketInOnAudioLibraryCleanStarted.method, new SocketInOnAudioLibraryCleanStarted(this.application));
     this.socketHandlerIn.set(SocketInOnAudioLibraryCleanFinished.method, new SocketInOnAudioLibraryCleanFinished(this.application, this.searchService));
+
+    this.socketHandlerOut.set(SocketOutRestart.method, new SocketOutRestart())
   }
 
   public registerPlayerHandlers(player:PlayerService){
@@ -118,14 +125,14 @@ export class KodiwebsocketService {
     const request:string = JSON.stringify({
       "jsonrpc" : "2.0",
       "id" : id,
-      "method" : req.method,
+      "method" : id,
       "params" : req.params
     });
    
     if(this.socket.readyState == this.socket.OPEN){
       this.socket.send(request)
     } else {
-      console.log("Unable to make request because not connected");
+      this.application.showNotification('notification.error', "notification.commandError", AppNotificationType.error);
     }
     
   }
