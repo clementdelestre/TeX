@@ -102,9 +102,9 @@ export class MediacardComponent implements OnInit {
       this.application.openMovieSetDetails.set((this.media as CategoryEntry).movieset);
       if (this.application.openMovieSetDetails()?.setid)
         this.location.go("/collection/" + this.application.openMovieSetDetails()!.setid);
-    } else if((this.media as VideoCast).name){
+    } else if((this.media as CategoryEntry)){
       this.searchService.clearFilters();
-      this.searchService.actorsFilter.push((this.media as VideoCast).name);
+      this.searchService.getArrayFilterFromFilter((this.media as CategoryEntry).filterName ?? "").push((this.media as VideoCast).name)
       if(this.router.url == "/search") this.location.go("/search");
       this.router.navigateByUrl("/search")
     } else {

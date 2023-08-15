@@ -62,6 +62,7 @@ export interface GlobalTime {
 export interface CategoryEntry {
   name: string;
   image: string;
+  filterName?: string;
   movieset?: MovieSetDetails
 }
 
