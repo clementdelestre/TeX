@@ -1,0 +1,8 @@
+<div>
+    <div *ngIf="!isLoaded" class="flex flex-col w-full my-4">
+        <div *ngFor="let number of [0,1,2]" [ngClass]="{'w-full' : number<2, 'w-9/12' : number==2}" class="data-placeholder rounded-sm mb-2 h-4 overflow-hidden relative bg-gray-500">
+        </div>
+    </div>
+
+    <app-library-row-medias @openClose [title]="'library.movies'" [medias]="collectionMoviesArray"></app-library-row-medias>
+</div>
