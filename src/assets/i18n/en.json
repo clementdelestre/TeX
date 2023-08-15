@@ -159,7 +159,8 @@
             "translationIssues" : "In case of translation issues, clear cache from your web browser",
             "refreshTranslation" : "Refresh translations",
             "currentVersion" : "Current version:",
-            "checkUpdates" : "Check for updates"
+            "checkUpdates" : "Check for updates",
+            "restart" : "Restart Kodi"
         },
         "appearance" : {
             "appearance" : "Appearance"
@@ -201,7 +202,10 @@
         "contentRemoved" : "Content removed. Refresh to see changes.",
         "contentNotRemoved" : "Content not removed",
         "appUpdated" : "App successfully updated",
-        "changelogsOnGithub" : "You can find the changelogs on Github."
+        "changelogsOnGithub" : "You can find the changelogs on Github.",
+        "restart" : "Kodi is restarting",
+        "waitBeforeUseApp" : "Kodi is restarting and will be available in a few seconds.",
+        "commandError" : "Unable to send command."
     },
     "remote" : {
         "sendText" : "Send text"

@@ -82,16 +82,16 @@ export class MediacardComponent implements OnInit {
 
   openDetails(){
     if(this.isDisabled) return;
-    this.application.openMovieDetails = undefined;
-    this.application.openMovieSetDetails = undefined;
-    this.application.openTVShowDetails = undefined;
+    this.application.openMovieDetails.set(undefined)
+    this.application.openTVShowDetails.set(undefined);
+    this.application.openMovieSetDetails.set(undefined);
     
     if((this.media as VideoDetailsMovie).movieid){
-      this.application.openMovieDetails = this.media as VideoDetailsMovie;
-      this.location.go("/movie/" + this.application.openMovieDetails.movieid);
+      this.application.openMovieDetails.set(this.media as VideoDetailsMovie);
+      this.location.go("/movie/" + this.application.openMovieDetails()!.movieid);
     } else if((this.media as VideoDetailsTVShow).tvshowid){
-      this.application.openTVShowDetails = (this.media as VideoDetailsTVShow);
-      this.location.go("/tvshow/" + this.application.openTVShowDetails.tvshowid);
+      this.application.openTVShowDetails.set(this.media as VideoDetailsTVShow);
+      this.location.go("/tvshow/" + this.application.openTVShowDetails()!.tvshowid);
     } else if((this.media as AudioDetailsAlbum).albumid){
       this.router.navigateByUrl("/musics/album/" + (this.media as AudioDetailsAlbum).albumid)
     } else if((this.media as AudioDetailsArtist).artistid){
@@ -99,9 +99,9 @@ export class MediacardComponent implements OnInit {
     } else if((this.media as LibraryDetailsGenre).genreid){
       this.router.navigateByUrl("/musics/genre/" + encodeURIComponent((this.media as LibraryDetailsGenre).title))
     } else if ((this.media as CategoryEntry).movieset) {
-      this.application.openMovieSetDetails = (this.media as CategoryEntry).movieset;
-      if (this.application.openMovieSetDetails?.setid)
-        this.location.go("/collection/" + this.application.openMovieSetDetails.setid);
+      this.application.openMovieSetDetails.set((this.media as CategoryEntry).movieset);
+      if (this.application.openMovieSetDetails()?.setid)
+        this.location.go("/collection/" + this.application.openMovieSetDetails()!.setid);
     } else if((this.media as VideoCast).name){
       this.searchService.clearFilters();
       this.searchService.actorsFilter.push((this.media as VideoCast).name);

@@ -74,7 +74,7 @@ export class MediaRequest extends HttpRequestData {
   
       const req = this.getRequestUrl("getmoviedetail", "VideoLibrary.GetMovieDetails", params);
       return this.makeGetRequest(req).pipe(
-        map(rep => { console.log(rep); return rep.moviedetails})
+        map(rep => rep.moviedetails)
       );
   }
 

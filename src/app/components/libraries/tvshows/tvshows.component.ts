@@ -35,10 +35,10 @@ export class TvshowsComponent implements OnInit {
     const routeData: (string)[] = this.location.path().split("/");
     if(routeData[1] == "tvshow"){
       this.kodiApi.media.getTvShowDetail(parseInt(routeData[2])).subscribe(tvshow => {
-        this.application.openTVShowDetails = tvshow;  
+        this.application.openTVShowDetails.set(tvshow);  
       });         
     } else {
-      this.application.openTVShowDetails = undefined;
+      this.application.openTVShowDetails.set(undefined);
     }
   }
 

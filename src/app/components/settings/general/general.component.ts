@@ -5,6 +5,8 @@ import { ApplicationService } from 'src/app/services/application.service';
 import { KodiApiService } from 'src/app/services/kodi-api.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import {environment} from '../../../../environments/environment';
+import { KodiwebsocketService } from 'src/app/services/kodiwebsocket.service';
+import { SocketOutRestart } from 'src/app/services/protocol/websocket/out/socketOutRestart';
 
 @Component({
   selector: 'app-settings-general',
@@ -16,7 +18,7 @@ export class GeneralComponent implements OnInit {
   version = environment.appVersion;
 
   vibrate:number = 50;
-  constructor(private kodiApi:KodiApiService, public application:ApplicationService, private localStorage: LocalStorageService, public translate: TranslateService) { }
+  constructor(private kodiApi:KodiApiService, public application:ApplicationService, private localStorage: LocalStorageService, public translate: TranslateService, public wsApiService: KodiwebsocketService) { }
 
   ngOnInit(): void {
     this.vibrate = this.localStorage.getData("vibrate") ?? 50;
@@ -50,7 +52,18 @@ export class GeneralComponent implements OnInit {
 
   async resetApp()  {
     this.localStorage.clear()
-    window.location.reload()
+    
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistration().then(registration => {
+        if (registration) {
+          registration.update();
+          registration.unregister().then(() => {
+            location.reload();
+          });
+        }
+      });
+    }
+
   }
 
   vibrateChange(value: any){
@@ -62,6 +75,11 @@ export class GeneralComponent implements OnInit {
   refreshTranslation(){
     this.application.refreshTranslations();
     this.application.showNotification('notification.updatedTranslations', "notification.refreshPageToSee", AppNotificationType.success);
+  }
+
+  restartKodi(){
+    this.wsApiService.sendRequest(SocketOutRestart.method, {});
+    this.application.showNotification('notification.restart', "notification.waitBeforeUseApp", AppNotificationType.success);
   }
 
 }

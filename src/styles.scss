@@ -165,7 +165,7 @@ body::-webkit-scrollbar {
 
 
 .data-placeholder {
-    animation: pulse 1s infinite ease-in-out;
+    animation: loadPlaceholder 1s infinite ease-in-out;
 }
 @keyframes loadPlaceholder {
     0% {

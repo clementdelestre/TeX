@@ -9,7 +9,7 @@
             <div class="flex items-center justify-items-center space-x-8">        
                 <app-searchbar></app-searchbar>
     
-                <button (click)="openPlayer()" [ngClass]="{'text-primary': application.showPlayer}" class="hidden sm:block header-button text-xl"><fa-icon [icon]="['far', 'play-circle']" class="toggle-player"></fa-icon></button>
+                <button (click)="openPlayer()" [ngClass]="{'text-primary': application.showPlayer}" class="hidden sm:block header-button text-xl"><fa-icon [icon]="['fas', 'play-circle']" class="toggle-player"></fa-icon></button>
     
                 <a (click)="openRemote()" class="header-button text-xl"><fa-icon [icon]="['fas', 'mobile-alt']"></fa-icon></a>
                 <a [ngClass]="{'text-primary': isRoute('settings')}" routerLink="/settings" class="header-button text-xl"><fa-icon [icon]="['fas', 'cog']"></fa-icon></a>
@@ -49,7 +49,7 @@
                     <fa-icon [icon]="['fas', 'mobile-alt']"></fa-icon>
                 </div>
                 <div *ngIf="player.isAvailable()" (click)="openPlayer()" class="rounded-full h-14 w-14 m-auto flex items-center justify-center text-gray-500 hover:text-dark-full bg-white hover:bg-gray-200 transition-colors duration-300 cursor-pointer ">
-                    <fa-icon [icon]="['far', 'play-circle']" class="toggle-player"></fa-icon>
+                    <fa-icon [icon]="['fas', 'play-circle']" class="toggle-player"></fa-icon>
                 </div>
             </div>
         </div>

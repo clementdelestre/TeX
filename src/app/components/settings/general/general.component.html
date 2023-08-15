@@ -30,8 +30,16 @@
                 <input type="range" min="0" max="80" [value]="vibrate" #ref (change)="vibrateChange(ref.value)">
                 <span>{{ vibrate != 0 ? vibrate + "ms" : ("settings.general.vibrationOff" | translate) }}</span>
             </div>
-
-
+        </div>
+          <!-- Vibrate -->
+        <div class="settings-subsection">
+            <div class="text-center sm:text-left">
+                <p class="font-semibold" translate="settings.general.restart"></p>
+            </div>
+            
+            <div class="flex items-center justify-right space-x-4 flex-col">
+                <button (click)="restartKodi()" class="bg-red-500 rounded-lg px-4 py-2 mx-4 my-2 hover:opacity-80 transition-opacity duration-300">{{ 'settings.general.restart' | translate }}</button>
+            </div>
         </div>
     </div>
 </div>
