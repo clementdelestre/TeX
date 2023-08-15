@@ -1,7 +1,10 @@
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs/internal/Observable";
 import { HttpRequestData } from "./http";
 
 export class RemoteRequest extends HttpRequestData {
+
+    private cecAddonID = "script.json-cec";
 
     constructor(http:HttpClient){
         super(http)
@@ -62,6 +65,14 @@ export class RemoteRequest extends HttpRequestData {
         this.makePostRequest(req).subscribe();
     }
 
+    cecCommand(command: string) {
+        const req = this.getRequestParams("cec", "Addons.ExecuteAddon", { "addonid": this.cecAddonID, "params": { "command": command } })
+        this.makePostRequest(req).subscribe();
+    }
     
+    cecEnabled(): Observable<any> {
+        const req = this.getRequestParams("cec", "Addons.GetAddonDetails", { "addonid": this.cecAddonID, "properties": ["enabled"] })
+        return this.makePostRequest(req);
+    }
 
 }
