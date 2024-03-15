@@ -15,8 +15,8 @@
         }
     },
     "library": {
-        "videoLibrary": "Библиотека видео",
-        "audioLibrary": "Библиотека аудио",
+        "videoLibrary": "Медиатека видео",
+        "audioLibrary": "Медиатека аудио",
         "continueToWatch": "Продолжить просмотр",
         "recentlyAdded": "Недавно добавленные",
         "unwatched": "Непросмотренные",
@@ -121,7 +121,8 @@
             "tagline": "Слоган:",
             "plot": "Сценарий:",
             "title": "Название:"
-        }
+        },
+        "collections": "Коллекции"
     },
     "player": {
         "playlist": "Плейлист",
@@ -136,11 +137,11 @@
             "general": "Общие",
             "language": "Язык",
             "musicsDefaultPlayer": "Аудиоплеер по умолчанию",
-            "scanVideoLibrary": "Сканировать библиотеку с видео",
-            "scanAudioLibrary": "Сканировать библиотеку с аудио",
-            "cleanVideoLibrary": "Очистить библиотеку с видео",
-            "cleanAudioLibrary": "Очистить библиотеку с аудио",
-            "libraries": "Библиотеки",
+            "scanVideoLibrary": "Сканировать видео медиатеку",
+            "scanAudioLibrary": "Сканировать аудио медиатеку",
+            "cleanVideoLibrary": "Очистить видео медиатеку",
+            "cleanAudioLibrary": "Очистить аудио медиатеку",
+            "libraries": "Медиатеки",
             "application": "Приложение",
             "resetApp": "Перезапустить приложение и установить обновления",
             "vibrate": "Вибрирование",
@@ -149,7 +150,8 @@
             "translationIssues": "В случае проблем с корректностью отображения вашего языка, очистите кеш в настройках вашего браузера",
             "refreshTranslation": "Обновить перевод",
             "checkUpdates": "Проверить наличие обновлений",
-            "currentVersion": "Текущая версия:"
+            "currentVersion": "Текущая версия:",
+            "restart": "Перезапуск Kodi"
         },
         "appearance": {
             "appearance": "Внешний вид"
@@ -191,7 +193,10 @@
         "contentRemoved": "Контент удалён. Обновите, чтобы увидеть изменения.",
         "contentNotUpdated": "Контент не обновлён",
         "error": "Ошибка",
-        "success": "Успех"
+        "success": "Успех",
+        "commandError": "Невозможно отправить команду.",
+        "restart": "Kodi перезагружается",
+        "waitBeforeUseApp": "Kodi перезагружается и будет доступен через несколько секунд."
     },
     "remote": {
         "sendText": "Отправить текст"

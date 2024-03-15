@@ -7,7 +7,7 @@
         "remote": "Fernsteuerung",
         "settings": "Einstellungen",
         "search": {
-            "search": "Suchen",
+            "search": "Suche",
             "searchIn": "Suchen in:",
             "filters": "Filter:",
             "year": "Jahr",
@@ -121,7 +121,8 @@
             "tagline": "Zusammenfassung:",
             "plot": "Handlung:",
             "title": "Titel:"
-        }
+        },
+        "collections": "Sammlungen"
     },
     "player": {
         "playlist": "Wiedergabeliste",
@@ -149,7 +150,8 @@
             "translationIssues": "Im Falle von Übersetzungsfehlern, bitte den Cache des Browers leeren",
             "refreshTranslation": "Übersetzungen aktualisieren",
             "checkUpdates": "Aktualisierungen suchen",
-            "currentVersion": "Aktuelle Version:"
+            "currentVersion": "Aktuelle Version:",
+            "restart": "Kodi neu starten"
         },
         "appearance": {
             "appearance": "Aussehen"
@@ -191,7 +193,10 @@
         "contentRemoved": "Inhalt entfernt. Um Änderungen zu sehen, Seite neu laden.",
         "contentNotUpdated": "Inhalt nicht aktualisiert",
         "error": "Fehler",
-        "success": "Erfolg"
+        "success": "Erfolg",
+        "commandError": "Kommando kann nicht gesendet werden.",
+        "restart": "Kodi startet neu",
+        "waitBeforeUseApp": "Kodi startet neu und wird in einigen Sekunden wieder verfügbar sein."
     },
     "remote": {
         "sendText": "Text senden"

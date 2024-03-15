@@ -121,7 +121,8 @@
             "tagline": "Titular:",
             "plot": "Argumento:",
             "title": "Título:"
-        }
+        },
+        "collections": "Colecciones"
     },
     "player": {
         "playlist": "Lista",
@@ -140,7 +141,7 @@
             "scanAudioLibrary": "Escanear colección de audio",
             "cleanVideoLibrary": "Limpiar colección de vídeo",
             "cleanAudioLibrary": "Limpiar biblioteca de audio",
-            "libraries": "Colecciones",
+            "libraries": "Bibliotecas",
             "application": "Aplicación",
             "resetApp": "Restablecer app e instalar actualizaciones",
             "vibrate": "Vibrar",
@@ -149,7 +150,8 @@
             "translationIssues": "En caso de errores de traducción, borra la caché del navegador",
             "refreshTranslation": "Refrescar traducciones",
             "checkUpdates": "Buscar actualizaciones",
-            "currentVersion": "Versión actual:"
+            "currentVersion": "Versión actual:",
+            "restart": "Reiniciar Kodi"
         },
         "appearance": {
             "appearance": "Apariencia"
@@ -191,7 +193,10 @@
         "contentRemoved": "Contenido eliminado. Refrescar para ver los cambios.",
         "contentNotUpdated": "Contenido no actualizado",
         "error": "Error",
-        "success": "Éxito"
+        "success": "Éxito",
+        "restart": "Kodi se está reiniciando",
+        "commandError": "No se puede enviar el comando.",
+        "waitBeforeUseApp": "Kodi se está reiniciando y estará disponible en unos segundos."
     },
     "remote": {
         "sendText": "Enviar texto"

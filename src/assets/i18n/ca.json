@@ -107,7 +107,7 @@
         "edit": {
             "confirm": "Confirma",
             "cancel": "Cancel·la",
-            "save": "Guarda",
+            "save": "Desa",
             "remove": "Elimina",
             "refresh": "Actualitza",
             "tags": "Etiquetes:",
@@ -121,7 +121,8 @@
             "tagline": "Eslogan:",
             "plot": "Trama:",
             "title": "Títol:"
-        }
+        },
+        "collections": "Col·leccions"
     },
     "player": {
         "playlist": "Llista de reproducció",
@@ -149,7 +150,8 @@
             "translationIssues": "En cas de problemes de traducció, esborreu la memòria cau del vostre navegador web",
             "refreshTranslation": "Actualitza les traduccions",
             "checkUpdates": "Cerca actualitzacions",
-            "currentVersion": "Versió actual:"
+            "currentVersion": "Versió actual:",
+            "restart": "Reiniciar Kodi"
         },
         "appearance": {
             "appearance": "Aparença"
@@ -191,7 +193,10 @@
         "contentRemoved": "Contingut eliminat. Recarrega per veure els canvis.",
         "contentNotUpdated": "Contingut no actualitzat",
         "error": "Error",
-        "success": "Èxit"
+        "success": "Èxit",
+        "restart": "El Kodi s'està reiniciant",
+        "waitBeforeUseApp": "El Kodi s'està reiniciant i estarà disponible en uns segons.",
+        "commandError": "No es pot enviar l'ordre."
     },
     "remote": {
         "sendText": "Envia text"

@@ -121,7 +121,8 @@
             "download": "Télécharger",
             "linkCopied": "Lien copié",
             "linkWasCopiedInClipBoard": "Le lien a été copié dans le presse-papier."
-        }
+        },
+        "collections": "Collections"
     },
     "player": {
         "playlist": "Playlist",
@@ -150,7 +151,7 @@
             "refreshTranslation": "Rafraichir les traductions",
             "currentVersion": "Version actuelle:",
             "checkUpdates": "Rechercher les mises à jour",
-            "restart" : "Redémarrer Kodi"
+            "restart": "Redémarrer Kodi"
         },
         "appearance": {
             "appearance": "Apparence"
@@ -193,9 +194,9 @@
         "contentNotRemoved": "Contenu non supprimé",
         "appUpdated": "Application mise à jour",
         "changelogsOnGithub": "Vous pouvez trouver la liste des changements sur Github.",
-        "restart" : "Kodi va redémarrer",
-        "waitBeforeUseApp" : "Merci de patienter quelques instants.",
-        "commandError" : "Impossible d'envoyer la requête."
+        "restart": "Kodi va redémarrer",
+        "waitBeforeUseApp": "Merci de patienter quelques instants.",
+        "commandError": "Impossible d'envoyer la requête."
     },
     "remote": {
         "sendText": "Envoyer du texte"
