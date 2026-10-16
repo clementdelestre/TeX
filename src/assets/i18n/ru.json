@@ -15,8 +15,8 @@
         }
     },
     "library": {
-        "videoLibrary": "Библиотека видео",
-        "audioLibrary": "Библиотека аудио",
+        "videoLibrary": "Медиатека видео",
+        "audioLibrary": "Медиатека аудио",
         "continueToWatch": "Продолжить просмотр",
         "recentlyAdded": "Недавно добавленные",
         "unwatched": "Непросмотренные",
@@ -24,17 +24,17 @@
         "tvshows": "Сериалы",
         "musics": "Музыка",
         "nothingToShow": "Нечего показывать",
-        "changeFilterToFindSomething": "Настроить фильтры для точного поиска",
+        "changeFilterToFindSomething": "Изменить фильтры поиска",
         "resetFilters": "Сбросить",
         "sortBy": {
             "sortBy": "Сортировать по",
-            "alphabetical": "Алфавиту",
-            "alphabeticalInversed": "Алфавиту (в обратном порядке)",
+            "alphabetical": "Алфавит",
+            "alphabeticalInversed": "Алфавит (обратный порядок)",
             "random": "Случайный порядок",
             "duration": "Длительность",
-            "latest": "Последний",
-            "older": "Ранний",
-            "track": "Треку"
+            "latest": "Последние",
+            "older": "Старые",
+            "track": "Трек"
         },
         "page": "Страница",
         "directors": "Режиссёры",
@@ -43,10 +43,10 @@
         "albums": "Альбомы",
         "artists": "Исполнители",
         "genres": "Жанры",
-        "years": "Года",
+        "years": "Годы",
         "recentlyPlayedAlbums": "Недавно прослушанные альбомы",
         "recentlyAddedAlbums": "Недавно добавленные альбомы",
-        "mostPlayedAlbums": "Самый прослушиваемые альбомы",
+        "mostPlayedAlbums": "Самые прослушиваемые альбомы",
         "allMusics": "Вся музыка",
         "filters": "Фильтры",
         "details": {
@@ -59,13 +59,13 @@
             "disk": "Диск",
             "born": "Родился(-ась):",
             "mood": "Настроение:",
-            "formed": "Дата формирования:",
-            "disbanded": "Дата распада:",
+            "formed": "Образован:",
+            "disbanded": "Распался:",
             "episodes": "Серии:",
             "musicsBy": "Автор музыки",
             "playButton": "Воспроизвести",
-            "playNext": "Воспроизвести следующим",
-            "rating": "Рейтинг по версии зрителей: {{ value }}%",
+            "playNext": "Воспроизвести следующее",
+            "rating": "Рейтинг зрителей: {{ value }}%",
             "watched": "Просмотрено",
             "unwatched": "Непросмотренные",
             "size": "Размер:",
@@ -121,7 +121,8 @@
             "tagline": "Слоган:",
             "plot": "Сценарий:",
             "title": "Название:"
-        }
+        },
+        "collections": "Коллекции"
     },
     "player": {
         "playlist": "Плейлист",
@@ -136,11 +137,11 @@
             "general": "Общие",
             "language": "Язык",
             "musicsDefaultPlayer": "Аудиоплеер по умолчанию",
-            "scanVideoLibrary": "Сканировать библиотеку с видео",
-            "scanAudioLibrary": "Сканировать библиотеку с аудио",
-            "cleanVideoLibrary": "Очистить библиотеку с видео",
-            "cleanAudioLibrary": "Очистить библиотеку с аудио",
-            "libraries": "Библиотеки",
+            "scanVideoLibrary": "Сканировать видео медиатеку",
+            "scanAudioLibrary": "Сканировать аудио медиатеку",
+            "cleanVideoLibrary": "Очистить видео медиатеку",
+            "cleanAudioLibrary": "Очистить аудио медиатеку",
+            "libraries": "Медиатеки",
             "application": "Приложение",
             "resetApp": "Перезапустить приложение и установить обновления",
             "vibrate": "Вибрирование",
@@ -149,7 +150,8 @@
             "translationIssues": "В случае проблем с корректностью отображения вашего языка, очистите кеш в настройках вашего браузера",
             "refreshTranslation": "Обновить перевод",
             "checkUpdates": "Проверить наличие обновлений",
-            "currentVersion": "Текущая версия:"
+            "currentVersion": "Текущая версия:",
+            "restart": "Перезапуск Kodi"
         },
         "appearance": {
             "appearance": "Внешний вид"
@@ -191,7 +193,10 @@
         "contentRemoved": "Контент удалён. Обновите, чтобы увидеть изменения.",
         "contentNotUpdated": "Контент не обновлён",
         "error": "Ошибка",
-        "success": "Успех"
+        "success": "Успех",
+        "commandError": "Невозможно отправить команду.",
+        "restart": "Kodi перезагружается",
+        "waitBeforeUseApp": "Kodi перезагружается и будет доступен через несколько секунд."
     },
     "remote": {
         "sendText": "Отправить текст"

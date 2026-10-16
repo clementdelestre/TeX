@@ -5,7 +5,7 @@
         "musics": "Música",
         "player": "Reproductor",
         "remote": "",
-        "settings": "Axustes",
+        "settings": "Configuración",
         "search": {
             "search": "",
             "searchIn": "",
@@ -15,7 +15,7 @@
         }
     },
     "library": {
-        "videoLibrary": "Videoteca",
+        "videoLibrary": "Biblioteca de vídeos",
         "audioLibrary": "",
         "continueToWatch": "",
         "recentlyAdded": "",
@@ -119,7 +119,7 @@
         "noMedia": ""
     },
     "settings": {
-        "settings": "Axustes",
+        "settings": "Configuración",
         "general": {
             "general": "Xeneral",
             "language": "Llingua",
@@ -169,7 +169,7 @@
         "updatedTranslations": "",
         "refreshPageToSee": "",
         "changelogsOnGithub": "Pues atopar los rexistros de cambeos en Github.",
-        "error": "Fallu"
+        "error": "Error"
     },
     "remote": {
         "sendText": ""

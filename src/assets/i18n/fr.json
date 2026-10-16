@@ -60,11 +60,11 @@
             "born": "Naissance :",
             "mood": "Ambiance :",
             "formed": "Date de formation :",
-            "disbanded": "Date de dissolution:",
+            "disbanded": "Date de dissolution :",
             "episodes": "Episodes :",
             "musicsBy": "Musique par",
-            "playButton": "Jouer",
-            "playNext": "Jouer ensuite",
+            "playButton": "Lire",
+            "playNext": "Lire ensuite",
             "rating": "Avis des utilisateurs : {{ value }}%",
             "watched": "Vu",
             "unwatched": "Non vu",
@@ -85,21 +85,21 @@
             "additionalInformation": "Informations additionnelles",
             "refresh": "Rafraîchir les données",
             "streamVideo": "Vidéo :",
-            "streamAudio": "Audio:",
-            "streamSubtitle": "Sous-titres:",
+            "streamAudio": "Audio :",
+            "streamSubtitle": "Sous-titres :",
             "edit": "Editer"
         },
         "edit": {
-            "title": "Titre:",
-            "plot": "Intrigue:",
-            "tagline": "Slogan:",
-            "studio": "Studio:",
-            "directors": "Réalisateurs:",
-            "writers": "Scénaristes:",
-            "genres": "Genres:",
-            "country": "Pays:",
-            "set": "Série:",
-            "tags": "Tags:",
+            "title": "Titre :",
+            "plot": "Intrigue :",
+            "tagline": "Slogan :",
+            "studio": "Studio :",
+            "directors": "Réalisateurs :",
+            "writers": "Scénaristes :",
+            "genres": "Genres :",
+            "country": "Pays :",
+            "set": "Série :",
+            "tags": "Tags :",
             "refresh": "Rafraichir",
             "remove": "Supprimer",
             "save": "Sauvegarder",
@@ -117,17 +117,18 @@
             "listenIn": "Ecouter dans :",
             "internalPlayer": "Navigateur",
             "search": "Rechercher",
-            "playNext": "Jouer ensuite",
+            "playNext": "Lire ensuite",
             "download": "Télécharger",
             "linkCopied": "Lien copié",
             "linkWasCopiedInClipBoard": "Le lien a été copié dans le presse-papier."
-        }
+        },
+        "collections": "Collections"
     },
     "player": {
         "playlist": "Playlist",
         "noMedia": "Aucun média",
-        "languages": "Langues:",
-        "subtitles": "Sous-titres:",
+        "languages": "Langues :",
+        "subtitles": "Sous-titres :",
         "disabled": "Désactivé"
     },
     "settings": {
@@ -146,11 +147,11 @@
             "vibrate": "Vibrations",
             "vibrationOff": "Vibrations désactivées",
             "mayNotWorkDevice": "Peut ne pas fonctionner sur certains appareils",
-            "translationIssues": "En cas de problème de traductions, nettoyez le cache de votre navigateur web",
+            "translationIssues": "En cas de problème de traductions, nettoyer le cache de votre navigateur web",
             "refreshTranslation": "Rafraichir les traductions",
-            "currentVersion": "Version actuelle:",
+            "currentVersion": "Version actuelle :",
             "checkUpdates": "Rechercher les mises à jour",
-            "restart" : "Redémarrer Kodi"
+            "restart": "Redémarrer Kodi"
         },
         "appearance": {
             "appearance": "Apparence"
@@ -159,7 +160,7 @@
             "advanced": "Avancés",
             "websocketAddr": "Adresse websocket",
             "websocketPort": "Port websocket",
-            "state": "Etat",
+            "state": "État",
             "connected": "Connecté",
             "disconnected": "Déconnecté",
             "connect": "Se connecter",
@@ -171,7 +172,7 @@
         },
         "contribute": {
             "contribute": "Contribuer",
-            "t1": "Ajouter de nouvelles fonctionnalités à TeX et continuer le développement prend beaucoup de temps.",
+            "t1": "L'ajout de nouvelles fonctionnalités à TeX et la poursuite de son développement prennent beaucoup de temps.",
             "t2": "Pour m'aider à garder ma motivation, vous pouvez soutenir financièrement le projet en faisant un don !",
             "t3": "Je serais ainsi plus motivé pour ajouter les fonctionnalités demandées par la communauté et corriger les problèmes existants.",
             "makeGift": "Faire un don"
@@ -180,22 +181,22 @@
     "unknown": "Inconnu",
     "notification": {
         "scanStarted": "Analyse démarrée",
-        "scanFinished": "Annalyse terminée",
+        "scanFinished": "Analyse terminée",
         "cleanStarted": "Nettoyage démarré",
         "cleanFinished": "Nettoyage terminé",
         "contentUpdated": "Contenu mis à jour.",
         "updatedTranslations": "Traductions mises à jour",
-        "refreshPageToSee": "Actualisez la page pour voir les changements",
+        "refreshPageToSee": "Actualiser la page pour voir les changements",
         "error": "Erreur",
         "success": "Succès",
         "contentNotUpdated": "Contenu non mis à jour",
-        "contentRemoved": "Contenu supprimé. Actualisez la page pour voir les changements.",
+        "contentRemoved": "Contenu supprimé. Actualiser la page pour voir les changements.",
         "contentNotRemoved": "Contenu non supprimé",
         "appUpdated": "Application mise à jour",
         "changelogsOnGithub": "Vous pouvez trouver la liste des changements sur Github.",
-        "restart" : "Kodi va redémarrer",
-        "waitBeforeUseApp" : "Merci de patienter quelques instants.",
-        "commandError" : "Impossible d'envoyer la requête."
+        "restart": "Kodi va redémarrer",
+        "waitBeforeUseApp": "Merci de patienter quelques instants.",
+        "commandError": "Impossible d'envoyer la requête."
     },
     "remote": {
         "sendText": "Envoyer du texte"

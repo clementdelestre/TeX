@@ -121,7 +121,8 @@
             "tagline": "태그 라인:",
             "plot": "구성:",
             "title": "제목:"
-        }
+        },
+        "collections": "컬렉션"
     },
     "player": {
         "playlist": "재생 목록",
@@ -149,7 +150,8 @@
             "translationIssues": "번역이 문제인 경우, 웹 브라우저에서 캐시 지우기",
             "refreshTranslation": "번역 새로고침",
             "checkUpdates": "업데이트 확인",
-            "currentVersion": "현재 버전:"
+            "currentVersion": "현재 버전:",
+            "restart": "Kodi 다시 시작"
         },
         "appearance": {
             "appearance": "외관"
@@ -191,7 +193,10 @@
         "contentRemoved": "콘텐츠가 삭제되었습니다. 변경 사항을 보려면 새로 고침 하세요.",
         "contentNotUpdated": "콘텐츠가 업데이트되지 않음",
         "error": "오류",
-        "success": "성공"
+        "success": "성공",
+        "commandError": "명령을 보낼 수 없습니다.",
+        "restart": "Kodi가 다시 시작됩니다",
+        "waitBeforeUseApp": "Kodi가 다시 시작되고 있으며, 몇 초 후에 사용할 수 있습니다."
     },
     "remote": {
         "sendText": "문자 보내기"

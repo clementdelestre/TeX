@@ -121,7 +121,8 @@
             "tagline": "Slogan:",
             "plot": "Kratak sadržaj:",
             "title": "Naslov:"
-        }
+        },
+        "collections": "Kolekcije"
     },
     "player": {
         "playlist": "Popis izvođenja",
@@ -149,7 +150,8 @@
             "translationIssues": "U slučaju problemima s prijevodom, očistite predmemoriju u vašem web pregledniku",
             "refreshTranslation": "Osvježi prijevode",
             "checkUpdates": "Provjeri nadopune",
-            "currentVersion": "Trenutna inačica:"
+            "currentVersion": "Trenutna inačica:",
+            "restart": "Ponovno pokreni Kodi"
         },
         "appearance": {
             "appearance": "Izgled"
@@ -191,7 +193,10 @@
         "contentRemoved": "Sadržaj uklonjen. Osvježite kako bi vidjeli promjene.",
         "contentNotUpdated": "Sadržaj nije nadopunjen",
         "error": "Greška",
-        "success": "Uspješno"
+        "success": "Uspješno",
+        "restart": "Kodi se ponovno pokreće",
+        "waitBeforeUseApp": "Kodi se ponovno pokreće i bit će dostupan nakon nekoliko sekundi.",
+        "commandError": "Nije moguće poslati komandu."
     },
     "remote": {
         "sendText": "Pošalji tekst"

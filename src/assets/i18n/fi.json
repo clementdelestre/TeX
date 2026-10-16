@@ -41,7 +41,7 @@
         "writers": "Kirjoittajat",
         "actors": "Näyttelijät",
         "albums": "Albumit",
-        "artists": "Esittäjät",
+        "artists": "Artistit",
         "genres": "Lajityypit",
         "years": "Vuodet",
         "recentlyPlayedAlbums": "Viimeksi toistetut albumit",
@@ -62,7 +62,7 @@
             "formed": "Perustettu:",
             "disbanded": "Lopettanut:",
             "episodes": "Jaksot:",
-            "musicsBy": "Musiikkia esittäjältä",
+            "musicsBy": "Musiikkia artistilta",
             "playButton": "Toista",
             "playNext": "Toista seuraava",
             "rating": "Katsoja-arviot: {{ value }} %",
@@ -90,7 +90,7 @@
             "streamAudio": "Ääni:"
         },
         "musicsView": {
-            "artist": "Esittäjä:",
+            "artist": "Artisti:",
             "album": "Albumi:",
             "track": "Kappale:",
             "duration": "Kesto:",
@@ -121,7 +121,8 @@
             "confirm": "Vahvista",
             "cancel": "Peruuta",
             "tags": "Tunnisteet:"
-        }
+        },
+        "collections": "Kokoelmat"
     },
     "player": {
         "playlist": "Toistolista",
@@ -149,7 +150,8 @@
             "translationIssues": "Jos ilmenee käännösongelmia, tyhjennä selaimen välimuisti",
             "refreshTranslation": "Päivitä käännökset",
             "checkUpdates": "Tarkista päivitykset",
-            "currentVersion": "Nykyinen versio:"
+            "currentVersion": "Nykyinen versio:",
+            "restart": "Käynnistä Kodi uudelleen"
         },
         "appearance": {
             "appearance": "Ulkoasu"
@@ -191,7 +193,10 @@
         "contentRemoved": "Sisältö poistettiin. Päivitä sivu nähdäksesi muutokset.",
         "contentNotUpdated": "Sisältöä ei päivitetty",
         "error": "Virhe",
-        "success": "Onnistui"
+        "success": "Onnistui",
+        "commandError": "Komennon lähetys ei onnistu.",
+        "restart": "Kodi käynnistyy uudelleen",
+        "waitBeforeUseApp": "Kodi käynnistyy uudelleen ja on käytettävissä muutaman sekunnin kuluttua."
     },
     "remote": {
         "sendText": "Lähetä tekstiä"

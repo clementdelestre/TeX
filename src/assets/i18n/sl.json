@@ -150,7 +150,9 @@
         "cleanFinished": "",
         "contentUpdated": "",
         "updatedTranslations": "",
-        "refreshPageToSee": ""
+        "refreshPageToSee": "",
+        "restart": "Kodi se znova zaganja",
+        "waitBeforeUseApp": "Kodi se znova zaganja in bo na voljo čez nekaj sekund."
     },
     "remote": {
         "sendText": ""

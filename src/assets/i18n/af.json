@@ -5,7 +5,7 @@
         "musics": "",
         "player": "",
         "remote": "",
-        "settings": "",
+        "settings": "Instellings",
         "search": {
             "search": "",
             "searchIn": "",
@@ -106,7 +106,7 @@
         "noMedia": ""
     },
     "settings": {
-        "settings": "",
+        "settings": "Instellings",
         "general": {
             "general": "",
             "language": "",
